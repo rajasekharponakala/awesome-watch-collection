@@ -1,0 +1,31 @@
+brand: "patek-philippe"
+name: "Nautilus"
+reference: "5711/1A"
+type: "mechanical/automatic"
+styles:
+  - "sports-luxury"
+  - "integrated-bracelet"
+complications:
+  - "date"
+caliber: "Patek Philippe 26-330 S C"
+case:
+  material: "Stainless steel"
+  diameter_mm: 40
+  thickness_mm: 8.3
+water_resistance_m: 120
+crystal: "Sapphire"
+years:
+  introduced: 2006
+  discontinued: 2021
+price_tier: "haute-horlogerie"
+levels:
+  - "complication"
+  - "grande-complication"
+region: "Switzerland"
+summary: "Gérald Genta's porthole-inspired design (1976) in its most coveted modern form. Its discontinuation made it a symbol of the secondary-market boom."
+look:
+  dial: "#24364f"
+  accent: "#e7ebf0"
+  metal: "steel"
+  bezel: "octagon"
+last_reviewed: "2026-10-16"

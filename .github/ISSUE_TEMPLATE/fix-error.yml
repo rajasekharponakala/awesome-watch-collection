@@ -1,0 +1,15 @@
+name: Regulate an error
+description: Report a factual error, typo or broken page
+labels: [fix]
+body:
+  - type: input
+    id: page
+    attributes: { label: Page URL or file path }
+    validations: { required: true }
+  - type: textarea
+    id: problem
+    attributes: { label: What is wrong, and what should it say? }
+    validations: { required: true }
+  - type: textarea
+    id: sources
+    attributes: { label: Source }

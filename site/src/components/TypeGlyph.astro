@@ -1,0 +1,109 @@
+---
+/** Animated illustrations for each watch family. */
+interface Props {
+  type: 'mechanical' | 'quartz' | 'digital' | 'smart' | 'hybrid' | 'exotic';
+  class?: string;
+}
+const { type, class: cls = '' } = Astro.props;
+function gear(cx: number, cy: number, r: number, n: number, depth = 6) {
+  const pts: string[] = [];
+  for (let i = 0; i < n * 4; i++) {
+    const a = (i / (n * 4)) * Math.PI * 2;
+    const rr = i % 4 < 2 ? r : r - depth;
+    pts.push(`${(cx + Math.cos(a) * rr).toFixed(1)},${(cy + Math.sin(a) * rr).toFixed(1)}`);
+  }
+  return pts.join(' ');
+}
+---
+
+<svg class={`glyph ${cls}`} viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+  {type === 'mechanical' && (
+    <g>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0 82 88" to="360 82 88" dur="16s" repeatCount="indefinite" />
+        <polygon points={gear(82, 88, 52, 22)} />
+        <circle cx="82" cy="88" r="34" />
+        <circle cx="82" cy="88" r="6" fill="currentColor" />
+      </g>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0 146 140" to="-360 146 140" dur="9s" repeatCount="indefinite" />
+        <polygon points={gear(146, 140, 32, 14)} />
+        <circle cx="146" cy="140" r="4" fill="currentColor" />
+      </g>
+    </g>
+  )}
+  {type === 'quartz' && (
+    <g>
+      <path d="M86 40 L86 120 Q100 150 114 120 L114 40" />
+      <path d="M92 40 L92 116 Q100 132 108 116 L108 40">
+        <animate attributeName="d" values="M92 40 L92 116 Q100 132 108 116 L108 40;M90 40 L91 116 Q100 132 109 116 L110 40;M92 40 L92 116 Q100 132 108 116 L108 40" dur=".25s" repeatCount="indefinite" />
+      </path>
+      <path d="M100 150 L100 172" />
+      {[0, 1, 2].map((i) => (
+        <circle cx="100" cy="80" r="40" opacity=".5">
+          <animate attributeName="r" values="30;90" dur="3s" begin={`${i}s`} repeatCount="indefinite" />
+          <animate attributeName="opacity" values=".6;0" dur="3s" begin={`${i}s`} repeatCount="indefinite" />
+        </circle>
+      ))}
+      <text x="100" y="192" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="currentColor" stroke="none">32,768 Hz</text>
+    </g>
+  )}
+  {type === 'digital' && (
+    <g>
+      <rect x="28" y="56" width="144" height="88" rx="10" />
+      <text x="100" y="116" text-anchor="middle" font-family="Orbitron, monospace" font-size="38" fill="currentColor" stroke="none" font-weight="600">
+        12<tspan><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" />:</tspan>00
+      </text>
+      <path d="M40 130 L80 130 M120 130 L160 130" opacity=".5" />
+    </g>
+  )}
+  {type === 'smart' && (
+    <g>
+      <rect x="48" y="36" width="104" height="128" rx="30" />
+      <circle cx="100" cy="100" r="36" opacity=".25" />
+      <circle cx="100" cy="100" r="36" stroke-dasharray="226" stroke-dashoffset="80" stroke-width="5" stroke-linecap="round" transform="rotate(-90 100 100)">
+        <animate attributeName="stroke-dashoffset" values="226;60;226" dur="6s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="100" cy="100" r="24" opacity=".25" />
+      <circle cx="100" cy="100" r="24" stroke-dasharray="151" stroke-dashoffset="40" stroke-width="5" stroke-linecap="round" transform="rotate(-90 100 100)">
+        <animate attributeName="stroke-dashoffset" values="151;20;151" dur="4.5s" repeatCount="indefinite" />
+      </circle>
+      <path d="M152 76 L160 76 L160 96 L152 96" />
+    </g>
+  )}
+  {type === 'hybrid' && (
+    <g>
+      <circle cx="100" cy="100" r="66" />
+      <path d="M100 34 A66 66 0 0 1 100 166" stroke-dasharray="3 5" />
+      <line x1="100" y1="100" x2="100" y2="50" stroke-width="2.5">
+        <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="12s" repeatCount="indefinite" />
+      </line>
+      <path d="M118 128 L128 128 L134 116 L142 140 L148 128 L156 128" opacity=".8" />
+      <circle cx="100" cy="100" r="4" fill="currentColor" />
+    </g>
+  )}
+  {type === 'exotic' && (
+    <g>
+      <circle cx="100" cy="100" r="70" opacity=".4" />
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="10s" repeatCount="indefinite" />
+        <circle cx="100" cy="100" r="50" />
+        <path d="M100 50 L100 150 M50 100 L150 100" />
+        <circle cx="100" cy="50" r="5" fill="currentColor" />
+        <g>
+          <animateTransform attributeName="transform" type="rotate" values="-120 100 100;120 100 100;-120 100 100" dur=".6s" repeatCount="indefinite" />
+          <circle cx="100" cy="100" r="22" />
+          <path d="M100 78 L100 122" />
+        </g>
+      </g>
+    </g>
+  )}
+</svg>
+
+<style>
+  .glyph {
+    width: 100%;
+    height: auto;
+    color: var(--gold);
+  }
+</style>

@@ -1,0 +1,15 @@
+name: "Miyota 9015"
+maker: "Miyota (Citizen)"
+kind: "automatic"
+frequency_vph: 28800
+jewels: 24
+power_reserve_h: 42
+hacking: true
+hand_winding: true
+functions:
+  - "hours"
+  - "minutes"
+  - "central seconds"
+  - "date"
+summary: "A slim, high-beat Japanese automatic often used as an alternative to Swiss calibres in affordable and micro-brand watches. It is known for a noisy, \"wobbly\" rotor."
+last_reviewed: "2026-10-16"

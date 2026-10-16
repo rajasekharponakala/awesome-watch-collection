@@ -1,0 +1,44 @@
+---
+import { u } from '../lib/meta';
+const built = new Date().toISOString().slice(0, 10);
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-mark" data-parallax="-0.06">Every second<br /><em class="gold-text">counts.</em></p>
+    <div class="footer-cols">
+      <div>
+        <h4>Learn</h4>
+        <a href={u('learn/first-wind/')}>First Wind</a>
+        <a href={u('learn/automatic/')}>Automatic</a>
+        <a href={u('learn/complication/')}>Complication</a>
+        <a href={u('learn/grande-complication/')}>Grande Complication</a>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href={u('types/')}>Watch types</a>
+        <a href={u('catalogue/')}>Catalogue</a>
+        <a href={u('calibers/')}>Calibers</a>
+        <a href={u('brands/')}>Brands</a>
+      </div>
+      <div>
+        <h4>Reference</h4>
+        <a href={u('history/')}>Chronograph (history)</a>
+        <a href={u('glossary/')}>Glossary</a>
+        <a href={u('resources/')}>Resources</a>
+        <a href={u('about/')}>Caseback (about)</a>
+      </div>
+      <div>
+        <h4>The Escapement</h4>
+        <a href="https://github.com/rajasekharponakala/awesome-watch-collection">GitHub repository</a>
+        <a href="https://github.com/rajasekharponakala/awesome-watch-collection/blob/main/CONTRIBUTING.md">Contribute knowledge</a>
+        <a href="https://github.com/rajasekharponakala/awesome-watch-collection/issues/new/choose">Report an error</a>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>Content CC BY-SA 4.0 · Code MIT</span>
+      <span>Service interval: last regulated {built}</span>
+      <span>28,800 vph · ±0 s/d</span>
+    </div>
+  </div>
+</footer>

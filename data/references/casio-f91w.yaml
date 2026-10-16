@@ -1,0 +1,31 @@
+brand: "casio"
+name: "F-91W"
+reference: "F-91W-1"
+type: "digital/lcd"
+styles:
+  - "tool"
+  - "everyday"
+complications:
+  - "alarm"
+  - "stopwatch"
+  - "backlight"
+caliber: "Casio module 593"
+case:
+  material: "Resin"
+  diameter_mm: 35.2
+  lug_to_lug_mm: 38.2
+  thickness_mm: 8.5
+  lug_width_mm: 18
+crystal: "Resin"
+years:
+  introduced: 1989
+price_tier: "entry"
+levels:
+  - "first-wind"
+region: "Japan"
+summary: "Possibly the best-selling watch in history: light, accurate, nearly indestructible and costs about as much as lunch. A design classic that every collector should understand."
+look:
+  dial: "#a9ad97"
+  accent: "#1b1c18"
+  metal: "resin"
+last_reviewed: "2026-10-16"

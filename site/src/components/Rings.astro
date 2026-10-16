@@ -1,0 +1,28 @@
+---
+/** Decorative guilloché / minute-track rings used as parallax backdrops. */
+interface Props {
+  class?: string;
+  spin?: number;
+}
+const { class: cls = '', spin = 240 } = Astro.props;
+const ticks = Array.from({ length: 120 }, (_, i) => i);
+const rings = [380, 330, 300, 250, 180, 120];
+---
+
+<svg class={`rings ${cls}`} viewBox="0 0 800 800" fill="none" aria-hidden="true">
+  <g stroke="var(--line-2)">
+    {rings.map((r) => <circle cx="400" cy="400" r={r} />)}
+  </g>
+  <g stroke="var(--gold)" opacity=".5">
+    <animateTransform attributeName="transform" type="rotate" from="0 400 400" to="360 400 400" dur={`${spin}s`} repeatCount="indefinite" />
+    {ticks.map((i) => (
+      <line x1="400" y1="20" x2="400" y2={i % 10 === 0 ? 44 : i % 2 === 0 ? 32 : 27} stroke-width={i % 10 === 0 ? 1.6 : 0.7} transform={`rotate(${i * 3} 400 400)`} />
+    ))}
+  </g>
+  <g stroke="var(--line-2)">
+    <animateTransform attributeName="transform" type="rotate" from="360 400 400" to="0 400 400" dur={`${spin * 1.5}s`} repeatCount="indefinite" />
+    {Array.from({ length: 48 }, (_, i) => (
+      <ellipse cx="400" cy="400" rx="300" ry="120" transform={`rotate(${i * 3.75} 400 400)`} opacity=".35" />
+    ))}
+  </g>
+</svg>

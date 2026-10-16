@@ -1,0 +1,23 @@
+---
+import Watch from './Watch.astro';
+import DigitalFace from './DigitalFace.astro';
+import { typeOf } from '../lib/meta';
+
+interface Props {
+  ref: { id: string; data: any };
+  brandName: string;
+  size?: string;
+}
+const { ref, brandName, size } = Astro.props;
+const t = typeOf(ref.data.type);
+const look = ref.data.look;
+const hasDate = (ref.data.complications as string[]).includes('date');
+const label = brandName.length > 10 ? brandName.split(' ')[0].toUpperCase() : brandName.toUpperCase();
+const sub = ref.data.type.split('/')[1].replace(/-/g, ' ').toUpperCase();
+---
+
+{t === 'digital' || t === 'smart' ? (
+  <DigitalFace kind={t} screen={t === 'digital' ? look.dial : '#000'} ink={look.accent} label={label} size={size} />
+) : (
+  <Watch dial={look.dial} accent={look.accent} metal={look.metal} bezel={look.bezel} label={label} sub={sub} date={hasDate} size={size} />
+)}

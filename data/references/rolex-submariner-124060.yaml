@@ -1,0 +1,28 @@
+brand: "rolex"
+name: "Submariner"
+reference: "124060"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "sports-luxury"
+caliber: "Rolex 3230"
+case:
+  material: "Oystersteel (904L)"
+  diameter_mm: 41
+  lug_width_mm: 21
+water_resistance_m: 300
+crystal: "Sapphire"
+years:
+  introduced: 2020
+price_tier: "luxury"
+levels:
+  - "automatic"
+  - "complication"
+region: "Switzerland"
+summary: "The no-date Submariner, the purest form of the dive watch that has defined the genre since 1953. The 2020 generation grew to 41 mm and gained the 70-hour calibre 3230."
+look:
+  dial: "#0b0c0e"
+  accent: "#f2ead3"
+  metal: "steel"
+  bezel: "dive"
+last_reviewed: "2026-10-16"

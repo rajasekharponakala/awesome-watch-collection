@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import PageHero from '../../../components/PageHero.astro';
+import { u, LEVELS, LEVEL_META, type Level } from '../../../lib/meta';
+
+export function getStaticPaths() {
+  return LEVELS.map((level) => ({ params: { level } }));
+}
+const level = Astro.params.level as Level;
+const meta = LEVEL_META[level];
+const i = LEVELS.indexOf(level);
+const guides = (await getCollection('guides')).filter((g) => g.data.level === level).sort((a, b) => a.data.order - b.data.order);
+const next = LEVELS[i + 1];
+---
+
+<Base title={meta.name} description={meta.blurb}>
+  <PageHero
+    eyebrow={`Level ${['I', 'II', 'III', 'IV'][i]} · ${meta.stage}`}
+    title={`<em>${meta.name}</em>`}
+    lede={meta.blurb}
+    crumbs={[[u(), 'Dial'], [u('learn/'), 'Learn'], [u(`learn/${level}/`), meta.name]]}
+  >
+    <div class="jewels" style="margin-top:28px" data-reveal="fade">{[1, 2, 3, 4].map((j) => <i class={j > meta.jewels ? 'off' : ''} />)}</div>
+  </PageHero>
+  <section class="section--tight">
+    <div class="container grid grid--3">
+      {guides.map((g, k) => (
+        <a href={u(`learn/${g.id}/`)} class="card guide-card" data-reveal data-tilt="5" style={`--d:${k * 0.07}s`}>
+          <span class="mono gc-num">Lesson {String(k + 1).padStart(2, '0')}</span>
+          <h2 class="display h4">{g.data.title}</h2>
+          <p class="muted">{g.data.description}</p>
+          <div class="gc-tags">{g.data.tags.map((t) => <span class="chip">{t}</span>)}</div>
+        </a>
+      ))}
+    </div>
+    {next && (
+      <div class="container next-level" data-reveal>
+        <span class="eyebrow">When you're fully wound</span>
+        <a href={u(`learn/${next}/`)} class="display h3">Continue to {LEVEL_META[next].name} →</a>
+      </div>
+    )}
+  </section>
+</Base>
+
+<style>
+  .guide-card { display: flex; flex-direction: column; gap: 12px; min-height: 280px; }
+  .gc-num { color: var(--gold); }
+  .guide-card h2 { margin: 6px 0 0; }
+  .guide-card p { margin: 0; flex: 1; }
+  .gc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .next-level { margin-top: 90px; display: grid; gap: 14px; }
+  .next-level a:hover { color: var(--gold); }
+</style>

@@ -1,0 +1,69 @@
+---
+import RefVisual from './RefVisual.astro';
+import { u, typeOf, TYPE_META, TIER_META } from '../lib/meta';
+
+interface Props {
+  ref: { id: string; data: any };
+  brandName: string;
+}
+const { ref, brandName } = Astro.props;
+const d = ref.data;
+const t = typeOf(d.type);
+---
+
+<a
+  href={u(`catalogue/${ref.id}/`)}
+  class="card ref-card"
+  data-tilt="6"
+  data-type={t}
+  data-tier={d.price_tier}
+  data-levels={d.levels.join(' ')}
+  data-styles={d.styles.join(' ')}
+>
+  <div class="ref-card__visual"><RefVisual ref={ref} brandName={brandName} size="230px" /></div>
+  <div class="ref-card__meta">
+    <span class="eyebrow">{brandName}</span>
+    <h3 class="display h4">{d.name}</h3>
+    <p class="mono muted">
+      {[d.case?.diameter_mm && `${d.case.diameter_mm} mm`, d.water_resistance_m && `${d.water_resistance_m} m`, d.caliber].filter(Boolean).join(' · ')}
+    </p>
+    <div class="ref-card__chips">
+      <span class="chip">{TYPE_META[t].name}</span>
+      <span class="chip">{TIER_META[d.price_tier as keyof typeof TIER_META].name}</span>
+    </div>
+  </div>
+</a>
+
+<style>
+  .ref-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: border-color 0.4s, box-shadow 0.5s, opacity 0.5s, transform 0.5s var(--ease);
+  }
+  .ref-card__visual {
+    display: grid;
+    place-items: center;
+    padding: 18px 0 6px;
+    transform: translateZ(40px);
+    transition: transform 0.7s var(--ease);
+  }
+  .ref-card:hover .ref-card__visual {
+    transform: translateZ(40px) scale(1.04) rotate(-2deg);
+  }
+  .ref-card h3 {
+    margin: 10px 0 6px;
+  }
+  .ref-card p {
+    margin: 0 0 14px;
+  }
+  .ref-card__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .ref-card.is-filtered {
+    display: none;
+  }
+</style>

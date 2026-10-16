@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { u, LEVEL_META } from '../lib/meta';
+const res = await getCollection('resources');
+const kinds = [...new Set(res.map((r) => r.data.kind))];
+---
+
+<Base title="Resources" description="Books, channels, forums, museums, schools, tools and events for watch lovers.">
+  <PageHero eyebrow="Further winding" title="Keep <em>learning.</em>" lede="The books, channels, communities and places that will take you further." crumbs={[[u(), 'Dial'], [u('resources/'), 'Resources']]} />
+  <section class="section--tight">
+    <div class="container">
+      {kinds.map((k) => (
+        <div class="res-group">
+          <span class="eyebrow" data-reveal="fade">{k}s</span>
+          <div class="grid grid--3" style="margin-top:20px">
+            {res.filter((r) => r.data.kind === k).map((r) => {
+              const Tag = r.data.url ? 'a' : 'div';
+              return (
+                <Tag href={r.data.url} class="card" data-reveal>
+                  <span class="mono" style="color:var(--gold);font-size:11px;letter-spacing:.1em;text-transform:uppercase">{LEVEL_META[r.data.level].name}</span>
+                  <h3 class="display h4" style="margin:10px 0 8px">{r.data.name}</h3>
+                  <p class="muted" style="margin:0;font-size:15px">{r.data.text}</p>
+                </Tag>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .res-group { margin-bottom: 60px; }
+</style>

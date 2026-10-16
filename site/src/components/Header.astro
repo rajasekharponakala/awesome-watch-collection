@@ -1,0 +1,62 @@
+---
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import { u } from '../lib/meta';
+
+const links = [
+  ['learn/', 'Learn'],
+  ['types/', 'Types'],
+  ['catalogue/', 'Catalogue'],
+  ['calibers/', 'Calibers'],
+  ['brands/', 'Brands'],
+  ['history/', 'History'],
+  ['glossary/', 'Glossary'],
+];
+const path = Astro.url.pathname;
+---
+
+<header class="site-header" data-header>
+  <div class="container">
+    <a href={u()} class="brand" aria-label="Awesome Watch Collection, home">
+      <Logo />
+      <span>Awesome Watch<small>Collection · Est. 2026</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      {links.map(([href, label]) => (
+        <a href={u(href)} aria-current={path.startsWith(u(href)) ? 'page' : undefined}>{label}</a>
+      ))}
+    </nav>
+    <div class="header-tools">
+      <button class="crown-btn" data-crown-open aria-label="Search (pull the crown)">
+        <Icon name="crown" /><span>Pull the crown</span><kbd>⌘K</kbd>
+      </button>
+      <button class="icon-btn" data-theme-toggle aria-label="Toggle lume (dark) and day dial (light) themes" title="Lume / Day dial">
+        <span class="t-moon"><Icon name="moon" /></span><span class="t-sun"><Icon name="sun" /></span>
+      </button>
+      <button class="icon-btn" data-hack-toggle aria-pressed="false" aria-label="Hack the seconds: pause all motion" title="Hacking seconds: pause motion">
+        <span class="t-pause"><Icon name="pause" /></span><span class="t-play"><Icon name="play" /></span>
+      </button>
+      <button class="icon-btn menu-btn" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu">
+        <span class="t-menu"><Icon name="menu" /></span><span class="t-close"><Icon name="close" /></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+  {links.map(([href, label], i) => (
+    <a href={u(href)}><span>{String((i + 1) * 5).padStart(2, '0')}′</span>{label}</a>
+  ))}
+  <a href={u('about/')}><span>60′</span>Caseback</a>
+</nav>
+
+<style>
+  .icon-btn > span { display: grid; place-items: center; }
+  .icon-btn > .t-sun, .icon-btn > .t-play, .icon-btn > .t-close { display: none; }
+  :global([data-theme='day']) .icon-btn > .t-sun { display: grid; }
+  :global([data-theme='day']) .icon-btn > .t-moon { display: none; }
+  :global(.hacked) .icon-btn > .t-play { display: grid; }
+  :global(.hacked) .icon-btn > .t-pause { display: none; }
+  :global(.menu-open) .icon-btn > .t-close { display: grid; }
+  :global(.menu-open) .icon-btn > .t-menu { display: none; }
+</style>

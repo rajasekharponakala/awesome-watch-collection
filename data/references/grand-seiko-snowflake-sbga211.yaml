@@ -1,0 +1,31 @@
+brand: "grand-seiko"
+name: "\"Snowflake\""
+reference: "SBGA211"
+type: "hybrid/spring-drive"
+styles:
+  - "dress"
+  - "everyday"
+complications:
+  - "power reserve indicator"
+  - "date"
+caliber: "Grand Seiko 9R65"
+caliber_id: "grand-seiko-9r65"
+case:
+  material: "High-intensity titanium"
+  diameter_mm: 41
+  thickness_mm: 12.5
+water_resistance_m: 100
+crystal: "Sapphire"
+years:
+  introduced: 2017
+price_tier: "luxury"
+levels:
+  - "automatic"
+  - "complication"
+region: "Japan"
+summary: "A dial textured like wind-blown snow around Shiojiri, a feather-light titanium case and the gliding seconds hand of Spring Drive. Many collectors' gateway to Grand Seiko."
+look:
+  dial: "#eef0f2"
+  accent: "#4a5260"
+  metal: "titanium"
+last_reviewed: "2026-10-16"

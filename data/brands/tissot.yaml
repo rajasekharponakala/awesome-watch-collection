@@ -1,0 +1,21 @@
+name: "Tissot"
+country: "Switzerland"
+city: "Le Locle"
+founded: 1853
+founders:
+  - "Charles-Félicien Tissot"
+  - "Charles-Émile Tissot"
+group: "Swatch Group"
+tier: "affordable"
+types:
+  - "mechanical"
+  - "quartz"
+  - "smart"
+summary: "Tissot offers Swiss-made watches at accessible prices. Its PRX revived the 1970s integrated-bracelet look, and its Powermatic 80 movement offers an 80-hour power reserve at entry price points."
+notable:
+  - "PRX"
+  - "Seastar"
+  - "Le Locle"
+  - "T-Touch"
+website: "https://www.tissotwatches.com"
+last_reviewed: "2026-10-16"

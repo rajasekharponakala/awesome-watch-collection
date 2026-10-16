@@ -1,0 +1,29 @@
+brand: "garmin"
+name: "fēnix 8"
+type: "smart/outdoor"
+styles:
+  - "sport"
+  - "outdoor"
+complications:
+  - "GPS"
+  - "heart rate"
+  - "maps"
+  - "flashlight"
+  - "dive mode"
+case:
+  material: "Stainless steel or titanium"
+  diameter_mm: 47
+crystal: "Gorilla Glass or sapphire"
+years:
+  introduced: 2024
+price_tier: "affordable"
+levels:
+  - "first-wind"
+  - "automatic"
+region: "United States"
+summary: "A multisport flagship with AMOLED or solar MIP displays, offline maps, a built-in flashlight and battery life measured in weeks rather than hours."
+look:
+  dial: "#0a0b0c"
+  accent: "#e7212f"
+  metal: "black"
+last_reviewed: "2026-10-16"

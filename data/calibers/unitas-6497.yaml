@@ -1,0 +1,14 @@
+name: "ETA / Unitas 6497"
+maker: "ETA (Swatch Group)"
+kind: "manual"
+frequency_vph: 18000
+jewels: 17
+power_reserve_h: 46
+hacking: false
+hand_winding: true
+functions:
+  - "hours"
+  - "minutes"
+  - "small seconds"
+summary: "A large, open pocket-watch movement with a slow 18,000 vph beat. Ideal for skeletonising and very popular for learning watchmaking because its big parts are easy to see and handle."
+last_reviewed: "2026-10-16"

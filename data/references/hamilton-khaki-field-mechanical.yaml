@@ -1,0 +1,24 @@
+brand: "hamilton"
+name: "Khaki Field Mechanical"
+reference: "H69439931"
+type: "mechanical/manual"
+styles:
+  - "field"
+  - "military"
+caliber: "Hamilton H-50"
+case:
+  material: "Stainless steel"
+  diameter_mm: 38
+  lug_width_mm: 20
+water_resistance_m: 50
+crystal: "Sapphire"
+price_tier: "affordable"
+levels:
+  - "first-wind"
+region: "Switzerland"
+summary: "A hand-wound field watch with roots in Hamilton's military pieces. With an 80-hour power reserve and a legible 12/24-hour dial, it is a perfect introduction to the ritual of winding."
+look:
+  dial: "#1c1f17"
+  accent: "#efe7cf"
+  metal: "steel"
+last_reviewed: "2026-10-16"

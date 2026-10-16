@@ -1,0 +1,430 @@
+---
+/**
+ * A layered SVG watch. Each layer is its own SVG so the watch can be "exploded" in 3D.
+ * Hands with [data-hand] are driven by the global clock script in real time.
+ *
+ * layers="front" renders only what you see on the wrist (dial, hands, case, crystal);
+ * layers="all" adds caseback, rotor and movement for the exploded view.
+ */
+interface Props {
+  dial?: string;
+  accent?: string;
+  metal?: 'steel' | 'gold' | 'titanium' | 'black' | 'resin';
+  bezel?: 'none' | 'dive' | 'tachy' | 'octagon';
+  label?: string;
+  sub?: string;
+  date?: boolean;
+  layers?: 'front' | 'all';
+  explode?: boolean;
+  class?: string;
+  size?: string;
+}
+
+const {
+  dial = '#0f1216',
+  accent = '#e9e4d8',
+  metal = 'gold',
+  bezel = 'none',
+  label = 'AWC',
+  sub = 'AUTOMATIC',
+  date = true,
+  layers = 'front',
+  explode = false,
+  class: cls = '',
+  size,
+} = Astro.props;
+
+const uid = 'w' + Math.random().toString(36).slice(2, 8);
+const C = 200;
+
+const METALS: Record<string, string[]> = {
+  steel: ['#f4f4f2', '#a7adb3', '#eceeee', '#6f767d', '#d9dcdf'],
+  gold: ['#fbecc0', '#b98a3d', '#f4d78f', '#7c5a20', '#e6c27a'],
+  titanium: ['#e3e5e6', '#8d9398', '#cfd3d5', '#5d6368', '#b9bec2'],
+  black: ['#4a4d52', '#17181b', '#3a3c40', '#0c0d0f', '#2a2c30'],
+  resin: ['#3b3d40', '#141517', '#2b2d30', '#0b0c0d', '#222427'],
+};
+const m = METALS[metal];
+
+const minuteTicks = Array.from({ length: 60 }, (_, i) => i);
+const hourIdx = Array.from({ length: 12 }, (_, i) => i).filter((i) => !(date && i === 3));
+const sunburst = Array.from({ length: 90 }, (_, i) => i * 4);
+
+// Gear helper: polygon with `n` teeth
+function gear(cx: number, cy: number, r: number, n: number, depth = 5) {
+  const pts: string[] = [];
+  for (let i = 0; i < n * 4; i++) {
+    const a = (i / (n * 4)) * Math.PI * 2;
+    const rr = i % 4 < 2 ? r : r - depth;
+    pts.push(`${(cx + Math.cos(a) * rr).toFixed(2)},${(cy + Math.sin(a) * rr).toFixed(2)}`);
+  }
+  return pts.join(' ');
+}
+
+// Hairspring spiral
+function spiral(cx: number, cy: number, turns: number, r0: number, r1: number) {
+  let d = '';
+  const steps = turns * 40;
+  for (let i = 0; i <= steps; i++) {
+    const t = i / steps;
+    const a = t * turns * Math.PI * 2;
+    const r = r0 + (r1 - r0) * t;
+    d += `${i ? 'L' : 'M'}${(cx + Math.cos(a) * r).toFixed(2)} ${(cy + Math.sin(a) * r).toFixed(2)}`;
+  }
+  return d;
+}
+
+const jewels = [
+  [200, 200], [262, 252], [140, 150], [250, 130], [160, 262], [205, 120], [118, 214], [290, 190],
+];
+
+const octagon =
+  Array.from({ length: 8 }, (_, i) => {
+    const a = (i / 8) * Math.PI * 2 + Math.PI / 8;
+    return `${i ? 'L' : 'M'}${(200 + Math.cos(a) * 186).toFixed(1)} ${(200 + Math.sin(a) * 186).toFixed(1)}`;
+  }).join(' ') + ' Z M200 48 a152 152 0 1 0 0.01 0 Z';
+
+const allLayers = layers === 'all';
+const style = size ? `--size:${size}` : '';
+---
+
+<div class={`watch ${explode ? 'watch--explode' : ''} ${cls}`} style={style} data-watch>
+  {allLayers && (
+    <>
+      {/* 0 · Caseback */}
+      <div class="watch__layer" style="--i:0" data-i="0">
+        <svg viewBox="-30 -30 460 460" aria-hidden="true">
+          <defs>
+            <linearGradient id={`${uid}-cb`} x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color={m[0]} /><stop offset=".35" stop-color={m[1]} />
+              <stop offset=".6" stop-color={m[2]} /><stop offset="1" stop-color={m[3]} />
+            </linearGradient>
+            <path id={`${uid}-ring`} d="M200 200 m-160 0 a160 160 0 1 1 320 0 a160 160 0 1 1 -320 0" />
+          </defs>
+          <circle cx={C} cy={C} r="188" fill={`url(#${uid}-cb)`} />
+          <circle cx={C} cy={C} r="176" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="1.5" />
+          <text font-family="JetBrains Mono, monospace" font-size="10.5" letter-spacing="4" fill="rgba(0,0,0,.45)">
+            <textPath href={`#${uid}-ring`}>AWESOME WATCH COLLECTION · SAPPHIRE CASEBACK · WATER RESISTANT 100 M · N° 0001 ·</textPath>
+          </text>
+          <circle cx={C} cy={C} r="140" fill="#0b0d10" opacity=".85" />
+          <circle cx={C} cy={C} r="140" fill="none" stroke={m[4]} stroke-width="2" />
+        </svg>
+      </div>
+
+      {/* 1 · Rotor */}
+      <div class="watch__layer" style="--i:1" data-i="1">
+        <svg viewBox="-30 -30 460 460" aria-hidden="true">
+          <defs>
+            <pattern id={`${uid}-cdg`} width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-20)">
+              <rect width="14" height="14" fill={m[2]} />
+              <rect width="14" height="7" fill={m[1]} opacity=".35" />
+            </pattern>
+          </defs>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="18s" repeatCount="indefinite" />
+            <path d="M48 200 A152 152 0 0 1 352 200 L262 200 A62 62 0 0 0 138 200 Z" fill={`url(#${uid}-cdg)`} stroke={m[3]} stroke-width="1.5" />
+            <text x="200" y="104" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="20" font-style="italic" fill={m[3]}>Awesome</text>
+            <text x="200" y="124" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="3" fill={m[3]}>28 JEWELS · SWISS LEVER</text>
+          </g>
+          <circle cx={C} cy={C} r="14" fill={m[1]} stroke={m[3]} />
+          <circle cx={C} cy={C} r="5" fill="#a3141f" />
+        </svg>
+      </div>
+
+      {/* 2 · Movement */}
+      <div class="watch__layer" style="--i:2" data-i="2">
+        <svg viewBox="-30 -30 460 460" aria-hidden="true">
+          <defs>
+            <pattern id={`${uid}-perlage`} width="18" height="18" patternUnits="userSpaceOnUse">
+              <rect width="18" height="18" fill="#c9ccd0" />
+              <circle cx="9" cy="9" r="9" fill="none" stroke="#9aa0a6" stroke-width="1" />
+              <circle cx="9" cy="9" r="5" fill="none" stroke="#e8eaec" stroke-width="1" />
+            </pattern>
+            <linearGradient id={`${uid}-br`} x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f6e3ad" /><stop offset=".5" stop-color="#c49a4c" /><stop offset="1" stop-color="#8b6a2e" />
+            </linearGradient>
+            <radialGradient id={`${uid}-jw`}>
+              <stop offset="0" stop-color="#ff9aa2" /><stop offset=".55" stop-color="#c0142a" /><stop offset="1" stop-color="#5a0510" />
+            </radialGradient>
+          </defs>
+          <circle cx={C} cy={C} r="162" fill={`url(#${uid}-perlage)`} />
+          <circle cx={C} cy={C} r="162" fill="none" stroke="#7d8389" stroke-width="2" />
+
+          {/* Gear train */}
+          <g fill="#d9b25f" stroke="#7c5a20" stroke-width=".8">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="60s" repeatCount="indefinite" />
+              <polygon points={gear(200, 200, 58, 40, 4)} />
+              <circle cx="200" cy="200" r="44" fill="#caa04d" />
+              {[0, 72, 144, 216, 288].map((a) => (
+                <path d="M200 200 L200 160" stroke="#7c5a20" stroke-width="6" transform={`rotate(${a} 200 200)`} />
+              ))}
+            </g>
+            <g>
+              <animateTransform attributeName="transform" type="rotate" from="360 140 150" to="0 140 150" dur="20s" repeatCount="indefinite" />
+              <polygon points={gear(140, 150, 34, 24, 4)} />
+              <circle cx="140" cy="150" r="22" fill="#caa04d" />
+            </g>
+            <g>
+              <animateTransform attributeName="transform" type="rotate" from="0 250 130" to="360 250 130" dur="8s" repeatCount="indefinite" />
+              <polygon points={gear(250, 130, 28, 20, 3.5)} />
+              <circle cx="250" cy="130" r="16" fill="#caa04d" />
+            </g>
+            <g>
+              <animateTransform attributeName="transform" type="rotate" from="0 160 262" to="-360 160 262" dur="4s" repeatCount="indefinite" />
+              <polygon points={gear(160, 262, 22, 15, 4)} fill="#e7e2d6" stroke="#6a6f74" />
+            </g>
+          </g>
+
+          {/* Bridges with Côtes de Genève */}
+          <path d="M60 170 Q120 90 236 82 L246 106 Q150 118 98 196 Z" fill={`url(#${uid}-br)`} stroke="#6b4f1c" stroke-width="1" />
+          <path d="M110 300 Q170 330 236 312 L224 286 Q170 300 128 278 Z" fill={`url(#${uid}-br)`} stroke="#6b4f1c" stroke-width="1" />
+
+          {/* Balance cock */}
+          <path d="M262 252 L338 312 L322 330 L246 268 Z" fill={`url(#${uid}-br)`} stroke="#6b4f1c" />
+
+          {/* Balance wheel */}
+          <g>
+            <animateTransform attributeName="transform" type="rotate" values="-160 262 252;160 262 252;-160 262 252" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" dur=".5s" repeatCount="indefinite" />
+            <circle cx="262" cy="252" r="44" fill="none" stroke="#d6b062" stroke-width="7" />
+            <circle cx="262" cy="252" r="44" fill="none" stroke="#7c5a20" stroke-width="1" />
+            <path d="M262 208 L262 296 M218 252 L306 252" stroke="#d6b062" stroke-width="4" />
+            {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((a) => (
+              <circle cx="262" cy="206" r="2.4" fill="#f1dca7" transform={`rotate(${a} 262 252)`} />
+            ))}
+          </g>
+          <path d={spiral(262, 252, 7, 4, 30)} fill="none" stroke="#3c6bd6" stroke-width="1" opacity=".9" />
+
+          {/* Jewels & screws */}
+          {jewels.map(([x, y]) => (
+            <g>
+              <circle cx={x} cy={y} r="6.5" fill="#e6e1d4" />
+              <circle cx={x} cy={y} r="4.2" fill={`url(#${uid}-jw)`} />
+              <circle cx={x - 1.3} cy={y - 1.3} r="1.1" fill="#fff" opacity=".8" />
+            </g>
+          ))}
+          {[[78, 176], [232, 92], [124, 290], [226, 300], [326, 318]].map(([x, y]) => (
+            <g>
+              <circle cx={x} cy={y} r="6" fill="#2b4fae" stroke="#0e1b45" />
+              <path d={`M${x - 4} ${y} L${x + 4} ${y}`} stroke="#0e1b45" stroke-width="1.6" />
+            </g>
+          ))}
+        </svg>
+      </div>
+    </>
+  )}
+
+  {/* 3 · Dial */}
+  <div class="watch__layer" style="--i:3" data-i="3">
+    <svg viewBox="-30 -30 460 460" aria-hidden="true">
+      <defs>
+        <radialGradient id={`${uid}-dial`} cx=".35" cy=".3" r=".9">
+          <stop offset="0" stop-color="#fff" stop-opacity=".22" />
+          <stop offset=".55" stop-color="#fff" stop-opacity="0" />
+          <stop offset="1" stop-color="#000" stop-opacity=".45" />
+        </radialGradient>
+        <linearGradient id={`${uid}-idx`} x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color={m[1]} /><stop offset=".5" stop-color={m[0]} /><stop offset="1" stop-color={m[3]} />
+        </linearGradient>
+      </defs>
+      <circle cx={C} cy={C} r="152" fill={dial} />
+      <g stroke="#fff" stroke-width=".7" opacity=".05">
+        {sunburst.map((a) => <line x1="200" y1="200" x2="200" y2="48" transform={`rotate(${a} 200 200)`} />)}
+      </g>
+      <circle cx={C} cy={C} r="152" fill={`url(#${uid}-dial)`} />
+
+      <g stroke={accent} opacity=".85">
+        {minuteTicks.map((i) => (
+          <line x1="200" y1="56" x2="200" y2={i % 5 ? 62 : 66} stroke-width={i % 5 ? 0.9 : 1.6} transform={`rotate(${i * 6} 200 200)`} />
+        ))}
+      </g>
+
+      <g>
+        {hourIdx.map((i) =>
+          i === 0 ? (
+            <g>
+              <rect x="186" y="72" width="10" height="34" rx="1.5" fill={`url(#${uid}-idx)`} />
+              <rect x="204" y="72" width="10" height="34" rx="1.5" fill={`url(#${uid}-idx)`} />
+              <rect x="188.5" y="75" width="5" height="28" class="lm" />
+              <rect x="206.5" y="75" width="5" height="28" class="lm" />
+            </g>
+          ) : (
+            <g transform={`rotate(${i * 30} 200 200)`}>
+              <rect x="194" y="72" width="12" height={i % 3 === 0 ? 34 : 28} rx="1.5" fill={`url(#${uid}-idx)`} />
+              <rect x="197" y="75" width="6" height={i % 3 === 0 ? 28 : 22} class="lm" />
+            </g>
+          ),
+        )}
+      </g>
+
+      {date && (
+        <g>
+          <rect x="296" y="187" width="38" height="26" rx="3" fill="#f6f3ea" stroke={m[1]} stroke-width="2.5" />
+          <text x="315" y="206" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="17" fill="#111" data-date>16</text>
+        </g>
+      )}
+
+      <text x="200" y="134" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="600" font-size="24" letter-spacing="3" fill={accent}>{label}</text>
+      <text x="200" y="272" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" letter-spacing="3.5" fill={accent} opacity=".75">{sub}</text>
+    </svg>
+  </div>
+
+  {/* 4 · Hands */}
+  <div class="watch__layer" style="--i:4" data-i="4">
+    <svg viewBox="-30 -30 460 460" aria-hidden="true">
+      <defs>
+        <linearGradient id={`${uid}-hand`} x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color={m[3]} /><stop offset=".5" stop-color={m[0]} /><stop offset="1" stop-color={m[1]} />
+        </linearGradient>
+        <filter id={`${uid}-hs`} x="-50%" y="-50%" width="200%" height="200%">
+          <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity=".45" />
+        </filter>
+      </defs>
+      <g filter={`url(#${uid}-hs)`}>
+        <g data-hand="h" transform="rotate(305 200 200)">
+          <polygon points="200,98 209,124 206,214 194,214 191,124" fill={`url(#${uid}-hand)`} />
+          <polygon points="200,112 204,127 202,188 198,188 196,127" class="lm" />
+        </g>
+        <g data-hand="m" transform="rotate(60 200 200)">
+          <polygon points="200,58 206,84 204.5,216 195.5,216 194,84" fill={`url(#${uid}-hand)`} />
+          <polygon points="200,70 203,88 201.6,190 198.4,190 197,88" class="lm" />
+        </g>
+        <g data-hand="s" transform="rotate(180 200 200)">
+          <rect x="198.8" y="54" width="2.4" height="196" fill="var(--red, #e0523f)" />
+          <circle cx="200" cy="96" r="7" fill="var(--red, #e0523f)" />
+          <circle cx="200" cy="96" r="4.2" class="lm" />
+          <rect x="196.5" y="228" width="7" height="24" rx="2" fill="var(--red, #e0523f)" />
+        </g>
+        <circle cx={C} cy={C} r="8" fill={`url(#${uid}-hand)`} />
+        <circle cx={C} cy={C} r="3.2" fill="var(--red, #e0523f)" />
+      </g>
+    </svg>
+  </div>
+
+  {/* 5 · Case and bezel */}
+  <div class="watch__layer" style="--i:5" data-i="5">
+    <svg viewBox="-30 -30 460 460" aria-hidden="true">
+      <defs>
+        <linearGradient id={`${uid}-case`} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color={m[0]} /><stop offset=".3" stop-color={m[1]} />
+          <stop offset=".55" stop-color={m[2]} /><stop offset=".8" stop-color={m[3]} /><stop offset="1" stop-color={m[4]} />
+        </linearGradient>
+        <linearGradient id={`${uid}-case2`} x1="1" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color={m[2]} /><stop offset=".5" stop-color={m[3]} /><stop offset="1" stop-color={m[0]} />
+        </linearGradient>
+      </defs>
+      {/* lugs */}
+      <g fill={`url(#${uid}-case)`} stroke="rgba(0,0,0,.25)">
+        <path d="M118 52 L130 -18 Q134 -26 144 -24 L162 -20 L156 40 Z" />
+        <path d="M282 52 L270 -18 Q266 -26 256 -24 L238 -20 L244 40 Z" />
+        <path d="M118 348 L130 418 Q134 426 144 424 L162 420 L156 360 Z" />
+        <path d="M282 348 L270 418 Q266 426 256 424 L238 420 L244 360 Z" />
+      </g>
+      {/* crown */}
+      <g>
+        <rect x="380" y="190" width="10" height="20" fill={m[3]} />
+        <rect x="388" y="180" width="20" height="40" rx="5" fill={`url(#${uid}-case)`} stroke="rgba(0,0,0,.3)" />
+        {[184, 189, 194, 199, 204, 209, 214].map((y) => (
+          <line x1="390" y1={y} x2="406" y2={y} stroke="rgba(0,0,0,.35)" stroke-width="1.2" />
+        ))}
+      </g>
+      {/* mid case */}
+      <path d="M200 10 a190 190 0 1 1 -0.01 0 Z M200 48 a152 152 0 1 0 0.01 0 Z" fill-rule="evenodd" fill={`url(#${uid}-case)`} />
+
+      {bezel === 'dive' && (
+        <g>
+          <path d="M200 16 a184 184 0 1 1 -0.01 0 Z M200 50 a150 150 0 1 0 0.01 0 Z" fill-rule="evenodd" fill="#0d0f12" />
+          <path d="M200 16 a184 184 0 1 1 -0.01 0 Z M200 50 a150 150 0 1 0 0.01 0 Z" fill-rule="evenodd" fill={`url(#${uid}-case2)`} opacity=".12" />
+          {Array.from({ length: 15 }, (_, i) => (
+            <line x1="200" y1="24" x2="200" y2="34" stroke="#e9e4d8" stroke-width="1.6" transform={`rotate(${i * 6 + 6} 200 200)`} />
+          ))}
+          {[10, 20, 30, 40, 50].map((n) => (
+            <text x="200" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="19" fill="#e9e4d8" transform={`rotate(${n * 6} 200 200)`}>{n}</text>
+          ))}
+          {[5, 15, 25, 35, 45, 55].map((n) =>
+            n > 15 ? <rect x="197" y="26" width="6" height="12" fill="#e9e4d8" transform={`rotate(${n * 6} 200 200)`} /> : null,
+          )}
+          <polygon points="200,46 186,22 214,22" fill="#e9e4d8" />
+          <circle cx="200" cy="30" r="4.5" class="lm" />
+        </g>
+      )}
+      {bezel === 'tachy' && (
+        <g>
+          <path d="M200 16 a184 184 0 1 1 -0.01 0 Z M200 50 a150 150 0 1 0 0.01 0 Z" fill-rule="evenodd" fill="#0c0d0f" />
+          <path id={`${uid}-tachy`} d="M200 200 m-160 0 a160 160 0 1 1 320 0 a160 160 0 1 1 -320 0" fill="none" />
+          <text font-family="Inter, sans-serif" font-size="12" font-weight="600" letter-spacing="2" fill="#e9e4d8">
+            <textPath href={`#${uid}-tachy`} startOffset="6%">500 · 400 · 300 · 250 · 200 · 170 · 150 · 130 · 120 · 110 · 100 · 90 · 80 · 70 · 60 · TACHYMETRE</textPath>
+          </text>
+        </g>
+      )}
+      {bezel === 'octagon' && (
+        <g>
+          <path d={octagon} fill-rule="evenodd" fill={`url(#${uid}-case2)`} stroke="rgba(0,0,0,.25)" />
+          {Array.from({ length: 8 }, (_, i) => {
+            const a = (i / 8) * Math.PI * 2 + Math.PI / 8;
+            const x = 200 + Math.cos(a) * 166;
+            const y = 200 + Math.sin(a) * 166;
+            return (
+              <g>
+                <circle cx={x} cy={y} r="7" fill={m[0]} stroke={m[3]} />
+                <path d={`M${x - 4} ${y - 2} L${x + 4} ${y + 2}`} stroke={m[3]} stroke-width="1.5" />
+              </g>
+            );
+          })}
+        </g>
+      )}
+      <circle cx={C} cy={C} r="150" fill="none" stroke="rgba(0,0,0,.4)" stroke-width="2" />
+    </svg>
+  </div>
+
+  {/* 6 · Crystal */}
+  <div class="watch__layer watch__crystal" style="--i:6" data-i="6">
+    <svg viewBox="-30 -30 460 460" aria-hidden="true">
+      <defs>
+        <linearGradient id={`${uid}-glare`} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#fff" stop-opacity=".32" />
+          <stop offset=".5" stop-color="#fff" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+      <circle cx={C} cy={C} r="151" fill="rgba(170,200,230,.04)" stroke="rgba(255,255,255,.18)" stroke-width="1" />
+      <path d="M78 150 A130 130 0 0 1 250 64 A150 150 0 0 0 88 176 Z" fill={`url(#${uid}-glare)`} />
+    </svg>
+  </div>
+</div>
+
+<style>
+  .watch {
+    position: relative;
+    width: var(--size, 420px);
+    max-width: 100%;
+    aspect-ratio: 1;
+    transform-style: preserve-3d;
+  }
+
+  .watch__layer {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transition: filter 0.6s;
+  }
+
+  .watch__layer svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .watch--explode .watch__layer {
+    transform: translateZ(calc((var(--i) - 3) * var(--e, 0) * var(--gap, 70px)));
+  }
+
+  .watch :global(.lm) {
+    fill: var(--watch-lume);
+    transition: fill 0.6s, filter 0.6s;
+  }
+
+  :global([data-theme='lume']) .watch :global(.lm) {
+    fill: var(--lume);
+    filter: drop-shadow(0 0 3px var(--lume));
+  }
+</style>

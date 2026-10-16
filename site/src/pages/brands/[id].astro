@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import RefCard from '../../components/RefCard.astro';
+import { u, TIER_META, TYPE_META } from '../../lib/meta';
+
+export async function getStaticPaths() {
+  const brands = await getCollection('brands');
+  return brands.map((b) => ({ params: { id: b.id }, props: { brand: b } }));
+}
+const { brand } = Astro.props;
+const d = brand.data;
+const refs = (await getCollection('references')).filter((r) => r.data.brand === brand.id);
+---
+
+<Base title={d.name} description={d.summary}>
+  <PageHero eyebrow={`${d.country} · Est. ${d.founded}`} title={d.name} lede={d.summary} crumbs={[[u(), 'Dial'], [u('brands/'), 'Brands'], [u(`brands/${brand.id}/`), d.name]]} />
+  <section class="section--tight">
+    <div class="container brand-grid">
+      <dl class="specs" data-reveal>
+        <div><dt>Founded</dt><dd>{d.founded}{d.city ? `, ${d.city}` : ''}</dd></div>
+        {d.founders.length > 0 && <div><dt>Founders</dt><dd>{d.founders.join(', ')}</dd></div>}
+        <div><dt>Group</dt><dd>{d.group}</dd></div>
+        <div><dt>Price tier</dt><dd>{TIER_META[d.tier].name} ({TIER_META[d.tier].range})</dd></div>
+        <div><dt>Makes</dt><dd>{d.types.map((t) => TYPE_META[t].name).join(', ')}</dd></div>
+        {d.notable.length > 0 && <div><dt>Notable lines</dt><dd>{d.notable.join(' · ')}</dd></div>}
+        {d.website && <div><dt>Website</dt><dd><a href={d.website} style="color:var(--gold)">{new URL(d.website).hostname}</a></dd></div>}
+      </dl>
+      <div class="since display" data-parallax="-0.08" aria-hidden="true">{d.founded}</div>
+    </div>
+  </section>
+  {refs.length > 0 && (
+    <section class="section--tight">
+      <div class="container">
+        <span class="eyebrow" data-reveal="fade">In the catalogue</span>
+        <div class="grid grid--3" style="margin-top:28px">{refs.map((r) => <div data-reveal><RefCard ref={r} brandName={d.name} /></div>)}</div>
+      </div>
+    </section>
+  )}
+</Base>
+
+<style>
+  .brand-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+  .since { font-size: clamp(110px, 18vw, 280px); font-style: italic; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--gold); text-align: right; }
+  @media (max-width: 860px) { .brand-grid { grid-template-columns: 1fr; } .since { text-align: left; } }
+</style>

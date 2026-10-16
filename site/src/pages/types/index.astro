@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import TypeGlyph from '../../components/TypeGlyph.astro';
+import { u } from '../../lib/meta';
+const types = (await getCollection('types')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base title="Watch types" description="Mechanical, quartz, digital, smart, hybrid and exotic watches explained.">
+  <PageHero
+    eyebrow="Six families"
+    title="How a watch <em>keeps time.</em>"
+    lede="Every watch belongs to a family defined by its source of energy and how it is regulated. Choose one to explore."
+    crumbs={[[u(), 'Dial'], [u('types/'), 'Types']]}
+  />
+  <section class="section--tight">
+    <div class="container grid grid--3">
+      {types.map((t, i) => (
+        <a href={u(`types/${t.id}/`)} class="card type-card" data-reveal data-tilt="7" style={`--d:${i * 0.07}s`}>
+          <span class="mono tc-no">{String(i + 1).padStart(2, '0')}</span>
+          <div class="tc-glyph"><TypeGlyph type={t.data.glyph} /></div>
+          <h2 class="display h3">{t.data.title}</h2>
+          <p class="muted">{t.data.tagline}</p>
+          <div class="tc-subs">{t.data.subcategories.map((s) => <span class="chip">{s.name}</span>)}</div>
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .type-card { display: flex; flex-direction: column; gap: 14px; min-height: 520px; }
+  .tc-no { color: var(--gold); }
+  .tc-glyph { width: 62%; margin: 0 auto 10px; transform: translateZ(30px); }
+  .type-card h2 { margin: 0; }
+  .type-card p { margin: 0; flex: 1; }
+  .tc-subs { display: flex; flex-wrap: wrap; gap: 6px; }
+</style>

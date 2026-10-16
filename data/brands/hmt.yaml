@@ -1,0 +1,19 @@
+name: "HMT"
+country: "India"
+city: "Bengaluru"
+founded: 1961
+founders:
+  - "Hindustan Machine Tools (Government of India)"
+  - "in collaboration with Citizen"
+group: "State-owned (Hindustan Machine Tools)"
+tier: "entry"
+types:
+  - "mechanical"
+  - "quartz"
+summary: "HMT (\"the Time Keepers of the Nation\") produced India's first domestically made wristwatches, beginning in collaboration with Citizen. Its hand-wound Janata and Pilot models are cult collectibles; the watch division largely ceased production in 2016."
+notable:
+  - "Janata"
+  - "Pilot"
+  - "Kohinoor"
+  - "Jawan"
+last_reviewed: "2026-10-16"

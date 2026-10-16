@@ -1,0 +1,16 @@
+---
+import Icon from './Icon.astro';
+---
+
+<div class="crown-search" data-crown role="dialog" aria-modal="true" aria-label="Search the collection">
+  <div class="crown-search__panel">
+    <label class="crown-search__field">
+      <Icon name="crown" />
+      <span class="sr-only">Search</span>
+      <input type="search" placeholder="Search watches, calibers, brands, terms…" autocomplete="off" spellcheck="false" data-crown-input />
+      <kbd class="chip">Esc</kbd>
+    </label>
+    <ul class="crown-search__results" data-crown-results role="listbox"></ul>
+    <div class="crown-search__foot"><span>↑↓ to wind · ↵ to set</span><span data-crown-count></span></div>
+  </div>
+</div>

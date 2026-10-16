@@ -1,0 +1,18 @@
+name: "Audemars Piguet"
+country: "Switzerland"
+city: "Le Brassus"
+founded: 1875
+founders:
+  - "Jules Louis Audemars"
+  - "Edward Auguste Piguet"
+group: "Independent (founding families)"
+tier: "haute-horlogerie"
+types:
+  - "mechanical"
+summary: "Based in the Vallée de Joux, Audemars Piguet launched the Royal Oak in 1972, the Gérald Genta design that created the luxury steel sports watch category."
+notable:
+  - "Royal Oak"
+  - "Royal Oak Offshore"
+  - "Code 11.59"
+website: "https://www.audemarspiguet.com"
+last_reviewed: "2026-10-16"

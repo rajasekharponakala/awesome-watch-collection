@@ -1,0 +1,19 @@
+name: "Grand Seiko"
+country: "Japan"
+city: "Tokyo / Shizukuishi / Shiojiri"
+founded: 1960
+founders:
+  - "Seiko"
+group: "Seiko Group"
+tier: "luxury"
+types:
+  - "mechanical"
+  - "quartz"
+  - "hybrid"
+summary: "Created in 1960 to rival the best Swiss watches, Grand Seiko became an independent brand in 2017. It is celebrated for Zaratsu polishing, nature-inspired dials and three distinct technologies: Hi-Beat mechanical, 9F quartz and Spring Drive."
+notable:
+  - "SBGA211 \"Snowflake\""
+  - "SBGW231"
+  - "White Birch SLGH005"
+website: "https://www.grand-seiko.com"
+last_reviewed: "2026-10-16"

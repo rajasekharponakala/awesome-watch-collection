@@ -1,0 +1,33 @@
+brand: "omega"
+name: "Speedmaster Professional Moonwatch"
+reference: "310.30.42.50.01.001"
+type: "mechanical/manual"
+styles:
+  - "chronograph"
+  - "racing"
+complications:
+  - "chronograph"
+caliber: "Omega 3861"
+case:
+  material: "Stainless steel"
+  diameter_mm: 42
+  lug_to_lug_mm: 47.5
+  thickness_mm: 13.2
+  lug_width_mm: 20
+water_resistance_m: 50
+crystal: "Hesalite"
+years:
+  introduced: 2021
+price_tier: "luxury"
+levels:
+  - "first-wind"
+  - "automatic"
+  - "complication"
+region: "Switzerland"
+summary: "Flight-qualified by NASA in 1965 and worn on the Moon in 1969. The current version keeps the hand-wound chronograph and hesalite crystal but adds the Master Chronometer calibre 3861."
+look:
+  dial: "#0d0e10"
+  accent: "#ece9e0"
+  metal: "steel"
+  bezel: "tachy"
+last_reviewed: "2026-10-16"

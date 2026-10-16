@@ -1,0 +1,15 @@
+name: "Sellita SW200-1"
+maker: "Sellita"
+kind: "automatic"
+frequency_vph: 28800
+jewels: 26
+power_reserve_h: 38
+hacking: true
+hand_winding: true
+functions:
+  - "hours"
+  - "minutes"
+  - "central seconds"
+  - "date"
+summary: "Developed after ETA restricted supply to brands outside the Swatch Group, the SW200-1 is dimensionally compatible with the 2824-2 and powers a large share of today's Swiss mid-range watches."
+last_reviewed: "2026-10-16"

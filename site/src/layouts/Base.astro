@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CrownSearch from '../components/CrownSearch.astro';
+import { u } from '../lib/meta';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title,
+  description = 'An open, community-built encyclopaedia of watches: mechanical, quartz, digital, smart and hybrid, from First Wind to Grande Complication.',
+} = Astro.props;
+const fullTitle = title ? `${title} · Awesome Watch Collection` : 'Awesome Watch Collection · Time, decoded';
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en" data-theme="lume">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#07080a" />
+    <link rel="icon" href={u('favicon.svg')} type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Orbitron:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline>
+      (function () {
+        var t = null, h = null;
+        try { t = localStorage.getItem('awc-theme'); h = localStorage.getItem('awc-hacked'); } catch (e) {}
+        if (!t) t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'day' : 'lume';
+        document.documentElement.setAttribute('data-theme', t);
+        if (h === '1') document.documentElement.classList.add('hacked');
+        document.documentElement.classList.add('js');
+      })();
+    </script>
+    <meta name="awc-base" content={u()} />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true" data-cursor></div>
+    <a class="sr-only" href="#main">Skip to content</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <CrownSearch />
+    <script>
+      import '../scripts/main.ts';
+    </script>
+  </body>
+</html>

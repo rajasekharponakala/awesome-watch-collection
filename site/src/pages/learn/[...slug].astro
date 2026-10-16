@@ -1,0 +1,81 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import { u, LEVEL_META, LEVELS } from '../../lib/meta';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map((g) => ({ params: { slug: g.id }, props: { guide: g } }));
+}
+const { guide } = Astro.props;
+const { Content } = await render(guide);
+const meta = LEVEL_META[guide.data.level];
+const all = (await getCollection('guides')).sort(
+  (a, b) => LEVELS.indexOf(a.data.level) - LEVELS.indexOf(b.data.level) || a.data.order - b.data.order,
+);
+const idx = all.findIndex((g) => g.id === guide.id);
+const prev = all[idx - 1];
+const next = all[idx + 1];
+const words = (guide.body ?? '').split(/\s+/).length;
+const minutes = Math.max(1, Math.round(words / 220));
+const beats = (minutes * 60 * 8).toLocaleString('en-US');
+---
+
+<Base title={guide.data.title} description={guide.data.description}>
+  <div class="power-reserve" data-power-reserve="#guide"></div>
+  <div class="pr-gauge" data-power-reserve="#guide" aria-hidden="true">
+    <svg viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="44" fill="none" stroke="var(--line-2)" stroke-width="3" stroke-dasharray="2 4.9" />
+      <circle cx="50" cy="50" r="44" fill="none" stroke="var(--gold)" stroke-width="3" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:calc(var(--p, 0) * 100)" transform="rotate(-90 50 50)" />
+    </svg>
+    <div class="pr-gauge__label"><b data-pr-value>100%</b><span>Power<br />reserve</span></div>
+  </div>
+
+  <PageHero
+    eyebrow={`${meta.name} · Lesson ${guide.data.order}`}
+    title={guide.data.title}
+    lede={guide.data.description}
+    crumbs={[[u(), 'Dial'], [u('learn/'), 'Learn'], [u(`learn/${guide.data.level}/`), meta.name]]}
+  >
+    <div class="guide-meta mono" data-reveal="fade">
+      <span class="jewels">{[1, 2, 3, 4].map((j) => <i class={j > meta.jewels ? 'off' : ''} />)}</span>
+      <span>≈ {minutes} min · {beats} beats</span>
+      <span>Serviced {guide.data.last_reviewed.toISOString().slice(0, 10)}</span>
+    </div>
+  </PageHero>
+
+  <article id="guide" class="section--tight">
+    <div class="container">
+      <div class="prose" data-reveal="fade"><Content /></div>
+
+      <nav class="guide-nav" aria-label="Lessons">
+        {prev ? (
+          <a href={u(`learn/${prev.id}/`)} class="card">
+            <span class="mono muted">← Previous lesson</span>
+            <strong class="display h4">{prev.data.title}</strong>
+          </a>
+        ) : <span />}
+        {next && (
+          <a href={u(`learn/${next.id}/`)} class="card next">
+            <span class="mono muted">Next lesson →</span>
+            <strong class="display h4">{next.data.title}</strong>
+          </a>
+        )}
+      </nav>
+      <p class="edit mono muted">
+        Spotted an error? <a href={`https://github.com/rajasekharponakala/awesome-watch-collection/edit/main/content/guides/${guide.id}.md`}>Regulate this page on GitHub →</a>
+      </p>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .guide-meta { display: flex; flex-wrap: wrap; gap: 22px; align-items: center; margin-top: 30px; color: var(--muted); font-size: 12px; }
+  .guide-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 90px; }
+  .guide-nav .card { display: grid; gap: 10px; }
+  .guide-nav .next { text-align: right; }
+  .edit { margin-top: 40px; font-size: 12px; }
+  .edit a { color: var(--gold); }
+  @media (max-width: 700px) { .guide-nav { grid-template-columns: 1fr; } .guide-nav .next { text-align: left; } }
+</style>

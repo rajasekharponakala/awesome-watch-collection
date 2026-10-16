@@ -1,0 +1,107 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { u } from '../lib/meta';
+
+const events = (await getCollection('timeline')).sort((a, b) => a.data.year - b.data.year || (a.data.month ?? 0) - (b.data.month ?? 0));
+const eras = [...new Set(events.map((e) => e.data.era))];
+const M = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+---
+
+<Base title="History" description="An interactive timeline of horology, from portable clocks to smartwatches.">
+  <PageHero
+    eyebrow="Chronograph"
+    title="Five centuries <em>in one sweep.</em>"
+    lede="Scroll to run the chronograph. The seconds hand on the left measures how far through time you have travelled."
+    crumbs={[[u(), 'Dial'], [u('history/'), 'History']]}
+  />
+
+  <section class="chrono" data-scene>
+    <div class="container chrono__grid">
+      <aside class="chrono__dial" aria-hidden="true">
+        <div class="chrono__face">
+          <svg viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="94" fill="var(--surface)" stroke="var(--line-2)" />
+            {Array.from({ length: 60 }, (_, i) => (
+              <line x1="100" y1="10" x2="100" y2={i % 5 ? 15 : 20} stroke="var(--muted)" stroke-width={i % 5 ? 0.6 : 1.4} transform={`rotate(${i * 6} 100 100)`} />
+            ))}
+            <circle cx="100" cy="100" r="80" fill="none" stroke="var(--gold)" stroke-width="2" pathLength="100" stroke-dasharray="100" class="chrono__arc" transform="rotate(-90 100 100)" />
+            <g class="chrono__hand"><line x1="100" y1="118" x2="100" y2="16" stroke="var(--red)" stroke-width="1.6" /><circle cx="100" cy="100" r="4" fill="var(--red)" /></g>
+          </svg>
+          <div class="chrono__year display" data-chrono-year>{events[0].data.year}</div>
+        </div>
+        <div class="chrono__eras mono">{eras.map((e) => <span>{e}</span>)}</div>
+      </aside>
+
+      <ol class="tl">
+        {events.map((e, i) => {
+          const firstOfEra = i === 0 || events[i - 1].data.era !== e.data.era;
+          return (
+            <>
+              {firstOfEra && <li class="tl__era display h3" data-reveal="fade"><em>{e.data.era}</em></li>}
+              <li class="tl__item" id={e.id} data-year={e.data.year} data-reveal>
+                <span class="tl__dot" />
+                <div class="tl__when mono">
+                  {e.data.day && e.data.month ? `${e.data.day} ${M[e.data.month - 1]} ` : e.data.month ? `${M[e.data.month - 1]} ` : ''}
+                  <b class="display">{e.data.year}</b>
+                </div>
+                <div class="tl__body">
+                  <h3 class="display h4">{e.data.title}</h3>
+                  <p class="muted">{e.data.text}</p>
+                </div>
+              </li>
+            </>
+          );
+        })}
+      </ol>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const items = Array.from(document.querySelectorAll<HTMLElement>('.tl__item'));
+  const yearEl = document.querySelector('[data-chrono-year]');
+  let current = '';
+  function update() {
+    const mid = window.innerHeight * 0.5;
+    let best: HTMLElement | undefined;
+    for (const it of items) if (it.getBoundingClientRect().top < mid) best = it;
+    const y = best?.dataset.year ?? items[0]?.dataset.year ?? '';
+    if (y !== current && yearEl) {
+      current = y;
+      yearEl.textContent = y;
+    }
+  }
+  window.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+  update();
+</script>
+
+<style>
+  .chrono { position: relative; padding-bottom: 120px; }
+  .chrono__grid { display: grid; grid-template-columns: 340px 1fr; gap: 60px; align-items: start; }
+  .chrono__dial { position: sticky; top: calc(var(--header-h) + 30px); display: grid; gap: 24px; }
+  .chrono__face { position: relative; width: 100%; max-width: 320px; }
+  .chrono__arc { stroke-dashoffset: calc(100 - var(--p, 0) * 100); }
+  .chrono__hand { transform-origin: 100px 100px; transform: rotate(calc(var(--p, 0) * 360deg)); }
+  .chrono__year { position: absolute; left: 0; right: 0; top: 60%; text-align: center; font-size: 46px; font-style: italic; }
+  .chrono__eras { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+  .tl { position: relative; list-style: none; margin: 0; padding: 0 0 0 34px; }
+  .tl::before { content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 1px; background: var(--line-2); }
+  .tl::after { content: ''; position: absolute; left: 6px; top: 0; width: 1px; height: calc(var(--p, 0) * 100%); background: linear-gradient(var(--gold-3), var(--gold-2)); box-shadow: 0 0 12px var(--gold); }
+  .tl__era { margin: 70px 0 30px; color: var(--gold); }
+  .tl__era:first-child { margin-top: 0; }
+  .tl__item { position: relative; display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 26px 0; border-bottom: 1px solid var(--line); scroll-margin-top: calc(var(--header-h) + 30px); }
+  .tl__item:target { background: linear-gradient(90deg, var(--glow), transparent); }
+  .tl__dot { position: absolute; left: -34px; top: 38px; width: 13px; height: 13px; border-radius: 50%; border: 1px solid var(--gold); background: var(--bg); }
+  .tl__item.is-in .tl__dot { background: var(--gold); box-shadow: 0 0 14px var(--gold); transition: all 0.6s 0.3s; }
+  .tl__when { color: var(--muted); font-size: 12px; }
+  .tl__when b { display: block; font-size: 44px; line-height: 1; color: var(--text); font-weight: 500; }
+  .tl__body h3 { margin: 4px 0 8px; }
+  .tl__body p { margin: 0; }
+  @media (max-width: 900px) {
+    .chrono__grid { grid-template-columns: 1fr; }
+    .chrono__dial { display: none; }
+    .tl__item { grid-template-columns: 1fr; gap: 6px; }
+  }
+</style>

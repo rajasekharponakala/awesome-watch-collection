@@ -1,0 +1,15 @@
+name: "Miyota 8215"
+maker: "Miyota (Citizen)"
+kind: "automatic"
+frequency_vph: 21600
+jewels: 21
+power_reserve_h: 42
+hacking: false
+hand_winding: true
+functions:
+  - "hours"
+  - "minutes"
+  - "central seconds"
+  - "date"
+summary: "A simple, durable and very affordable automatic that has powered entry-level mechanical watches for decades."
+last_reviewed: "2026-10-16"

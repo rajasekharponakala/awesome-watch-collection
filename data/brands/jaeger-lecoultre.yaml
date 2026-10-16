@@ -1,0 +1,18 @@
+name: "Jaeger-LeCoultre"
+country: "Switzerland"
+city: "Le Sentier"
+founded: 1833
+founders:
+  - "Antoine LeCoultre"
+group: "Richemont"
+tier: "luxury"
+types:
+  - "mechanical"
+summary: "Known as \"the watchmaker's watchmaker\", JLC has produced well over a thousand calibres and supplied movements to many great houses. Its Reverso (1931) has a case that flips to protect the crystal."
+notable:
+  - "Reverso"
+  - "Master Ultra Thin"
+  - "Polaris"
+  - "Atmos clock"
+website: "https://www.jaeger-lecoultre.com"
+last_reviewed: "2026-10-16"

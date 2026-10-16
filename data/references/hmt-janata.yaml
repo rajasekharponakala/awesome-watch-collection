@@ -1,0 +1,21 @@
+brand: "hmt"
+name: "Janata"
+type: "mechanical/manual"
+styles:
+  - "everyday"
+  - "dress"
+caliber: "HMT hand-wound calibre"
+case:
+  material: "Stainless steel / chrome-plated"
+  diameter_mm: 35
+price_tier: "entry"
+levels:
+  - "first-wind"
+  - "complication"
+region: "India"
+summary: "\"Janata\" means \"the people\". Simple, hand-wound and built to last, it was the everyday watch of millions in India and is now a beloved collectible and vintage starting point."
+look:
+  dial: "#f1ece0"
+  accent: "#2b2b2b"
+  metal: "steel"
+last_reviewed: "2026-10-16"

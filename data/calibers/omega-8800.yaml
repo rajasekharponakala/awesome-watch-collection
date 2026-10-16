@@ -1,0 +1,16 @@
+name: "Omega 8800"
+maker: "Omega"
+kind: "automatic"
+frequency_vph: 25200
+jewels: 35
+power_reserve_h: 55
+hacking: true
+hand_winding: true
+accuracy: "0/+5 s/day (METAS Master Chronometer)"
+functions:
+  - "hours"
+  - "minutes"
+  - "central seconds"
+  - "date"
+summary: "A Master Chronometer calibre with Omega's co-axial escapement and silicon balance spring, resistant to magnetic fields of 15,000 gauss and certified by METAS."
+last_reviewed: "2026-10-16"

@@ -1,0 +1,21 @@
+name: "Seiko"
+country: "Japan"
+city: "Tokyo"
+founded: 1881
+founders:
+  - "Kintaro Hattori"
+group: "Seiko Group"
+tier: "affordable"
+types:
+  - "mechanical"
+  - "quartz"
+  - "digital"
+  - "hybrid"
+summary: "Seiko launched the world's first quartz wristwatch, the Astron, in 1969, and is one of the very few makers that produces nearly every component in-house. Its range runs from entry-level automatics to high-end Prospex and Presage pieces."
+notable:
+  - "Astron"
+  - "Prospex divers"
+  - "Presage"
+  - "Seiko 5 Sports"
+website: "https://www.seikowatches.com"
+last_reviewed: "2026-10-16"

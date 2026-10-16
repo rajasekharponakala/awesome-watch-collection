@@ -176,8 +176,8 @@ sources:
 last_reviewed: 2026-10-16
 ```
 
-Similar schemas exist for `brand`, `caliber`, `glossary-term`, `person`, `event` and `resource`.
-Every schema is validated in CI, so broken data never reaches the site.
+Similar schemas exist for `brand`, `caliber`, `glossary-term`, `event` and `resource`. They live in
+`site/src/content.config.ts` and are enforced on every build in CI, so broken data never reaches the site.
 
 ### 4.3 Repository Layout
 
@@ -201,12 +201,10 @@ awesome-watch-collection/
 │   ├── brands/*.yaml
 │   ├── calibers/*.yaml
 │   ├── references/*.yaml
-│   ├── people/*.yaml
 │   ├── glossary.yaml
 │   ├── timeline.yaml
 │   └── resources.yaml
-├── schemas/                  # JSON Schemas for every data type
-├── site/                     # Website source (Astro)
+├── site/                     # Website source (Astro); schemas in site/src/content.config.ts
 └── .github/workflows/        # Validate, build and deploy to GitHub Pages
 ```
 
@@ -217,7 +215,7 @@ awesome-watch-collection/
 ### 5.1 Tech Stack
 
 - **Astro** static site generator: content collections map directly to `content/` and `data/`, with typed schemas, fast pages and minimal JS.
-- **Pagefind** for client-side full-text search (no server needed).
+- **Crown search**: a static JSON index built at deploy time and searched in the browser (no server needed).
 - **GitHub Actions** builds on every push to `main` and deploys to **GitHub Pages**.
 - Small interactive "islands" (vanilla JS / Preact) only where needed: filters, movement explorer, calculators.
 - Light and dark themes, responsive down to phone width, accessible (WCAG AA, keyboard navigation, reduced-motion support).
@@ -287,24 +285,24 @@ applied-index bullet points, sunburst / guilloché background textures used spar
 
 ## 7. Roadmap
 
-### Phase 0 — Mainspring (Foundation) · Weeks 1–2
-- [ ] README as an awesome-list index
-- [ ] This plan, CONTRIBUTING, licence files, issue/PR templates
-- [ ] Folder structure and JSON Schemas for all data types
-- [ ] Astro site skeleton + GitHub Pages deploy workflow
+### Phase 0 — Mainspring (Foundation) · ✅ done
+- [x] README as an awesome-list index
+- [x] This plan, CONTRIBUTING, licence files, issue/PR templates
+- [x] Folder structure and validated schemas for all data types
+- [x] Astro site + GitHub Pages deploy workflow
 
-### Phase 1 — First Wind (MVP) · Weeks 3–6
-- [ ] Dial home page, navigation, light/lume themes
-- [ ] Level 1 guides complete (≈ 12 articles)
-- [ ] Six type hubs (mechanical, quartz, digital, smart, hybrid, exotic)
-- [ ] Glossary: first 150 terms
-- [ ] 30 brands, 20 calibers, 50 references
-- [ ] Search (crown)
+### Phase 1 — First Wind (MVP) · in progress
+- [x] Dial home page, navigation, lume/day themes, exploded 3D watch, parallax scenes
+- [ ] Level 1 guides complete (≈ 12 articles). 6 written; all four levels seeded (18 guides)
+- [x] Six type hubs (mechanical, quartz, digital, smart, hybrid, exotic)
+- [ ] Glossary: first 150 terms (88 so far)
+- [ ] 30 brands, 20 calibers, 50 references (25 / 14 / 16 so far)
+- [x] Search (crown, ⌘K)
 
 ### Phase 2 — Automatic (Depth) · Months 2–3
 - [ ] Level 2 guides; styles and complications hubs
-- [ ] Bezel filters on the catalogue; caliber compare view
-- [ ] Chronograph history timeline; date-window widget
+- [x] Bezel filters on the catalogue; [ ] caliber compare view
+- [x] Chronograph history timeline; date-window widget
 - [ ] 100 brands, 75 calibers, 250 references
 
 ### Phase 3 — Complication (Interactive) · Months 4–6
@@ -342,7 +340,7 @@ applied-index bullet points, sunburst / guilloché background textures used spar
 
 ## 9. Immediate Next Steps
 
-1. Approve this plan (or adjust levels, sections and the UX names).
-2. Build Phase 0: folder skeleton, schemas, Astro site, Pages deploy.
-3. Write the first Level 1 guides and seed the glossary.
+1. Enable GitHub Pages (Settings → Pages → Source: **GitHub Actions**) and merge to `main` to go live.
+2. Grow the data toward the Phase 1 targets (brands, calibers, references, glossary).
+3. Finish the remaining Level 1 guides, then deepen Levels 2–4.
 4. Open "good first issue" tickets so contributors can join.

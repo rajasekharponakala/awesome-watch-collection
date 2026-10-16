@@ -1,0 +1,20 @@
+name: Add a watch reference
+description: Suggest a watch for the catalogue
+labels: [data, reference]
+body:
+  - type: input
+    id: brand
+    attributes: { label: Brand, placeholder: Seiko }
+    validations: { required: true }
+  - type: input
+    id: model
+    attributes: { label: Model and reference number, placeholder: "SKX007K2" }
+    validations: { required: true }
+  - type: textarea
+    id: why
+    attributes: { label: Why does it belong in the collection?, description: What makes it important for learners or collectors? }
+    validations: { required: true }
+  - type: textarea
+    id: sources
+    attributes: { label: Sources for the specs, description: Manufacturer pages or reputable references }
+    validations: { required: true }

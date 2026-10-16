@@ -1,0 +1,20 @@
+name: "Timex"
+country: "United States"
+city: "Middlebury, CT"
+founded: 1854
+founders:
+  - "Waterbury Clock Company"
+group: "Timex Group"
+tier: "entry"
+types:
+  - "quartz"
+  - "digital"
+  - "mechanical"
+summary: "Descended from the Waterbury Clock Company, Timex democratised the wristwatch with affordable, durable pieces (\"takes a licking and keeps on ticking\") and introduced the Indiglo backlight in 1992."
+notable:
+  - "Weekender"
+  - "Ironman"
+  - "Marlin"
+  - "Q Timex"
+website: "https://www.timex.com"
+last_reviewed: "2026-10-16"

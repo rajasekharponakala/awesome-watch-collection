@@ -1,0 +1,17 @@
+name: "Grand Seiko 9R65"
+maker: "Grand Seiko"
+kind: "spring-drive"
+jewels: 30
+power_reserve_h: 72
+hacking: true
+hand_winding: true
+introduced: 2004
+accuracy: "±15 s/month (±1 s/day)"
+functions:
+  - "hours"
+  - "minutes"
+  - "glide-motion seconds"
+  - "date"
+  - "power reserve indicator"
+summary: "A Spring Drive movement: a mainspring powers the gear train, but instead of an escapement a glide wheel generates a little electricity to drive a quartz-controlled electromagnetic brake. The result is a perfectly smooth seconds hand."
+last_reviewed: "2026-10-16"

@@ -1,0 +1,30 @@
+brand: "tissot"
+name: "PRX Powermatic 80"
+reference: "T137.407.11.041.00"
+type: "mechanical/automatic"
+styles:
+  - "sports-luxury"
+  - "integrated-bracelet"
+complications:
+  - "date"
+caliber: "Powermatic 80.111"
+case:
+  material: "Stainless steel"
+  diameter_mm: 40
+  thickness_mm: 10.9
+water_resistance_m: 100
+crystal: "Sapphire"
+years:
+  introduced: 2021
+price_tier: "affordable"
+levels:
+  - "first-wind"
+  - "automatic"
+region: "Switzerland"
+summary: "A 1970s-style integrated bracelet watch with a \"Clous de Paris\" waffle dial and an 80-hour power reserve, giving the sports-luxury look at a fraction of the price."
+look:
+  dial: "#1f3d6b"
+  accent: "#eef0f3"
+  metal: "steel"
+  bezel: "none"
+last_reviewed: "2026-10-16"

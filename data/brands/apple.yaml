@@ -1,0 +1,19 @@
+name: "Apple"
+country: "United States"
+city: "Cupertino, CA"
+founded: 1976
+founders:
+  - "Steve Jobs"
+  - "Steve Wozniak"
+  - "Ronald Wayne"
+group: "Apple Inc."
+tier: "affordable"
+types:
+  - "smart"
+summary: "Apple launched the Apple Watch in 2015. Within a few years it became the best-selling watch in the world by unit volume, mainstreaming health sensors such as ECG and blood-oxygen measurement on the wrist."
+notable:
+  - "Apple Watch Series"
+  - "Apple Watch Ultra"
+  - "Apple Watch SE"
+website: "https://www.apple.com/watch/"
+last_reviewed: "2026-10-16"

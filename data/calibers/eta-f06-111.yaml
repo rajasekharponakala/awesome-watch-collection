@@ -1,0 +1,12 @@
+name: "ETA F06.111"
+maker: "ETA (Swatch Group)"
+kind: "quartz"
+quartz_hz: 32768
+accuracy: "about ±15 s/month"
+functions:
+  - "hours"
+  - "minutes"
+  - "central seconds"
+  - "date"
+summary: "One of the most common Swiss quartz movements: inexpensive, thin and reliable, found in many affordable Swiss-made watches."
+last_reviewed: "2026-10-16"

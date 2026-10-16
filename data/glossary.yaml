@@ -1,0 +1,441 @@
+# Watch glossary. Add terms alphabetically; ids are kebab-case.
+- id: amplitude
+  term: "Amplitude"
+  level: grande-complication
+  short: "How far the balance wheel swings in degrees. A healthy movement typically shows about 270–310° when fully wound."
+  related: ["Timegrapher", "Isochronism"]
+- id: anglage
+  term: "Anglage"
+  level: complication
+  short: "Hand-bevelling and polishing the edges of movement parts at 45°, a hallmark of fine finishing."
+  related: ["Côtes de Genève", "Perlage"]
+- id: annual-calendar
+  term: "Annual calendar"
+  level: complication
+  short: "A calendar complication that adjusts for 30- and 31-day months automatically and needs correcting only once a year, at the end of February."
+  related: ["Perpetual calendar"]
+- id: applied-index
+  term: "Applied index"
+  level: first-wind
+  short: "An hour marker made as a separate piece and fixed onto the dial, rather than printed."
+  related: ["Dial"]
+- id: automatic
+  term: "Automatic"
+  level: first-wind
+  short: "A mechanical movement that winds itself using a rotor that spins as your wrist moves."
+  related: ["Rotor", "Manual-wind"]
+- id: balance-wheel
+  term: "Balance wheel"
+  level: automatic
+  short: "The oscillating wheel that, with the hairspring, divides time into equal beats. The heart of a mechanical watch."
+  related: ["Hairspring", "Escapement"]
+- id: beat-rate
+  term: "Beat rate"
+  level: automatic
+  short: "How many times the balance swings per hour, in vibrations per hour (vph). 28,800 vph is 8 beats per second, or 4 Hz."
+  related: ["Balance wheel"]
+- id: bezel
+  term: "Bezel"
+  level: first-wind
+  short: "The ring around the crystal. It can be fixed, or rotate to measure elapsed time, a second time zone or speed."
+  related: ["Tachymeter", "Dive bezel"]
+- id: bracelet
+  term: "Bracelet"
+  level: first-wind
+  short: "A metal band made of links, as opposed to a strap."
+  related: ["Lug width", "Clasp"]
+- id: calibre
+  term: "Calibre"
+  level: first-wind
+  short: "The name or number of a specific movement design, for example ETA 2824-2. Also spelled caliber."
+  related: ["Movement"]
+- id: cerachrom
+  term: "Cerachrom"
+  level: automatic
+  short: "Rolex's name for its scratch- and fade-resistant ceramic bezel inserts."
+  related: ["Ceramic"]
+- id: ceramic
+  term: "Ceramic"
+  level: automatic
+  short: "A very hard, scratch-resistant material (usually zirconium oxide) used for bezels and cases."
+  related: ["Cerachrom"]
+- id: chronograph
+  term: "Chronograph"
+  level: first-wind
+  short: "A watch with a built-in stopwatch, usually operated by two pushers beside the crown."
+  related: ["Flyback", "Rattrapante", "Column wheel"]
+- id: chronometer
+  term: "Chronometer"
+  level: automatic
+  short: "A watch whose movement has passed an official accuracy test, such as COSC (−4/+6 s/day for mechanical movements)."
+  related: ["COSC", "METAS"]
+- id: co-axial-escapement
+  term: "Co-axial escapement"
+  level: grande-complication
+  short: "An escapement invented by George Daniels that reduces sliding friction, so it needs less lubrication. Industrialised by Omega in 1999."
+  related: ["Escapement", "Lever escapement"]
+- id: column-wheel
+  term: "Column wheel"
+  level: complication
+  short: "A castellated wheel that coordinates the start, stop and reset of a chronograph. Prized for its smooth pusher feel."
+  related: ["Chronograph"]
+- id: complication
+  term: "Complication"
+  level: first-wind
+  short: "Any function beyond showing hours, minutes and seconds, such as a date, chronograph or moon phase."
+  related: []
+- id: constant-force
+  term: "Constant force"
+  level: grande-complication
+  short: "A mechanism that delivers the same energy to the escapement regardless of how wound the mainspring is."
+  related: ["Remontoir", "Fusée"]
+- id: cosc
+  term: "COSC"
+  level: automatic
+  short: "Contrôle Officiel Suisse des Chronomètres, the Swiss body that tests and certifies chronometer movements."
+  related: ["Chronometer"]
+- id: cotes-de-geneve
+  term: "Côtes de Genève"
+  level: complication
+  short: "\"Geneva stripes\": parallel decorative waves applied to movement plates and rotors."
+  related: ["Perlage", "Anglage"]
+- id: crown
+  term: "Crown"
+  level: first-wind
+  short: "The knob on the side of the case used to wind the watch and set the time and date."
+  related: ["Screw-down crown"]
+- id: crystal
+  term: "Crystal"
+  level: first-wind
+  short: "The transparent cover over the dial: acrylic (hesalite), mineral glass or sapphire."
+  related: ["Sapphire", "Hesalite"]
+- id: date-window
+  term: "Date window"
+  level: first-wind
+  short: "An opening in the dial that shows the date disc underneath."
+  related: []
+- id: dauphine-hands
+  term: "Dauphine hands"
+  level: first-wind
+  short: "Faceted, tapering hands shaped like an elongated triangle, classic on dress watches."
+  related: []
+- id: detent-escapement
+  term: "Detent escapement"
+  level: grande-complication
+  short: "A chronometer escapement historically used in marine chronometers. Very accurate, but sensitive to shocks."
+  related: ["Escapement"]
+- id: dial
+  term: "Dial"
+  level: first-wind
+  short: "The face of the watch, carrying markers, hands and text."
+  related: ["Applied index"]
+- id: dive-bezel
+  term: "Dive bezel"
+  level: first-wind
+  short: "A unidirectional rotating bezel with a 60-minute scale, used to track elapsed dive time. It only turns one way so an accidental knock can only shorten the shown time."
+  related: ["ISO 6425"]
+- id: ebauche
+  term: "Ébauche"
+  level: complication
+  short: "A partly finished base movement supplied to a brand, which then finishes, decorates or modifies it."
+  related: ["In-house"]
+- id: eco-drive
+  term: "Eco-Drive"
+  level: first-wind
+  short: "Citizen's light-powered quartz technology. A solar cell under the dial charges a rechargeable cell."
+  related: ["Solar"]
+- id: escapement
+  term: "Escapement"
+  level: automatic
+  short: "The mechanism that releases the energy of the mainspring in tiny, regular steps. It makes the tick."
+  related: ["Lever escapement", "Balance wheel"]
+- id: exhibition-caseback
+  term: "Exhibition caseback"
+  level: first-wind
+  short: "A sapphire caseback that lets you see the movement."
+  related: []
+- id: flyback
+  term: "Flyback"
+  level: complication
+  short: "A chronograph that can be reset and restarted with a single press of the reset pusher while running."
+  related: ["Chronograph"]
+- id: frankenwatch
+  term: "Frankenwatch"
+  level: complication
+  short: "A watch assembled from parts of different watches and passed off as original."
+  related: ["Redial"]
+- id: fusee
+  term: "Fusée"
+  level: grande-complication
+  short: "A cone-shaped pulley linked to the barrel by a chain. It evens out the mainspring's force as it unwinds."
+  related: ["Constant force"]
+- id: geneva-seal
+  term: "Geneva Seal"
+  level: complication
+  short: "Poinçon de Genève: a quality hallmark for movements made and finished in the Canton of Geneva to strict criteria."
+  related: []
+- id: gmt
+  term: "GMT"
+  level: first-wind
+  short: "A complication that shows a second time zone, usually with an extra 24-hour hand."
+  related: ["World time"]
+- id: grand-feu-enamel
+  term: "Grand Feu enamel"
+  level: grande-complication
+  short: "Enamel fired at very high temperatures in multiple layers. Produces dials of extraordinary depth and permanence."
+  related: []
+- id: grey-market
+  term: "Grey market"
+  level: automatic
+  short: "New watches sold by dealers who are not authorised by the brand, often at a discount (or a premium)."
+  related: []
+- id: guilloche
+  term: "Guilloché"
+  level: complication
+  short: "Precise repeating patterns engraved into a dial with a rose engine or straight-line engine."
+  related: []
+- id: hacking
+  term: "Hacking"
+  level: first-wind
+  short: "A feature that stops the seconds hand when you pull out the crown, so you can set the time to the second."
+  related: []
+- id: hairspring
+  term: "Hairspring"
+  level: automatic
+  short: "A very fine spiral spring attached to the balance wheel. Its elasticity sets the rhythm of the watch."
+  related: ["Balance wheel", "Silicon"]
+- id: haq
+  term: "HAQ"
+  level: automatic
+  short: "High-accuracy quartz: thermocompensated movements accurate to around ±10 seconds per year."
+  related: ["Quartz"]
+- id: hesalite
+  term: "Hesalite"
+  level: first-wind
+  short: "Omega's name for its acrylic crystal. It scratches easily, but the scratches polish out and it does not shatter."
+  related: ["Crystal"]
+- id: high-beat
+  term: "High-beat"
+  level: automatic
+  short: "A movement running at 36,000 vph (5 Hz) or faster, for better stability and finer chronograph resolution."
+  related: ["Beat rate"]
+- id: homage
+  term: "Homage"
+  level: first-wind
+  short: "A watch that closely imitates a famous design under its own brand name. Legal, but debated."
+  related: []
+- id: in-house
+  term: "In-house"
+  level: automatic
+  short: "A movement designed and made by the watch brand itself rather than bought from a supplier."
+  related: ["Ébauche"]
+- id: iso-6425
+  term: "ISO 6425"
+  level: automatic
+  short: "The international standard for dive watches, covering water resistance, legibility in the dark, shock resistance and more."
+  related: ["Dive bezel"]
+- id: iso-764
+  term: "ISO 764"
+  level: complication
+  short: "The international standard for anti-magnetic watches."
+  related: ["Magnetism"]
+- id: isochronism
+  term: "Isochronism"
+  level: grande-complication
+  short: "The ability of a balance to keep the same rate whether its swing (amplitude) is large or small."
+  related: ["Amplitude"]
+- id: jewel
+  term: "Jewel"
+  level: first-wind
+  short: "A synthetic ruby used as a low-friction bearing for pivots in the movement. Jewel count is not a measure of quality on its own."
+  related: []
+- id: jump-hour
+  term: "Jump hour"
+  level: complication
+  short: "A display where the hour number jumps instantly to the next one instead of being shown with a hand."
+  related: ["Wandering hour"]
+- id: lever-escapement
+  term: "Lever escapement"
+  level: automatic
+  short: "The Swiss lever escapement: the near-universal escapement in mechanical wristwatches, descended from Thomas Mudge's 18th-century invention."
+  related: ["Escapement", "Co-axial escapement"]
+- id: lug-to-lug
+  term: "Lug-to-lug"
+  level: first-wind
+  short: "The distance from the top lug tip to the bottom lug tip. It matters more than diameter for how a watch fits your wrist."
+  related: ["Lug width"]
+- id: lug-width
+  term: "Lug width"
+  level: first-wind
+  short: "The gap between the lugs where the strap fits, in millimetres. Tells you which straps will fit."
+  related: ["Lug-to-lug"]
+- id: lume
+  term: "Lume"
+  level: first-wind
+  short: "Luminous material on hands and markers that glows in the dark, usually Super-LumiNova or LumiBrite."
+  related: ["Tritium"]
+- id: magnetism
+  term: "Magnetism"
+  level: automatic
+  short: "Exposure to magnets (speakers, phone cases, bag clasps) can make a mechanical watch run very fast. A watchmaker can demagnetise it in seconds."
+  related: ["ISO 764"]
+- id: mainspring
+  term: "Mainspring"
+  level: first-wind
+  short: "The coiled spring in the barrel that stores the energy of a mechanical watch."
+  related: ["Power reserve"]
+- id: manual-wind
+  term: "Manual-wind"
+  level: first-wind
+  short: "A mechanical movement you wind by turning the crown, with no rotor. Also called hand-wound."
+  related: ["Automatic"]
+- id: mecaquartz
+  term: "Mecaquartz"
+  level: automatic
+  short: "A quartz movement with a mechanical chronograph module, giving a snappy pusher feel at low cost."
+  related: []
+- id: metas
+  term: "METAS"
+  level: complication
+  short: "The Swiss Federal Institute of Metrology. It certifies Omega's Master Chronometers to 0/+5 s/day and 15,000 gauss resistance."
+  related: ["Chronometer"]
+- id: micro-brand
+  term: "Micro-brand"
+  level: first-wind
+  short: "A small, often online-only watch brand, frequently founded by enthusiasts."
+  related: []
+- id: minute-repeater
+  term: "Minute repeater"
+  level: grande-complication
+  short: "A chiming complication that sounds the hours, quarter-hours and minutes on demand using tiny hammers and gongs."
+  related: ["Sonnerie"]
+- id: moon-phase
+  term: "Moon phase"
+  level: complication
+  short: "A display showing the current phase of the moon, usually through a disc in a dial aperture."
+  related: []
+- id: movement
+  term: "Movement"
+  level: first-wind
+  short: "The engine of a watch: the mechanism that keeps and displays time."
+  related: ["Calibre"]
+- id: nato-strap
+  term: "NATO strap"
+  level: first-wind
+  short: "A one-piece fabric strap that threads under the watch. Originally military, now a cheap way to change a watch's look."
+  related: []
+- id: perlage
+  term: "Perlage"
+  level: complication
+  short: "A decorative pattern of overlapping small circles applied to movement plates."
+  related: ["Côtes de Genève"]
+- id: perpetual-calendar
+  term: "Perpetual calendar"
+  level: grande-complication
+  short: "A calendar that accounts for months of different lengths and leap years, correct until the year 2100."
+  related: ["Annual calendar"]
+- id: power-reserve
+  term: "Power reserve"
+  level: first-wind
+  short: "How long a fully wound watch runs before stopping, typically 38–80 hours."
+  related: ["Mainspring"]
+- id: quartz
+  term: "Quartz"
+  level: first-wind
+  short: "A movement regulated by a quartz crystal vibrating at 32,768 Hz. Far more accurate than mechanical and cheaper to make."
+  related: ["HAQ"]
+- id: rattrapante
+  term: "Rattrapante"
+  level: grande-complication
+  short: "A split-seconds chronograph with two seconds hands, used to time two events that start together."
+  related: ["Chronograph"]
+- id: redial
+  term: "Redial"
+  level: complication
+  short: "A dial that has been refinished or repainted. It dramatically reduces the value of a vintage watch."
+  related: ["Frankenwatch"]
+- id: remontoir
+  term: "Remontoir"
+  level: grande-complication
+  short: "A secondary spring rewound at regular intervals to deliver constant force to the escapement."
+  related: ["Constant force"]
+- id: rotor
+  term: "Rotor"
+  level: first-wind
+  short: "The weighted, pivoting semicircle in an automatic movement that winds the mainspring."
+  related: ["Automatic"]
+- id: sapphire
+  term: "Sapphire"
+  level: first-wind
+  short: "Synthetic sapphire crystal: very scratch-resistant, used on most quality watches."
+  related: ["Crystal"]
+- id: screw-down-crown
+  term: "Screw-down crown"
+  level: first-wind
+  short: "A crown that screws onto a threaded tube to seal the case, important for water resistance."
+  related: ["Crown"]
+- id: silicon
+  term: "Silicon"
+  level: grande-complication
+  short: "A modern material for hairsprings and escapement parts. Anti-magnetic, light and needs no lubrication."
+  related: ["Hairspring"]
+- id: skeleton
+  term: "Skeleton"
+  level: complication
+  short: "A watch whose movement and dial have been cut away to show the mechanism."
+  related: []
+- id: sonnerie
+  term: "Sonnerie"
+  level: grande-complication
+  short: "A chiming watch that strikes the hours (and quarters) automatically as they pass. Grande sonnerie strikes hours and quarters every quarter."
+  related: ["Minute repeater"]
+- id: spring-drive
+  term: "Spring Drive"
+  level: automatic
+  short: "Seiko's hybrid technology: a mainspring drives the hands, while a quartz-controlled electromagnetic brake regulates them, giving a gliding seconds hand."
+  related: ["Quartz"]
+- id: sweep-seconds
+  term: "Sweep seconds"
+  level: first-wind
+  short: "A central seconds hand that moves in small, rapid steps, appearing to sweep round the dial."
+  related: []
+- id: tachymeter
+  term: "Tachymeter"
+  level: first-wind
+  short: "A scale on a chronograph bezel or dial used to calculate speed over a known distance."
+  related: ["Chronograph"]
+- id: timegrapher
+  term: "Timegrapher"
+  level: grande-complication
+  short: "An instrument that listens to a movement and measures its rate, amplitude and beat error."
+  related: ["Amplitude"]
+- id: tourbillon
+  term: "Tourbillon"
+  level: grande-complication
+  short: "A rotating cage carrying the escapement and balance, invented by Breguet in 1801 to average out errors caused by gravity."
+  related: ["Escapement"]
+- id: tritium
+  term: "Tritium"
+  level: complication
+  short: "A radioactive luminous material used on watches from the 1960s to late 1990s. It ages to a creamy patina."
+  related: ["Lume"]
+- id: wandering-hour
+  term: "Wandering hour"
+  level: complication
+  short: "A display where the hour numeral travels along an arc to indicate the minutes."
+  related: ["Jump hour"]
+- id: water-resistance
+  term: "Water resistance"
+  level: first-wind
+  short: "The pressure a watch is tested to, shown in metres or ATM. 30 m means splash-proof, 100 m is fine for swimming, and 200 m or more is a dive watch."
+  related: ["Screw-down crown", "ISO 6425"]
+- id: world-time
+  term: "World time"
+  level: complication
+  short: "A complication that shows the time in all 24 major time zones at once, using a ring of city names."
+  related: ["GMT"]
+- id: zaratsu
+  term: "Zaratsu"
+  level: complication
+  short: "A blade-polishing technique used by Grand Seiko for distortion-free, mirror-like surfaces."
+  related: []

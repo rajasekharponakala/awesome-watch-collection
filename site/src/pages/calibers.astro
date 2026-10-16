@@ -1,0 +1,88 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { u } from '../lib/meta';
+
+const order = { manual: 0, automatic: 1, 'spring-drive': 2, quartz: 3 } as const;
+const cals = (await getCollection('calibers')).sort((a, b) => order[a.data.kind] - order[b.data.kind] || a.data.name.localeCompare(b.data.name));
+const maxPR = Math.max(...cals.map((c) => c.data.power_reserve_h ?? 0));
+---
+
+<Base title="Calibers" description="Movement database: beat rates, jewels, power reserves and accuracy of the world's key calibres.">
+  <PageHero
+    eyebrow="Movement database"
+    title="The <em>engines.</em>"
+    lede="Every balance on this page beats at its calibre's real frequency (half-speed for the eye). Compare power reserves, jewels and accuracy at a glance."
+    crumbs={[[u(), 'Dial'], [u('calibers/'), 'Calibers']]}
+  />
+  <section class="section--tight">
+    <div class="container grid grid--2">
+      {cals.map((c, i) => {
+        const d = c.data;
+        const hz = d.frequency_vph ? d.frequency_vph / 7200 : 0;
+        return (
+          <article class="card cal" id={c.id} data-reveal style={`--d:${(i % 2) * 0.08}s`}>
+            <header class="cal__head">
+              <div>
+                <span class="eyebrow">{d.maker}</span>
+                <h2 class="display h3">{d.name}</h2>
+              </div>
+              <div class="cal__osc" aria-hidden="true" style={hz ? `--dur:${(1 / hz).toFixed(3)}s` : ''} data-kind={d.kind}>
+                {d.kind === 'quartz' ? (
+                  <svg viewBox="0 0 80 80"><path d="M30 14v38q10 16 20 0V14M36 14v36q4 7 8 0V14" fill="none" stroke="var(--gold)" stroke-width="1.6" /><circle cx="40" cy="40" r="34" fill="none" stroke="var(--line-2)" class="cal__pulse" /></svg>
+                ) : d.kind === 'spring-drive' ? (
+                  <svg viewBox="0 0 80 80" class="cal__glide"><circle cx="40" cy="40" r="30" fill="none" stroke="var(--gold)" stroke-width="2" stroke-dasharray="4 4" /><circle cx="40" cy="40" r="5" fill="var(--gold)" /></svg>
+                ) : (
+                  <svg viewBox="0 0 80 80" class="cal__balance"><circle cx="40" cy="40" r="30" fill="none" stroke="var(--gold)" stroke-width="3.5" /><path d="M40 10v60M10 40h60" stroke="var(--gold)" stroke-width="2" /><circle cx="40" cy="40" r="4" fill="#c0142a" /></svg>
+                )}
+              </div>
+            </header>
+            <p class="muted">{d.summary}</p>
+            <dl class="cal__specs">
+              <div><dt class="mono">Type</dt><dd>{d.kind.replace('-', ' ')}</dd></div>
+              <div><dt class="mono">Frequency</dt><dd>{d.frequency_vph ? `${d.frequency_vph.toLocaleString('en-US')} vph · ${(d.frequency_vph / 7200).toFixed(1)} Hz` : d.quartz_hz ? `${d.quartz_hz.toLocaleString('en-US')} Hz quartz` : 'Glide wheel + quartz'}</dd></div>
+              {d.jewels && <div><dt class="mono">Jewels</dt><dd>{d.jewels}</dd></div>}
+              {d.accuracy && <div><dt class="mono">Accuracy</dt><dd>{d.accuracy}</dd></div>}
+              {d.introduced && <div><dt class="mono">Introduced</dt><dd>{d.introduced}</dd></div>}
+              <div><dt class="mono">Functions</dt><dd>{d.functions.join(', ')}</dd></div>
+              {d.hacking !== undefined && <div><dt class="mono">Hacking / hand-wind</dt><dd>{d.hacking ? 'Yes' : 'No'} / {d.hand_winding ? 'Yes' : 'No'}</dd></div>}
+            </dl>
+            {d.power_reserve_h && (
+              <div class="cal__pr">
+                <div class="cal__pr-top mono"><span>Power reserve</span><b>{d.power_reserve_h} h</b></div>
+                <div class="cal__bar"><i style={`--w:${(d.power_reserve_h / maxPR).toFixed(3)}`} /></div>
+              </div>
+            )}
+          </article>
+        );
+      })}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .cal { display: flex; flex-direction: column; gap: 16px; scroll-margin-top: calc(var(--header-h) + 20px); }
+  .cal:target { border-color: var(--gold); }
+  .cal__head { display: flex; justify-content: space-between; gap: 20px; align-items: start; }
+  .cal__head h2 { margin: 12px 0 0; }
+  .cal__osc { width: 76px; flex: none; }
+  .cal__balance { animation: osc var(--dur, 0.5s) cubic-bezier(0.45, 0, 0.55, 1) infinite alternate; }
+  .cal__glide { animation: spin 8s linear infinite; }
+  .cal__pulse { transform-origin: center; animation: pulse 1s ease-out infinite; }
+  @keyframes osc { from { transform: rotate(-150deg); } to { transform: rotate(150deg); } }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes pulse { from { transform: scale(0.6); opacity: 1; } to { transform: scale(1.1); opacity: 0; } }
+  .cal p { margin: 0; }
+  .cal__specs { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .cal__specs div { display: grid; grid-template-columns: 150px 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+  .cal__specs dt { font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); padding-top: 3px; }
+  .cal__specs dd { margin: 0; text-transform: none; }
+  .cal__pr-top { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+  .cal__pr-top b { color: var(--gold); font-weight: 500; }
+  .cal__bar { height: 6px; border-radius: 6px; background: var(--line); overflow: hidden; }
+  .cal__bar i { display: block; height: 100%; width: 100%; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, var(--gold-3), var(--gold-2)); transition: transform 1.6s var(--ease) 0.3s; }
+  .cal.is-in .cal__bar i { transform: scaleX(var(--w)); }
+  :global(html:not(.js)) .cal__bar i { transform: scaleX(var(--w)); }
+  @media (max-width: 560px) { .cal__specs div { grid-template-columns: 1fr; gap: 2px; } }
+</style>

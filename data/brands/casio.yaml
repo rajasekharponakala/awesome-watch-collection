@@ -1,0 +1,20 @@
+name: "Casio"
+country: "Japan"
+city: "Tokyo"
+founded: 1946
+founders:
+  - "Tadao Kashio"
+group: "Independent (Casio Computer Co.)"
+tier: "entry"
+types:
+  - "digital"
+  - "quartz"
+  - "smart"
+summary: "Casio entered watches with the Casiotron in 1974 and changed the industry with the shock-resistant G-Shock in 1983. Its affordable digital watches, like the F-91W, are among the best-selling watches ever made."
+notable:
+  - "F-91W"
+  - "G-Shock DW-5600"
+  - "A168"
+  - "Pro Trek"
+website: "https://www.casio.com"
+last_reviewed: "2026-10-16"

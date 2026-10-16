@@ -1,0 +1,81 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { u, LEVEL_META } from '../lib/meta';
+
+const terms = (await getCollection('glossary')).sort((a, b) => a.id.localeCompare(b.id));
+const letter = (t: string) => t.normalize('NFD').replace(/[̀-ͯ]/g, '')[0].toUpperCase();
+const letters = [...new Set(terms.map((t) => letter(t.data.term)))];
+const idOf = (term: string) => terms.find((t) => t.data.term === term)?.id;
+---
+
+<Base title="Glossary" description="Every watch term explained, from anglage to Zaratsu.">
+  <PageHero
+    eyebrow={`${terms.length} terms`}
+    title="Speak <em>watch.</em>"
+    lede="The vocabulary of horology, A to Z. Each term is tagged with the level at which you will usually meet it."
+    crumbs={[[u(), 'Dial'], [u('glossary/'), 'Glossary']]}
+  />
+  <section class="section--tight">
+    <div class="container">
+      <div class="gl-bar">
+        <input type="search" class="gl-search" placeholder="Filter terms…" data-gl-filter aria-label="Filter glossary terms" />
+        <nav class="gl-letters mono" aria-label="Letters">{letters.map((l) => <a href={`#letter-${l}`}>{l}</a>)}</nav>
+      </div>
+      {letters.map((l) => (
+        <section class="gl-group" id={`letter-${l}`} data-gl-group>
+          <h2 class="display gl-letter" data-reveal="fade">{l}</h2>
+          <div class="grid grid--3">
+            {terms.filter((t) => letter(t.data.term) === l).map((t) => (
+              <article class="card gl-term" id={t.id} data-gl-term={`${t.data.term} ${t.data.short}`.toLowerCase()}>
+                <div class="gl-head">
+                  <h3 class="display h4">{t.data.term}</h3>
+                  <span class="jewels" title={LEVEL_META[t.data.level].name}>{[1, 2, 3, 4].map((j) => <i class={j > LEVEL_META[t.data.level].jewels ? 'off' : ''} />)}</span>
+                </div>
+                <p class="muted">{t.data.short}</p>
+                {t.data.related.length > 0 && (
+                  <p class="gl-rel mono">See: {t.data.related.map((r) => (idOf(r) ? <a href={`#${idOf(r)}`}>{r}</a> : <span>{r}</span>))}</p>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<script>
+  const input = document.querySelector<HTMLInputElement>('[data-gl-filter]');
+  input?.addEventListener('input', () => {
+    const q = input.value.toLowerCase().trim();
+    document.querySelectorAll<HTMLElement>('[data-gl-group]').forEach((g) => {
+      let any = false;
+      g.querySelectorAll<HTMLElement>('[data-gl-term]').forEach((t) => {
+        const ok = !q || (t.dataset.glTerm || '').includes(q);
+        t.hidden = !ok;
+        if (ok) any = true;
+      });
+      g.hidden = !any;
+    });
+  });
+</script>
+
+<style>
+  .gl-bar { position: sticky; top: calc(var(--header-h) + 8px); z-index: 5; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; padding: 14px; margin-bottom: 30px; border-radius: 18px; border: 1px solid var(--line-2); background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  .gl-search { flex: 1 1 220px; min-width: 0; height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface); color: var(--text); font: 15px var(--sans); }
+  .gl-search:focus { outline: none; border-color: var(--gold); }
+  .gl-letters { display: flex; flex-wrap: wrap; gap: 2px; }
+  .gl-letters a { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; font-size: 13px; color: var(--muted); }
+  .gl-letters a:hover { background: var(--gold); color: #120f08; }
+  .gl-group { scroll-margin-top: calc(var(--header-h) + 100px); margin-bottom: 50px; }
+  .gl-letter { font-size: 90px; font-style: italic; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--gold); margin: 0 0 20px; }
+  .gl-term { scroll-margin-top: calc(var(--header-h) + 100px); }
+  .gl-term:target { border-color: var(--gold); }
+  .gl-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .gl-term h3 { margin: 0 0 10px; }
+  .gl-term p { margin: 0; font-size: 15px; }
+  .gl-rel { margin-top: 14px !important; font-size: 11.5px !important; display: flex; flex-wrap: wrap; gap: 4px 10px; color: var(--faint); }
+  .gl-rel a { color: var(--gold); }
+</style>

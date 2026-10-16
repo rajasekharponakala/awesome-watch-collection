@@ -1,0 +1,19 @@
+name: "Longines"
+country: "Switzerland"
+city: "Saint-Imier"
+founded: 1832
+founders:
+  - "Auguste Agassiz"
+group: "Swatch Group"
+tier: "mid-range"
+types:
+  - "mechanical"
+  - "quartz"
+summary: "Longines has a long history in aviation and sports timing, and its winged hourglass logo is one of the oldest registered trademarks still in use. It is known for classic, heritage-inspired designs."
+notable:
+  - "Spirit"
+  - "HydroConquest"
+  - "Legend Diver"
+  - "Master Collection"
+website: "https://www.longines.com"
+last_reviewed: "2026-10-16"

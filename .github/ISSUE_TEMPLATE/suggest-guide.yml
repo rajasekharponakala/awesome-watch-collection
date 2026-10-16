@@ -1,0 +1,14 @@
+name: Suggest a guide or topic
+description: Propose new knowledge for a learning path
+labels: [content]
+body:
+  - type: dropdown
+    id: level
+    attributes:
+      label: Level
+      options: [First Wind (beginner), Automatic (intermediate), Complication (advanced), Grande Complication (pro)]
+    validations: { required: true }
+  - type: textarea
+    id: topic
+    attributes: { label: Topic and outline }
+    validations: { required: true }

@@ -1,0 +1,26 @@
+brand: "citizen"
+name: "Promaster Diver"
+reference: "BN0150-28E"
+type: "quartz/solar"
+styles:
+  - "diver"
+  - "tool"
+complications:
+  - "date"
+caliber: "Citizen Eco-Drive E168"
+case:
+  material: "Stainless steel"
+  diameter_mm: 44
+water_resistance_m: 200
+crystal: "Mineral"
+price_tier: "entry"
+levels:
+  - "first-wind"
+region: "Japan"
+summary: "An ISO-rated, light-powered diver that never needs a battery change in normal use. Arguably the most practical dive watch you can buy for the money."
+look:
+  dial: "#101215"
+  accent: "#f3f0e6"
+  metal: "steel"
+  bezel: "dive"
+last_reviewed: "2026-10-16"

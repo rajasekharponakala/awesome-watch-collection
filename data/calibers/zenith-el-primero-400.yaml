@@ -1,0 +1,17 @@
+name: "Zenith El Primero 400"
+maker: "Zenith (LVMH)"
+kind: "automatic"
+frequency_vph: 36000
+jewels: 31
+power_reserve_h: 50
+hacking: false
+hand_winding: true
+introduced: 1969
+functions:
+  - "hours"
+  - "minutes"
+  - "small seconds"
+  - "chronograph"
+  - "date"
+summary: "Announced in 1969, the El Primero was one of the first automatic chronograph movements and the first high-beat one. Its 36,000 vph frequency lets it time events to a tenth of a second."
+last_reviewed: "2026-10-16"

@@ -1,0 +1,33 @@
+brand: "casio"
+name: "G-Shock DW-5600"
+reference: "DW-5600E-1V"
+type: "digital/lcd"
+styles:
+  - "tool"
+  - "sport"
+complications:
+  - "alarm"
+  - "stopwatch"
+  - "countdown timer"
+  - "backlight"
+caliber: "Casio module 3229"
+case:
+  material: "Resin"
+  diameter_mm: 42.8
+  lug_to_lug_mm: 48.9
+  thickness_mm: 13.4
+  lug_width_mm: 16
+water_resistance_m: 200
+crystal: "Mineral"
+years:
+  introduced: 1987
+price_tier: "entry"
+levels:
+  - "first-wind"
+region: "Japan"
+summary: "The square descendant of Kikuo Ibe's original 1983 G-Shock. A suspended module and resin armour make it one of the toughest watches you can buy, at any price."
+look:
+  dial: "#9ea18e"
+  accent: "#151612"
+  metal: "resin"
+last_reviewed: "2026-10-16"

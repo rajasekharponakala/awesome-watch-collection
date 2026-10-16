@@ -1,0 +1,19 @@
+name: "Garmin"
+country: "United States"
+city: "Olathe, KS"
+founded: 1989
+founders:
+  - "Gary Burrell"
+  - "Min Kao"
+group: "Garmin Ltd."
+tier: "affordable"
+types:
+  - "smart"
+summary: "A GPS specialist, Garmin builds multisport and outdoor smartwatches with long battery life, deep training metrics and navigation features favoured by athletes and adventurers."
+notable:
+  - "fēnix"
+  - "Forerunner"
+  - "Instinct"
+  - "Epix"
+website: "https://www.garmin.com"
+last_reviewed: "2026-10-16"

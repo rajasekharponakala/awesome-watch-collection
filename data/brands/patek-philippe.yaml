@@ -1,0 +1,20 @@
+name: "Patek Philippe"
+country: "Switzerland"
+city: "Geneva"
+founded: 1839
+founders:
+  - "Antoine Norbert de Patek"
+  - "François Czapek"
+  - "Adrien Philippe"
+group: "Independent (Stern family)"
+tier: "haute-horlogerie"
+types:
+  - "mechanical"
+summary: "One of the oldest continuously operating manufactures, Patek Philippe is synonymous with grand complications, perpetual calendars and record-breaking auction results. It is still family-owned."
+notable:
+  - "Calatrava"
+  - "Nautilus"
+  - "Aquanaut"
+  - "Grand Complications"
+website: "https://www.patek.com"
+last_reviewed: "2026-10-16"

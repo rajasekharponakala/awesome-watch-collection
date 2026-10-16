@@ -1,0 +1,35 @@
+brand: "seiko"
+name: "SKX007"
+reference: "SKX007K2"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+complications:
+  - "date"
+  - "day"
+caliber: "Seiko 7S26"
+caliber_id: "seiko-7s26"
+case:
+  material: "Stainless steel"
+  diameter_mm: 42.5
+  lug_to_lug_mm: 46
+  thickness_mm: 13.25
+  lug_width_mm: 22
+water_resistance_m: 200
+crystal: "Hardlex"
+years:
+  introduced: 1996
+  discontinued: 2019
+price_tier: "entry"
+levels:
+  - "first-wind"
+  - "automatic"
+region: "Japan"
+summary: "The definitive affordable ISO-rated dive watch for more than two decades, and the starting point of the modding scene. Its 4 o'clock crown and legible dial are textbook tool-watch design."
+look:
+  dial: "#121417"
+  accent: "#f1efe6"
+  metal: "steel"
+  bezel: "dive"
+last_reviewed: "2026-10-16"

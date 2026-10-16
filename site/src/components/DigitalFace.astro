@@ -1,0 +1,148 @@
+---
+/** A live digital (LCD) or smartwatch face. Time is filled in by the global clock script. */
+interface Props {
+  kind: 'digital' | 'smart';
+  screen?: string;
+  ink?: string;
+  label?: string;
+  size?: string;
+}
+const { kind, screen = '#a9ad97', ink = '#1b1c18', label = 'AWC', size } = Astro.props;
+---
+
+<div class={`dface dface--${kind}`} style={`--screen:${screen};--ink:${ink};${size ? `--size:${size}` : ''}`}>
+  <div class="dface__strap dface__strap--top"></div>
+  <div class="dface__strap dface__strap--bottom"></div>
+  <div class="dface__case">
+    <div class="dface__screen">
+      {kind === 'digital' ? (
+        <>
+          <div class="dface__top"><span>{label}</span><span data-dclock="day">FR</span></div>
+          <div class="dface__time"><span data-dclock="hm">10:10</span><small data-dclock="s">30</small></div>
+          <div class="dface__bottom"><span>ALARM CHRONOGRAPH</span><span data-dclock="date">10-16</span></div>
+        </>
+      ) : (
+        <>
+          <svg class="dface__rings" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="44" fill="none" stroke="#3a0b12" stroke-width="7" />
+            <circle cx="50" cy="50" r="44" fill="none" stroke="#fa114f" stroke-width="7" stroke-linecap="round" stroke-dasharray="276" stroke-dashoffset="70" transform="rotate(-90 50 50)" />
+            <circle cx="50" cy="50" r="35" fill="none" stroke="#1d3a06" stroke-width="7" />
+            <circle cx="50" cy="50" r="35" fill="none" stroke="#a6ff00" stroke-width="7" stroke-linecap="round" stroke-dasharray="220" stroke-dashoffset="88" transform="rotate(-90 50 50)" />
+            <circle cx="50" cy="50" r="26" fill="none" stroke="#06303a" stroke-width="7" />
+            <circle cx="50" cy="50" r="26" fill="none" stroke="#00e5ff" stroke-width="7" stroke-linecap="round" stroke-dasharray="163" stroke-dashoffset="30" transform="rotate(-90 50 50)" />
+          </svg>
+          <div class="dface__smart">
+            <span class="dface__date" data-dclock="long">FRI 16</span>
+            <span class="dface__stime" data-dclock="hm">10:10</span>
+            <span class="dface__hr">♥ 62 BPM</span>
+          </div>
+        </>
+      )}
+    </div>
+    <div class="dface__btn dface__btn--1"></div>
+    <div class="dface__btn dface__btn--2"></div>
+  </div>
+</div>
+
+<style>
+  .dface {
+    position: relative;
+    width: var(--size, 320px);
+    max-width: 100%;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+  }
+  .dface__strap {
+    position: absolute;
+    left: 28%;
+    right: 28%;
+    height: 20%;
+    background: linear-gradient(90deg, #111, #26282b 50%, #111);
+  }
+  .dface__strap--top { top: 0; border-radius: 8px 8px 0 0; }
+  .dface__strap--bottom { bottom: 0; border-radius: 0 0 8px 8px; }
+  .dface__case {
+    position: relative;
+    width: 78%;
+    aspect-ratio: 0.92;
+    border-radius: 22%;
+    padding: 9%;
+    background: linear-gradient(145deg, #45484d, #141517 45%, #2b2d31);
+    box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.15), 0 30px 60px -20px rgba(0, 0, 0, 0.7);
+  }
+  .dface--digital .dface__case {
+    border-radius: 14%;
+    background: linear-gradient(145deg, #3a3c40, #101113 50%, #26282b);
+  }
+  .dface__screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 16%;
+    overflow: hidden;
+    background: var(--screen);
+    color: var(--ink);
+    container-type: inline-size;
+  }
+  .dface--digital .dface__screen {
+    border-radius: 6%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 8% 9%;
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.25), inset 0 8px 18px rgba(0, 0, 0, 0.25);
+    background-image: linear-gradient(160deg, rgba(255, 255, 255, 0.25), transparent 40%), linear-gradient(var(--screen), var(--screen));
+  }
+  .dface__top,
+  .dface__bottom {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 6.5cqi;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+  .dface__bottom { font-size: 5cqi; }
+  .dface__time {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2cqi;
+    font-family: var(--lcd);
+    font-weight: 600;
+    font-size: 24cqi;
+    line-height: 1;
+    align-self: center;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+  }
+  .dface__time small { font-size: 12cqi; }
+  .dface--smart .dface__screen { background: #000; color: #fff; }
+  .dface__rings {
+    position: absolute;
+    inset: 8%;
+    width: 84%;
+    height: 84%;
+  }
+  .dface__smart {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--sans);
+  }
+  .dface__date { font-size: 6cqi; color: var(--ink, #ff8a1f); font-weight: 600; letter-spacing: 0.08em; }
+  .dface__stime { font-size: 14cqi; font-weight: 600; letter-spacing: -0.02em; line-height: 1; }
+  .dface__hr { font-size: 5cqi; color: #fa114f; margin-top: 2cqi; font-family: var(--mono); }
+  .dface__btn {
+    position: absolute;
+    right: -4%;
+    width: 5%;
+    height: 14%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #2b2d31, #55585d);
+  }
+  .dface__btn--1 { top: 22%; }
+  .dface__btn--2 { top: 52%; height: 10%; }
+</style>

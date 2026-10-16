@@ -1,0 +1,19 @@
+name: "Cartier"
+country: "France"
+city: "Paris"
+founded: 1847
+founders:
+  - "Louis-François Cartier"
+group: "Richemont"
+tier: "luxury"
+types:
+  - "mechanical"
+  - "quartz"
+summary: "The Paris jeweller created one of the first purpose-built men's wristwatches, the Santos (1904), for aviator Alberto Santos-Dumont, and the Tank (1917). Cartier defines shaped, design-led watches."
+notable:
+  - "Tank"
+  - "Santos"
+  - "Ballon Bleu"
+  - "Crash"
+website: "https://www.cartier.com"
+last_reviewed: "2026-10-16"

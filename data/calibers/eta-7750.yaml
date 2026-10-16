@@ -1,0 +1,18 @@
+name: "ETA / Valjoux 7750"
+maker: "ETA (Swatch Group)"
+kind: "automatic"
+frequency_vph: 28800
+jewels: 25
+power_reserve_h: 48
+hacking: true
+hand_winding: true
+introduced: 1974
+functions:
+  - "hours"
+  - "minutes"
+  - "small seconds"
+  - "chronograph"
+  - "date"
+  - "day"
+summary: "Designed by Edmond Capt and introduced in 1974, the cam-lever 7750 is the most widely used automatic chronograph movement in the world, and the base of countless modified calibres."
+last_reviewed: "2026-10-16"

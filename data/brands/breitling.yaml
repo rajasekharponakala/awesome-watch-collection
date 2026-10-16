@@ -1,0 +1,19 @@
+name: "Breitling"
+country: "Switzerland"
+city: "Grenchen"
+founded: 1884
+founders:
+  - "Léon Breitling"
+group: "Independent (private-equity owned)"
+tier: "luxury"
+types:
+  - "mechanical"
+  - "quartz"
+summary: "Breitling is closely tied to aviation and chronographs. Its Navitimer (1952) carries a slide-rule bezel for flight calculations, and the brand helped develop the separate start/stop and reset pushers of the modern chronograph."
+notable:
+  - "Navitimer"
+  - "Chronomat"
+  - "Superocean"
+  - "Premier"
+website: "https://www.breitling.com"
+last_reviewed: "2026-10-16"

@@ -1,0 +1,30 @@
+---
+import Rings from './Rings.astro';
+interface Props {
+  eyebrow: string;
+  title: string;
+  lede?: string;
+  crumbs?: [string, string][];
+}
+const { eyebrow, title, lede, crumbs = [] } = Astro.props;
+---
+
+<section class="page-hero">
+  <div class="page-hero__rings" data-parallax="0.25"><Rings /></div>
+  <div class="container">
+    {crumbs.length > 0 && (
+      <nav class="breadcrumbs" aria-label="Breadcrumb" data-reveal="fade">
+        {crumbs.map(([href, label], i) => (
+          <>
+            {i > 0 && <span aria-hidden="true">/</span>}
+            <a href={href}>{label}</a>
+          </>
+        ))}
+      </nav>
+    )}
+    <span class="eyebrow" data-reveal="fade">{eyebrow}</span>
+    <h1 class="display h1" data-reveal style="margin-top:22px" set:html={title} />
+    {lede && <p class="lede" data-reveal style="--d:.15s">{lede}</p>}
+    <slot />
+  </div>
+</section>

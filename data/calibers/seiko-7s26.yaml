@@ -1,0 +1,16 @@
+name: "Seiko 7S26"
+maker: "Seiko"
+kind: "automatic"
+frequency_vph: 21600
+jewels: 21
+power_reserve_h: 41
+hacking: false
+hand_winding: false
+functions:
+  - "hours"
+  - "minutes"
+  - "central seconds"
+  - "date"
+  - "day"
+summary: "The movement inside the SKX family and older Seiko 5s, built around Seiko's efficient \"Magic Lever\" winding system. It neither hacks nor hand-winds, but is famous for running for decades without attention."
+last_reviewed: "2026-10-16"

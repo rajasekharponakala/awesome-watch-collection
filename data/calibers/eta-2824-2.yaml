@@ -1,0 +1,15 @@
+name: "ETA 2824-2"
+maker: "ETA (Swatch Group)"
+kind: "automatic"
+frequency_vph: 28800
+jewels: 25
+power_reserve_h: 38
+hacking: true
+hand_winding: true
+functions:
+  - "hours"
+  - "minutes"
+  - "central seconds"
+  - "date"
+summary: "The archetypal Swiss workhorse automatic. Robust, easy to service and used by dozens of brands for decades, it is the reference point that most other mid-range movements are compared against."
+last_reviewed: "2026-10-16"

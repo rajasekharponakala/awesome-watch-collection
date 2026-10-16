@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Watch from '../components/Watch.astro';
+import { u } from '../lib/meta';
+const counts = {
+  guides: (await getCollection('guides')).length,
+  references: (await getCollection('references')).length,
+  calibers: (await getCollection('calibers')).length,
+  brands: (await getCollection('brands')).length,
+  terms: (await getCollection('glossary')).length,
+  events: (await getCollection('timeline')).length,
+};
+---
+
+<Base title="Caseback" description="How this site is built, and how to contribute.">
+  <PageHero
+    eyebrow="Caseback"
+    title="Open the <em>caseback.</em>"
+    lede="This is how the site itself is built: open source, community-regulated, and built to run for generations like a good watch."
+    crumbs={[[u(), 'Dial'], [u('about/'), 'Caseback']]}
+  />
+  <section class="section--tight">
+    <div class="container about">
+      <div class="about__watch" data-reveal="scale"><Watch layers="all" metal="steel" dial="#14181d" label="AWC" sub="OPEN SOURCE" /></div>
+      <div class="prose">
+        <h2>The movement</h2>
+        <ul>
+          <li><strong>Content</strong> lives as Markdown in <code>/content</code>: guides by level and the six type hubs.</li>
+          <li><strong>Data</strong> lives as YAML in <code>/data</code>: {counts.references} references, {counts.calibers} calibres, {counts.brands} brands, {counts.terms} glossary terms and {counts.events} history events.</li>
+          <li><strong>Schemas</strong> validate every entry at build time, so a broken entry never reaches the site.</li>
+          <li><strong>The site</strong> is built with Astro and deployed to GitHub Pages on every merge to <code>main</code>.</li>
+        </ul>
+        <h2>The vocabulary</h2>
+        <p>The interface speaks watch. <strong>The Dial</strong> is the home page, <strong>the Crown</strong> is search (press <code>⌘K</code> or <code>/</code>), <strong>the Bezel</strong> filters the catalogue, <strong>Lume</strong> is the night theme, the <strong>power reserve</strong> shows how much of a guide is left, <strong>jewels</strong> show difficulty, and <strong>hacking seconds</strong> pauses all motion.</p>
+        <h2>The Escapement: contributing</h2>
+        <p>Add a reference, correct a spec, write a guide. Read <a href="https://github.com/rajasekharponakala/awesome-watch-collection/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a> and open a pull request. Every fact needs a source, and every page carries a "serviced" date.</p>
+        <p>Content is licensed <strong>CC BY-SA 4.0</strong>; code is <strong>MIT</strong>.</p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .about { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: start; }
+  .about__watch { position: sticky; top: calc(var(--header-h) + 40px); display: grid; place-items: center; transform: rotateY(180deg); }
+  @media (max-width: 900px) { .about { grid-template-columns: 1fr; } .about__watch { position: relative; top: 0; } }
+</style>

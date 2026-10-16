@@ -1,0 +1,19 @@
+name: "Orient"
+country: "Japan"
+city: "Tokyo"
+founded: 1950
+founders:
+  - "Orient Watch Co."
+group: "Seiko Epson"
+tier: "entry"
+types:
+  - "mechanical"
+  - "quartz"
+summary: "Orient is a favourite for first mechanical watches, producing its own automatic movements at very low prices. It has been fully part of Seiko Epson since 2009."
+notable:
+  - "Bambino"
+  - "Kamasu"
+  - "Mako"
+  - "Orient Star"
+website: "https://www.orient-watch.com"
+last_reviewed: "2026-10-16"

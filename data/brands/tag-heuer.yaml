@@ -1,0 +1,20 @@
+name: "TAG Heuer"
+country: "Switzerland"
+city: "La Chaux-de-Fonds"
+founded: 1860
+founders:
+  - "Edouard Heuer"
+group: "LVMH"
+tier: "mid-range"
+types:
+  - "mechanical"
+  - "quartz"
+  - "smart"
+summary: "Heuer was a pioneer of stopwatches and racing chronographs, co-developing one of the first automatic chronograph movements (Calibre 11) in 1969. It became TAG Heuer in 1985."
+notable:
+  - "Monaco"
+  - "Carrera"
+  - "Autavia"
+  - "Connected"
+website: "https://www.tagheuer.com"
+last_reviewed: "2026-10-16"

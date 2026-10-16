@@ -1,0 +1,27 @@
+brand: "tudor"
+name: "Black Bay Fifty-Eight"
+reference: "M79030N"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+caliber: "Tudor MT5402"
+case:
+  material: "Stainless steel"
+  diameter_mm: 39
+  thickness_mm: 11.9
+  lug_width_mm: 20
+water_resistance_m: 200
+crystal: "Sapphire"
+years:
+  introduced: 2018
+price_tier: "mid-range"
+levels:
+  - "automatic"
+region: "Switzerland"
+summary: "A vintage-proportioned 39 mm diver inspired by Tudor's 1958 references, with a 70-hour in-house movement. It turned Tudor into a brand enthusiasts buy for its own sake."
+look:
+  dial: "#0e0f11"
+  accent: "#e8d6a8"
+  metal: "gold"
+  bezel: "dive"
+last_reviewed: "2026-10-16"

@@ -1,0 +1,19 @@
+name: "Citizen"
+country: "Japan"
+city: "Tokyo"
+founded: 1918
+founders:
+  - "Shokosha Watch Research Institute"
+group: "Citizen Group"
+tier: "affordable"
+types:
+  - "quartz"
+  - "mechanical"
+summary: "Citizen is one of the largest movement makers in the world (through Miyota) and the pioneer of light-powered Eco-Drive watches. It also owns brands such as Bulova, Frédérique Constant and Arnold & Son."
+notable:
+  - "Promaster"
+  - "Eco-Drive"
+  - "The Citizen"
+  - "Tsuyosa"
+website: "https://www.citizenwatch.com"
+last_reviewed: "2026-10-16"

@@ -1,0 +1,20 @@
+name: "Rolex"
+country: "Switzerland"
+city: "Geneva"
+founded: 1905
+founders:
+  - "Hans Wilsdorf"
+  - "Alfred Davis"
+group: "Independent (Hans Wilsdorf Foundation)"
+tier: "luxury"
+types:
+  - "mechanical"
+summary: "Founded in London and moved to Geneva, Rolex pioneered the waterproof Oyster case (1926) and the Perpetual rotor (1931). Today it is the most recognised luxury watch brand in the world, known for robust in-house movements and tool-watch icons."
+notable:
+  - "Submariner"
+  - "Daytona"
+  - "GMT-Master II"
+  - "Datejust"
+  - "Explorer"
+website: "https://www.rolex.com"
+last_reviewed: "2026-10-16"

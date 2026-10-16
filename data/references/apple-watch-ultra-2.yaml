@@ -1,0 +1,32 @@
+brand: "apple"
+name: "Apple Watch Ultra 2"
+type: "smart/full-os"
+styles:
+  - "sport"
+  - "outdoor"
+  - "diver"
+complications:
+  - "GPS"
+  - "heart rate"
+  - "ECG"
+  - "depth gauge"
+  - "dive computer"
+caliber: "Apple S9 SiP"
+case:
+  material: "Titanium"
+  diameter_mm: 49
+water_resistance_m: 100
+crystal: "Sapphire"
+years:
+  introduced: 2023
+price_tier: "affordable"
+levels:
+  - "first-wind"
+  - "automatic"
+region: "United States"
+summary: "Apple's most capable watch: dual-frequency GPS, a 3,000-nit display, a programmable Action button and recreational dive-computer features. It shows how far smartwatches have moved into tool-watch territory."
+look:
+  dial: "#050505"
+  accent: "#ff8a1f"
+  metal: "titanium"
+last_reviewed: "2026-10-16"

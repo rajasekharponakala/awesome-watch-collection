@@ -1,0 +1,18 @@
+name: "Tudor"
+country: "Switzerland"
+city: "Geneva"
+founded: 1926
+founders:
+  - "Hans Wilsdorf"
+group: "Independent (Hans Wilsdorf Foundation)"
+tier: "mid-range"
+types:
+  - "mechanical"
+summary: "Created by Rolex founder Hans Wilsdorf as a more accessible sister brand. Since the 2010s, Tudor has built a strong identity with the Black Bay family and its own in-house manufacture calibres."
+notable:
+  - "Black Bay"
+  - "Black Bay 58"
+  - "Pelagos"
+  - "Ranger"
+website: "https://www.tudorwatch.com"
+last_reviewed: "2026-10-16"

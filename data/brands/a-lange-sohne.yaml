@@ -1,0 +1,18 @@
+name: "A. Lange & Söhne"
+country: "Germany"
+city: "Glashütte"
+founded: 1845
+founders:
+  - "Ferdinand Adolph Lange"
+group: "Richemont"
+tier: "haute-horlogerie"
+types:
+  - "mechanical"
+summary: "Founder of the Glashütte watchmaking tradition. Nationalised after WWII, the brand was refounded in 1990 by Walter Lange and Günter Blümlein and is renowned for German silver plates, hand-engraved balance cocks and the outsized date."
+notable:
+  - "Lange 1"
+  - "Datograph"
+  - "Zeitwerk"
+  - "Saxonia"
+website: "https://www.alange-soehne.com"
+last_reviewed: "2026-10-16"

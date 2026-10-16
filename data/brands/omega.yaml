@@ -1,0 +1,19 @@
+name: "Omega"
+country: "Switzerland"
+city: "Biel/Bienne"
+founded: 1848
+founders:
+  - "Louis Brandt"
+group: "Swatch Group"
+tier: "luxury"
+types:
+  - "mechanical"
+  - "quartz"
+summary: "Omega began as Louis Brandt's workshop in La Chaux-de-Fonds. Its Speedmaster went to the Moon in 1969 and its co-axial escapement and METAS Master Chronometer certification set modern benchmarks for accuracy and anti-magnetism."
+notable:
+  - "Speedmaster Professional"
+  - "Seamaster Diver 300M"
+  - "Constellation"
+  - "Aqua Terra"
+website: "https://www.omegawatches.com"
+last_reviewed: "2026-10-16"

@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import { u } from '../lib/meta';
+---
+
+<Base title="Out of beat">
+  <section class="oob">
+    <div class="container oob__inner">
+      <svg viewBox="0 0 200 200" class="oob__dial" aria-hidden="true">
+        <circle cx="100" cy="100" r="92" fill="var(--surface)" stroke="var(--gold)" />
+        {Array.from({ length: 12 }, (_, i) => <line x1="100" y1="16" x2="100" y2="28" stroke="var(--muted)" stroke-width="2" transform={`rotate(${i * 30} 100 100)`} />)}
+        <line x1="100" y1="100" x2="100" y2="52" stroke="var(--text)" stroke-width="5" stroke-linecap="round" transform="rotate(-60 100 100)" />
+        <line x1="100" y1="100" x2="100" y2="30" stroke="var(--text)" stroke-width="3" stroke-linecap="round" transform="rotate(20 100 100)" />
+        <line x1="100" y1="112" x2="100" y2="26" stroke="var(--red)" stroke-width="1.2" transform="rotate(184 100 100)" class="oob__sec" />
+        <circle cx="100" cy="100" r="5" fill="var(--gold)" />
+      </svg>
+      <span class="eyebrow">Error 404 · Out of beat</span>
+      <h1 class="display h2">This page has lost its <em>power reserve.</em></h1>
+      <p class="lede">The page you were looking for has stopped. Give the crown a few turns and head back to the dial.</p>
+      <a class="btn btn--gold" href={u()} data-magnetic>Back to the dial</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .oob { min-height: 100svh; display: grid; place-items: center; padding: calc(var(--header-h) + 40px) 0 80px; text-align: center; }
+  .oob__inner { display: grid; justify-items: center; gap: 22px; }
+  .oob__dial { width: 220px; }
+  .oob__sec { transform-origin: 100px 100px; animation: twitch 2.4s ease-in-out infinite; }
+  @keyframes twitch { 0%, 80%, 100% { transform: rotate(184deg); } 85% { transform: rotate(190deg); } 90% { transform: rotate(182deg); } }
+  .oob .lede { margin: 0 auto; }
+</style>

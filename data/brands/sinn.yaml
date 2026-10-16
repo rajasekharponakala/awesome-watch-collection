@@ -1,0 +1,18 @@
+name: "Sinn"
+country: "Germany"
+city: "Frankfurt am Main"
+founded: 1961
+founders:
+  - "Helmut Sinn"
+group: "Independent"
+tier: "mid-range"
+types:
+  - "mechanical"
+summary: "Sinn makes rugged tool watches for pilots, divers and specialist units, with technologies like Tegiment surface hardening, Ar-dehumidifying capsules and magnetic-field protection."
+notable:
+  - "556"
+  - "104"
+  - "U1"
+  - "EZM"
+website: "https://www.sinn.de"
+last_reviewed: "2026-10-16"

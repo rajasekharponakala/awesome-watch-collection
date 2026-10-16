@@ -1,0 +1,13 @@
+name: "Grand Seiko 9F61"
+maker: "Grand Seiko"
+kind: "quartz"
+quartz_hz: 32768
+introduced: 1993
+accuracy: "±10 s/year"
+functions:
+  - "hours"
+  - "minutes"
+  - "central seconds"
+  - "date"
+summary: "The benchmark high-accuracy quartz movement. Hand-selected, aged crystals, thermocompensation, a backlash-free seconds hand and a twin-pulse motor make it arguably the finest analog quartz movement in production."
+last_reviewed: "2026-10-16"

@@ -1,0 +1,29 @@
+brand: "seiko"
+name: "Presage \"Cocktail Time\""
+reference: "SRPB43"
+type: "mechanical/automatic"
+styles:
+  - "dress"
+complications:
+  - "date"
+caliber: "Seiko 4R35"
+case:
+  material: "Stainless steel"
+  diameter_mm: 40.5
+  thickness_mm: 11.8
+  lug_width_mm: 20
+water_resistance_m: 50
+crystal: "Hardlex (box-shaped)"
+years:
+  introduced: 2017
+price_tier: "affordable"
+levels:
+  - "first-wind"
+  - "automatic"
+region: "Japan"
+summary: "A textured, cocktail-inspired sunburst dial that punches far above its price, and a common recommendation for a first dressy automatic."
+look:
+  dial: "#2f5f8a"
+  accent: "#e9edf2"
+  metal: "steel"
+last_reviewed: "2026-10-16"

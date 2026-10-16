@@ -1,0 +1,15 @@
+name: "Seiko NH35A"
+maker: "Seiko Instruments (TMI)"
+kind: "automatic"
+frequency_vph: 21600
+jewels: 24
+power_reserve_h: 41
+hacking: true
+hand_winding: true
+functions:
+  - "hours"
+  - "minutes"
+  - "central seconds"
+  - "date"
+summary: "The supplier version of Seiko's 4R35. It is cheap, tough and easy to regulate, which has made it the default engine of micro-brands and the watch-modding community."
+last_reviewed: "2026-10-16"

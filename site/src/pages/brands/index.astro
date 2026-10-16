@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import { u, TIER_META } from '../../lib/meta';
+
+const brands = (await getCollection('brands')).sort((a, b) => a.data.name.localeCompare(b.data.name));
+const groups = new Map<string, typeof brands>();
+for (const b of brands) {
+  const g = b.data.group.startsWith('Independent') ? 'Independent' : b.data.group;
+  groups.set(g, [...(groups.get(g) ?? []), b]);
+}
+const groupList = [...groups.entries()].sort((a, b) => b[1].length - a[1].length);
+---
+
+<Base title="Brands" description="Watch brands, groups and independents: who makes what, and who owns whom.">
+  <PageHero
+    eyebrow="Maisons & makers"
+    title="Who makes <em>what.</em>"
+    lede="From 19th-century Geneva houses to Silicon Valley. Browse A–Z, or see how the industry's groups fit together."
+    crumbs={[[u(), 'Dial'], [u('brands/'), 'Brands']]}
+  />
+  <section class="section--tight">
+    <div class="container grid grid--3">
+      {brands.map((b, i) => (
+        <a href={u(`brands/${b.id}/`)} class="card brand-card" data-reveal data-tilt="5" style={`--d:${(i % 3) * 0.06}s`}>
+          <div class="bc-top mono"><span>Est. {b.data.founded}</span><span>{b.data.country}</span></div>
+          <h2 class="display h3">{b.data.name}</h2>
+          <p class="muted">{b.data.summary}</p>
+          <div class="bc-chips"><span class="chip">{TIER_META[b.data.tier].name}</span><span class="chip">{b.data.group.replace(/ \(.*\)/, '')}</span></div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow" data-reveal="fade">Ownership map</span>
+      <h2 class="display h2" data-reveal style="margin:18px 0 50px">The <em>groups.</em></h2>
+      <div class="groups">
+        {groupList.map(([g, list]) => (
+          <div class="group" data-reveal>
+            <h3 class="mono">{g}<span>{list.length}</span></h3>
+            <div class="group__list">
+              {list.map((b) => <a href={u(`brands/${b.id}/`)} class="display">{b.data.name}</a>)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .brand-card { display: flex; flex-direction: column; gap: 12px; }
+  .bc-top { display: flex; justify-content: space-between; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+  .brand-card h2 { margin: 4px 0 0; }
+  .brand-card p { margin: 0; flex: 1; font-size: 15px; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+  .bc-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .groups { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .group { display: grid; grid-template-columns: 280px 1fr; gap: 24px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+  .group h3 { margin: 6px 0 0; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); display: flex; gap: 12px; }
+  .group h3 span { color: var(--faint); }
+  .group__list { display: flex; flex-wrap: wrap; gap: 6px 26px; }
+  .group__list a { font-size: clamp(24px, 2.6vw, 36px); line-height: 1.2; transition: color 0.3s; }
+  .group__list a:hover { color: var(--gold); font-style: italic; }
+  @media (max-width: 760px) { .group { grid-template-columns: 1fr; gap: 8px; } }
+</style>

@@ -1,0 +1,17 @@
+name: "Rolex 3235"
+maker: "Rolex"
+kind: "automatic"
+frequency_vph: 28800
+jewels: 31
+power_reserve_h: 70
+hacking: true
+hand_winding: true
+introduced: 2015
+accuracy: "−2/+2 s/day (Superlative Chronometer, cased)"
+functions:
+  - "hours"
+  - "minutes"
+  - "central seconds"
+  - "date"
+summary: "Rolex's modern date calibre, featuring the Chronergy escapement, a blue Parachrom hairspring and a 70-hour power reserve. Each cased watch is tested to −2/+2 seconds per day."
+last_reviewed: "2026-10-16"

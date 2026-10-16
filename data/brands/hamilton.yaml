@@ -1,0 +1,20 @@
+name: "Hamilton"
+country: "United States / Switzerland"
+city: "Lancaster, PA (origin); Biel (today)"
+founded: 1892
+founders:
+  - "Hamilton Watch Company"
+group: "Swatch Group"
+tier: "affordable"
+types:
+  - "mechanical"
+  - "quartz"
+  - "digital"
+summary: "Founded in Pennsylvania, Hamilton supplied railroad and military watches, launched the first battery-powered watch (Electric 500, 1957) and the first LED digital watch, Pulsar. It is now Swiss-based and famous for field watches and film appearances."
+notable:
+  - "Khaki Field"
+  - "Ventura"
+  - "Jazzmaster"
+  - "PSR"
+website: "https://www.hamiltonwatch.com"
+last_reviewed: "2026-10-16"

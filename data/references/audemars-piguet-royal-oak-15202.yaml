@@ -1,0 +1,31 @@
+brand: "audemars-piguet"
+name: "Royal Oak \"Jumbo\" Extra-Thin"
+reference: "15202ST"
+type: "mechanical/automatic"
+styles:
+  - "sports-luxury"
+  - "integrated-bracelet"
+complications:
+  - "date"
+caliber: "Audemars Piguet 2121"
+case:
+  material: "Stainless steel"
+  diameter_mm: 39
+  thickness_mm: 8.1
+water_resistance_m: 50
+crystal: "Sapphire"
+years:
+  introduced: 2000
+  discontinued: 2022
+price_tier: "haute-horlogerie"
+levels:
+  - "complication"
+  - "grande-complication"
+region: "Switzerland"
+summary: "The closest modern descendant of the 1972 original: 39 mm, extra-thin, \"Petite Tapisserie\" dial and the octagonal bezel with eight exposed screws that changed luxury forever."
+look:
+  dial: "#1b2c4a"
+  accent: "#e4e9f0"
+  metal: "steel"
+  bezel: "octagon"
+last_reviewed: "2026-10-16"
