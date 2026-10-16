@@ -7,7 +7,7 @@ styles:
   - "integrated-bracelet"
 complications:
   - "date"
-caliber: "Patek Philippe 26-330 S C"
+caliber: "Patek Philippe 324 S C (26-330 S C in the final years)"
 case:
   material: "Stainless steel"
   diameter_mm: 40
@@ -28,4 +28,8 @@ look:
   accent: "#e7ebf0"
   metal: "steel"
   bezel: "octagon"
+sources:
+  - "https://www.watchonista.com/node/491483"
+  - "https://watchbase.com/patek-philippe/nautilus/5711-1a-010"
+  - "https://prideandpinion.com/products/patek-philippe-nautilus-5711-blue-dial"
 last_reviewed: "2026-10-16"

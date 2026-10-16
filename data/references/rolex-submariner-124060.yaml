@@ -9,7 +9,6 @@ caliber: "Rolex 3230"
 case:
   material: "Oystersteel (904L)"
   diameter_mm: 41
-  lug_width_mm: 21
 water_resistance_m: 300
 crystal: "Sapphire"
 years:
@@ -25,4 +24,8 @@ look:
   accent: "#f2ead3"
   metal: "steel"
   bezel: "dive"
+sources:
+  - "https://www.watchonista.com/rolex/watches/rolex-submariner"
+  - "https://wristcheck.com/us/buy/rolex/submariner-no-date-stainless-steel-black-dial"
+  - "https://swisswatch.com.my/collections/rolex/products/rolex-submariner-no-date-124060"
 last_reviewed: "2026-10-16"

@@ -30,4 +30,7 @@ look:
   accent: "#ece9e0"
   metal: "steel"
   bezel: "tachy"
+sources:
+  - "https://watchbase.com/omega/speedmaster/310-30-42-50-01-001"
+  - "https://watchbase.com/omega/caliber/3861"
 last_reviewed: "2026-10-16"

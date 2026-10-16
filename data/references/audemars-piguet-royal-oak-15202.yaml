@@ -22,10 +22,14 @@ levels:
   - "complication"
   - "grande-complication"
 region: "Switzerland"
-summary: "The closest modern descendant of the 1972 original: 39 mm, extra-thin, \"Petite Tapisserie\" dial and the octagonal bezel with eight exposed screws that changed luxury forever."
+summary: "The closest modern descendant of the 1972 original: 39 mm, extra-thin, \"Petite Tapisserie\" dial and the octagonal bezel with eight exposed screws that changed luxury forever. Its 2012 update (with the AP logo at 6 o'clock) is sometimes cited as the launch date; the reference itself dates to 2000."
 look:
   dial: "#1b2c4a"
   accent: "#e4e9f0"
   metal: "steel"
   bezel: "octagon"
+sources:
+  - "https://watchesbysjx.com/2022/01/audemars-piguet-royal-oak-jumbo-16202.html"
+  - "https://phillips.com/detail/audemars-piguet/HK080123/804/zh"
+  - "https://gandgtimepieces.com/products/audemars-piguet-2018-royal-oak-jumbo-15202st"
 last_reviewed: "2026-10-16"

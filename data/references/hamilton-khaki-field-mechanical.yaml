@@ -9,6 +9,8 @@ caliber: "Hamilton H-50"
 case:
   material: "Stainless steel"
   diameter_mm: 38
+  lug_to_lug_mm: 47
+  thickness_mm: 9.5
   lug_width_mm: 20
 water_resistance_m: 50
 crystal: "Sapphire"
@@ -21,4 +23,8 @@ look:
   dial: "#1c1f17"
   accent: "#efe7cf"
   metal: "steel"
+sources:
+  - "https://watchbase.com/hamilton/khaki-field/h69439931"
+  - "https://www.safajewelers.com/products/hamilton-khaki-fieldmechanical-38mm-h69439931"
+  - "https://majestixcollection.com/watches/hamilton-khaki-field-mechanical-38-black-h69439931/"
 last_reviewed: "2026-10-16"

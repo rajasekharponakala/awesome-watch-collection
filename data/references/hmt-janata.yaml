@@ -7,7 +7,6 @@ styles:
 caliber: "HMT hand-wound calibre"
 case:
   material: "Stainless steel / chrome-plated"
-  diameter_mm: 35
 price_tier: "entry"
 levels:
   - "first-wind"
@@ -18,4 +17,7 @@ look:
   dial: "#f1ece0"
   accent: "#2b2b2b"
   metal: "steel"
+sources:
+  - "https://watchesbysjx.com/2016/07/hmt-watches-the-rise-and-fall-of-indias-watchmaking-titan.html"
+  - "https://theprint.in/past-forward/indias-endless-nostalgia-for-hmt-nehrus-dream-to-desh-ki-dhadkan-downfall/3025194/"
 last_reviewed: "2026-10-16"

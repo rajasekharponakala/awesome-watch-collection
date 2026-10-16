@@ -14,8 +14,6 @@ case:
   lug_width_mm: 20
 water_resistance_m: 50
 crystal: "Hardlex (box-shaped)"
-years:
-  introduced: 2017
 price_tier: "affordable"
 levels:
   - "first-wind"
@@ -26,4 +24,7 @@ look:
   dial: "#2f5f8a"
   accent: "#e9edf2"
   metal: "steel"
+sources:
+  - "https://www.seikowatches.com/es-es/products/presage/SRPB43J1"
+  - "https://skeies.com/products/seiko-presage-srpb43-automatic-watch"
 last_reviewed: "2026-10-16"

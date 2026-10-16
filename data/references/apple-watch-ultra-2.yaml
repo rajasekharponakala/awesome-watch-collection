@@ -29,4 +29,7 @@ look:
   dial: "#050505"
   accent: "#ff8a1f"
   metal: "titanium"
+sources:
+  - "https://www.apple.com/za/apple-watch-ultra-2/specs"
+  - "https://everymac.com/systems/apple/apple-watch/specs/apple-watch-ultra-2-49mm-us-canada.html"
 last_reviewed: "2026-10-16"

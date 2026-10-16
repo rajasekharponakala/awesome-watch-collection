@@ -26,4 +26,7 @@ look:
   dial: "#0a0b0c"
   accent: "#e7212f"
   metal: "black"
+sources:
+  - "https://the5krunner.com/specs/garmin/fenix-8/"
+  - "https://www.heartratemonitorsusa.com/collections/garmin/products/garmin-fenix-8-sapphire-solar-edition-outdoor-gps-watch"
 last_reviewed: "2026-10-16"
