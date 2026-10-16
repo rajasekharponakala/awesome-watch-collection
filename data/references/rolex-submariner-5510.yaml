@@ -1,0 +1,29 @@
+brand: "rolex"
+name: "Submariner \"Big Crown\""
+reference: "5510"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+caliber: "Rolex 1530"
+case:
+  material: "Stainless steel"
+water_resistance_m: 200
+crystal: "Acrylic"
+years:
+  introduced: 1958
+price_tier: "haute-horlogerie"
+levels:
+  - "complication"
+region: "Switzerland"
+summary: "A short-lived, rare reference: effectively the 6200/6538 big-crown architecture updated with the calibre 1530."
+look:
+  dial: "#0b0c0e"
+  accent: "#d9bd7f"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://en.wikipedia.org/wiki/Rolex_Submariner"
+  - "https://www.aviandco.com/rolex-submariner-reference-guide"
+  - "https://professionalwatches.com/rolex-submariner-reference-guide"
+last_reviewed: "2026-10-16"

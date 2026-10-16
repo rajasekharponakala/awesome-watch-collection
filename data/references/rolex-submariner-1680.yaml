@@ -1,0 +1,33 @@
+brand: "rolex"
+name: "Submariner Date"
+reference: "1680"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+complications:
+  - "date"
+caliber: "Rolex 1575"
+case:
+  material: "Stainless steel"
+  diameter_mm: 40
+water_resistance_m: 200
+crystal: "Acrylic with Cyclops lens"
+years:
+  introduced: 1967
+  discontinued: 1979
+price_tier: "luxury"
+levels:
+  - "complication"
+region: "Switzerland"
+summary: "The first Submariner with a date and Cyclops magnifier, launching the line that leads to today's Submariner Date. Early dials carry the prized red \"Submariner\" script. Sources give its launch as 1967 or 1969."
+look:
+  dial: "#0c0d0f"
+  accent: "#efe6cf"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://www.bobswatches.com/rolex-blog/watch-review/appeal-reference-submariner-1680.html"
+  - "https://www.sothebys.com/en/buy/auction/2019/watches-online-8/rolex-submariner-reference-1680-stainless-steel"
+  - "https://authenticwrist.com/guides/every-rolex-submariner-reference-explained/"
+last_reviewed: "2026-10-16"

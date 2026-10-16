@@ -1,0 +1,33 @@
+brand: "rolex"
+name: "Submariner Date"
+reference: "116610LN"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+complications:
+  - "date"
+caliber: "Rolex 3135"
+case:
+  material: "Oystersteel (904L)"
+  diameter_mm: 40
+water_resistance_m: 300
+crystal: "Sapphire"
+years:
+  introduced: 2010
+  discontinued: 2020
+price_tier: "luxury"
+levels:
+  - "automatic"
+  - "complication"
+region: "Switzerland"
+summary: "The first Submariner Date with a Cerachrom ceramic bezel, a Maxi dial and thick-lugged \"Super Case\". It kept the calibre 3135 and a 40 mm diameter."
+look:
+  dial: "#08090b"
+  accent: "#f2ede2"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://www.watchguys.com/blogs/watch-comparisons/rolex-submariner-116610ln-vs-126610ln"
+  - "https://authenticwrist.com/guides/every-rolex-submariner-reference-explained/"
+last_reviewed: "2026-10-16"

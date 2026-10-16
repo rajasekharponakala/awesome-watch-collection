@@ -8,9 +8,16 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "export": "astro build && node scripts/sync-api.mjs"
+    "export": "astro build && node scripts/sync-api.mjs",
+    "data:check": "node scripts/duck_bridge.js check",
+    "data:query": "node scripts/duck_bridge.js query",
+    "data:export": "node scripts/duck_bridge.js export"
   },
   "dependencies": {
     "astro": "5.18.2"
+  },
+  "devDependencies": {
+    "@duckdb/node-api": "1.5.6-r.1",
+    "yaml": "2.9.1"
   }
 }

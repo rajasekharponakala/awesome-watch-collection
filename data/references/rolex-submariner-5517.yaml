@@ -1,0 +1,31 @@
+brand: "rolex"
+name: "Submariner \"MilSub\""
+reference: "5517"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+  - "military"
+caliber: "Rolex 1520"
+case:
+  material: "Stainless steel"
+  diameter_mm: 39
+water_resistance_m: 200
+crystal: "Acrylic"
+years:
+  introduced: 1971
+  discontinued: 1979
+price_tier: "haute-horlogerie"
+levels:
+  - "complication"
+region: "Switzerland"
+summary: "Made for the British Ministry of Defence: sword hands, a full-graduation bezel, fixed spring bars and a circled T for tritium on the dial. Only about 1,200 to 1,250 were delivered, making it one of the rarest Submariners."
+look:
+  dial: "#0c0d0f"
+  accent: "#efe6cf"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://www.bobswatches.com/rolex-blog/resources/rolex-milsub-submariner-ref-5517.html"
+  - "https://www.phillips.com/detail/rolex/214905"
+last_reviewed: "2026-10-16"

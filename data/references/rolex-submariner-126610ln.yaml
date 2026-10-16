@@ -1,0 +1,33 @@
+brand: "rolex"
+name: "Submariner Date"
+reference: "126610LN"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+complications:
+  - "date"
+caliber: "Rolex 3235"
+caliber_id: "rolex-3235"
+case:
+  material: "Oystersteel (904L)"
+  diameter_mm: 41
+water_resistance_m: 300
+crystal: "Sapphire"
+years:
+  introduced: 2020
+price_tier: "luxury"
+levels:
+  - "automatic"
+  - "complication"
+region: "Switzerland"
+summary: "The current Submariner Date: 41 mm with slimmer lugs, the 70-hour calibre 3235 with Chronergy escapement, and a Glidelock clasp for tool-free adjustment."
+look:
+  dial: "#08090b"
+  accent: "#f2ede2"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://www.luxurybazaar.com/brands/rolex/126610ln/"
+  - "https://www.watchguys.com/blogs/watch-comparisons/rolex-submariner-116610ln-vs-126610ln"
+last_reviewed: "2026-10-16"

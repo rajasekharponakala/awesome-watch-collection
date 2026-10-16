@@ -1,8 +1,7 @@
 // Shared vocabulary for the whole site: levels, types, tiers and the URL helper.
 
-export const LEVELS = ['first-wind', 'automatic', 'complication', 'grande-complication'] as const;
-export const TYPES = ['mechanical', 'quartz', 'digital', 'smart', 'hybrid', 'exotic'] as const;
-export const TIERS = ['entry', 'affordable', 'mid-range', 'luxury', 'haute-horlogerie'] as const;
+import { LEVELS, TYPES, TIERS } from './schemas';
+export { LEVELS, TYPES, TIERS };
 
 export type Level = (typeof LEVELS)[number];
 export type WatchType = (typeof TYPES)[number];

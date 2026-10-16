@@ -1,0 +1,31 @@
+brand: "rolex"
+name: "Submariner"
+reference: "5512"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+caliber: "Rolex 1530 / 1560 / 1570"
+case:
+  material: "Stainless steel"
+  diameter_mm: 40
+water_resistance_m: 200
+crystal: "Acrylic"
+years:
+  introduced: 1959
+  discontinued: 1978
+price_tier: "luxury"
+levels:
+  - "complication"
+region: "Switzerland"
+summary: "The first Submariner with crown guards and a 40 mm case, and the first chronometer-certified Submariner. The guards evolved from square to pointed to rounded. Sources give the end of production as 1978, 1979 or 1980."
+look:
+  dial: "#0c0d0f"
+  accent: "#efe6cf"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://www.bobswatches.com/rolex-blog/watch-review/rolex-submariner-5512.html"
+  - "https://amsterdamvintagewatches.com/shop/rolex-submariner-5512"
+  - "https://en.wikipedia.org/wiki/Rolex_Submariner"
+last_reviewed: "2026-10-16"

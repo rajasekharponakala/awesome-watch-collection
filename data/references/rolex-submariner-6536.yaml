@@ -1,0 +1,29 @@
+brand: "rolex"
+name: "Submariner"
+reference: "6536"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+caliber: "Rolex 1030"
+case:
+  material: "Stainless steel"
+water_resistance_m: 100
+crystal: "Acrylic"
+years:
+  introduced: 1955
+price_tier: "haute-horlogerie"
+levels:
+  - "complication"
+region: "Switzerland"
+summary: "The small-crown successor to the 6205, upgraded to the full-rotor calibre 1030; a chronometer version was sold as the 6536/1. Most sources rate it to 100 m, and its exact launch year (1955 or 1956) varies between them."
+look:
+  dial: "#0b0c0e"
+  accent: "#d9bd7f"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://en.wikipedia.org/wiki/Rolex_Submariner"
+  - "https://www.aviandco.com/rolex-submariner-reference-guide"
+  - "https://www.fratellowatches.com/the-history-of-the-rolex-submariner/"
+last_reviewed: "2026-10-16"

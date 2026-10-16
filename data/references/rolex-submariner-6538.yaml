@@ -1,0 +1,29 @@
+brand: "rolex"
+name: "Submariner \"Big Crown\""
+reference: "6538"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+caliber: "Rolex 1030"
+case:
+  material: "Stainless steel"
+water_resistance_m: 200
+crystal: "Acrylic"
+years:
+  introduced: 1956
+price_tier: "haute-horlogerie"
+levels:
+  - "complication"
+region: "Switzerland"
+summary: "The big-crown, 200 m reference famously associated with Sean Connery in Dr. No (1962), although some sources attribute the film watch to a 6536. Today it is among the most valuable Submariners at auction."
+look:
+  dial: "#0b0c0e"
+  accent: "#d9bd7f"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://en.wikipedia.org/wiki/Rolex_Submariner"
+  - "https://www.phillips.com/detail/rolex/165500"
+  - "https://www.aviandco.com/rolex-submariner-reference-guide"
+last_reviewed: "2026-10-16"

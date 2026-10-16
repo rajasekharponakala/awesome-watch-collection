@@ -1,0 +1,31 @@
+brand: "rolex"
+name: "Submariner"
+reference: "14060M"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+caliber: "Rolex 3130"
+case:
+  material: "Stainless steel (904L)"
+  diameter_mm: 40
+water_resistance_m: 300
+crystal: "Sapphire"
+years:
+  introduced: 1999
+  discontinued: 2012
+price_tier: "luxury"
+levels:
+  - "automatic"
+  - "complication"
+region: "Switzerland"
+summary: "The 14060 updated with the calibre 3130, later chronometer-certified and with an engraved rehaut. It was the last no-date Submariner with an aluminium bezel; sources date its end to 2009 or 2012."
+look:
+  dial: "#08090b"
+  accent: "#f2ede2"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://www.luxurybazaar.com/grey-market/rolex-submariner-14060-14060m/"
+  - "https://www.fratellowatches.com/rolex-14060-submariner-52mondayz-week-17/"
+last_reviewed: "2026-10-16"

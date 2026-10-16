@@ -1,0 +1,31 @@
+brand: "rolex"
+name: "Submariner"
+reference: "14060"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+caliber: "Rolex 3000"
+case:
+  material: "Stainless steel (904L)"
+  diameter_mm: 40
+water_resistance_m: 300
+crystal: "Sapphire"
+years:
+  introduced: 1989
+  discontinued: 1999
+price_tier: "luxury"
+levels:
+  - "automatic"
+  - "complication"
+region: "Switzerland"
+summary: "The no-date Submariner reborn for the modern era: sapphire crystal, 904L steel and the calibre 3000. Unlike its date sibling it was not chronometer-certified."
+look:
+  dial: "#08090b"
+  accent: "#f2ede2"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://www.fratellowatches.com/rolex-14060-submariner-52mondayz-week-17/"
+  - "https://www.luxurybazaar.com/grey-market/rolex-submariner-14060-14060m/"
+last_reviewed: "2026-10-16"

@@ -1,0 +1,29 @@
+brand: "rolex"
+name: "Submariner"
+reference: "5508"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+caliber: "Rolex 1530"
+case:
+  material: "Stainless steel"
+crystal: "Acrylic"
+years:
+  introduced: 1957
+  discontinued: 1962
+price_tier: "haute-horlogerie"
+levels:
+  - "complication"
+region: "Switzerland"
+summary: "A small-crown Submariner with a 6 mm crown and the calibre 1530, bridging the first generation and the crown-guard era. Sources disagree on its depth rating (100 m or 200 m) and on its exact production years, so neither is stated here."
+look:
+  dial: "#0b0c0e"
+  accent: "#d9bd7f"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://en.wikipedia.org/wiki/Rolex_Submariner"
+  - "https://www.watchprozine.com/digest/rolex-submariner-5508-vintage-overview/"
+  - "https://professionalwatches.com/rolex-submariner-reference-guide"
+last_reviewed: "2026-10-16"

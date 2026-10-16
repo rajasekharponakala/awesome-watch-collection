@@ -1,0 +1,30 @@
+brand: "rolex"
+name: "Submariner"
+reference: "6205"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+caliber: "Rolex A260"
+case:
+  material: "Stainless steel"
+  diameter_mm: 37
+water_resistance_m: 100
+crystal: "Acrylic"
+years:
+  introduced: 1954
+  discontinued: 1955
+price_tier: "haute-horlogerie"
+levels:
+  - "complication"
+region: "Switzerland"
+summary: "A near twin of the 6204 with the same A260 movement and 37 mm case, and still no depth rating on the dial. In 1955 it evolved into the 6536."
+look:
+  dial: "#0b0c0e"
+  accent: "#d9bd7f"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://en.wikipedia.org/wiki/Rolex_Submariner"
+  - "https://www.watchprosite.com/digest/rolex-submariner-6204-6200-6205-history-guide/"
+last_reviewed: "2026-10-16"

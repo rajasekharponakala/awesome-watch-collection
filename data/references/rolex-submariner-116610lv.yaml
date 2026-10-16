@@ -1,0 +1,33 @@
+brand: "rolex"
+name: "Submariner Date \"Hulk\""
+reference: "116610LV"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+complications:
+  - "date"
+caliber: "Rolex 3135"
+case:
+  material: "Oystersteel (904L)"
+  diameter_mm: 40
+water_resistance_m: 300
+crystal: "Sapphire"
+years:
+  introduced: 2010
+  discontinued: 2020
+price_tier: "luxury"
+levels:
+  - "automatic"
+  - "complication"
+region: "Switzerland"
+summary: "A green sunburst dial matched with a green Cerachrom bezel in the 40 mm Super Case. Its discontinuation in 2020 made it a modern collectible."
+look:
+  dial: "#0f4d2c"
+  accent: "#eef2ea"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://www.bobswatches.com/rolex-blog/editorial/rolex-kermit-vs-starbucks.html"
+  - "https://www.aviandco.com/rolex-kermit-hulk-starbucks-submariner-collection"
+last_reviewed: "2026-10-16"

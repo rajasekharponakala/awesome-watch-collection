@@ -1,0 +1,30 @@
+brand: "rolex"
+name: "Submariner \"Big Crown\""
+reference: "6200"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+caliber: "Rolex A296"
+case:
+  material: "Stainless steel"
+water_resistance_m: 200
+crystal: "Acrylic"
+years:
+  introduced: 1954
+  discontinued: 1958
+price_tier: "haute-horlogerie"
+levels:
+  - "complication"
+region: "Switzerland"
+summary: "The first 200 m Submariner, with an 8 mm \"big crown\" and an Explorer-style 3-6-9 dial; it did not yet carry the Submariner name on the dial. Sources date its launch between 1953 and 1955, and it was succeeded by the 5510 in 1958."
+look:
+  dial: "#0b0c0e"
+  accent: "#d9bd7f"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://en.wikipedia.org/wiki/Rolex_Submariner"
+  - "https://www.watchprosite.com/digest/rolex-submariner-6204-6200-6205-history-guide/"
+  - "https://www.fratellowatches.com/the-history-of-the-rolex-submariner/"
+last_reviewed: "2026-10-16"

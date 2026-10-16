@@ -1,0 +1,33 @@
+brand: "rolex"
+name: "Submariner Date"
+reference: "16610"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+complications:
+  - "date"
+caliber: "Rolex 3135"
+case:
+  material: "Stainless steel (904L)"
+  diameter_mm: 40
+water_resistance_m: 300
+crystal: "Sapphire"
+years:
+  introduced: 1988
+  discontinued: 2010
+price_tier: "luxury"
+levels:
+  - "automatic"
+  - "complication"
+region: "Switzerland"
+summary: "For two decades the definitive Submariner Date: calibre 3135, an aluminium bezel insert and the classic slim-lug 40 mm case. Many collectors consider it the last \"traditional\" Submariner."
+look:
+  dial: "#08090b"
+  accent: "#f2ede2"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://www.watchguys.com/blogs/watch-comparisons/rolex-16610-vs-126610ln"
+  - "https://authenticwrist.com/guides/every-rolex-submariner-reference-explained/"
+last_reviewed: "2026-10-16"

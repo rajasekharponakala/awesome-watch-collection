@@ -32,7 +32,7 @@
 
 | Collection | Where | Entries |
 |---|---|---|
-| Watch references | [`data/references/`](data/references) | 16 |
+| Watch references | [`data/references/`](data/references) | 38 (incl. the full steel Rolex Submariner lineage, 1953 to today) |
 | Calibers (movements) | [`data/calibers/`](data/calibers) | 14 |
 | Brands | [`data/brands/`](data/brands) | 25 |
 | Glossary | [`data/glossary.yaml`](data/glossary.yaml) | 88 terms |
@@ -50,9 +50,16 @@ data/*.yaml, content/*.md  ──build──▶  schema validation  ──▶  w
 ```
 
 - **Validated:** every build checks each entry against the schemas in [`site/src/content.config.ts`](site/src/content.config.ts). Bad data fails CI.
-- **JSON in the repo:** [`api/`](api) holds a generated JSON copy of every collection (`brands`, `calibers`, `references`, `glossary`, `timeline`, `resources`, `types`, `guides`), plus [`api/index.json`](api/index.json). The [Sync JSON API](.github/workflows/sync-json.yml) workflow regenerates and commits it on every change to `main`. **Don't edit these files by hand.**
+- **SQL checks with DuckDB:** [`site/scripts/duck_bridge.js`](site/scripts/duck_bridge.js) loads the YAML into an in-memory DuckDB and runs integrity checks that a per-file schema can't do (unknown brands or calibers, duplicate references, impossible dates). It can also run any SQL over the library and export relational batches, such as [`harvest/`](harvest), into validated YAML files.
+- **JSON in the repo:** [`api/`](api) holds a generated JSON copy of every collection (`brands`, `calibers`, `references`, `glossary`, `timeline`, `resources`, `types`, `guides`), plus [`api/index.json`](api/index.json). The [pipeline](.github/workflows/deploy.yml) regenerates and commits it on every change to `main`. **Don't edit these files by hand.**
 - **JSON on the web:** the same files are served at `https://rajasekharponakala.github.io/awesome-watch-collection/api/<collection>.json`, so other projects can use the data directly.
-- **Locally:** `cd site && npm run export` rebuilds the site and refreshes `/api`.
+- **Locally (from `site/`):**
+  - `npm run data:check`: SQL integrity checks (CI fails on errors)
+  - `npm run data:query -- "SELECT reference, years.introduced FROM refs WHERE brand = 'rolex' ORDER BY 2"`: query the library
+  - `npm run data:export -- ../harvest/<batch>.ndjson`: turn a harvested batch into `data/references/*.yaml` (add `--dry-run` to validate only)
+  - `npm run export`: rebuild the site and refresh `/api`
+
+On every push to `main`, [`deploy.yml`](.github/workflows/deploy.yml) runs one ordered pipeline: install → `data:check` → build and regenerate `/api` → auto-commit `/api` (`chore: sync API dataset [skip ci]`) → deploy to GitHub Pages. Pull requests get the same validation and build, without committing or deploying.
 
 ## The site speaks watch
 

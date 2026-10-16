@@ -1,0 +1,33 @@
+brand: "rolex"
+name: "Submariner Date"
+reference: "16800"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+complications:
+  - "date"
+caliber: "Rolex 3035"
+case:
+  material: "Stainless steel"
+  diameter_mm: 40
+water_resistance_m: 300
+crystal: "Sapphire"
+years:
+  introduced: 1979
+  discontinued: 1988
+price_tier: "luxury"
+levels:
+  - "automatic"
+  - "complication"
+region: "Switzerland"
+summary: "The transitional Submariner Date: sapphire crystal, 300 m water resistance (still the standard today), a quickset date and a high-beat calibre 3035. Matte dials gave way to glossy dials with white-gold surrounds in the mid-1980s."
+look:
+  dial: "#0c0d0f"
+  accent: "#efe6cf"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://www.bobswatches.com/rolex-blog/watch-review/rolex-submariner-stainless-steel-16800.html"
+  - "https://blog.craftandtailored.com/the-crossroads-of-vintage-and-contemporary-the-reference-16800-rolex-submariner/"
+last_reviewed: "2026-10-16"

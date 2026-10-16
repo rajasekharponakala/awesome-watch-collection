@@ -1,0 +1,31 @@
+brand: "rolex"
+name: "Submariner"
+reference: "114060"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+caliber: "Rolex 3130"
+case:
+  material: "Oystersteel (904L)"
+  diameter_mm: 40
+water_resistance_m: 300
+crystal: "Sapphire"
+years:
+  introduced: 2012
+  discontinued: 2020
+price_tier: "luxury"
+levels:
+  - "automatic"
+  - "complication"
+region: "Switzerland"
+summary: "The modern no-date Submariner: Cerachrom bezel, Super Case and the calibre 3130 with a blue Parachrom hairspring."
+look:
+  dial: "#08090b"
+  accent: "#f2ede2"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://www.watchpatrol.net/ja/discover/brands/rolex/submariner-114060/"
+  - "https://authenticwrist.com/guides/every-rolex-submariner-reference-explained/"
+last_reviewed: "2026-10-16"

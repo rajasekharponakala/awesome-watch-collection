@@ -1,0 +1,32 @@
+brand: "rolex"
+name: "Submariner Date \"Triple Zero\""
+reference: "168000"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+complications:
+  - "date"
+caliber: "Rolex 3035"
+case:
+  material: "Stainless steel (904L)"
+  diameter_mm: 40
+water_resistance_m: 300
+crystal: "Sapphire"
+years:
+  introduced: 1987
+price_tier: "luxury"
+levels:
+  - "automatic"
+  - "complication"
+region: "Switzerland"
+summary: "A very short-lived reference marking Rolex's switch to 904L steel; otherwise essentially a 16800. Sources describe production lasting from about nine months to two years."
+look:
+  dial: "#08090b"
+  accent: "#f2ede2"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://www.sothebys.com/en/buy/_rolex-submariner-ref-16800-0acc"
+  - "https://www.bobswatches.com/rolex-blog/watch-review/rolex-submariner-stainless-steel-16800.html"
+last_reviewed: "2026-10-16"

@@ -1,0 +1,31 @@
+brand: "rolex"
+name: "Submariner (first series)"
+reference: "6204"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+caliber: "Rolex A260"
+case:
+  material: "Stainless steel"
+  diameter_mm: 37
+water_resistance_m: 100
+crystal: "Acrylic"
+years:
+  introduced: 1953
+  discontinued: 1954
+price_tier: "haute-horlogerie"
+levels:
+  - "complication"
+region: "Switzerland"
+summary: "The first Submariner, shown at the 1954 Basel fair and rated to 100 m. A 37 mm case, small unprotected crown and straight pencil hands; whether the 6204 or the near-identical 6205 came first is still debated."
+look:
+  dial: "#0b0c0e"
+  accent: "#d9bd7f"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://en.wikipedia.org/wiki/Rolex_Submariner"
+  - "https://www.watchprosite.com/digest/rolex-submariner-6204-6200-6205-history-guide/"
+  - "https://www.fratellowatches.com/the-history-of-the-rolex-submariner/"
+last_reviewed: "2026-10-16"

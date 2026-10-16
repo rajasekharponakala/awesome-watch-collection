@@ -67,6 +67,8 @@ npm install
 npm run dev      # http://localhost:4321/awesome-watch-collection/
 npm run build    # validates all content and builds to site/dist
 npm run export   # build + refresh the JSON copy in /api
+npm run data:check                                   # SQL integrity checks via DuckDB
+npm run data:export -- ../harvest/<batch>.ndjson     # bulk-add references from a harvested batch
 ```
 
 ## Licensing

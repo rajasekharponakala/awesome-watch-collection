@@ -1,4 +1,11 @@
-name: Build and deploy site
+name: Validate, sync and deploy
+
+# One ordered pipeline for every change:
+#   validate the library (Zod schemas + DuckDB SQL checks)
+#   -> build the site and regenerate /api JSON
+#   -> on main, auto-commit any refreshed /api files
+#   -> deploy the built site to GitHub Pages
+# Pull requests run the validation and build only; nothing is committed or deployed.
 
 on:
   push:
@@ -8,31 +15,59 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
+# Queue runs on the same ref instead of cancelling, so a run is never killed mid-commit or mid-deploy.
 concurrency:
-  group: pages-${{ github.ref }}
-  cancel-in-progress: true
+  group: pipeline-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # auto-commit refreshed /api files on main
     defaults:
       run:
         working-directory: site
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js with npm cache
+        uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
           cache-dependency-path: site/package-lock.json
-      - run: npm ci
-      # Building validates every guide and data file against the schemas in site/src/content.config.ts
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
-        if: github.event_name != 'pull_request'
+
+      - name: Install project modules
+        run: npm ci
+
+      - name: Validate library (schemas + DuckDB SQL integrity checks)
+        run: npm run data:check
+
+      - name: Build site and regenerate JSON API (Astro enforces content.config.ts)
+        run: npm run export
+
+      - name: Auto-commit refreshed JSON API
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        working-directory: .
+        run: |
+          git add --all api
+          if git diff --cached --quiet; then
+            echo "JSON API already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: sync API dataset [skip ci]"
+          if ! git pull --rebase origin main || ! git push origin HEAD:main; then
+            echo "::warning::main moved during this run; the queued run for the newer commit will sync api/."
+          fi
+
+      - name: Package site for GitHub Pages
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
         with:
           path: site/dist
 
@@ -40,9 +75,13 @@ jobs:
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4

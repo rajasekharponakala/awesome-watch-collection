@@ -1,0 +1,31 @@
+brand: "rolex"
+name: "Submariner"
+reference: "5513"
+type: "mechanical/automatic"
+styles:
+  - "diver"
+  - "tool"
+caliber: "Rolex 1530 / 1520"
+case:
+  material: "Stainless steel"
+  diameter_mm: 40
+water_resistance_m: 200
+crystal: "Acrylic"
+years:
+  introduced: 1962
+  discontinued: 1989
+price_tier: "luxury"
+levels:
+  - "complication"
+region: "Switzerland"
+summary: "The non-chronometer sibling of the 5512 and one of Rolex's longest-running references, produced for almost three decades. It is the classic vintage Submariner and the basis of the military MilSub."
+look:
+  dial: "#0c0d0f"
+  accent: "#efe6cf"
+  metal: "steel"
+  bezel: "dive"
+sources:
+  - "https://www.bobswatches.com/rolex-blog/rolex-info/vintage-week-rolex-submariner-5513.html"
+  - "https://rdavidoff.photobiz.com/our-archive/rolex-submariner-5513-1971"
+  - "https://en.wikipedia.org/wiki/Rolex_Submariner"
+last_reviewed: "2026-10-16"
