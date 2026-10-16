@@ -1,0 +1,288 @@
+{
+  "collection": "types",
+  "count": 6,
+  "items": [
+    {
+      "id": "digital",
+      "title": "Digital",
+      "tagline": "Time as numbers. From the red glow of 1970s LED to the near-indestructible LCDs that live on millions of wrists.",
+      "order": 3,
+      "glyph": "digital",
+      "subcategories": [
+        {
+          "name": "LCD",
+          "text": "Liquid-crystal displays that are always on and sip power. Batteries can last 7 to 10 years."
+        },
+        {
+          "name": "LED",
+          "text": "The original 1970s digital watch. You pressed a button to light up red digits, and batteries drained quickly."
+        },
+        {
+          "name": "Ana-digi",
+          "text": "Analog hands combined with a digital display, such as many G-Shock and Pro Trek models."
+        },
+        {
+          "name": "Rugged / tool digital",
+          "text": "Shock-resistant, water-resistant and packed with functions such as altimeters, compasses and tide graphs."
+        },
+        {
+          "name": "Data and calculator watches",
+          "text": "1980s icons with calculators, databanks and even TV remotes built in."
+        }
+      ],
+      "facts": [
+        {
+          "k": "First LED watch",
+          "v": "Hamilton Pulsar (1970 prototype, 1972 on sale)"
+        },
+        {
+          "k": "First 6-digit LCD",
+          "v": "Seiko 06LC (1973)"
+        },
+        {
+          "k": "Icon",
+          "v": "Casio F-91W"
+        },
+        {
+          "k": "Battery life",
+          "v": "3–10 years"
+        }
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "In the early 1970s the digital watch was the height of luxury: the first Pulsar cost more than a car. Within a decade, LCD technology had made digital watches the cheapest timekeepers ever made.\n\n## Why digital matters to collectors\n\nDigital watches are design and technology history you can actually wear. The **Casio F-91W**, the **G-Shock**, the **Seiko** \"James Bond\" LCD watches and the **Hamilton Pulsar** are all collectible, and many cost very little.\n\n## Buying tips\n\n- Check the **module number** on the caseback. It tells you exactly which functions the watch has.\n- Look for **solar** and **radio-controlled** versions if you never want to set or change a battery.\n- For tough use, the **G-Shock** standard of shock resistance is the benchmark."
+    },
+    {
+      "id": "exotic",
+      "title": "Exotic",
+      "tagline": "Tuning forks, jumping hours, wandering numerals and pure concept pieces. The beautifully strange side of horology.",
+      "order": 6,
+      "glyph": "exotic",
+      "subcategories": [
+        {
+          "name": "Tuning fork",
+          "text": "The Bulova Accutron (1960) used a tuning fork vibrating at 360 Hz. It hums instead of ticking."
+        },
+        {
+          "name": "Jump hour",
+          "text": "The hour appears as a numeral in a window and jumps instantly on the hour, often with a separate minute display."
+        },
+        {
+          "name": "Wandering hour",
+          "text": "Hour numerals travel along an arc, pointing to the minutes as they go. A 17th-century idea revived by modern makers."
+        },
+        {
+          "name": "Mechanical digital",
+          "text": "Watches that show time as numbers using mechanical discs, like the A. Lange & Söhne Zeitwerk."
+        },
+        {
+          "name": "Concept and art pieces",
+          "text": "Independents such as MB&F, Urwerk and HYT reinvent how a watch can display time."
+        }
+      ],
+      "facts": [
+        {
+          "k": "Accutron frequency",
+          "v": "360 Hz"
+        },
+        {
+          "k": "Famous independent",
+          "v": "MB&F, Urwerk, De Bethune"
+        },
+        {
+          "k": "Mechanical digital",
+          "v": "Lange Zeitwerk (2009)"
+        },
+        {
+          "k": "Collecting tip",
+          "v": "Service access matters, so check it first"
+        }
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "Exotic watches are where horology becomes art. Some are historical dead ends, like the tuning-fork watch overtaken by quartz, and some are modern experiments in how we read time.\n\n## Collecting exotics\n\n- **Know who can service it.** Tuning-fork and early electronic watches need specialists.\n- **Documentation matters even more** for independents and low-production pieces.\n- **Wear before you buy.** Unusual displays can be thrilling or frustrating in daily life."
+    },
+    {
+      "id": "hybrid",
+      "title": "Hybrid",
+      "tagline": "Where mechanics meet electronics. Watches that borrow the best of both worlds.",
+      "order": 5,
+      "glyph": "hybrid",
+      "subcategories": [
+        {
+          "name": "Spring Drive",
+          "text": "Seiko and Grand Seiko's technology. A mainspring powers the watch, and a quartz-regulated electromagnetic brake controls its speed. The seconds hand glides perfectly smoothly."
+        },
+        {
+          "name": "Hybrid smartwatch",
+          "text": "A traditional analog watch face with hidden sensors for steps, sleep and notifications, and batteries that last weeks or months."
+        },
+        {
+          "name": "Mecaquartz",
+          "text": "A quartz timekeeping movement with a mechanical chronograph module, giving a crisp mechanical pusher feel."
+        },
+        {
+          "name": "Auto-quartz",
+          "text": "Quartz regulation charged by a rotor (Seiko Kinetic and similar), sometimes also counted as quartz."
+        }
+      ],
+      "facts": [
+        {
+          "k": "Spring Drive accuracy",
+          "v": "±1 s/day (±15 s/month)"
+        },
+        {
+          "k": "Spring Drive launch",
+          "v": "1999"
+        },
+        {
+          "k": "Hybrid smart battery",
+          "v": "Weeks to months"
+        },
+        {
+          "k": "Best for",
+          "v": "People who want character and convenience"
+        }
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "Hybrid watches resist easy classification, and that is exactly what makes them fascinating.\n\n## Spring Drive in one paragraph\n\nThe mainspring unwinds through a normal gear train, but instead of an escapement, the final wheel, the **glide wheel**, spins continuously. As it spins it generates a small current that powers a quartz crystal and an integrated circuit. The circuit compares the glide wheel's speed with the crystal and applies a precise **electromagnetic brake**. There is no tick, just a seconds hand that flows like time itself.\n\n## Hybrid smartwatches\n\nBrands such as Withings and Garmin hide activity tracking inside classic-looking cases. They suit people who want health data without a glowing screen."
+    },
+    {
+      "id": "mechanical",
+      "title": "Mechanical",
+      "tagline": "Springs, gears and a beating heart. No battery, just energy stored in a coiled spring and released one tick at a time.",
+      "order": 1,
+      "glyph": "mechanical",
+      "subcategories": [
+        {
+          "name": "Manual-wind",
+          "text": "Wound by turning the crown, usually every day or two. Thinner and more intimate, with no rotor blocking the view of the movement."
+        },
+        {
+          "name": "Automatic (central rotor)",
+          "text": "A weighted rotor spins with your wrist movements and winds the mainspring. The most common type of mechanical watch today."
+        },
+        {
+          "name": "Micro-rotor",
+          "text": "A small rotor set into the movement itself, which allows thin automatic watches with an unobstructed view of the finishing."
+        },
+        {
+          "name": "Peripheral rotor",
+          "text": "A weighted ring that runs around the edge of the movement, leaving the whole calibre visible."
+        }
+      ],
+      "facts": [
+        {
+          "k": "Typical accuracy",
+          "v": "−10 to +15 s/day (chronometers −4/+6 or better)"
+        },
+        {
+          "k": "Typical beat rate",
+          "v": "21,600–28,800 vph"
+        },
+        {
+          "k": "Power reserve",
+          "v": "38–80 hours (some 8 days or more)"
+        },
+        {
+          "k": "Service interval",
+          "v": "Every 5–10 years"
+        }
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "A mechanical watch is a small machine that stores energy in a **mainspring** and lets it out in perfectly measured steps. The energy flows through the **gear train** to the **escapement**, which gives regular impulses to the **balance wheel**. The balance and its hairspring swing back and forth several times a second, and every swing lets the gear train advance a tiny bit. That is the tick you hear.\n\n## Why people still love them\n\nA quartz watch is more accurate and cheaper. People choose mechanical for the same reasons they choose a fountain pen or a vinyl record: craft, longevity and the sense of owning something alive. A well-made mechanical watch can be serviced and kept running for generations.\n\n## What to look for\n\n- **Movement**: a proven workhorse (ETA, Sellita, Seiko, Miyota) or an in-house calibre\n- **Power reserve**: 70–80 hours means the watch survives a weekend off the wrist\n- **Hacking and hand-winding**: convenient for setting the time precisely\n- **Anti-magnetism**: silicon hairsprings or a soft-iron cage resist everyday magnets\n\n## Start here\n\nRead [How a mechanical movement works](../../learn/automatic/how-a-mechanical-movement-works/), then explore the calibre database."
+    },
+    {
+      "id": "quartz",
+      "title": "Quartz Analog",
+      "tagline": "A sliver of quartz crystal vibrating 32,768 times a second, counted by a chip and turned into the steady step of a seconds hand.",
+      "order": 2,
+      "glyph": "quartz",
+      "subcategories": [
+        {
+          "name": "Standard quartz",
+          "text": "Battery-powered, accurate to around ±15 seconds a month, inexpensive and virtually maintenance-free."
+        },
+        {
+          "name": "High-accuracy quartz (HAQ)",
+          "text": "Thermocompensated movements that correct for temperature, accurate to about ±10 seconds a year."
+        },
+        {
+          "name": "Solar",
+          "text": "A photovoltaic cell under the dial charges a rechargeable cell. Citizen Eco-Drive and Casio Tough Solar are the best known."
+        },
+        {
+          "name": "Kinetic / auto-quartz",
+          "text": "A rotor like an automatic's spins a tiny generator to charge the cell."
+        },
+        {
+          "name": "Radio-controlled and GPS",
+          "text": "The watch synchronises itself with atomic clock radio signals or GPS satellites and is effectively always exact."
+        }
+      ],
+      "facts": [
+        {
+          "k": "Typical accuracy",
+          "v": "±15 s/month (HAQ ±10 s/year)"
+        },
+        {
+          "k": "Crystal frequency",
+          "v": "32,768 Hz (2^15)"
+        },
+        {
+          "k": "Battery life",
+          "v": "2–10 years (solar much longer)"
+        },
+        {
+          "k": "Introduced",
+          "v": "1969, Seiko Astron"
+        }
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "When Seiko sold the first quartz wristwatch on Christmas Day 1969, it began the **quartz crisis**: within fifteen years, cheap and astonishingly accurate quartz watches had devastated the traditional Swiss industry.\n\n## How it works\n\nA battery sends current through a tiny tuning-fork-shaped quartz crystal. Quartz is *piezoelectric*: it vibrates at a precise frequency when electrified. An integrated circuit counts 32,768 vibrations and sends one pulse per second to a stepper motor that moves the hands.\n\n## Why choose quartz\n\n- **Accuracy** that the best mechanical watches cannot match\n- **Grab-and-go**: no winding, no setting after a weekend off the wrist\n- **Thin and light** cases\n- **Cost**: superb quartz watches exist at every price, up to Grand Seiko 9F and beyond\n\nQuartz is not a lesser choice, it is a different one. Many collectors keep at least one excellent quartz piece in the box."
+    },
+    {
+      "id": "smart",
+      "title": "Smartwatch",
+      "tagline": "A computer that also tells the time. Health sensors, notifications, GPS and payments, all on the wrist.",
+      "order": 4,
+      "glyph": "smart",
+      "subcategories": [
+        {
+          "name": "Full operating system",
+          "text": "Apple watchOS, Google Wear OS, Samsung, Huawei HarmonyOS. Third-party apps, rich notifications, payments and voice assistants."
+        },
+        {
+          "name": "Fitness trackers",
+          "text": "Slimmer devices focused on steps, sleep, heart rate and workouts, with batteries that last a week or more."
+        },
+        {
+          "name": "Outdoor and multisport",
+          "text": "Garmin, Coros, Suunto and others. Precise GPS, maps, training load, and batteries measured in weeks."
+        },
+        {
+          "name": "Kids and safety",
+          "text": "Location tracking, calling and SOS features for children and older people."
+        }
+      ],
+      "facts": [
+        {
+          "k": "Battery life",
+          "v": "1 day to several weeks"
+        },
+        {
+          "k": "Typical lifespan",
+          "v": "3–6 years of software support"
+        },
+        {
+          "k": "Key sensors",
+          "v": "Optical heart rate, accelerometer, GPS, SpO₂, ECG, temperature"
+        },
+        {
+          "k": "Watershed moment",
+          "v": "Apple Watch, 2015"
+        }
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "Smartwatches are now the best-selling category of watch in the world by volume. For collectors they raise new questions: **how long will it be supported?**, **which ecosystem am I locked into?** and **what happens to my health data?**\n\n## Choosing a smartwatch\n\n1. **Match your phone.** Apple Watch only works with iPhone; most others work best with Android.\n2. **Decide what matters: battery or apps.** Full-OS watches charge daily; outdoor watches can last weeks.\n3. **Check sensor accuracy** for the sports you do. Wrist heart rate is weaker for intervals and weightlifting.\n4. **Think about longevity.** A mechanical watch lasts generations; a smartwatch typically lasts a few years.\n\n## Smartwatches and traditional watches\n\nMany enthusiasts wear both: a smartwatch for training, a mechanical watch for everything else. Hybrid watches try to combine the two, see the Hybrid section."
+    }
+  ]
+}

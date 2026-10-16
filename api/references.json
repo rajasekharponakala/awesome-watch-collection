@@ -1,0 +1,645 @@
+{
+  "collection": "references",
+  "count": 16,
+  "items": [
+    {
+      "id": "apple-watch-ultra-2",
+      "brand": "apple",
+      "name": "Apple Watch Ultra 2",
+      "type": "smart/full-os",
+      "styles": [
+        "sport",
+        "outdoor",
+        "diver"
+      ],
+      "complications": [
+        "GPS",
+        "heart rate",
+        "ECG",
+        "depth gauge",
+        "dive computer"
+      ],
+      "caliber": "Apple S9 SiP",
+      "case": {
+        "material": "Titanium",
+        "diameter_mm": 49
+      },
+      "water_resistance_m": 100,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 2023
+      },
+      "price_tier": "affordable",
+      "levels": [
+        "first-wind",
+        "automatic"
+      ],
+      "region": "United States",
+      "summary": "Apple's most capable watch: dual-frequency GPS, a 3,000-nit display, a programmable Action button and recreational dive-computer features. It shows how far smartwatches have moved into tool-watch territory.",
+      "look": {
+        "dial": "#050505",
+        "accent": "#ff8a1f",
+        "metal": "titanium",
+        "bezel": "none"
+      },
+      "sources": [],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "audemars-piguet-royal-oak-15202",
+      "brand": "audemars-piguet",
+      "name": "Royal Oak \"Jumbo\" Extra-Thin",
+      "reference": "15202ST",
+      "type": "mechanical/automatic",
+      "styles": [
+        "sports-luxury",
+        "integrated-bracelet"
+      ],
+      "complications": [
+        "date"
+      ],
+      "caliber": "Audemars Piguet 2121",
+      "case": {
+        "material": "Stainless steel",
+        "diameter_mm": 39,
+        "thickness_mm": 8.1
+      },
+      "water_resistance_m": 50,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 2000,
+        "discontinued": 2022
+      },
+      "price_tier": "haute-horlogerie",
+      "levels": [
+        "complication",
+        "grande-complication"
+      ],
+      "region": "Switzerland",
+      "summary": "The closest modern descendant of the 1972 original: 39 mm, extra-thin, \"Petite Tapisserie\" dial and the octagonal bezel with eight exposed screws that changed luxury forever.",
+      "look": {
+        "dial": "#1b2c4a",
+        "accent": "#e4e9f0",
+        "metal": "steel",
+        "bezel": "octagon"
+      },
+      "sources": [],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "casio-f91w",
+      "brand": "casio",
+      "name": "F-91W",
+      "reference": "F-91W-1",
+      "type": "digital/lcd",
+      "styles": [
+        "tool",
+        "everyday"
+      ],
+      "complications": [
+        "alarm",
+        "stopwatch",
+        "backlight"
+      ],
+      "caliber": "Casio module 593",
+      "case": {
+        "material": "Resin",
+        "diameter_mm": 35.2,
+        "lug_to_lug_mm": 38.2,
+        "thickness_mm": 8.5,
+        "lug_width_mm": 18
+      },
+      "crystal": "Resin",
+      "years": {
+        "introduced": 1989
+      },
+      "price_tier": "entry",
+      "levels": [
+        "first-wind"
+      ],
+      "region": "Japan",
+      "summary": "Possibly the best-selling watch in history: light, accurate, nearly indestructible and costs about as much as lunch. A design classic that every collector should understand.",
+      "look": {
+        "dial": "#a9ad97",
+        "accent": "#1b1c18",
+        "metal": "resin",
+        "bezel": "none"
+      },
+      "sources": [],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "casio-g-shock-dw5600",
+      "brand": "casio",
+      "name": "G-Shock DW-5600",
+      "reference": "DW-5600E-1V",
+      "type": "digital/lcd",
+      "styles": [
+        "tool",
+        "sport"
+      ],
+      "complications": [
+        "alarm",
+        "stopwatch",
+        "countdown timer",
+        "backlight"
+      ],
+      "caliber": "Casio module 3229",
+      "case": {
+        "material": "Resin",
+        "diameter_mm": 42.8,
+        "lug_to_lug_mm": 48.9,
+        "thickness_mm": 13.4,
+        "lug_width_mm": 16
+      },
+      "water_resistance_m": 200,
+      "crystal": "Mineral",
+      "years": {
+        "introduced": 1987
+      },
+      "price_tier": "entry",
+      "levels": [
+        "first-wind"
+      ],
+      "region": "Japan",
+      "summary": "The square descendant of Kikuo Ibe's original 1983 G-Shock. A suspended module and resin armour make it one of the toughest watches you can buy, at any price.",
+      "look": {
+        "dial": "#9ea18e",
+        "accent": "#151612",
+        "metal": "resin",
+        "bezel": "none"
+      },
+      "sources": [],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "citizen-promaster-diver-bn0150",
+      "brand": "citizen",
+      "name": "Promaster Diver",
+      "reference": "BN0150-28E",
+      "type": "quartz/solar",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [
+        "date"
+      ],
+      "caliber": "Citizen Eco-Drive E168",
+      "case": {
+        "material": "Stainless steel",
+        "diameter_mm": 44
+      },
+      "water_resistance_m": 200,
+      "crystal": "Mineral",
+      "years": {},
+      "price_tier": "entry",
+      "levels": [
+        "first-wind"
+      ],
+      "region": "Japan",
+      "summary": "An ISO-rated, light-powered diver that never needs a battery change in normal use. Arguably the most practical dive watch you can buy for the money.",
+      "look": {
+        "dial": "#101215",
+        "accent": "#f3f0e6",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "garmin-fenix-8",
+      "brand": "garmin",
+      "name": "fēnix 8",
+      "type": "smart/outdoor",
+      "styles": [
+        "sport",
+        "outdoor"
+      ],
+      "complications": [
+        "GPS",
+        "heart rate",
+        "maps",
+        "flashlight",
+        "dive mode"
+      ],
+      "case": {
+        "material": "Stainless steel or titanium",
+        "diameter_mm": 47
+      },
+      "crystal": "Gorilla Glass or sapphire",
+      "years": {
+        "introduced": 2024
+      },
+      "price_tier": "affordable",
+      "levels": [
+        "first-wind",
+        "automatic"
+      ],
+      "region": "United States",
+      "summary": "A multisport flagship with AMOLED or solar MIP displays, offline maps, a built-in flashlight and battery life measured in weeks rather than hours.",
+      "look": {
+        "dial": "#0a0b0c",
+        "accent": "#e7212f",
+        "metal": "black",
+        "bezel": "none"
+      },
+      "sources": [],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "grand-seiko-snowflake-sbga211",
+      "brand": "grand-seiko",
+      "name": "\"Snowflake\"",
+      "reference": "SBGA211",
+      "type": "hybrid/spring-drive",
+      "styles": [
+        "dress",
+        "everyday"
+      ],
+      "complications": [
+        "power reserve indicator",
+        "date"
+      ],
+      "caliber": "Grand Seiko 9R65",
+      "caliber_id": "grand-seiko-9r65",
+      "case": {
+        "material": "High-intensity titanium",
+        "diameter_mm": 41,
+        "thickness_mm": 12.5
+      },
+      "water_resistance_m": 100,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 2017
+      },
+      "price_tier": "luxury",
+      "levels": [
+        "automatic",
+        "complication"
+      ],
+      "region": "Japan",
+      "summary": "A dial textured like wind-blown snow around Shiojiri, a feather-light titanium case and the gliding seconds hand of Spring Drive. Many collectors' gateway to Grand Seiko.",
+      "look": {
+        "dial": "#eef0f2",
+        "accent": "#4a5260",
+        "metal": "titanium",
+        "bezel": "none"
+      },
+      "sources": [],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "hamilton-khaki-field-mechanical",
+      "brand": "hamilton",
+      "name": "Khaki Field Mechanical",
+      "reference": "H69439931",
+      "type": "mechanical/manual",
+      "styles": [
+        "field",
+        "military"
+      ],
+      "complications": [],
+      "caliber": "Hamilton H-50",
+      "case": {
+        "material": "Stainless steel",
+        "diameter_mm": 38,
+        "lug_width_mm": 20
+      },
+      "water_resistance_m": 50,
+      "crystal": "Sapphire",
+      "years": {},
+      "price_tier": "affordable",
+      "levels": [
+        "first-wind"
+      ],
+      "region": "Switzerland",
+      "summary": "A hand-wound field watch with roots in Hamilton's military pieces. With an 80-hour power reserve and a legible 12/24-hour dial, it is a perfect introduction to the ritual of winding.",
+      "look": {
+        "dial": "#1c1f17",
+        "accent": "#efe7cf",
+        "metal": "steel",
+        "bezel": "none"
+      },
+      "sources": [],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "hmt-janata",
+      "brand": "hmt",
+      "name": "Janata",
+      "type": "mechanical/manual",
+      "styles": [
+        "everyday",
+        "dress"
+      ],
+      "complications": [],
+      "caliber": "HMT hand-wound calibre",
+      "case": {
+        "material": "Stainless steel / chrome-plated",
+        "diameter_mm": 35
+      },
+      "years": {},
+      "price_tier": "entry",
+      "levels": [
+        "first-wind",
+        "complication"
+      ],
+      "region": "India",
+      "summary": "\"Janata\" means \"the people\". Simple, hand-wound and built to last, it was the everyday watch of millions in India and is now a beloved collectible and vintage starting point.",
+      "look": {
+        "dial": "#f1ece0",
+        "accent": "#2b2b2b",
+        "metal": "steel",
+        "bezel": "none"
+      },
+      "sources": [],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "omega-speedmaster-professional",
+      "brand": "omega",
+      "name": "Speedmaster Professional Moonwatch",
+      "reference": "310.30.42.50.01.001",
+      "type": "mechanical/manual",
+      "styles": [
+        "chronograph",
+        "racing"
+      ],
+      "complications": [
+        "chronograph"
+      ],
+      "caliber": "Omega 3861",
+      "case": {
+        "material": "Stainless steel",
+        "diameter_mm": 42,
+        "lug_to_lug_mm": 47.5,
+        "thickness_mm": 13.2,
+        "lug_width_mm": 20
+      },
+      "water_resistance_m": 50,
+      "crystal": "Hesalite",
+      "years": {
+        "introduced": 2021
+      },
+      "price_tier": "luxury",
+      "levels": [
+        "first-wind",
+        "automatic",
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "Flight-qualified by NASA in 1965 and worn on the Moon in 1969. The current version keeps the hand-wound chronograph and hesalite crystal but adds the Master Chronometer calibre 3861.",
+      "look": {
+        "dial": "#0d0e10",
+        "accent": "#ece9e0",
+        "metal": "steel",
+        "bezel": "tachy"
+      },
+      "sources": [],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "patek-philippe-nautilus-5711",
+      "brand": "patek-philippe",
+      "name": "Nautilus",
+      "reference": "5711/1A",
+      "type": "mechanical/automatic",
+      "styles": [
+        "sports-luxury",
+        "integrated-bracelet"
+      ],
+      "complications": [
+        "date"
+      ],
+      "caliber": "Patek Philippe 26-330 S C",
+      "case": {
+        "material": "Stainless steel",
+        "diameter_mm": 40,
+        "thickness_mm": 8.3
+      },
+      "water_resistance_m": 120,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 2006,
+        "discontinued": 2021
+      },
+      "price_tier": "haute-horlogerie",
+      "levels": [
+        "complication",
+        "grande-complication"
+      ],
+      "region": "Switzerland",
+      "summary": "Gérald Genta's porthole-inspired design (1976) in its most coveted modern form. Its discontinuation made it a symbol of the secondary-market boom.",
+      "look": {
+        "dial": "#24364f",
+        "accent": "#e7ebf0",
+        "metal": "steel",
+        "bezel": "octagon"
+      },
+      "sources": [],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-124060",
+      "brand": "rolex",
+      "name": "Submariner",
+      "reference": "124060",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "sports-luxury"
+      ],
+      "complications": [],
+      "caliber": "Rolex 3230",
+      "case": {
+        "material": "Oystersteel (904L)",
+        "diameter_mm": 41,
+        "lug_width_mm": 21
+      },
+      "water_resistance_m": 300,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 2020
+      },
+      "price_tier": "luxury",
+      "levels": [
+        "automatic",
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "The no-date Submariner, the purest form of the dive watch that has defined the genre since 1953. The 2020 generation grew to 41 mm and gained the 70-hour calibre 3230.",
+      "look": {
+        "dial": "#0b0c0e",
+        "accent": "#f2ead3",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "seiko-presage-cocktail-time",
+      "brand": "seiko",
+      "name": "Presage \"Cocktail Time\"",
+      "reference": "SRPB43",
+      "type": "mechanical/automatic",
+      "styles": [
+        "dress"
+      ],
+      "complications": [
+        "date"
+      ],
+      "caliber": "Seiko 4R35",
+      "case": {
+        "material": "Stainless steel",
+        "diameter_mm": 40.5,
+        "thickness_mm": 11.8,
+        "lug_width_mm": 20
+      },
+      "water_resistance_m": 50,
+      "crystal": "Hardlex (box-shaped)",
+      "years": {
+        "introduced": 2017
+      },
+      "price_tier": "affordable",
+      "levels": [
+        "first-wind",
+        "automatic"
+      ],
+      "region": "Japan",
+      "summary": "A textured, cocktail-inspired sunburst dial that punches far above its price, and a common recommendation for a first dressy automatic.",
+      "look": {
+        "dial": "#2f5f8a",
+        "accent": "#e9edf2",
+        "metal": "steel",
+        "bezel": "none"
+      },
+      "sources": [],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "seiko-skx007",
+      "brand": "seiko",
+      "name": "SKX007",
+      "reference": "SKX007K2",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [
+        "date",
+        "day"
+      ],
+      "caliber": "Seiko 7S26",
+      "caliber_id": "seiko-7s26",
+      "case": {
+        "material": "Stainless steel",
+        "diameter_mm": 42.5,
+        "lug_to_lug_mm": 46,
+        "thickness_mm": 13.25,
+        "lug_width_mm": 22
+      },
+      "water_resistance_m": 200,
+      "crystal": "Hardlex",
+      "years": {
+        "introduced": 1996,
+        "discontinued": 2019
+      },
+      "price_tier": "entry",
+      "levels": [
+        "first-wind",
+        "automatic"
+      ],
+      "region": "Japan",
+      "summary": "The definitive affordable ISO-rated dive watch for more than two decades, and the starting point of the modding scene. Its 4 o'clock crown and legible dial are textbook tool-watch design.",
+      "look": {
+        "dial": "#121417",
+        "accent": "#f1efe6",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "tissot-prx-powermatic-80",
+      "brand": "tissot",
+      "name": "PRX Powermatic 80",
+      "reference": "T137.407.11.041.00",
+      "type": "mechanical/automatic",
+      "styles": [
+        "sports-luxury",
+        "integrated-bracelet"
+      ],
+      "complications": [
+        "date"
+      ],
+      "caliber": "Powermatic 80.111",
+      "case": {
+        "material": "Stainless steel",
+        "diameter_mm": 40,
+        "thickness_mm": 10.9
+      },
+      "water_resistance_m": 100,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 2021
+      },
+      "price_tier": "affordable",
+      "levels": [
+        "first-wind",
+        "automatic"
+      ],
+      "region": "Switzerland",
+      "summary": "A 1970s-style integrated bracelet watch with a \"Clous de Paris\" waffle dial and an 80-hour power reserve, giving the sports-luxury look at a fraction of the price.",
+      "look": {
+        "dial": "#1f3d6b",
+        "accent": "#eef0f3",
+        "metal": "steel",
+        "bezel": "none"
+      },
+      "sources": [],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "tudor-black-bay-58",
+      "brand": "tudor",
+      "name": "Black Bay Fifty-Eight",
+      "reference": "M79030N",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver"
+      ],
+      "complications": [],
+      "caliber": "Tudor MT5402",
+      "case": {
+        "material": "Stainless steel",
+        "diameter_mm": 39,
+        "thickness_mm": 11.9,
+        "lug_width_mm": 20
+      },
+      "water_resistance_m": 200,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 2018
+      },
+      "price_tier": "mid-range",
+      "levels": [
+        "automatic"
+      ],
+      "region": "Switzerland",
+      "summary": "A vintage-proportioned 39 mm diver inspired by Tudor's 1958 references, with a 70-hour in-house movement. It turned Tudor into a brand enthusiasts buy for its own sake.",
+      "look": {
+        "dial": "#0e0f11",
+        "accent": "#e8d6a8",
+        "metal": "gold",
+        "bezel": "dive"
+      },
+      "sources": [],
+      "last_reviewed": "2026-10-16"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Awesome Watch Collection API",
+  "description": "Static JSON generated from /data and /content. Edit the YAML/Markdown sources, not these files.",
+  "license": {
+    "content": "CC BY-SA 4.0",
+    "code": "MIT"
+  },
+  "collections": [
+    {
+      "name": "brands",
+      "path": "brands.json",
+      "count": 25
+    },
+    {
+      "name": "calibers",
+      "path": "calibers.json",
+      "count": 14
+    },
+    {
+      "name": "references",
+      "path": "references.json",
+      "count": 16
+    },
+    {
+      "name": "glossary",
+      "path": "glossary.json",
+      "count": 88
+    },
+    {
+      "name": "timeline",
+      "path": "timeline.json",
+      "count": 34
+    },
+    {
+      "name": "resources",
+      "path": "resources.json",
+      "count": 13
+    },
+    {
+      "name": "types",
+      "path": "types.json",
+      "count": 6
+    },
+    {
+      "name": "guides",
+      "path": "guides.json",
+      "count": 18
+    }
+  ]
+}

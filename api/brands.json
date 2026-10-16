@@ -1,0 +1,634 @@
+{
+  "collection": "brands",
+  "count": 25,
+  "items": [
+    {
+      "id": "a-lange-sohne",
+      "name": "A. Lange & Söhne",
+      "country": "Germany",
+      "city": "Glashütte",
+      "founded": 1845,
+      "founders": [
+        "Ferdinand Adolph Lange"
+      ],
+      "group": "Richemont",
+      "tier": "haute-horlogerie",
+      "types": [
+        "mechanical"
+      ],
+      "summary": "Founder of the Glashütte watchmaking tradition. Nationalised after WWII, the brand was refounded in 1990 by Walter Lange and Günter Blümlein and is renowned for German silver plates, hand-engraved balance cocks and the outsized date.",
+      "notable": [
+        "Lange 1",
+        "Datograph",
+        "Zeitwerk",
+        "Saxonia"
+      ],
+      "website": "https://www.alange-soehne.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "country": "United States",
+      "city": "Cupertino, CA",
+      "founded": 1976,
+      "founders": [
+        "Steve Jobs",
+        "Steve Wozniak",
+        "Ronald Wayne"
+      ],
+      "group": "Apple Inc.",
+      "tier": "affordable",
+      "types": [
+        "smart"
+      ],
+      "summary": "Apple launched the Apple Watch in 2015. Within a few years it became the best-selling watch in the world by unit volume, mainstreaming health sensors such as ECG and blood-oxygen measurement on the wrist.",
+      "notable": [
+        "Apple Watch Series",
+        "Apple Watch Ultra",
+        "Apple Watch SE"
+      ],
+      "website": "https://www.apple.com/watch/",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "audemars-piguet",
+      "name": "Audemars Piguet",
+      "country": "Switzerland",
+      "city": "Le Brassus",
+      "founded": 1875,
+      "founders": [
+        "Jules Louis Audemars",
+        "Edward Auguste Piguet"
+      ],
+      "group": "Independent (founding families)",
+      "tier": "haute-horlogerie",
+      "types": [
+        "mechanical"
+      ],
+      "summary": "Based in the Vallée de Joux, Audemars Piguet launched the Royal Oak in 1972, the Gérald Genta design that created the luxury steel sports watch category.",
+      "notable": [
+        "Royal Oak",
+        "Royal Oak Offshore",
+        "Code 11.59"
+      ],
+      "website": "https://www.audemarspiguet.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "breitling",
+      "name": "Breitling",
+      "country": "Switzerland",
+      "city": "Grenchen",
+      "founded": 1884,
+      "founders": [
+        "Léon Breitling"
+      ],
+      "group": "Independent (private-equity owned)",
+      "tier": "luxury",
+      "types": [
+        "mechanical",
+        "quartz"
+      ],
+      "summary": "Breitling is closely tied to aviation and chronographs. Its Navitimer (1952) carries a slide-rule bezel for flight calculations, and the brand helped develop the separate start/stop and reset pushers of the modern chronograph.",
+      "notable": [
+        "Navitimer",
+        "Chronomat",
+        "Superocean",
+        "Premier"
+      ],
+      "website": "https://www.breitling.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "cartier",
+      "name": "Cartier",
+      "country": "France",
+      "city": "Paris",
+      "founded": 1847,
+      "founders": [
+        "Louis-François Cartier"
+      ],
+      "group": "Richemont",
+      "tier": "luxury",
+      "types": [
+        "mechanical",
+        "quartz"
+      ],
+      "summary": "The Paris jeweller created one of the first purpose-built men's wristwatches, the Santos (1904), for aviator Alberto Santos-Dumont, and the Tank (1917). Cartier defines shaped, design-led watches.",
+      "notable": [
+        "Tank",
+        "Santos",
+        "Ballon Bleu",
+        "Crash"
+      ],
+      "website": "https://www.cartier.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "casio",
+      "name": "Casio",
+      "country": "Japan",
+      "city": "Tokyo",
+      "founded": 1946,
+      "founders": [
+        "Tadao Kashio"
+      ],
+      "group": "Independent (Casio Computer Co.)",
+      "tier": "entry",
+      "types": [
+        "digital",
+        "quartz",
+        "smart"
+      ],
+      "summary": "Casio entered watches with the Casiotron in 1974 and changed the industry with the shock-resistant G-Shock in 1983. Its affordable digital watches, like the F-91W, are among the best-selling watches ever made.",
+      "notable": [
+        "F-91W",
+        "G-Shock DW-5600",
+        "A168",
+        "Pro Trek"
+      ],
+      "website": "https://www.casio.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "citizen",
+      "name": "Citizen",
+      "country": "Japan",
+      "city": "Tokyo",
+      "founded": 1918,
+      "founders": [
+        "Shokosha Watch Research Institute"
+      ],
+      "group": "Citizen Group",
+      "tier": "affordable",
+      "types": [
+        "quartz",
+        "mechanical"
+      ],
+      "summary": "Citizen is one of the largest movement makers in the world (through Miyota) and the pioneer of light-powered Eco-Drive watches. It also owns brands such as Bulova, Frédérique Constant and Arnold & Son.",
+      "notable": [
+        "Promaster",
+        "Eco-Drive",
+        "The Citizen",
+        "Tsuyosa"
+      ],
+      "website": "https://www.citizenwatch.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "garmin",
+      "name": "Garmin",
+      "country": "United States",
+      "city": "Olathe, KS",
+      "founded": 1989,
+      "founders": [
+        "Gary Burrell",
+        "Min Kao"
+      ],
+      "group": "Garmin Ltd.",
+      "tier": "affordable",
+      "types": [
+        "smart"
+      ],
+      "summary": "A GPS specialist, Garmin builds multisport and outdoor smartwatches with long battery life, deep training metrics and navigation features favoured by athletes and adventurers.",
+      "notable": [
+        "fēnix",
+        "Forerunner",
+        "Instinct",
+        "Epix"
+      ],
+      "website": "https://www.garmin.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "grand-seiko",
+      "name": "Grand Seiko",
+      "country": "Japan",
+      "city": "Tokyo / Shizukuishi / Shiojiri",
+      "founded": 1960,
+      "founders": [
+        "Seiko"
+      ],
+      "group": "Seiko Group",
+      "tier": "luxury",
+      "types": [
+        "mechanical",
+        "quartz",
+        "hybrid"
+      ],
+      "summary": "Created in 1960 to rival the best Swiss watches, Grand Seiko became an independent brand in 2017. It is celebrated for Zaratsu polishing, nature-inspired dials and three distinct technologies: Hi-Beat mechanical, 9F quartz and Spring Drive.",
+      "notable": [
+        "SBGA211 \"Snowflake\"",
+        "SBGW231",
+        "White Birch SLGH005"
+      ],
+      "website": "https://www.grand-seiko.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "hamilton",
+      "name": "Hamilton",
+      "country": "United States / Switzerland",
+      "city": "Lancaster, PA (origin); Biel (today)",
+      "founded": 1892,
+      "founders": [
+        "Hamilton Watch Company"
+      ],
+      "group": "Swatch Group",
+      "tier": "affordable",
+      "types": [
+        "mechanical",
+        "quartz",
+        "digital"
+      ],
+      "summary": "Founded in Pennsylvania, Hamilton supplied railroad and military watches, launched the first battery-powered watch (Electric 500, 1957) and the first LED digital watch, Pulsar. It is now Swiss-based and famous for field watches and film appearances.",
+      "notable": [
+        "Khaki Field",
+        "Ventura",
+        "Jazzmaster",
+        "PSR"
+      ],
+      "website": "https://www.hamiltonwatch.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "hmt",
+      "name": "HMT",
+      "country": "India",
+      "city": "Bengaluru",
+      "founded": 1961,
+      "founders": [
+        "Hindustan Machine Tools (Government of India)",
+        "in collaboration with Citizen"
+      ],
+      "group": "State-owned (Hindustan Machine Tools)",
+      "tier": "entry",
+      "types": [
+        "mechanical",
+        "quartz"
+      ],
+      "summary": "HMT (\"the Time Keepers of the Nation\") produced India's first domestically made wristwatches, beginning in collaboration with Citizen. Its hand-wound Janata and Pilot models are cult collectibles; the watch division largely ceased production in 2016.",
+      "notable": [
+        "Janata",
+        "Pilot",
+        "Kohinoor",
+        "Jawan"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "iwc",
+      "name": "IWC Schaffhausen",
+      "country": "Switzerland",
+      "city": "Schaffhausen",
+      "founded": 1868,
+      "founders": [
+        "Florentine Ariosto Jones"
+      ],
+      "group": "Richemont",
+      "tier": "luxury",
+      "types": [
+        "mechanical"
+      ],
+      "summary": "Founded by an American engineer in German-speaking Switzerland, IWC is known for pilot's watches, the Portugieser and robust engineering such as the Pellaton winding system.",
+      "notable": [
+        "Pilot's Watch Mark XX",
+        "Portugieser",
+        "Big Pilot",
+        "Ingenieur"
+      ],
+      "website": "https://www.iwc.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "jaeger-lecoultre",
+      "name": "Jaeger-LeCoultre",
+      "country": "Switzerland",
+      "city": "Le Sentier",
+      "founded": 1833,
+      "founders": [
+        "Antoine LeCoultre"
+      ],
+      "group": "Richemont",
+      "tier": "luxury",
+      "types": [
+        "mechanical"
+      ],
+      "summary": "Known as \"the watchmaker's watchmaker\", JLC has produced well over a thousand calibres and supplied movements to many great houses. Its Reverso (1931) has a case that flips to protect the crystal.",
+      "notable": [
+        "Reverso",
+        "Master Ultra Thin",
+        "Polaris",
+        "Atmos clock"
+      ],
+      "website": "https://www.jaeger-lecoultre.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "longines",
+      "name": "Longines",
+      "country": "Switzerland",
+      "city": "Saint-Imier",
+      "founded": 1832,
+      "founders": [
+        "Auguste Agassiz"
+      ],
+      "group": "Swatch Group",
+      "tier": "mid-range",
+      "types": [
+        "mechanical",
+        "quartz"
+      ],
+      "summary": "Longines has a long history in aviation and sports timing, and its winged hourglass logo is one of the oldest registered trademarks still in use. It is known for classic, heritage-inspired designs.",
+      "notable": [
+        "Spirit",
+        "HydroConquest",
+        "Legend Diver",
+        "Master Collection"
+      ],
+      "website": "https://www.longines.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "nomos",
+      "name": "NOMOS Glashütte",
+      "country": "Germany",
+      "city": "Glashütte",
+      "founded": 1990,
+      "founders": [
+        "Roland Schwertner"
+      ],
+      "group": "Independent",
+      "tier": "affordable",
+      "types": [
+        "mechanical"
+      ],
+      "summary": "Founded weeks after the fall of the Berlin Wall, NOMOS is known for Bauhaus-inspired design and in-house movements, including its own escapement (\"swing system\"), at comparatively accessible prices.",
+      "notable": [
+        "Tangente",
+        "Orion",
+        "Club",
+        "Ahoi"
+      ],
+      "website": "https://nomos-glashuette.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "omega",
+      "name": "Omega",
+      "country": "Switzerland",
+      "city": "Biel/Bienne",
+      "founded": 1848,
+      "founders": [
+        "Louis Brandt"
+      ],
+      "group": "Swatch Group",
+      "tier": "luxury",
+      "types": [
+        "mechanical",
+        "quartz"
+      ],
+      "summary": "Omega began as Louis Brandt's workshop in La Chaux-de-Fonds. Its Speedmaster went to the Moon in 1969 and its co-axial escapement and METAS Master Chronometer certification set modern benchmarks for accuracy and anti-magnetism.",
+      "notable": [
+        "Speedmaster Professional",
+        "Seamaster Diver 300M",
+        "Constellation",
+        "Aqua Terra"
+      ],
+      "website": "https://www.omegawatches.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "orient",
+      "name": "Orient",
+      "country": "Japan",
+      "city": "Tokyo",
+      "founded": 1950,
+      "founders": [
+        "Orient Watch Co."
+      ],
+      "group": "Seiko Epson",
+      "tier": "entry",
+      "types": [
+        "mechanical",
+        "quartz"
+      ],
+      "summary": "Orient is a favourite for first mechanical watches, producing its own automatic movements at very low prices. It has been fully part of Seiko Epson since 2009.",
+      "notable": [
+        "Bambino",
+        "Kamasu",
+        "Mako",
+        "Orient Star"
+      ],
+      "website": "https://www.orient-watch.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "patek-philippe",
+      "name": "Patek Philippe",
+      "country": "Switzerland",
+      "city": "Geneva",
+      "founded": 1839,
+      "founders": [
+        "Antoine Norbert de Patek",
+        "François Czapek",
+        "Adrien Philippe"
+      ],
+      "group": "Independent (Stern family)",
+      "tier": "haute-horlogerie",
+      "types": [
+        "mechanical"
+      ],
+      "summary": "One of the oldest continuously operating manufactures, Patek Philippe is synonymous with grand complications, perpetual calendars and record-breaking auction results. It is still family-owned.",
+      "notable": [
+        "Calatrava",
+        "Nautilus",
+        "Aquanaut",
+        "Grand Complications"
+      ],
+      "website": "https://www.patek.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex",
+      "name": "Rolex",
+      "country": "Switzerland",
+      "city": "Geneva",
+      "founded": 1905,
+      "founders": [
+        "Hans Wilsdorf",
+        "Alfred Davis"
+      ],
+      "group": "Independent (Hans Wilsdorf Foundation)",
+      "tier": "luxury",
+      "types": [
+        "mechanical"
+      ],
+      "summary": "Founded in London and moved to Geneva, Rolex pioneered the waterproof Oyster case (1926) and the Perpetual rotor (1931). Today it is the most recognised luxury watch brand in the world, known for robust in-house movements and tool-watch icons.",
+      "notable": [
+        "Submariner",
+        "Daytona",
+        "GMT-Master II",
+        "Datejust",
+        "Explorer"
+      ],
+      "website": "https://www.rolex.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "seiko",
+      "name": "Seiko",
+      "country": "Japan",
+      "city": "Tokyo",
+      "founded": 1881,
+      "founders": [
+        "Kintaro Hattori"
+      ],
+      "group": "Seiko Group",
+      "tier": "affordable",
+      "types": [
+        "mechanical",
+        "quartz",
+        "digital",
+        "hybrid"
+      ],
+      "summary": "Seiko launched the world's first quartz wristwatch, the Astron, in 1969, and is one of the very few makers that produces nearly every component in-house. Its range runs from entry-level automatics to high-end Prospex and Presage pieces.",
+      "notable": [
+        "Astron",
+        "Prospex divers",
+        "Presage",
+        "Seiko 5 Sports"
+      ],
+      "website": "https://www.seikowatches.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "sinn",
+      "name": "Sinn",
+      "country": "Germany",
+      "city": "Frankfurt am Main",
+      "founded": 1961,
+      "founders": [
+        "Helmut Sinn"
+      ],
+      "group": "Independent",
+      "tier": "mid-range",
+      "types": [
+        "mechanical"
+      ],
+      "summary": "Sinn makes rugged tool watches for pilots, divers and specialist units, with technologies like Tegiment surface hardening, Ar-dehumidifying capsules and magnetic-field protection.",
+      "notable": [
+        "556",
+        "104",
+        "U1",
+        "EZM"
+      ],
+      "website": "https://www.sinn.de",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "tag-heuer",
+      "name": "TAG Heuer",
+      "country": "Switzerland",
+      "city": "La Chaux-de-Fonds",
+      "founded": 1860,
+      "founders": [
+        "Edouard Heuer"
+      ],
+      "group": "LVMH",
+      "tier": "mid-range",
+      "types": [
+        "mechanical",
+        "quartz",
+        "smart"
+      ],
+      "summary": "Heuer was a pioneer of stopwatches and racing chronographs, co-developing one of the first automatic chronograph movements (Calibre 11) in 1969. It became TAG Heuer in 1985.",
+      "notable": [
+        "Monaco",
+        "Carrera",
+        "Autavia",
+        "Connected"
+      ],
+      "website": "https://www.tagheuer.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "timex",
+      "name": "Timex",
+      "country": "United States",
+      "city": "Middlebury, CT",
+      "founded": 1854,
+      "founders": [
+        "Waterbury Clock Company"
+      ],
+      "group": "Timex Group",
+      "tier": "entry",
+      "types": [
+        "quartz",
+        "digital",
+        "mechanical"
+      ],
+      "summary": "Descended from the Waterbury Clock Company, Timex democratised the wristwatch with affordable, durable pieces (\"takes a licking and keeps on ticking\") and introduced the Indiglo backlight in 1992.",
+      "notable": [
+        "Weekender",
+        "Ironman",
+        "Marlin",
+        "Q Timex"
+      ],
+      "website": "https://www.timex.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "tissot",
+      "name": "Tissot",
+      "country": "Switzerland",
+      "city": "Le Locle",
+      "founded": 1853,
+      "founders": [
+        "Charles-Félicien Tissot",
+        "Charles-Émile Tissot"
+      ],
+      "group": "Swatch Group",
+      "tier": "affordable",
+      "types": [
+        "mechanical",
+        "quartz",
+        "smart"
+      ],
+      "summary": "Tissot offers Swiss-made watches at accessible prices. Its PRX revived the 1970s integrated-bracelet look, and its Powermatic 80 movement offers an 80-hour power reserve at entry price points.",
+      "notable": [
+        "PRX",
+        "Seastar",
+        "Le Locle",
+        "T-Touch"
+      ],
+      "website": "https://www.tissotwatches.com",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "tudor",
+      "name": "Tudor",
+      "country": "Switzerland",
+      "city": "Geneva",
+      "founded": 1926,
+      "founders": [
+        "Hans Wilsdorf"
+      ],
+      "group": "Independent (Hans Wilsdorf Foundation)",
+      "tier": "mid-range",
+      "types": [
+        "mechanical"
+      ],
+      "summary": "Created by Rolex founder Hans Wilsdorf as a more accessible sister brand. Since the 2010s, Tudor has built a strong identity with the Black Bay family and its own in-house manufacture calibres.",
+      "notable": [
+        "Black Bay",
+        "Black Bay 58",
+        "Pelagos",
+        "Ranger"
+      ],
+      "website": "https://www.tudorwatch.com",
+      "last_reviewed": "2026-10-16"
+    }
+  ]
+}

@@ -184,6 +184,7 @@ Similar schemas exist for `brand`, `caliber`, `glossary-term`, `event` and `reso
 ```
 awesome-watch-collection/
 ├── README.md                 # Awesome-list style index (works on GitHub without the site)
+├── api/                      # Generated JSON copy of all data (do not edit; synced by CI)
 ├── PLAN.md                   # This document
 ├── CONTRIBUTING.md           # How to add knowledge ("The Escapement")
 ├── content/
@@ -317,7 +318,7 @@ applied-index bullet points, sunburst / guilloché background textures used spar
 - [ ] Quizzes / self-assessment per level ("certify your power reserve")
 - [ ] Translations (i18n)
 - [ ] Community showcases, contributor leaderboard
-- [ ] Open JSON API of the data (static JSON files) for other projects
+- [x] Open JSON API of the data (static JSON files in `/api`, served on the site and synced into the repo)
 
 ---
 

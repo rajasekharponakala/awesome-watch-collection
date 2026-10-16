@@ -1,0 +1,277 @@
+{
+  "collection": "calibers",
+  "count": 14,
+  "items": [
+    {
+      "id": "eta-2824-2",
+      "name": "ETA 2824-2",
+      "maker": "ETA (Swatch Group)",
+      "kind": "automatic",
+      "frequency_vph": 28800,
+      "jewels": 25,
+      "power_reserve_h": 38,
+      "hacking": true,
+      "hand_winding": true,
+      "functions": [
+        "hours",
+        "minutes",
+        "central seconds",
+        "date"
+      ],
+      "summary": "The archetypal Swiss workhorse automatic. Robust, easy to service and used by dozens of brands for decades, it is the reference point that most other mid-range movements are compared against.",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "eta-7750",
+      "name": "ETA / Valjoux 7750",
+      "maker": "ETA (Swatch Group)",
+      "kind": "automatic",
+      "frequency_vph": 28800,
+      "jewels": 25,
+      "power_reserve_h": 48,
+      "hacking": true,
+      "hand_winding": true,
+      "functions": [
+        "hours",
+        "minutes",
+        "small seconds",
+        "chronograph",
+        "date",
+        "day"
+      ],
+      "introduced": 1974,
+      "summary": "Designed by Edmond Capt and introduced in 1974, the cam-lever 7750 is the most widely used automatic chronograph movement in the world, and the base of countless modified calibres.",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "eta-f06-111",
+      "name": "ETA F06.111",
+      "maker": "ETA (Swatch Group)",
+      "kind": "quartz",
+      "quartz_hz": 32768,
+      "accuracy": "about ±15 s/month",
+      "functions": [
+        "hours",
+        "minutes",
+        "central seconds",
+        "date"
+      ],
+      "summary": "One of the most common Swiss quartz movements: inexpensive, thin and reliable, found in many affordable Swiss-made watches.",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "grand-seiko-9r65",
+      "name": "Grand Seiko 9R65",
+      "maker": "Grand Seiko",
+      "kind": "spring-drive",
+      "jewels": 30,
+      "power_reserve_h": 72,
+      "accuracy": "±15 s/month (±1 s/day)",
+      "hacking": true,
+      "hand_winding": true,
+      "functions": [
+        "hours",
+        "minutes",
+        "glide-motion seconds",
+        "date",
+        "power reserve indicator"
+      ],
+      "introduced": 2004,
+      "summary": "A Spring Drive movement: a mainspring powers the gear train, but instead of an escapement a glide wheel generates a little electricity to drive a quartz-controlled electromagnetic brake. The result is a perfectly smooth seconds hand.",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "miyota-8215",
+      "name": "Miyota 8215",
+      "maker": "Miyota (Citizen)",
+      "kind": "automatic",
+      "frequency_vph": 21600,
+      "jewels": 21,
+      "power_reserve_h": 42,
+      "hacking": false,
+      "hand_winding": true,
+      "functions": [
+        "hours",
+        "minutes",
+        "central seconds",
+        "date"
+      ],
+      "summary": "A simple, durable and very affordable automatic that has powered entry-level mechanical watches for decades.",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "miyota-9015",
+      "name": "Miyota 9015",
+      "maker": "Miyota (Citizen)",
+      "kind": "automatic",
+      "frequency_vph": 28800,
+      "jewels": 24,
+      "power_reserve_h": 42,
+      "hacking": true,
+      "hand_winding": true,
+      "functions": [
+        "hours",
+        "minutes",
+        "central seconds",
+        "date"
+      ],
+      "summary": "A slim, high-beat Japanese automatic often used as an alternative to Swiss calibres in affordable and micro-brand watches. It is known for a noisy, \"wobbly\" rotor.",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "omega-8800",
+      "name": "Omega 8800",
+      "maker": "Omega",
+      "kind": "automatic",
+      "frequency_vph": 25200,
+      "jewels": 35,
+      "power_reserve_h": 55,
+      "accuracy": "0/+5 s/day (METAS Master Chronometer)",
+      "hacking": true,
+      "hand_winding": true,
+      "functions": [
+        "hours",
+        "minutes",
+        "central seconds",
+        "date"
+      ],
+      "summary": "A Master Chronometer calibre with Omega's co-axial escapement and silicon balance spring, resistant to magnetic fields of 15,000 gauss and certified by METAS.",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-3235",
+      "name": "Rolex 3235",
+      "maker": "Rolex",
+      "kind": "automatic",
+      "frequency_vph": 28800,
+      "jewels": 31,
+      "power_reserve_h": 70,
+      "accuracy": "−2/+2 s/day (Superlative Chronometer, cased)",
+      "hacking": true,
+      "hand_winding": true,
+      "functions": [
+        "hours",
+        "minutes",
+        "central seconds",
+        "date"
+      ],
+      "introduced": 2015,
+      "summary": "Rolex's modern date calibre, featuring the Chronergy escapement, a blue Parachrom hairspring and a 70-hour power reserve. Each cased watch is tested to −2/+2 seconds per day.",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "seiko-7s26",
+      "name": "Seiko 7S26",
+      "maker": "Seiko",
+      "kind": "automatic",
+      "frequency_vph": 21600,
+      "jewels": 21,
+      "power_reserve_h": 41,
+      "hacking": false,
+      "hand_winding": false,
+      "functions": [
+        "hours",
+        "minutes",
+        "central seconds",
+        "date",
+        "day"
+      ],
+      "summary": "The movement inside the SKX family and older Seiko 5s, built around Seiko's efficient \"Magic Lever\" winding system. It neither hacks nor hand-winds, but is famous for running for decades without attention.",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "seiko-9f61",
+      "name": "Grand Seiko 9F61",
+      "maker": "Grand Seiko",
+      "kind": "quartz",
+      "quartz_hz": 32768,
+      "accuracy": "±10 s/year",
+      "functions": [
+        "hours",
+        "minutes",
+        "central seconds",
+        "date"
+      ],
+      "introduced": 1993,
+      "summary": "The benchmark high-accuracy quartz movement. Hand-selected, aged crystals, thermocompensation, a backlash-free seconds hand and a twin-pulse motor make it arguably the finest analog quartz movement in production.",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "seiko-nh35",
+      "name": "Seiko NH35A",
+      "maker": "Seiko Instruments (TMI)",
+      "kind": "automatic",
+      "frequency_vph": 21600,
+      "jewels": 24,
+      "power_reserve_h": 41,
+      "hacking": true,
+      "hand_winding": true,
+      "functions": [
+        "hours",
+        "minutes",
+        "central seconds",
+        "date"
+      ],
+      "summary": "The supplier version of Seiko's 4R35. It is cheap, tough and easy to regulate, which has made it the default engine of micro-brands and the watch-modding community.",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "sellita-sw200-1",
+      "name": "Sellita SW200-1",
+      "maker": "Sellita",
+      "kind": "automatic",
+      "frequency_vph": 28800,
+      "jewels": 26,
+      "power_reserve_h": 38,
+      "hacking": true,
+      "hand_winding": true,
+      "functions": [
+        "hours",
+        "minutes",
+        "central seconds",
+        "date"
+      ],
+      "summary": "Developed after ETA restricted supply to brands outside the Swatch Group, the SW200-1 is dimensionally compatible with the 2824-2 and powers a large share of today's Swiss mid-range watches.",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "unitas-6497",
+      "name": "ETA / Unitas 6497",
+      "maker": "ETA (Swatch Group)",
+      "kind": "manual",
+      "frequency_vph": 18000,
+      "jewels": 17,
+      "power_reserve_h": 46,
+      "hacking": false,
+      "hand_winding": true,
+      "functions": [
+        "hours",
+        "minutes",
+        "small seconds"
+      ],
+      "summary": "A large, open pocket-watch movement with a slow 18,000 vph beat. Ideal for skeletonising and very popular for learning watchmaking because its big parts are easy to see and handle.",
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "zenith-el-primero-400",
+      "name": "Zenith El Primero 400",
+      "maker": "Zenith (LVMH)",
+      "kind": "automatic",
+      "frequency_vph": 36000,
+      "jewels": 31,
+      "power_reserve_h": 50,
+      "hacking": false,
+      "hand_winding": true,
+      "functions": [
+        "hours",
+        "minutes",
+        "small seconds",
+        "chronograph",
+        "date"
+      ],
+      "introduced": 1969,
+      "summary": "Announced in 1969, the El Primero was one of the first automatic chronograph movements and the first high-beat one. Its 36,000 vph frequency lets it time events to a tenth of a second.",
+      "last_reviewed": "2026-10-16"
+    }
+  ]
+}

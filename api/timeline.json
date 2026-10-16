@@ -1,0 +1,266 @@
+{
+  "collection": "timeline",
+  "count": 34,
+  "items": [
+    {
+      "id": "1510-portable-timekeeping",
+      "year": 1510,
+      "era": "Origins",
+      "title": "Portable timekeeping",
+      "text": "Clockmakers in Nuremberg, among them Peter Henlein, make small spring-driven clocks that can be carried, the ancestors of the watch."
+    },
+    {
+      "id": "1657-the-pendulum-clock",
+      "year": 1657,
+      "era": "Origins",
+      "title": "The pendulum clock",
+      "text": "Christiaan Huygens patents the pendulum clock, making clocks accurate to seconds rather than minutes."
+    },
+    {
+      "id": "1675-the-balance-spring",
+      "year": 1675,
+      "era": "Origins",
+      "title": "The balance spring",
+      "text": "Huygens applies a spiral balance spring to the balance wheel, the single biggest leap in portable accuracy."
+    },
+    {
+      "id": "1755-the-lever-escapement",
+      "year": 1755,
+      "era": "Pocket era",
+      "title": "The lever escapement",
+      "text": "Thomas Mudge invents the detached lever escapement, which still ticks inside nearly every mechanical watch."
+    },
+    {
+      "id": "1761-harrison-s-h4",
+      "year": 1761,
+      "era": "Pocket era",
+      "title": "Harrison's H4",
+      "text": "John Harrison's marine timekeeper H4 is tested at sea, solving the problem of longitude."
+    },
+    {
+      "id": "1770-self-winding",
+      "year": 1770,
+      "era": "Pocket era",
+      "title": "Self-winding",
+      "text": "Abraham-Louis Perrelet builds a self-winding \"perpétuelle\" pocket watch powered by the wearer's motion."
+    },
+    {
+      "id": "1801-the-tourbillon",
+      "year": 1801,
+      "month": 6,
+      "day": 26,
+      "era": "Pocket era",
+      "title": "The tourbillon",
+      "text": "Abraham-Louis Breguet patents the tourbillon, a rotating cage that averages out positional errors caused by gravity."
+    },
+    {
+      "id": "1810-the-first-wristwatch",
+      "year": 1810,
+      "era": "Pocket era",
+      "title": "The first wristwatch",
+      "text": "Breguet is commissioned to make a bracelet watch for Caroline Murat, Queen of Naples, one of the earliest wristwatches recorded."
+    },
+    {
+      "id": "1839-patek-founded",
+      "year": 1839,
+      "month": 5,
+      "day": 1,
+      "era": "Pocket era",
+      "title": "Patek founded",
+      "text": "Antoine Norbert de Patek and François Czapek begin making watches in Geneva; Adrien Philippe joins in 1845."
+    },
+    {
+      "id": "1904-the-santos",
+      "year": 1904,
+      "era": "Early wrist",
+      "title": "The Santos",
+      "text": "Louis Cartier designs a wristwatch for the aviator Alberto Santos-Dumont so he can read the time without letting go of the controls."
+    },
+    {
+      "id": "1923-automatic-wristwatch",
+      "year": 1923,
+      "era": "Early wrist",
+      "title": "Automatic wristwatch",
+      "text": "John Harwood patents a self-winding wristwatch with a swinging weight."
+    },
+    {
+      "id": "1926-the-oyster",
+      "year": 1926,
+      "era": "Early wrist",
+      "title": "The Oyster",
+      "text": "Rolex patents the Oyster, a hermetically sealed case. In 1927 Mercedes Gleitze wears one while swimming the English Channel."
+    },
+    {
+      "id": "1931-the-perpetual-rotor",
+      "year": 1931,
+      "era": "Early wrist",
+      "title": "The Perpetual rotor",
+      "text": "Rolex introduces the 360° Perpetual rotor, the template for modern automatic winding."
+    },
+    {
+      "id": "1953-the-dive-watch",
+      "year": 1953,
+      "era": "Golden age",
+      "title": "The dive watch",
+      "text": "The Blancpain Fifty Fathoms and the Rolex Submariner define the modern dive watch."
+    },
+    {
+      "id": "1957-electric-500",
+      "year": 1957,
+      "month": 1,
+      "day": 3,
+      "era": "Golden age",
+      "title": "Electric 500",
+      "text": "Hamilton launches the Electric 500, the first battery-powered wristwatch."
+    },
+    {
+      "id": "1957-the-speedmaster",
+      "year": 1957,
+      "era": "Golden age",
+      "title": "The Speedmaster",
+      "text": "Omega introduces the Speedmaster, a racing chronograph that would later go to the Moon."
+    },
+    {
+      "id": "1960-accutron",
+      "year": 1960,
+      "month": 10,
+      "day": 25,
+      "era": "Golden age",
+      "title": "Accutron",
+      "text": "Bulova releases the Accutron, regulated by a tuning fork vibrating at 360 Hz and guaranteed to within a minute a month."
+    },
+    {
+      "id": "1965-flight-qualified",
+      "year": 1965,
+      "month": 3,
+      "day": 1,
+      "era": "Golden age",
+      "title": "Flight-qualified",
+      "text": "After brutal testing, NASA qualifies the Omega Speedmaster for its crewed space missions."
+    },
+    {
+      "id": "1969-on-the-moon",
+      "year": 1969,
+      "month": 7,
+      "day": 21,
+      "era": "Golden age",
+      "title": "On the Moon",
+      "text": "Buzz Aldrin wears his Speedmaster on the lunar surface during Apollo 11."
+    },
+    {
+      "id": "1969-seiko-astron",
+      "year": 1969,
+      "month": 12,
+      "day": 25,
+      "era": "Quartz crisis",
+      "title": "Seiko Astron",
+      "text": "Seiko sells the Astron 35SQ in Tokyo, the world's first quartz wristwatch. The quartz revolution begins."
+    },
+    {
+      "id": "1969-the-automatic-chronograph-race",
+      "year": 1969,
+      "era": "Golden age",
+      "title": "The automatic chronograph race",
+      "text": "Zenith's El Primero, the Heuer-Breitling-Hamilton Calibre 11 and Seiko's 6139 all bring automatic chronographs to market."
+    },
+    {
+      "id": "1970-the-led-watch",
+      "year": 1970,
+      "era": "Quartz crisis",
+      "title": "The LED watch",
+      "text": "Hamilton shows the Pulsar prototype, the first electronic digital watch. It goes on sale in 1972."
+    },
+    {
+      "id": "1972-royal-oak",
+      "year": 1972,
+      "month": 4,
+      "day": 15,
+      "era": "Quartz crisis",
+      "title": "Royal Oak",
+      "text": "Audemars Piguet unveils the Royal Oak, designed by Gérald Genta: a steel luxury sports watch."
+    },
+    {
+      "id": "1973-six-digit-lcd",
+      "year": 1973,
+      "era": "Quartz crisis",
+      "title": "Six-digit LCD",
+      "text": "Seiko introduces the 06LC, the first watch with a six-digit liquid-crystal display."
+    },
+    {
+      "id": "1976-solar-quartz",
+      "year": 1976,
+      "era": "Quartz crisis",
+      "title": "Solar quartz",
+      "text": "Citizen launches the Crystron Solar Cell, the first light-powered analog quartz watch. The same year, Patek Philippe releases the Nautilus."
+    },
+    {
+      "id": "1983-swatch-and-g-shock",
+      "year": 1983,
+      "era": "Revival",
+      "title": "Swatch and G-Shock",
+      "text": "Swatch launches its plastic quartz watches and helps save the Swiss industry; Casio launches the first G-Shock, the DW-5000C."
+    },
+    {
+      "id": "1988-auto-quartz",
+      "year": 1988,
+      "era": "Revival",
+      "title": "Auto-quartz",
+      "text": "Seiko launches the AGS, later called Kinetic: a quartz watch charged by a rotor."
+    },
+    {
+      "id": "1990-lange-returns",
+      "year": 1990,
+      "month": 12,
+      "day": 7,
+      "era": "Revival",
+      "title": "Lange returns",
+      "text": "Walter Lange and Günter Blümlein refound A. Lange & Söhne in Glashütte after German reunification."
+    },
+    {
+      "id": "1990-radio-controlled",
+      "year": 1990,
+      "era": "Revival",
+      "title": "Radio-controlled",
+      "text": "Junghans releases the Mega 1, the first radio-controlled wristwatch, synchronising itself with an atomic clock signal."
+    },
+    {
+      "id": "1999-co-axial-and-spring-drive",
+      "year": 1999,
+      "era": "Revival",
+      "title": "Co-axial and Spring Drive",
+      "text": "Omega launches the first serial-production co-axial escapement (George Daniels' invention), and Seiko launches Spring Drive."
+    },
+    {
+      "id": "2001-silicon",
+      "year": 2001,
+      "era": "Revival",
+      "title": "Silicon",
+      "text": "Ulysse Nardin's Freak uses silicon escapement parts, beginning the silicon era."
+    },
+    {
+      "id": "2012-gps-solar",
+      "year": 2012,
+      "era": "Smart era",
+      "title": "GPS solar",
+      "text": "Seiko launches the Astron GPS Solar, which sets itself by satellite anywhere on Earth."
+    },
+    {
+      "id": "2015-apple-watch",
+      "year": 2015,
+      "month": 4,
+      "day": 24,
+      "era": "Smart era",
+      "title": "Apple Watch",
+      "text": "The Apple Watch goes on sale, and within a few years smartwatches outsell the entire Swiss industry by volume."
+    },
+    {
+      "id": "2022-moonswatch",
+      "year": 2022,
+      "month": 3,
+      "day": 26,
+      "era": "Smart era",
+      "title": "MoonSwatch",
+      "text": "The Omega × Swatch Bioceramic MoonSwatch launches to queues around the world, bringing a new generation into watches."
+    }
+  ]
+}

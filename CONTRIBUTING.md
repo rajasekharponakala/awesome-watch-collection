@@ -17,6 +17,8 @@ correction, reference or guide is a beat. Thank you for adding yours.
 | Improve a type hub | `content/types/<type>.md` |
 | Improve the website | `site/src/` |
 
+Never edit `/api/*.json` directly. It is generated from these sources and kept in sync automatically.
+
 Copy an existing file as a template. The fields are validated by the schemas in
 [`site/src/content.config.ts`](site/src/content.config.ts), so the build will tell you exactly what is wrong.
 
@@ -64,6 +66,7 @@ cd site
 npm install
 npm run dev      # http://localhost:4321/awesome-watch-collection/
 npm run build    # validates all content and builds to site/dist
+npm run export   # build + refresh the JSON copy in /api
 ```
 
 ## Licensing

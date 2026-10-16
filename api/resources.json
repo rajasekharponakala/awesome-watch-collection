@@ -1,0 +1,105 @@
+{
+  "collection": "resources",
+  "count": 13,
+  "items": [
+    {
+      "id": "mih",
+      "name": "Musée international d'horlogerie, La Chaux-de-Fonds",
+      "kind": "museum",
+      "url": "https://www.mih.ch",
+      "level": "complication",
+      "text": "One of the world's great horological museums, in the heart of the Swiss watch industry."
+    },
+    {
+      "id": "patek-museum",
+      "name": "Patek Philippe Museum, Geneva",
+      "kind": "museum",
+      "url": "https://www.patekmuseum.com",
+      "level": "complication",
+      "text": "Five centuries of watchmaking, from early portable clocks to grand complications."
+    },
+    {
+      "id": "r-watches",
+      "name": "r/Watches",
+      "kind": "forum",
+      "url": "https://www.reddit.com/r/Watches/",
+      "level": "first-wind",
+      "text": "A busy community for questions, wrist shots and buying advice."
+    },
+    {
+      "id": "the-theory-of-horology",
+      "name": "The Theory of Horology (WOSTEP)",
+      "kind": "book",
+      "level": "grande-complication",
+      "text": "The textbook used in professional watchmaking schools."
+    },
+    {
+      "id": "the-watch-book",
+      "name": "The Watch Book (Gisbert L. Brunner)",
+      "kind": "book",
+      "level": "first-wind",
+      "text": "A lavishly illustrated survey of brands, styles and icons."
+    },
+    {
+      "id": "timegrapher-app",
+      "name": "Timegrapher apps & machines",
+      "kind": "tool",
+      "level": "grande-complication",
+      "text": "Measure your watch's rate, amplitude and beat error with a phone app or a dedicated timegrapher."
+    },
+    {
+      "id": "watch-magazines",
+      "name": "Hodinkee / A Collected Man / Monochrome (online magazines)",
+      "kind": "magazine",
+      "level": "automatic",
+      "text": "Long-form reviews, history and market coverage from leading watch publications."
+    },
+    {
+      "id": "watches-and-wonders",
+      "name": "Watches and Wonders Geneva",
+      "kind": "event",
+      "url": "https://www.watchesandwonders.com",
+      "level": "automatic",
+      "text": "The industry's major annual trade fair, where brands unveil their novelties each spring."
+    },
+    {
+      "id": "watchfinder",
+      "name": "Watchfinder & Co. (YouTube)",
+      "kind": "video",
+      "url": "https://www.youtube.com/@WatchfinderCo",
+      "level": "first-wind",
+      "text": "Clear explainers and reviews, including deep dives into movements."
+    },
+    {
+      "id": "watchmaking-daniels",
+      "name": "Watchmaking (George Daniels)",
+      "kind": "book",
+      "level": "grande-complication",
+      "text": "The definitive bench reference by one of the greatest watchmakers of the 20th century."
+    },
+    {
+      "id": "wostep",
+      "name": "WOSTEP",
+      "kind": "school",
+      "url": "https://www.wostep.ch",
+      "level": "grande-complication",
+      "text": "The Watchmakers of Switzerland Training and Educational Program, a global standard in watchmaker education."
+    },
+    {
+      "id": "wristwatch-revival",
+      "name": "Wristwatch Revival (YouTube)",
+      "kind": "video",
+      "url": "https://www.youtube.com/@WristwatchRevival",
+      "level": "grande-complication",
+      "text": "Full restorations filmed at the bench, a masterclass in servicing."
+    },
+    {
+      "id": "wus",
+      "name": "WatchUSeek forums",
+      "kind": "forum",
+      "url": "https://www.watchuseek.com",
+      "level": "first-wind",
+      "text": "One of the oldest and largest watch forums, with sub-forums for every brand and style."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+name: Sync JSON API
+
+# Regenerates /api/*.json from the YAML and Markdown sources and commits it,
+# so the repository always carries an up-to-date JSON copy of the library.
+on:
+  push:
+    branches: [main]
+    paths: ['data/**', 'content/**', 'site/src/**', 'site/package*.json']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-json
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - run: npm ci
+        working-directory: site
+      - run: npm run export
+        working-directory: site
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- api && [ -z "$(git ls-files --others --exclude-standard api)" ]; then
+            echo "JSON API already up to date"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add api
+          git commit -m "Sync JSON API from data sources"
+          git push

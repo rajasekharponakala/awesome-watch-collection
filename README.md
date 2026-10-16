@@ -39,6 +39,21 @@
 | Timeline | [`data/timeline.yaml`](data/timeline.yaml) | 34 events |
 | Resources | [`data/resources.yaml`](data/resources.yaml) | Books, channels, forums, museums, schools |
 
+## Data and the JSON API
+
+The library has one source of truth: human-friendly **YAML** in [`data/`](data) and **Markdown** in [`content/`](content).
+Contributors only ever edit those files.
+
+```
+data/*.yaml, content/*.md  ──build──▶  schema validation  ──▶  website pages
+                                                         └──▶  JSON API  ──▶  /api/*.json (site + repo)
+```
+
+- **Validated:** every build checks each entry against the schemas in [`site/src/content.config.ts`](site/src/content.config.ts). Bad data fails CI.
+- **JSON in the repo:** [`api/`](api) holds a generated JSON copy of every collection (`brands`, `calibers`, `references`, `glossary`, `timeline`, `resources`, `types`, `guides`), plus [`api/index.json`](api/index.json). The [Sync JSON API](.github/workflows/sync-json.yml) workflow regenerates and commits it on every change to `main`. **Don't edit these files by hand.**
+- **JSON on the web:** the same files are served at `https://rajasekharponakala.github.io/awesome-watch-collection/api/<collection>.json`, so other projects can use the data directly.
+- **Locally:** `cd site && npm run export` rebuilds the site and refreshes `/api`.
+
 ## The site speaks watch
 
 | Watch | Site |

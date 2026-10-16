@@ -1,0 +1,245 @@
+{
+  "collection": "guides",
+  "count": 18,
+  "items": [
+    {
+      "id": "automatic/accuracy-and-regulation",
+      "title": "Accuracy and regulation",
+      "description": "Seconds per day, positions, amplitude and magnetism. What \"accurate\" really means for a mechanical watch.",
+      "level": "automatic",
+      "order": 2,
+      "tags": [
+        "accuracy",
+        "regulation",
+        "timegrapher"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "A mechanical watch is never perfect. The question is how far from perfect, and how consistently.\n\n## Seconds per day (s/d)\n\nAccuracy is measured as how many seconds a watch gains (+) or loses (−) in 24 hours.\n\n| Standard | Typical spec |\n|---|---|\n| Entry automatic (e.g. Seiko NH35) | −20 to +40 s/d |\n| Swiss \"elaboré\" grade (e.g. ETA 2824-2) | ±7 s/d average |\n| COSC chronometer | −4 to +6 s/d |\n| Rolex Superlative Chronometer | −2 to +2 s/d |\n| METAS Master Chronometer | 0 to +5 s/d |\n\nReal-world results often beat the specification.\n\n## Why rates vary\n\n- **Position:** gravity pulls on the balance differently when the watch is dial-up, crown-down and so on. Watchmakers test in up to six positions.\n- **State of wind:** a fully wound mainspring delivers more force than a nearly empty one. Better movements are more **isochronous**.\n- **Temperature:** modern alloys and silicon hairsprings reduce this effect.\n- **Magnetism:** the number-one cause of a suddenly fast watch.\n\n## Measuring at home\n\n1. Set the watch exactly against an atomic time source (such as time.is).\n2. Check it at the same time each day for a week, noting the difference.\n3. Divide the total by the number of days.\n\nA **timegrapher** (or a phone app) measures the **rate**, **amplitude** (the balance's swing, ideally 270–310° when fully wound) and **beat error** in seconds.\n\n## Using positions to your advantage\n\nIf your watch runs fast, leave it **crown-up** or **dial-up** overnight, whichever slows it. Many owners \"regulate by position\" without opening the case."
+    },
+    {
+      "id": "automatic/buying-new-grey-preowned",
+      "title": "Buying new, grey and pre-owned",
+      "description": "Authorised dealers, grey market, pre-owned, auctions and forums. The trade-offs, and how to stay safe.",
+      "level": "automatic",
+      "order": 4,
+      "tags": [
+        "buying",
+        "market",
+        "authentication"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "## The four main channels\n\n| Channel | Price | Warranty | Risk |\n|---|---|---|---|\n| **Authorised dealer (AD) / boutique** | List price (sometimes discounted) | Full manufacturer warranty | Lowest |\n| **Grey market** | Often below list for most brands; above list for hyped models | Dealer warranty, sometimes manufacturer | Low to medium |\n| **Pre-owned dealer** | Usually below new, depending on the model | Dealer warranty, typically 1–2 years | Medium |\n| **Private sale / forums / auction** | Potentially the best deals | None, or limited | Highest |\n\n## Protecting yourself\n\n1. **Buy the seller before the watch.** Check reviews, history and returns policy.\n2. **Pay with protection:** a credit card or escrow, never a bank transfer to a stranger.\n3. **\"Box and papers\"** (original box, warranty card, receipts) add value and confidence, but papers can be faked too.\n4. **Ask for a timegrapher reading** and recent service records.\n5. **Compare serial and reference numbers** with known production data.\n6. **If it's too cheap, it's fake or stolen.** No one sells a desirable watch for half of its market value.\n\n## Depreciation and hype\n\nMost new watches lose value when they leave the shop. A few models trade above list price because of scarcity. That premium can vanish, as many buyers learned after the 2022 market correction. **Buy what you love, not what you think will appreciate.**"
+    },
+    {
+      "id": "automatic/how-a-mechanical-movement-works",
+      "title": "How a mechanical movement works",
+      "description": "Follow the energy from the mainspring to the hands, one component at a time.",
+      "level": "automatic",
+      "order": 1,
+      "tags": [
+        "movement",
+        "mechanics"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "Every mechanical watch, from a $100 Seiko to a $1,000,000 grand complication, uses the same five systems.\n\n## 1. Power: the mainspring\n\nA long ribbon of special alloy is coiled inside a drum called the **barrel**. Winding (by the crown or the rotor) tightens the spring. As it slowly uncoils, it turns the barrel, and that is the energy for everything else.\n\n## 2. Transmission: the gear train\n\nThe barrel drives a chain of wheels: the **centre wheel** (which turns once an hour and carries the minute hand), the **third wheel**, the **fourth wheel** (once a minute, often carrying the seconds hand) and finally the **escape wheel**. Each step speeds the rotation up and reduces the force.\n\n## 3. Distribution: the escapement\n\nThe **escape wheel** would spin freely if nothing stopped it. The **pallet fork** locks it, then releases it one tooth at a time. Each release gives a tiny push, the **impulse**, to the balance. This lock-and-release is the tick.\n\n## 4. Regulation: the balance and hairspring\n\nThe **balance wheel** and its spiral **hairspring** form an oscillator, like a pendulum that works in any position. Their natural frequency, for example **28,800 vibrations per hour (4 Hz)**, sets the pace of the whole watch. Shortening or lengthening the active part of the hairspring makes the watch run faster or slower: this is **regulation**.\n\n## 5. Display: the motion works\n\nUnder the dial, a small set of gears (the **motion works**) reduces the minute wheel's rotation by 12:1 to drive the hour hand.\n\n## Where automatic winding fits in\n\nAn automatic adds a **rotor** and a **reversing or Magic Lever system** that turns the rotor's swings, in either direction, into winding of the mainspring. A **slipping bridle** stops the spring from being over-wound.\n\n## Jewels\n\nPivots run in synthetic **ruby jewels** to cut friction and wear. A simple three-hand automatic has about 21–25 functional jewels. More jewels do not automatically mean a better watch.\n\n> **See it moving:** scroll the exploded watch on the [home page](../../../), then browse the [Calibers](../../../calibers/) database."
+    },
+    {
+      "id": "automatic/materials-crystals-and-lume",
+      "title": "Materials, crystals and lume",
+      "description": "Steel grades, titanium, bronze, ceramic and gold, plus sapphire versus mineral, and every kind of glow.",
+      "level": "automatic",
+      "order": 3,
+      "tags": [
+        "materials",
+        "crystal",
+        "lume"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "## Case materials\n\n| Material | Pros | Cons |\n|---|---|---|\n| **316L stainless steel** | Corrosion-resistant, affordable, polishes well | Scratches; relatively heavy |\n| **904L steel** (Rolex \"Oystersteel\") | Even more corrosion-resistant, high lustre | Expensive to machine |\n| **Titanium** (Grade 2 / Grade 5) | ~40% lighter than steel, hypoallergenic | Duller grey; Grade 2 scratches easily |\n| **Bronze** | Develops a unique patina | Can discolour skin; needs care |\n| **Ceramic** | Almost scratch-proof, light, colourful | Can shatter if dropped on a hard surface |\n| **Gold** (18k yellow, rose, white) | Warm, prestigious, holds value | Soft, heavy, expensive |\n| **Carbon composites** | Ultra-light, unique textures | Hard to repair |\n\nTreatments like **DLC**, **PVD** and Sinn's **Tegiment** harden or colour the surface.\n\n## Crystals\n\n- **Acrylic / hesalite:** vintage warmth and distortion, shatterproof, scratches but polishes out.\n- **Mineral glass:** cheap and fairly tough, but scratches can't be polished out.\n- **Hardlex:** Seiko's hardened mineral glass.\n- **Sapphire:** extremely scratch-resistant (second only to diamond). It can chip on hard impacts. **Anti-reflective (AR) coating** on the inside, outside or both reduces glare.\n\n## Lume\n\n| Type | Era | Notes |\n|---|---|---|\n| **Radium** | 1910s–1960s | Radioactive and harmful. Vintage only, handle with care |\n| **Tritium** | 1960s–1990s | Radioactive but low-risk; decays and ages to a creamy colour. Dials marked \"T\" |\n| **Super-LumiNova / LumiBrite** | 1990s–today | Non-radioactive. Charges in light and glows for hours |\n| **Tritium gas tubes** | Today | Self-powered tubes that glow constantly for years |\n\nIn the **Lume** theme (the night setting on this site) you can see how lume keeps a watch legible in the dark."
+    },
+    {
+      "id": "automatic/servicing",
+      "title": "Servicing",
+      "description": "When to service a watch, what a service involves and how to choose a watchmaker.",
+      "level": "automatic",
+      "order": 5,
+      "tags": [
+        "service",
+        "maintenance"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "## When to service\n\nManufacturers recommend intervals of **5 to 10 years** for mechanical watches. Signs that your watch needs attention sooner:\n\n- The rate has changed a lot, or the power reserve has dropped\n- Winding feels gritty, or the date changes at the wrong time\n- Condensation appears under the crystal\n- The watch has had a hard knock\n\n## What a full service involves\n\n1. The movement is **fully disassembled**, often into more than 100 parts.\n2. Parts are **cleaned** in ultrasonic baths and inspected; worn parts are replaced.\n3. The movement is **reassembled and lubricated** with several specific oils and greases.\n4. It is **regulated** on a timegrapher in multiple positions.\n5. **Gaskets** are replaced and the case is **pressure-tested**.\n6. Optionally, the case and bracelet are **refinished**. For vintage watches, **say no to polishing**, because it removes metal and value.\n\n## Cost\n\nExpect a simple automatic to cost roughly $150–$400 at an independent watchmaker, and luxury brands often $500–$1,000 or more at the manufacturer, more for chronographs and complications.\n\n## Brand service or independent?\n\n- **Brand service centre:** genuine parts, a new warranty, but higher cost, and they may replace original vintage parts (such as hands or dials) unless you tell them not to.\n- **Independent watchmaker:** often cheaper and more flexible. Look for certifications (WOSTEP, AWCI, BHI) and reviews."
+    },
+    {
+      "id": "complication/certifications-and-standards",
+      "title": "Certifications and standards",
+      "description": "COSC, METAS, the Geneva Seal, Qualité Fleurier, ISO 6425, ISO 764 and Swiss Made, decoded.",
+      "level": "complication",
+      "order": 3,
+      "tags": [
+        "standards",
+        "chronometer"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "| Standard | Body | What it certifies |\n|---|---|---|\n| **COSC chronometer** | Contrôle Officiel Suisse des Chronomètres | Uncased movement: −4/+6 s/day over 15 days, 5 positions, 3 temperatures |\n| **METAS Master Chronometer** | Swiss Federal Institute of Metrology | Cased watch: 0/+5 s/day, resistance to 15,000 gauss, water resistance, power reserve |\n| **Rolex Superlative Chronometer** | Rolex (in-house) | Cased watch: −2/+2 s/day after COSC |\n| **Geneva Seal (Poinçon de Genève)** | Canton of Geneva | Origin and finishing standards, plus a cased-watch test |\n| **Qualité Fleurier** | Fleurier Quality Foundation | Finishing, chronometry and a cased \"Fleuritest\" simulation of daily wear |\n| **ISO 6425** | International Organization for Standardization | Dive watches: water resistance (+25% safety margin), legibility at 25 cm in darkness, a unidirectional bezel and more |\n| **ISO 764** | ISO | Anti-magnetic: functions after exposure to 4,800 A/m (about 60 gauss) |\n| **Swiss Made** | Swiss law | At least 60% of manufacturing cost in Switzerland, movement Swiss, final assembly and inspection in Switzerland |\n\n## Reading between the lines\n\n- A **chronometer** label means the movement passed a test, not that it is better made than an uncertified one. Some excellent makers simply don't certify.\n- **\"Swiss Movement\"** (not \"Swiss Made\") on a dial may mean only the movement is Swiss.\n- **Dive watches** marked \"DIVER'S\" (with the depth) must meet ISO 6425. \"Water resistant 200 m\" alone does not guarantee it."
+    },
+    {
+      "id": "complication/complications-explained",
+      "title": "Complications explained",
+      "description": "Chronographs, GMTs, calendars and moon phases. What they do and how they work.",
+      "level": "complication",
+      "order": 1,
+      "tags": [
+        "complications"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "A **complication** is any function beyond hours, minutes and seconds.\n\n## Chronograph\n\nA stopwatch built into the watch. Start and stop with the top pusher, reset with the bottom one.\n\n- **Cam-lever** (e.g. ETA 7750): robust and economical; pushers can feel firm.\n- **Column-wheel**: a castellated wheel coordinates the functions, with a smoother feel; prized by connoisseurs.\n- **Horizontal vs vertical clutch:** a vertical clutch avoids the seconds hand jumping at start.\n- **Flyback:** press reset while running and the chronograph instantly restarts. Made for pilots.\n- **Rattrapante (split-seconds):** two seconds hands to time two events. One of the most difficult complications to make.\n\n## GMT and world time\n\n- **\"Flyer\" or \"true\" GMT:** the local hour hand jumps independently, ideal for travellers.\n- **\"Caller\" or \"office\" GMT:** the 24-hour hand is set independently, ideal for following another time zone from home.\n- **World time:** a city ring and a 24-hour ring show all time zones at once (Louis Cottier's 1930s system).\n\n## Calendars\n\n| Complication | Corrections needed |\n|---|---|\n| Simple date | 5 per year (every 30-day month and February) |\n| Annual calendar | 1 per year (end of February) |\n| Perpetual calendar | None until 2100 (not a leap year in the Gregorian calendar) |\n\n## Moon phase\n\nA disc with two moons turns once every two lunar months. A standard moon phase is out by one day after about **2.5 years**. \"Astronomical\" versions stay accurate for over 100 years.\n\n## Others\n\n**Power-reserve indicator**, **alarm** (mechanical alarms buzz with a small hammer), **tachymeter** scales and **regatta** countdown timers."
+    },
+    {
+      "id": "complication/finishing-and-decoration",
+      "title": "Finishing and decoration",
+      "description": "How to judge the craft of a movement and dial, from Côtes de Genève to black polish.",
+      "level": "complication",
+      "order": 2,
+      "tags": [
+        "finishing",
+        "craft"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "Finishing is the craft of making a movement beautiful, even in places no one will ever see. Hand-finishing is one of the clearest differences between a $5,000 watch and a $50,000 one.\n\n## Movement techniques\n\n- **Côtes de Genève (Geneva stripes):** parallel waves across plates and rotors.\n- **Perlage:** overlapping circular grains, often on the main plate and under the dial.\n- **Anglage (bevelling):** edges are filed at 45° and polished. Look for **inward angles** (sharp internal corners), which can only be done by hand.\n- **Black polish (miroir):** steel parts polished so flat they look black from most angles.\n- **Straight graining (Côtes droites) and circular graining:** finishing on bridges and wheels.\n- **Blued screws:** steel screws heated until they turn a deep blue.\n- **Hand engraving:** balance cocks engraved by hand, a signature of Glashütte watches.\n\n## Dial techniques\n\n- **Guilloché:** patterns cut on a rose engine or straight-line engine.\n- **Grand Feu enamel:** layers of enamel fired at around 800 °C. The best dials of all, and the most fragile to make.\n- **Sunburst, fumé (smoked) and textured stamping.**\n- **Applied indices** with diamond-cut facets, and **Zaratsu** blade-polishing on cases.\n\n## How to judge it\n\nUse a 10× **loupe**. Look for crisp, consistent angles; no tool marks; perfectly clean surfaces. Compare an industrial finish (machine-applied stripes, stamped parts) with true hand-finishing and the difference becomes obvious."
+    },
+    {
+      "id": "complication/vintage-collecting",
+      "title": "Vintage collecting",
+      "description": "Originality, patina, redials, Frankenwatches and documentation. How to buy vintage without getting burned.",
+      "level": "complication",
+      "order": 4,
+      "tags": [
+        "vintage",
+        "authentication"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "In vintage, **originality is everything**. Two watches that look identical can differ in value by ten times.\n\n## The originality checklist\n\n1. **Dial:** original, not **redialled** (repainted). Look at the printing under a loupe: is it crisp, and does the font match references?\n2. **Hands:** do they match the dial's lume colour and the correct period style?\n3. **Case:** is it unpolished, with sharp edges and chamfers? Heavy polishing ruins value.\n4. **Movement:** is it the correct calibre and serial for the case? Mismatches suggest a **Frankenwatch**.\n5. **Crown, crystal and bezel:** service replacements are common and acceptable, but should be disclosed.\n6. **Bracelet:** correct period bracelet with matching end links adds value.\n\n## Patina versus damage\n\n**Patina** (evenly aged lume, \"tropical\" brown dials, softly faded bezels) can add value. **Damage** (water spots, flaking paint, corrosion) usually reduces it. The line is subjective, so learn by looking at many examples.\n\n## Documentation\n\nOriginal box, papers, receipts, service history and **archive extracts** (offered by Omega, Longines, Patek Philippe and others) prove provenance and can dramatically increase value.\n\n## Where to start\n\nAffordable vintage is a fantastic school: **Seiko** (5, Bell-Matic, King Seiko), **Omega** Seamaster and De Ville, **Longines** dress watches, **HMT** in India and **Soviet** Vostok and Poljot pieces. Buy from specialists, and ask questions until you are satisfied."
+    },
+    {
+      "id": "first-wind/anatomy-of-a-watch",
+      "title": "Anatomy of a watch",
+      "description": "Every part of a watch, from crown to caseback, explained in plain language.",
+      "level": "first-wind",
+      "order": 1,
+      "tags": [
+        "anatomy",
+        "basics"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "Before you can compare watches, you need the words for what you are looking at. A wristwatch is made of a few main groups of parts.\n\n## The case\n\n- **Case**: the metal (or resin, ceramic, titanium) housing that protects the movement.\n- **Lugs**: the \"horns\" at the top and bottom that hold the strap or bracelet.\n- **Crown**: the knob used to wind the watch and set the time. A **screw-down crown** seals the case for better water resistance.\n- **Pushers**: extra buttons, usually for a chronograph (stopwatch).\n- **Caseback**: the back of the case. It is either solid or an **exhibition caseback** in sapphire that shows the movement.\n- **Crown guards**: shoulders on the case that protect the crown from knocks.\n\n## The face\n\n- **Crystal**: the transparent cover. It is made of **acrylic** (warm, scratches but polishes out), **mineral glass** (cheap and fairly tough) or **sapphire** (very scratch-resistant).\n- **Bezel**: the ring around the crystal. It may be fixed, or rotate for timing dives, tracking a second time zone or calculating speed.\n- **Dial**: the face itself, with **indices** (hour markers), a **minute track** and often text.\n- **Hands**: hour, minute and seconds. Their shapes have names: *dauphine*, *sword*, *Mercedes*, *baton*, *cathedral*.\n- **Lume**: glow-in-the-dark material on the hands and markers.\n\n## The inside\n\n- **Movement** (or **calibre**): the engine. It can be mechanical, quartz or electronic.\n- **Rotor**: in an automatic watch, the weight that winds the mainspring as you move.\n\n## The strap\n\n- **Strap** (leather, rubber, fabric) or **bracelet** (metal links), joined to the lugs with **spring bars** and closed with a **buckle** or **clasp**.\n\n> **Try this:** pick up any watch you own and name every part you can see. Then check the [Glossary](../../../glossary/) for any that you missed."
+    },
+    {
+      "id": "first-wind/care-basics",
+      "title": "Care basics",
+      "description": "Winding, setting, cleaning and storing a watch so it lasts for decades.",
+      "level": "first-wind",
+      "order": 6,
+      "tags": [
+        "care",
+        "maintenance"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "A little care goes a long way.\n\n## Winding\n\n- **Manual-wind:** wind at the same time every day until you feel resistance, then stop. Never force it.\n- **Automatic:** if it has stopped, give the crown 20–30 turns to start it, then wear it.\n- Take the watch **off your wrist** to wind it, to avoid stressing the crown stem.\n\n## Setting the date safely\n\nMany mechanical watches should not have their date changed between roughly **9 pm and 3 am**, because the date mechanism is engaged then. If in doubt, move the hands to 6:30 first, then set the date.\n\n## Water\n\n- Push in or screw down the crown before getting wet.\n- Rinse with fresh water after the sea or a pool.\n- Have water resistance checked every year or two if you swim with the watch.\n\n## Magnets\n\nPhones, speakers, laptop lids and bag clasps can magnetise a mechanical watch and make it run very fast. A watchmaker can demagnetise it in seconds, or you can use an inexpensive demagnetiser.\n\n## Cleaning and storage\n\n- Clean bracelets with a soft toothbrush and warm, soapy water (only if the watch is water-resistant).\n- Store watches away from direct sunlight and magnetic fields, ideally in a watch box.\n- **Quartz:** replace a dead battery promptly, because old batteries can leak.\n- **Mechanical:** plan a service every 5–10 years, see [Servicing](../../automatic/servicing/)."
+    },
+    {
+      "id": "first-wind/choosing-your-first-watch",
+      "title": "Choosing your first watch",
+      "description": "A step-by-step method for buying your first watch with confidence, at any budget.",
+      "level": "first-wind",
+      "order": 4,
+      "tags": [
+        "buying",
+        "budget"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "Your first good watch is a big decision, but it does not need to be a stressful one. Work through these five questions in order.\n\n## 1. What is your budget?\n\nDecide a number before you browse. Excellent watches exist at every level:\n\n- **Under $100:** Casio F-91W, Casio Duro, Timex Weekender, Casio G-Shock DW-5600\n- **$100–$500:** Seiko 5 Sports, Orient Bambino, Citizen Promaster Diver, Hamilton Khaki Field\n- **$500–$1,500:** Tissot PRX Powermatic 80, Seiko Presage, Christopher Ward, Sinn 556\n- **$1,500–$5,000:** Tudor Black Bay, Longines Spirit, Oris Aquis, NOMOS Tangente\n\n## 2. Where will you wear it?\n\nOffice, gym, beach, black tie or all of them? If you want one watch for everything, choose a **steel sports watch on a bracelet with 100 m water resistance**. It works with a suit and in the sea.\n\n## 3. Which type of movement suits your life?\n\nRead [Watch types explained](../watch-types-explained/). If you want to fall in love with watches, a simple **automatic** is a great start. If you just want the time, **quartz** is unbeatable.\n\n## 4. Will it fit?\n\nUse the lug-to-lug rule from [Reading the spec sheet](../reading-the-spec-sheet/). If you can, try it on in a shop, even if you buy elsewhere.\n\n## 5. Where should you buy?\n\nFor a first watch, buy from an **authorised dealer** or a reputable retailer. You get a full warranty and zero risk of a fake. Pre-owned is a great way to stretch your budget later, once you know what to look for.\n\n## Common first-buyer mistakes\n\n- Buying too big because it looked good in photos\n- Prioritising a famous brand over a watch you actually love\n- Buying from marketplace listings that seem too good to be true (they are)\n- Forgetting the strap. A new strap can transform a watch for very little money"
+    },
+    {
+      "id": "first-wind/reading-the-spec-sheet",
+      "title": "Reading the spec sheet",
+      "description": "Diameter, lug-to-lug, thickness, lug width and water resistance. The numbers that decide whether a watch will suit you.",
+      "level": "first-wind",
+      "order": 3,
+      "tags": [
+        "specs",
+        "sizing",
+        "water-resistance"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "A watch's specifications tell you most of what you need to know before you try it on.\n\n## Size\n\n- **Diameter** (e.g. 40 mm): the width of the case, usually not counting the crown. Most people find 36–42 mm comfortable.\n- **Lug-to-lug** (e.g. 47 mm): the distance between the lug tips. **This is the most important number for fit.** If the lug-to-lug is wider than your wrist is flat, the lugs will overhang.\n- **Thickness** (e.g. 12 mm): affects whether the watch slips under a shirt cuff. Under 10 mm feels slim; over 14 mm feels chunky.\n- **Lug width** (e.g. 20 mm): the strap width that fits. 18, 20 and 22 mm are the most common.\n\n> **Rule of thumb:** measure across the top of your wrist with a ruler. Choose a lug-to-lug equal to or smaller than that number.\n\n## Water resistance\n\nThe number on the dial is a **laboratory pressure rating**, not a depth you can dive to. Movement in water creates extra pressure, and seals age.\n\n| Marking | What it really means |\n|---|---|\n| 30 m / 3 ATM | Splashes and rain. Do not swim |\n| 50 m / 5 ATM | Hand-washing and a brief swim |\n| 100 m / 10 ATM | Swimming and snorkelling |\n| 200 m+ | Diving. Look for **ISO 6425** certification |\n\nAlways make sure the crown is pushed in (or screwed down) before the watch meets water, and never operate chronograph pushers underwater unless the watch is rated for it.\n\n## Other lines on the spec sheet\n\n- **Crystal**: sapphire is best for scratch resistance.\n- **Movement**: the calibre name lets you look up accuracy, power reserve and service cost in the [Calibers](../../../calibers/) database.\n- **Power reserve**: how long the watch runs once fully wound.\n- **Lume**: the type of luminous material, which matters if you need the watch at night."
+    },
+    {
+      "id": "first-wind/straps-and-bracelets",
+      "title": "Straps and bracelets",
+      "description": "Leather, rubber, NATO, steel. How to choose, size and swap them yourself.",
+      "level": "first-wind",
+      "order": 5,
+      "tags": [
+        "straps",
+        "style"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "Changing the strap is the cheapest way to make one watch feel like several.\n\n## Materials\n\n| Strap | Best for | Avoid |\n|---|---|---|\n| **Leather** | Dress and smart-casual | Water and hot, sweaty days |\n| **Rubber / FKM** | Sport, swimming and hot climates | Formal settings |\n| **NATO / fabric** | Casual, field and military styles | Very thick cases (they add height) |\n| **Steel bracelet** | Everything. The most versatile option | People who dislike weight |\n| **Mesh (Milanese)** | Dive and dress watches, vintage style | Hairy wrists (it can pinch) |\n\n## Sizing\n\n- Know your **lug width** (on the spec sheet, or measure between the lugs).\n- A bracelet is sized by removing **links**. Many watches also have **micro-adjustment** holes in the clasp, or tool-free extension systems.\n- A good fit lets you slide one finger under the strap.\n\n## Swapping a strap\n\n1. Use a **spring bar tool** (or a strap with quick-release pins).\n2. Compress the spring bar at the lug and ease the strap out.\n3. Fit the new strap's spring bar into one lug hole, compress it and slide it into the other. Listen for the click.\n4. Tug gently to check that both ends are secure.\n\n> **Tip:** cover the lugs with a strip of tape while you work, to avoid scratching the case."
+    },
+    {
+      "id": "first-wind/watch-types-explained",
+      "title": "Watch types explained",
+      "description": "Mechanical, automatic, quartz, digital, smart and hybrid. What they are and who each suits.",
+      "level": "first-wind",
+      "order": 2,
+      "tags": [
+        "types",
+        "basics"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "Almost every watch falls into one of six families. The family tells you how it keeps time, how accurate it will be and how you will live with it.\n\n| Type | Powered by | Accuracy | Lives with you like… |\n|---|---|---|---|\n| **Manual-wind** | A mainspring you wind | ±5–20 s/day | A ritual. Wind it every day or two |\n| **Automatic** | A mainspring wound by your wrist | ±5–20 s/day | A companion. Wear it and it keeps going |\n| **Quartz** | A battery and a quartz crystal | ±15 s/month | An appliance. Set it and forget it |\n| **Digital** | A battery and an LCD/LED display | ±15–30 s/month | A tool. Alarms, timers, backlight |\n| **Smartwatch** | A rechargeable battery and a computer | Network-synced | A gadget. Charge it daily or weekly |\n| **Hybrid** | A mix (e.g. Spring Drive, hybrid-smart) | Varies | The best of both, with some quirks |\n\n## Which one is right for you?\n\n- **You want something accurate, cheap and fuss-free:** quartz or digital.\n- **You love craft and the idea of a machine on your wrist:** mechanical, either automatic or manual.\n- **You train, run or hike:** an outdoor smartwatch, or a G-Shock.\n- **You want one watch for everything:** a 38–40 mm steel automatic with 100 m water resistance and a bracelet.\n\nThere is no \"best\" type. Most collectors end up owning several, because each one is good at something different.\n\nExplore each family in depth in the [Types](../../../types/) section."
+    },
+    {
+      "id": "grande-complication/escapements-deep-dive",
+      "title": "Escapements, a deep dive",
+      "description": "Lever, detent, co-axial, silicon and constant-force escapements. The heart of horological engineering.",
+      "level": "grande-complication",
+      "order": 1,
+      "tags": [
+        "escapement",
+        "engineering"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "The escapement is where watchmaking becomes physics. It has to give the balance just enough energy, at just the right moment, while disturbing it as little as possible.\n\n## The Swiss lever escapement\n\nDerived from **Thomas Mudge's** detached lever (c. 1755). The pallet fork alternately locks and releases the escape wheel; the **impulse** is delivered through **sliding friction** between the escape wheel teeth and the pallet jewels. It is robust, self-starting and cheap to produce, but that sliding requires lubrication, which degrades over time.\n\n## The detent escapement\n\nThe **chronometer escapement** of marine clocks. Impulse is given directly to the balance in only one direction, with almost no friction. It is extremely accurate, but sensitive to shocks and not self-starting, so it is rarely used in wristwatches.\n\n## The co-axial escapement\n\nInvented by **George Daniels** in the 1970s and industrialised by **Omega** in 1999. Impulse is delivered radially, through pushing rather than sliding, which reduces friction and the need for lubrication. It is now in nearly all Omega mechanical watches.\n\n## Silicon and new materials\n\nSilicon (Si) parts are light, hard, anti-magnetic and need no lubrication. They can be made with micron precision by **DRIE etching**. Silicon escape wheels, pallet forks and hairsprings (Rolex Syloxi, Omega Si14, Patek Spiromax) have transformed modern accuracy and reliability.\n\n## Constant force\n\nMainspring torque falls as it unwinds, which affects amplitude and rate. **Constant-force escapements** and **remontoirs** store energy in a small intermediate spring that is rewound at regular intervals, so the balance receives identical impulses. Often a one-second \"dead-beat\" seconds hand is the visible sign.\n\n## Further experiments\n\nThe **Girard-Perregaux Constant Escapement** (a buckling silicon blade), the **Zenith Defy Lab** oscillator (a single silicon piece replacing over 30 parts) and **Ulysse Nardin's Freak** are ongoing attempts to reinvent the oldest problem in horology."
+    },
+    {
+      "id": "grande-complication/tourbillons-and-regulation-showpieces",
+      "title": "Tourbillons and regulation showpieces",
+      "description": "Tourbillon, carrousel, multi-axis and fusée-and-chain. Their history, purpose and real-world value.",
+      "level": "grande-complication",
+      "order": 2,
+      "tags": [
+        "tourbillon",
+        "haute-horlogerie"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "## The tourbillon\n\nPatented by **Abraham-Louis Breguet** in 1801, the tourbillon puts the entire escapement and balance in a rotating **cage**, typically turning once a minute. In a pocket watch, which sits vertically for hours, rotation averages out the rate errors that gravity causes in vertical positions.\n\n**On the wrist the benefit is debated**, because a wristwatch changes position constantly. Today the tourbillon is mostly a showcase of skill: the cage of a one-minute tourbillon can weigh less than 0.3 g and contains dozens of parts.\n\n### Variants\n\n- **Flying tourbillon:** supported from one side only, with no top bridge, so it seems to float.\n- **Multi-axis tourbillons:** cages rotating in two or three axes (Jaeger-LeCoultre Gyrotourbillon, Greubel Forsey).\n- **Carrousel:** similar effect, but driven differently (Bahne Bonniksen, 1892). Blancpain has revived it.\n\n## Fusée-and-chain\n\nA tiny bicycle-like chain wraps around a cone (the fusée). When the spring is fully wound, it pulls on the narrow part of the cone; as it unwinds, the larger diameter compensates for the lower force. The chain of an A. Lange & Söhne Pour le Mérite has more than 600 parts.\n\n## Is it worth it?\n\nAs engineering art, absolutely. As a precision device, a modern chronometer-grade movement with a silicon hairspring is often just as accurate. Judge a tourbillon on **finishing, architecture and the maker's skill**. Today's Chinese industrial tourbillons cost a few hundred dollars, while the finest hand-made ones cost hundreds of thousands."
+    },
+    {
+      "id": "grande-complication/watchmaking-at-home",
+      "title": "Watchmaking at home",
+      "description": "Tools, a first movement, regulation and modding. How to start working on watches safely.",
+      "level": "grande-complication",
+      "order": 3,
+      "tags": [
+        "diy",
+        "tools",
+        "modding",
+        "education"
+      ],
+      "last_reviewed": "2026-10-16",
+      "body": "Many collectors eventually want to understand watches with their hands.\n\n## A starter bench\n\n- **Screwdrivers:** a quality set, with sizes from 0.6 to 2.0 mm\n- **Tweezers:** brass and anti-magnetic steel (Dumont-style)\n- **Loupe:** 3×–5× for work, 10× for inspection\n- **Movement holder**, **hand levers** and **hand-setting tools**\n- **Rodico** (cleaning putty), **finger cots**, **dust blower**\n- **Case opener** and **press** for casebacks\n- A **timegrapher** or a phone app\n- A clean, well-lit desk with a **white or green mat**\n\n## Your first movement\n\nBuy an inexpensive **Unitas/ETA 6497** clone or a **Seiko NH35** and take it apart and reassemble it many times before you touch a watch you care about. Learn the order: **let down the mainspring first**, then remove the balance, then the train.\n\n## Regulation\n\nWith a timegrapher, adjust the **regulator index** to bring the rate within a few seconds a day, and the **beat error** to under 1.0 ms. Compare readings in different positions.\n\n## Modding\n\nThe **Seiko NH35/NH36 ecosystem** lets you build a custom watch from case, dial, hands, bezel and crystal. It is the most accessible way to learn about fit, tolerances and design.\n\n## Becoming a watchmaker\n\nFormal training programmes include **WOSTEP** (Switzerland), **Lycée/école d'horlogerie** schools, **BHI** (UK), the **AWCI** (US) and brand-run academies. Many independent watchmakers began as hobbyists.\n\n> **Safety:** vintage radium dials are radioactive. Never sand, scrape or open them without proper protection."
+    }
+  ]
+}
