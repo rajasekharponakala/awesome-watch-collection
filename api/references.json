@@ -42,7 +42,10 @@
         "metal": "titanium",
         "bezel": "none"
       },
-      "sources": [],
+      "sources": [
+        "https://www.apple.com/za/apple-watch-ultra-2/specs",
+        "https://everymac.com/systems/apple/apple-watch/specs/apple-watch-ultra-2-49mm-us-canada.html"
+      ],
       "last_reviewed": "2026-10-16"
     },
     {
@@ -76,14 +79,18 @@
         "grande-complication"
       ],
       "region": "Switzerland",
-      "summary": "The closest modern descendant of the 1972 original: 39 mm, extra-thin, \"Petite Tapisserie\" dial and the octagonal bezel with eight exposed screws that changed luxury forever.",
+      "summary": "The closest modern descendant of the 1972 original: 39 mm, extra-thin, \"Petite Tapisserie\" dial and the octagonal bezel with eight exposed screws that changed luxury forever. Its 2012 update (with the AP logo at 6 o'clock) is sometimes cited as the launch date; the reference itself dates to 2000.",
       "look": {
         "dial": "#1b2c4a",
         "accent": "#e4e9f0",
         "metal": "steel",
         "bezel": "octagon"
       },
-      "sources": [],
+      "sources": [
+        "https://watchesbysjx.com/2022/01/audemars-piguet-royal-oak-jumbo-16202.html",
+        "https://phillips.com/detail/audemars-piguet/HK080123/804/zh",
+        "https://gandgtimepieces.com/products/audemars-piguet-2018-royal-oak-jumbo-15202st"
+      ],
       "last_reviewed": "2026-10-16"
     },
     {
@@ -125,7 +132,11 @@
         "metal": "resin",
         "bezel": "none"
       },
-      "sources": [],
+      "sources": [
+        "https://en.wikipedia.org/wiki/Casio_F91W",
+        "https://varusteleka.com/en/products/casio-f-91w-1yeg",
+        "https://teddybaldassarre.com/blogs/watches/casio-f-91w"
+      ],
       "last_reviewed": "2026-10-16"
     },
     {
@@ -700,7 +711,10 @@
         "metal": "steel",
         "bezel": "dive"
       },
-      "sources": [],
+      "sources": [
+        "https://www.citizenwatch.com/us/en/product/BN0150-28E.html",
+        "https://bigtimewatches.com/products/citizen-bn0150-28e-promaster-diver"
+      ],
       "last_reviewed": "2026-10-16"
     },
     {
@@ -740,7 +754,10 @@
         "metal": "black",
         "bezel": "none"
       },
-      "sources": [],
+      "sources": [
+        "https://the5krunner.com/specs/garmin/fenix-8/",
+        "https://www.heartratemonitorsusa.com/collections/garmin/products/garmin-fenix-8-sapphire-solar-edition-outdoor-gps-watch"
+      ],
       "last_reviewed": "2026-10-16"
     },
     {
@@ -782,7 +799,11 @@
         "metal": "titanium",
         "bezel": "none"
       },
-      "sources": [],
+      "sources": [
+        "https://vivir.com/article/grand-seiko-snowflake-sbga211",
+        "https://www.5dwatches.com/grand-seiko/snowflake-sbga211",
+        "https://www.bernardwatch.com/watch/GS211"
+      ],
       "last_reviewed": "2026-10-16"
     },
     {
@@ -800,6 +821,8 @@
       "case": {
         "material": "Stainless steel",
         "diameter_mm": 38,
+        "lug_to_lug_mm": 47,
+        "thickness_mm": 9.5,
         "lug_width_mm": 20
       },
       "water_resistance_m": 50,
@@ -817,7 +840,11 @@
         "metal": "steel",
         "bezel": "none"
       },
-      "sources": [],
+      "sources": [
+        "https://watchbase.com/hamilton/khaki-field/h69439931",
+        "https://www.safajewelers.com/products/hamilton-khaki-fieldmechanical-38mm-h69439931",
+        "https://majestixcollection.com/watches/hamilton-khaki-field-mechanical-38-black-h69439931/"
+      ],
       "last_reviewed": "2026-10-16"
     },
     {
@@ -832,8 +859,7 @@
       "complications": [],
       "caliber": "HMT hand-wound calibre",
       "case": {
-        "material": "Stainless steel / chrome-plated",
-        "diameter_mm": 35
+        "material": "Stainless steel / chrome-plated"
       },
       "years": {},
       "price_tier": "entry",
@@ -849,7 +875,10 @@
         "metal": "steel",
         "bezel": "none"
       },
-      "sources": [],
+      "sources": [
+        "https://watchesbysjx.com/2016/07/hmt-watches-the-rise-and-fall-of-indias-watchmaking-titan.html",
+        "https://theprint.in/past-forward/indias-endless-nostalgia-for-hmt-nehrus-dream-to-desh-ki-dhadkan-downfall/3025194/"
+      ],
       "last_reviewed": "2026-10-16"
     },
     {
@@ -892,7 +921,10 @@
         "metal": "steel",
         "bezel": "tachy"
       },
-      "sources": [],
+      "sources": [
+        "https://watchbase.com/omega/speedmaster/310-30-42-50-01-001",
+        "https://watchbase.com/omega/caliber/3861"
+      ],
       "last_reviewed": "2026-10-16"
     },
     {
@@ -908,7 +940,7 @@
       "complications": [
         "date"
       ],
-      "caliber": "Patek Philippe 26-330 S C",
+      "caliber": "Patek Philippe 324 S C (26-330 S C in the final years)",
       "case": {
         "material": "Stainless steel",
         "diameter_mm": 40,
@@ -933,7 +965,11 @@
         "metal": "steel",
         "bezel": "octagon"
       },
-      "sources": [],
+      "sources": [
+        "https://www.watchonista.com/node/491483",
+        "https://watchbase.com/patek-philippe/nautilus/5711-1a-010",
+        "https://prideandpinion.com/products/patek-philippe-nautilus-5711-blue-dial"
+      ],
       "last_reviewed": "2026-10-16"
     },
     {
@@ -1077,8 +1113,7 @@
       "caliber": "Rolex 3230",
       "case": {
         "material": "Oystersteel (904L)",
-        "diameter_mm": 41,
-        "lug_width_mm": 21
+        "diameter_mm": 41
       },
       "water_resistance_m": 300,
       "crystal": "Sapphire",
@@ -1098,7 +1133,11 @@
         "metal": "steel",
         "bezel": "dive"
       },
-      "sources": [],
+      "sources": [
+        "https://www.watchonista.com/rolex/watches/rolex-submariner",
+        "https://wristcheck.com/us/buy/rolex/submariner-no-date-stainless-steel-black-dial",
+        "https://swisswatch.com.my/collections/rolex/products/rolex-submariner-no-date-124060"
+      ],
       "last_reviewed": "2026-10-16"
     },
     {
@@ -1904,9 +1943,7 @@
       },
       "water_resistance_m": 50,
       "crystal": "Hardlex (box-shaped)",
-      "years": {
-        "introduced": 2017
-      },
+      "years": {},
       "price_tier": "affordable",
       "levels": [
         "first-wind",
@@ -1920,7 +1957,10 @@
         "metal": "steel",
         "bezel": "none"
       },
-      "sources": [],
+      "sources": [
+        "https://www.seikowatches.com/es-es/products/presage/SRPB43J1",
+        "https://skeies.com/products/seiko-presage-srpb43-automatic-watch"
+      ],
       "last_reviewed": "2026-10-16"
     },
     {
@@ -1965,7 +2005,11 @@
         "metal": "steel",
         "bezel": "dive"
       },
-      "sources": [],
+      "sources": [
+        "https://watchbase.com/seiko/mechanical/skx007k1",
+        "https://sofrep.com/gear/seiko-skx007-every-other-persons-favorite-dive-watch/",
+        "https://longislandwatch.com/products/seiko-skx007k2-watch-skx007k2"
+      ],
       "last_reviewed": "2026-10-16"
     },
     {
@@ -2005,7 +2049,10 @@
         "metal": "steel",
         "bezel": "none"
       },
-      "sources": [],
+      "sources": [
+        "https://www.tissotwatches.com/en-us/t1374071104100.html",
+        "https://watchbase.com/tissot/prx/t137-407-11-041-00"
+      ],
       "last_reviewed": "2026-10-16"
     },
     {
@@ -2042,7 +2089,11 @@
         "metal": "gold",
         "bezel": "dive"
       },
-      "sources": [],
+      "sources": [
+        "https://watchbase.com/tudor/black-bay-58/79030n-0001",
+        "https://watchesbysjx.com/2018/03/22",
+        "https://www.pragnell.co.uk/tudor-black-bay-fifty-eight_m79030n-0001-p"
+      ],
       "last_reviewed": "2026-10-16"
     }
   ]
