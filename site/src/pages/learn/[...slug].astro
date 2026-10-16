@@ -72,7 +72,7 @@ const beats = (minutes * 60 * 8).toLocaleString('en-US');
 
 <style>
   .guide-meta { display: flex; flex-wrap: wrap; gap: 22px; align-items: center; margin-top: 30px; color: var(--muted); font-size: 12px; }
-  .guide-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 90px; }
+  .guide-nav { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; margin-top: 90px; }
   .guide-nav .card { display: grid; gap: 10px; }
   .guide-nav .next { text-align: right; }
   .edit { margin-top: 40px; font-size: 12px; }

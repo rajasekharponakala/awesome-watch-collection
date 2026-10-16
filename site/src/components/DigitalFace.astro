@@ -47,7 +47,7 @@ const { kind, screen = '#a9ad97', ink = '#1b1c18', label = 'AWC', size } = Astro
 <style>
   .dface {
     position: relative;
-    width: var(--size, 320px);
+    width: var(--size, min(320px, 100%));
     max-width: 100%;
     aspect-ratio: 1;
     display: grid;

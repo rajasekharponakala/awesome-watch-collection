@@ -395,7 +395,7 @@ const style = size ? `--size:${size}` : '';
 <style>
   .watch {
     position: relative;
-    width: var(--size, 420px);
+    width: var(--size, min(420px, 100%));
     max-width: 100%;
     aspect-ratio: 1;
     transform-style: preserve-3d;

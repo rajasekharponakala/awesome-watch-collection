@@ -41,7 +41,7 @@ const refs = (await getCollection('references')).filter((r) => r.data.brand === 
 </Base>
 
 <style>
-  .brand-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+  .brand-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: center; }
   .since { font-size: clamp(110px, 18vw, 280px); font-style: italic; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--gold); text-align: right; }
   @media (max-width: 860px) { .brand-grid { grid-template-columns: 1fr; } .since { text-align: left; } }
 </style>

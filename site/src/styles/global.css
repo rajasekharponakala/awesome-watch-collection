@@ -94,6 +94,10 @@ svg {
   max-width: 100%;
 }
 
+h1, h2, h3, h4, p, li, dd, dt, td, th {
+  overflow-wrap: break-word;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -184,6 +188,7 @@ main {
 }
 
 .grid--2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
+.grid > * { min-width: 0; }
 .grid--3 { grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
 .grid--4 { grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); }
 
@@ -362,6 +367,7 @@ main {
 
 button.chip {
   cursor: pointer;
+  min-height: 36px;
   transition: all 0.3s var(--ease);
 }
 
@@ -610,6 +616,18 @@ html.js .split-line.is-in > span {
   display: none;
 }
 
+@media (max-width: 640px) {
+  .brand { font-size: 19px; gap: 10px; min-width: 0; }
+  .brand small { letter-spacing: 0.22em; }
+  .brand__mark { width: 30px; height: 30px; }
+  .site-header .container { gap: 12px; }
+  .header-tools { gap: 6px; flex: none; }
+}
+
+@media (max-width: 380px) {
+  .brand small { display: none; }
+}
+
 @media (max-width: 1080px) {
   .nav,
   .crown-btn kbd,
@@ -633,6 +651,8 @@ html.js .split-line.is-in > span {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   padding: calc(var(--header-h) + 20px) var(--gutter) 40px;
   background: var(--bg);
   clip-path: circle(0% at calc(100% - 40px) 38px);
@@ -838,6 +858,14 @@ html.js .split-line.is-in > span {
 
 .specs dd {
   margin: 0;
+  min-width: 0;
+}
+
+@media (max-width: 520px) {
+  .specs > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
 }
 
 /* ---------- Footer ---------- */

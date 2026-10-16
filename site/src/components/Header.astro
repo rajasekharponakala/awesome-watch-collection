@@ -30,10 +30,10 @@ const path = Astro.url.pathname;
       <button class="crown-btn" data-crown-open aria-label="Search (pull the crown)">
         <Icon name="crown" /><span>Pull the crown</span><kbd>⌘K</kbd>
       </button>
-      <button class="icon-btn" data-theme-toggle aria-label="Toggle lume (dark) and day dial (light) themes" title="Lume / Day dial">
+      <button class="icon-btn hdr-opt" data-theme-toggle aria-label="Toggle lume (dark) and day dial (light) themes" title="Lume / Day dial">
         <span class="t-moon"><Icon name="moon" /></span><span class="t-sun"><Icon name="sun" /></span>
       </button>
-      <button class="icon-btn" data-hack-toggle aria-pressed="false" aria-label="Hack the seconds: pause all motion" title="Hacking seconds: pause motion">
+      <button class="icon-btn hdr-opt" data-hack-toggle aria-pressed="false" aria-label="Hack the seconds: pause all motion" title="Hacking seconds: pause motion">
         <span class="t-pause"><Icon name="pause" /></span><span class="t-play"><Icon name="play" /></span>
       </button>
       <button class="icon-btn menu-btn" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu">
@@ -48,9 +48,23 @@ const path = Astro.url.pathname;
     <a href={u(href)}><span>{String((i + 1) * 5).padStart(2, '0')}′</span>{label}</a>
   ))}
   <a href={u('about/')}><span>60′</span>Caseback</a>
+  <div class="mobile-menu__tools">
+    <button class="btn btn--ghost" data-theme-toggle><span class="t-moon">Lume</span><span class="t-sun">Day dial</span> theme</button>
+    <button class="btn btn--ghost" data-hack-toggle aria-pressed="false"><span class="t-pause">Pause motion</span><span class="t-play">Resume motion</span></button>
+  </div>
 </nav>
 
 <style>
+  .mobile-menu__tools { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .mobile-menu__tools .btn { padding: 12px 18px; font-size: 14px; }
+  .mobile-menu__tools .t-sun, .mobile-menu__tools .t-play { display: none; }
+  :global([data-theme='day']) .mobile-menu__tools .t-sun { display: inline; }
+  :global([data-theme='day']) .mobile-menu__tools .t-moon { display: none; }
+  :global(.hacked) .mobile-menu__tools .t-play { display: inline; }
+  :global(.hacked) .mobile-menu__tools .t-pause { display: none; }
+  @media (max-width: 640px) {
+    .hdr-opt { display: none !important; }
+  }
   .icon-btn > span { display: grid; place-items: center; }
   .icon-btn > .t-sun, .icon-btn > .t-play, .icon-btn > .t-close { display: none; }
   :global([data-theme='day']) .icon-btn > .t-sun { display: grid; }

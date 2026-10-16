@@ -154,7 +154,7 @@ const marquee = brands.map((b) => b.data.name);
       <div class="sec-head">
         <span class="eyebrow" data-reveal="fade">The Dial</span>
         <h2 class="display h2" data-reveal>Twelve indices.<br /><em>Every horizon.</em></h2>
-        <p class="lede" data-reveal>Each hour marker leads to a part of the library. Hover over an index and the hand will find it.</p>
+        <p class="lede" data-reveal>Each hour marker leads to a part of the library. Point at an index and the hand will find it, or tap one to go there.</p>
       </div>
 
       <div class="dialnav" data-dialnav data-reveal="scale">
@@ -407,7 +407,7 @@ const marquee = brands.map((b) => b.data.name);
   .hero__grid {
     position: relative;
     display: grid;
-    grid-template-columns: 1.05fr 1fr;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
     align-items: center;
     gap: 40px;
   }
@@ -493,9 +493,19 @@ const marquee = brands.map((b) => b.data.name);
     100% { transform: scaleY(1); opacity: 0; }
   }
   @media (max-width: 960px) {
-    .hero__grid { grid-template-columns: 1fr; text-align: left; }
-    .hero__watch { order: -1; margin-top: 10px; }
+    .hero { min-height: auto; padding-bottom: 72px; }
+    .hero__grid { grid-template-columns: minmax(0, 1fr); text-align: left; gap: 8px; }
+    .hero__watch { order: -1; }
+    .hero__follow :global(.watch) { --size: min(400px, 62vw) !important; }
+    .hero__title { margin: 18px 0 20px; }
+    .hero__ctas { margin-top: 28px; }
+    .hero__readout { margin-top: 36px; gap: 22px; }
     .hero__cue { display: none; }
+  }
+  @media (max-width: 600px) {
+    .hero__follow :global(.watch) { --size: min(300px, 70vw) !important; }
+    .hero__title { font-size: clamp(56px, 17vw, 84px); }
+    .hero__ctas .btn { flex: 1 1 auto; justify-content: center; }
   }
 
   /* ---------- Marquee ---------- */
@@ -555,7 +565,7 @@ const marquee = brands.map((b) => b.data.name);
   }
   .explode__grid {
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     align-items: center;
     gap: 40px;
   }
@@ -614,10 +624,15 @@ const marquee = brands.map((b) => b.data.name);
     .explode__grid { grid-template-columns: 1fr; gap: 0; }
     .explode__view { order: -1; }
     .explode__stage { --gap: 34px; }
-    .explode__stage :global(.watch) { --size: min(300px, 70vw) !important; }
+    .explode__stage :global(.watch) { --size: min(440px, 64vw) !important; }
+    .explode__stage { --gap: 52px; }
     .explode__copy h2, .explode__copy .lede, .explode__copy .eyebrow { display: none; }
     .explode__parts li:not(.is-active) { display: none; }
-    .explode__parts { border: 0; min-height: 120px; }
+    .explode__parts { border: 0; min-height: 120px; max-width: 560px; margin: 0 auto; }
+  }
+  @media (max-width: 600px) {
+    .explode__stage :global(.watch) { --size: min(300px, 74vw) !important; }
+    .explode__stage { --gap: 34px; }
   }
 
   /* ---------- Section heads ---------- */
@@ -729,7 +744,7 @@ const marquee = brands.map((b) => b.data.name);
       aspect-ratio: auto;
       border-radius: var(--radius);
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 8px;
       padding: 16px;
       box-shadow: none;
@@ -820,7 +835,7 @@ const marquee = brands.map((b) => b.data.name);
     width: min(900px, 78vw);
     height: min(640px, 76vh);
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     align-items: center;
     gap: 30px;
     padding: clamp(28px, 4vw, 56px);
@@ -938,7 +953,7 @@ const marquee = brands.map((b) => b.data.name);
   .sweep span { display: block; font-size: 38px; line-height: 1; }
   .sweep strong { display: block; font-weight: 500; font-size: 14px; color: var(--muted); margin-top: 6px; }
   @media (max-width: 760px) {
-    .sweep { grid-template-columns: 1fr 1fr; row-gap: 40px; }
+    .sweep { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); row-gap: 40px; }
     .sweep::before { display: none; }
     .sweep li::before { display: none; }
   }

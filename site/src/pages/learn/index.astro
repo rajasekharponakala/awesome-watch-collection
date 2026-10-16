@@ -51,7 +51,7 @@ const guides = (await getCollection('guides')).sort((a, b) => a.data.order - b.d
 
 <style>
   .levels { display: grid; gap: 28px; }
-  .level { display: grid; grid-template-columns: 1fr 1.3fr; gap: 20px 60px; padding: clamp(26px, 4vw, 56px); }
+  .level { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 20px 60px; padding: clamp(26px, 4vw, 56px); }
   .level__head { display: flex; gap: 28px; align-items: start; }
   .level__num { font-size: clamp(70px, 9vw, 130px); line-height: 0.8; font-style: italic; color: transparent; -webkit-text-stroke: 1px var(--gold); }
   .level__head h2 { margin: 14px 0 6px; }

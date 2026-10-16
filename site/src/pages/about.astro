@@ -43,7 +43,7 @@ const counts = {
 </Base>
 
 <style>
-  .about { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: start; }
+  .about { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 60px; align-items: start; }
   .about__watch { position: sticky; top: calc(var(--header-h) + 40px); display: grid; place-items: center; transform: rotateY(180deg); }
   @media (max-width: 900px) { .about { grid-template-columns: 1fr; } .about__watch { position: relative; top: 0; } }
 </style>
