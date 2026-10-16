@@ -1,6 +1,6 @@
 {
   "collection": "references",
-  "count": 38,
+  "count": 49,
   "items": [
     {
       "id": "apple-watch-ultra-2",
@@ -129,9 +129,215 @@
       "last_reviewed": "2026-10-16"
     },
     {
+      "id": "casio-g-shock-dw5000c",
+      "brand": "casio",
+      "name": "G-Shock DW-5000C",
+      "reference": "DW-5000C",
+      "type": "digital/lcd",
+      "styles": [
+        "tool",
+        "sport"
+      ],
+      "complications": [
+        "alarm",
+        "stopwatch"
+      ],
+      "caliber": "Casio module 240",
+      "case": {
+        "material": "Resin over a floating module, stainless steel screw-back"
+      },
+      "years": {
+        "introduced": 1983
+      },
+      "price_tier": "affordable",
+      "levels": [
+        "first-wind",
+        "complication"
+      ],
+      "region": "Japan",
+      "summary": "The first G-Shock, launched in April 1983. Kikuo Ibe's brief was a single line: \"a durable watch that would not break even if dropped\". The module floats inside a hollow, shock-absorbing resin case. Sources disagree on its original depth rating (100 m or 200 m), so it is not stated here.",
+      "look": {
+        "dial": "#a7ab95",
+        "accent": "#15160f",
+        "metal": "resin",
+        "bezel": "none"
+      },
+      "sources": [
+        "https://gshock.casio.com/intl/identity/",
+        "https://www.g-central.com/g-shock-history/",
+        "https://www.fratellowatches.com/celebrating-40-years-of-casio-g-shock-a-concise-overview-of-g-shock-history/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "casio-g-shock-dw5000r",
+      "brand": "casio",
+      "name": "G-Shock DW-5000R \"Origin Revival\"",
+      "reference": "DW-5000R-1A",
+      "type": "digital/lcd",
+      "styles": [
+        "tool",
+        "sport"
+      ],
+      "complications": [
+        "alarm",
+        "stopwatch",
+        "countdown timer",
+        "backlight"
+      ],
+      "caliber": "Casio module 3576",
+      "case": {
+        "material": "Bio-based resin bezel over stainless steel case, screw-lock back",
+        "diameter_mm": 42.3,
+        "lug_to_lug_mm": 48.9,
+        "thickness_mm": 13.1
+      },
+      "water_resistance_m": 200,
+      "crystal": "Mineral",
+      "years": {
+        "introduced": 2024
+      },
+      "price_tier": "affordable",
+      "levels": [
+        "first-wind",
+        "complication"
+      ],
+      "region": "Japan",
+      "summary": "A standard-issue (non-limited) re-creation of the 1983 DW-5000C, made at Yamagata Casio in Japan, with the screw-lock steel case of the original and a bio-based resin band and bezel.",
+      "look": {
+        "dial": "#a7ab95",
+        "accent": "#15160f",
+        "metal": "resin",
+        "bezel": "none"
+      },
+      "sources": [
+        "https://www.g-central.com/casio-officially-announces-dw-5000r-1a-standard-issue-re-creation-of-the-first-generation-g-shock/",
+        "https://www.fratellowatches.com/hands-on-g-shock-dw-5000r-1a-origin-revival/",
+        "https://gshock.casio.com/us/products/collection/origin/5000_5600/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "casio-g-shock-dw5040pg",
+      "brand": "casio",
+      "name": "G-Shock DW-5040PG \"Recrystallized\"",
+      "reference": "DW-5040PG",
+      "type": "digital/lcd",
+      "styles": [
+        "tool",
+        "sport"
+      ],
+      "complications": [
+        "alarm",
+        "stopwatch",
+        "backlight"
+      ],
+      "case": {
+        "material": "Resin; recrystallised, deep-layer-hardened stainless steel back, buckle and loop"
+      },
+      "water_resistance_m": 200,
+      "years": {
+        "introduced": 2023
+      },
+      "price_tier": "affordable",
+      "levels": [
+        "complication"
+      ],
+      "region": "Japan",
+      "summary": "A 40th-anniversary limited edition from the Recrystallized series (2023): the original DW-5000 design, with a case back, buckle and loop in steel treated by recrystallisation and deep-layer hardening.",
+      "look": {
+        "dial": "#a7ab95",
+        "accent": "#15160f",
+        "metal": "resin",
+        "bezel": "none"
+      },
+      "sources": [
+        "https://www.casio.com/za/news/2023/0315-recrystallized/",
+        "https://www.fratellowatches.com/celebrating-40-years-of-casio-g-shock-a-concise-overview-of-g-shock-history/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "casio-g-shock-dw5200c",
+      "brand": "casio",
+      "name": "G-Shock DW-5200C",
+      "reference": "DW-5200C",
+      "type": "digital/lcd",
+      "styles": [
+        "tool",
+        "sport"
+      ],
+      "complications": [
+        "alarm",
+        "stopwatch"
+      ],
+      "caliber": "Casio module 240",
+      "case": {
+        "material": "Resin, stainless steel screw-back"
+      },
+      "years": {
+        "introduced": 1984
+      },
+      "price_tier": "affordable",
+      "levels": [
+        "complication"
+      ],
+      "region": "Japan",
+      "summary": "A near-identical successor to the DW-5000C, released in 1984, the year a US television advert that used the watch as a hockey puck helped turn G-Shock into a hit.",
+      "look": {
+        "dial": "#a7ab95",
+        "accent": "#15160f",
+        "metal": "resin",
+        "bezel": "none"
+      },
+      "sources": [
+        "https://www.g-central.com/g-shock-history/",
+        "https://www.fratellowatches.com/evolution-of-the-casio-g-shock-watches/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "casio-g-shock-dw5500c",
+      "brand": "casio",
+      "name": "G-Shock DW-5500C",
+      "reference": "DW-5500C",
+      "type": "digital/lcd",
+      "styles": [
+        "tool",
+        "sport"
+      ],
+      "complications": [
+        "alarm",
+        "stopwatch"
+      ],
+      "case": {
+        "material": "Two-tone moulded resin"
+      },
+      "years": {
+        "introduced": 1985
+      },
+      "price_tier": "affordable",
+      "levels": [
+        "complication"
+      ],
+      "region": "Japan",
+      "summary": "Casio's first Mud Resist G-Shock, using two-tone moulding to seal the square case against mud and dust: the ancestor of the later Mudman line.",
+      "look": {
+        "dial": "#a7ab95",
+        "accent": "#15160f",
+        "metal": "resin",
+        "bezel": "none"
+      },
+      "sources": [
+        "https://gshock.casio.com/intl/identity/",
+        "https://www.g-central.com/g-shock-history/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
       "id": "casio-g-shock-dw5600",
       "brand": "casio",
-      "name": "G-Shock DW-5600",
+      "name": "G-Shock DW-5600E",
       "reference": "DW-5600E-1V",
       "type": "digital/lcd",
       "styles": [
@@ -155,21 +361,310 @@
       "water_resistance_m": 200,
       "crystal": "Mineral",
       "years": {
-        "introduced": 1987
+        "introduced": 1996
       },
       "price_tier": "entry",
       "levels": [
         "first-wind"
       ],
       "region": "Japan",
-      "summary": "The square descendant of Kikuo Ibe's original 1983 G-Shock. A suspended module and resin armour make it one of the toughest watches you can buy, at any price.",
+      "summary": "The square descendant of Kikuo Ibe's original 1983 G-Shock, introduced in 1996 to replace the DW-5600C with an EL backlight and module 3229. A suspended module and resin armour make it one of the toughest watches you can buy, at any price.",
       "look": {
         "dial": "#9ea18e",
         "accent": "#151612",
         "metal": "resin",
         "bezel": "none"
       },
-      "sources": [],
+      "sources": [
+        "https://gshock.casio.com/intl/identity/",
+        "https://weknowwatches.com/casio-g-shock-dw5600-guide/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "casio-g-shock-dw5600c",
+      "brand": "casio",
+      "name": "G-Shock DW-5600C",
+      "reference": "DW-5600C",
+      "type": "digital/lcd",
+      "styles": [
+        "tool",
+        "sport"
+      ],
+      "complications": [
+        "alarm",
+        "stopwatch",
+        "countdown timer",
+        "backlight"
+      ],
+      "caliber": "Casio module 691 (later 901)",
+      "case": {
+        "material": "Resin, stainless steel screw-back"
+      },
+      "years": {
+        "introduced": 1987,
+        "discontinued": 1996
+      },
+      "price_tier": "affordable",
+      "levels": [
+        "first-wind",
+        "complication"
+      ],
+      "region": "Japan",
+      "summary": "The first \"5600\", the shape that became the definitive square G-Shock. It sold for nine years until the EL-backlit DW-5600E replaced it in 1996; the module changed from 691 to 901 around 1989 or 1990, depending on the source.",
+      "look": {
+        "dial": "#a7ab95",
+        "accent": "#15160f",
+        "metal": "resin",
+        "bezel": "none"
+      },
+      "sources": [
+        "https://gshock.casio.com/intl/identity/",
+        "https://www.g-central.com/g-shock-history/",
+        "https://weknowwatches.com/casio-g-shock-dw5600-guide/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "casio-g-shock-gmw-b5000d",
+      "brand": "casio",
+      "name": "G-Shock GMW-B5000D \"Full Metal\"",
+      "reference": "GMW-B5000D-1",
+      "type": "digital/lcd",
+      "styles": [
+        "tool",
+        "everyday"
+      ],
+      "complications": [
+        "alarm",
+        "stopwatch",
+        "countdown timer",
+        "backlight",
+        "Tough Solar",
+        "Multi-Band 6 radio sync",
+        "world time",
+        "Bluetooth sync"
+      ],
+      "caliber": "Casio module 3459 (3539 on releases from 2023)",
+      "case": {
+        "material": "Stainless steel, screw-lock back (DLC)",
+        "diameter_mm": 43.2,
+        "lug_to_lug_mm": 49.3,
+        "thickness_mm": 13
+      },
+      "water_resistance_m": 200,
+      "crystal": "Mineral",
+      "years": {
+        "introduced": 2018
+      },
+      "price_tier": "affordable",
+      "levels": [
+        "first-wind",
+        "automatic"
+      ],
+      "region": "Japan",
+      "summary": "The first full-metal 5000-series G-Shock, released in Japan in April 2018 for the 35th anniversary: the 1983 shape rebuilt in steel with resin shock absorbers between case and bezel, solar power, radio sync and Bluetooth.",
+      "look": {
+        "dial": "#9fa391",
+        "accent": "#15160f",
+        "metal": "steel",
+        "bezel": "none"
+      },
+      "sources": [
+        "https://www.g-central.com/g-shock-gmw-b5000-metal-screw-back-bluetooth-solar/",
+        "https://deployant.com/new-release-casios-first-5000-series-g-shock-with-full-metal-construction/",
+        "https://gshock.casio.com/sg/g-news/gmw-b5000-stories/ep1/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "casio-g-shock-gw-b5600",
+      "brand": "casio",
+      "name": "G-Shock GW-B5600",
+      "reference": "GW-B5600BC-1",
+      "type": "digital/lcd",
+      "styles": [
+        "tool",
+        "sport"
+      ],
+      "complications": [
+        "alarm",
+        "stopwatch",
+        "countdown timer",
+        "backlight",
+        "Tough Solar",
+        "Multi-Band 6 radio sync",
+        "world time",
+        "Bluetooth sync"
+      ],
+      "caliber": "Casio module 3461",
+      "case": {
+        "material": "Resin",
+        "diameter_mm": 42.8,
+        "lug_to_lug_mm": 48.9,
+        "thickness_mm": 13.4
+      },
+      "water_resistance_m": 200,
+      "years": {
+        "introduced": 2018
+      },
+      "price_tier": "entry",
+      "levels": [
+        "first-wind"
+      ],
+      "region": "Japan",
+      "summary": "The resin twin of the full-metal GMW-B5000: the same solar, Multi-Band 6 and Bluetooth functions in the classic lightweight 5600 case, announced in Japan in October 2018.",
+      "look": {
+        "dial": "#0d0e10",
+        "accent": "#e9e6dc",
+        "metal": "resin",
+        "bezel": "none"
+      },
+      "sources": [
+        "https://www.g-central.com/g-shock-gw-b5600-and-gw-b5600bc-tough-solar-bluetooth-resin-squares/comment-page-2/",
+        "https://www.g-central.com/g-shock-5000-5600-origin-square-series-shopping-guide/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "casio-g-shock-gw-m5610",
+      "brand": "casio",
+      "name": "G-Shock GW-M5610",
+      "reference": "GW-M5610",
+      "type": "digital/lcd",
+      "styles": [
+        "tool",
+        "everyday"
+      ],
+      "complications": [
+        "alarm",
+        "stopwatch",
+        "countdown timer",
+        "backlight",
+        "Tough Solar",
+        "Multi-Band 6 radio sync",
+        "world time"
+      ],
+      "caliber": "Casio module 3159 (3495 on the 2021 GW-M5610U)",
+      "case": {
+        "material": "Resin"
+      },
+      "water_resistance_m": 200,
+      "years": {},
+      "price_tier": "entry",
+      "levels": [
+        "first-wind",
+        "automatic"
+      ],
+      "region": "Japan",
+      "summary": "The square that never needs setting or a battery change: solar-charged and synchronised by radio with atomic clocks. Its GW-M5600 predecessor launched in 2008; the exact debut year of the 5610 is not confirmed by the sources, so it is not stated here.",
+      "look": {
+        "dial": "#a7ab95",
+        "accent": "#15160f",
+        "metal": "resin",
+        "bezel": "none"
+      },
+      "sources": [
+        "https://g-central.com/g-shock-5000-u-series-including-gw-5000u-1/",
+        "https://www.watchpatrol.net/discover/brands/casio/gw-m5610/",
+        "https://www.g-central.com/g-shock-5000-5600-origin-square-series-shopping-guide/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "casio-g-shock-gw5000",
+      "brand": "casio",
+      "name": "G-Shock GW-5000",
+      "reference": "GW-5000-1JF",
+      "type": "digital/lcd",
+      "styles": [
+        "tool",
+        "sport"
+      ],
+      "complications": [
+        "alarm",
+        "stopwatch",
+        "countdown timer",
+        "backlight",
+        "Tough Solar",
+        "Multi-Band 6 radio sync",
+        "world time"
+      ],
+      "case": {
+        "material": "Resin with stainless steel case and screw-back (DLC)"
+      },
+      "water_resistance_m": 200,
+      "crystal": "Mineral",
+      "years": {
+        "introduced": 2009,
+        "discontinued": 2021
+      },
+      "price_tier": "affordable",
+      "levels": [
+        "automatic",
+        "complication"
+      ],
+      "region": "Japan",
+      "summary": "A made-in-Japan homage to the 1983 original, with a screw-lock back, solar power and radio sync. It is held in the Victoria and Albert Museum's collection as a 2009 design, and was succeeded by the GW-5000U.",
+      "look": {
+        "dial": "#a7ab95",
+        "accent": "#15160f",
+        "metal": "resin",
+        "bezel": "none"
+      },
+      "sources": [
+        "https://collections.vam.ac.uk/item/O1360467/",
+        "https://www.g-central.com/japan-only-g-shock-5000-series-watches-to-consider/",
+        "https://g-central.com/g-shock-5000-u-series-including-gw-5000u-1/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "casio-g-shock-gw5000u",
+      "brand": "casio",
+      "name": "G-Shock GW-5000U",
+      "reference": "GW-5000U-1JF",
+      "type": "digital/lcd",
+      "styles": [
+        "tool",
+        "sport"
+      ],
+      "complications": [
+        "alarm",
+        "stopwatch",
+        "countdown timer",
+        "backlight",
+        "Tough Solar",
+        "Multi-Band 6 radio sync",
+        "world time"
+      ],
+      "caliber": "Casio module 3495",
+      "case": {
+        "material": "Resin with stainless steel case and screw-back (DLC)"
+      },
+      "water_resistance_m": 200,
+      "crystal": "Mineral",
+      "years": {
+        "introduced": 2021
+      },
+      "price_tier": "affordable",
+      "levels": [
+        "automatic",
+        "complication"
+      ],
+      "region": "Japan",
+      "summary": "The updated, made-in-Japan GW-5000: the new module 3495 adds a full auto LED backlight with adjustable afterglow and an adjustable date format, while keeping the screw-back, solar charging and Multi-Band 6.",
+      "look": {
+        "dial": "#a7ab95",
+        "accent": "#15160f",
+        "metal": "resin",
+        "bezel": "none"
+      },
+      "sources": [
+        "https://g-central.com/g-shock-5000-u-series-including-gw-5000u-1/",
+        "https://www.fratellowatches.com/why-i-bought-it-the-g-shock-gw-5000u-1jf/",
+        "https://www.g-central.com/japan-only-g-shock-5000-series-watches-to-consider/"
+      ],
       "last_reviewed": "2026-10-16"
     },
     {
