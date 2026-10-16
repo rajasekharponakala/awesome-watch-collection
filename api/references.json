@@ -1,6 +1,6 @@
 {
   "collection": "references",
-  "count": 16,
+  "count": 38,
   "items": [
     {
       "id": "apple-watch-ultra-2",
@@ -442,6 +442,133 @@
       "last_reviewed": "2026-10-16"
     },
     {
+      "id": "rolex-submariner-114060",
+      "brand": "rolex",
+      "name": "Submariner",
+      "reference": "114060",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [],
+      "caliber": "Rolex 3130",
+      "case": {
+        "material": "Oystersteel (904L)",
+        "diameter_mm": 40
+      },
+      "water_resistance_m": 300,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 2012,
+        "discontinued": 2020
+      },
+      "price_tier": "luxury",
+      "levels": [
+        "automatic",
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "The modern no-date Submariner: Cerachrom bezel, Super Case and the calibre 3130 with a blue Parachrom hairspring.",
+      "look": {
+        "dial": "#08090b",
+        "accent": "#f2ede2",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://www.watchpatrol.net/ja/discover/brands/rolex/submariner-114060/",
+        "https://authenticwrist.com/guides/every-rolex-submariner-reference-explained/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-116610ln",
+      "brand": "rolex",
+      "name": "Submariner Date",
+      "reference": "116610LN",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [
+        "date"
+      ],
+      "caliber": "Rolex 3135",
+      "case": {
+        "material": "Oystersteel (904L)",
+        "diameter_mm": 40
+      },
+      "water_resistance_m": 300,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 2010,
+        "discontinued": 2020
+      },
+      "price_tier": "luxury",
+      "levels": [
+        "automatic",
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "The first Submariner Date with a Cerachrom ceramic bezel, a Maxi dial and thick-lugged \"Super Case\". It kept the calibre 3135 and a 40 mm diameter.",
+      "look": {
+        "dial": "#08090b",
+        "accent": "#f2ede2",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://www.watchguys.com/blogs/watch-comparisons/rolex-submariner-116610ln-vs-126610ln",
+        "https://authenticwrist.com/guides/every-rolex-submariner-reference-explained/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-116610lv",
+      "brand": "rolex",
+      "name": "Submariner Date \"Hulk\"",
+      "reference": "116610LV",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [
+        "date"
+      ],
+      "caliber": "Rolex 3135",
+      "case": {
+        "material": "Oystersteel (904L)",
+        "diameter_mm": 40
+      },
+      "water_resistance_m": 300,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 2010,
+        "discontinued": 2020
+      },
+      "price_tier": "luxury",
+      "levels": [
+        "automatic",
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "A green sunburst dial matched with a green Cerachrom bezel in the 40 mm Super Case. Its discontinuation in 2020 made it a modern collectible.",
+      "look": {
+        "dial": "#0f4d2c",
+        "accent": "#eef2ea",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://www.bobswatches.com/rolex-blog/editorial/rolex-kermit-vs-starbucks.html",
+        "https://www.aviandco.com/rolex-kermit-hulk-starbucks-submariner-collection"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
       "id": "rolex-submariner-124060",
       "brand": "rolex",
       "name": "Submariner",
@@ -477,6 +604,788 @@
         "bezel": "dive"
       },
       "sources": [],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-126610ln",
+      "brand": "rolex",
+      "name": "Submariner Date",
+      "reference": "126610LN",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [
+        "date"
+      ],
+      "caliber": "Rolex 3235",
+      "caliber_id": "rolex-3235",
+      "case": {
+        "material": "Oystersteel (904L)",
+        "diameter_mm": 41
+      },
+      "water_resistance_m": 300,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 2020
+      },
+      "price_tier": "luxury",
+      "levels": [
+        "automatic",
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "The current Submariner Date: 41 mm with slimmer lugs, the 70-hour calibre 3235 with Chronergy escapement, and a Glidelock clasp for tool-free adjustment.",
+      "look": {
+        "dial": "#08090b",
+        "accent": "#f2ede2",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://www.luxurybazaar.com/brands/rolex/126610ln/",
+        "https://www.watchguys.com/blogs/watch-comparisons/rolex-submariner-116610ln-vs-126610ln"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-126610lv",
+      "brand": "rolex",
+      "name": "Submariner Date \"Starbucks\"",
+      "reference": "126610LV",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [
+        "date"
+      ],
+      "caliber": "Rolex 3235",
+      "caliber_id": "rolex-3235",
+      "case": {
+        "material": "Oystersteel (904L)",
+        "diameter_mm": 41
+      },
+      "water_resistance_m": 300,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 2020
+      },
+      "price_tier": "luxury",
+      "levels": [
+        "automatic",
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "A green Cerachrom bezel over a black dial in the 41 mm case with the 70-hour calibre 3235. Collectors nicknamed it \"Starbucks\"; it succeeded both the Kermit and the Hulk.",
+      "look": {
+        "dial": "#08090b",
+        "accent": "#f2ede2",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://www.bobswatches.com/rolex-blog/editorial/rolex-kermit-vs-starbucks.html",
+        "https://www.aviandco.com/rolex-kermit-hulk-starbucks-submariner-collection"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-14060",
+      "brand": "rolex",
+      "name": "Submariner",
+      "reference": "14060",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [],
+      "caliber": "Rolex 3000",
+      "case": {
+        "material": "Stainless steel (904L)",
+        "diameter_mm": 40
+      },
+      "water_resistance_m": 300,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 1989,
+        "discontinued": 1999
+      },
+      "price_tier": "luxury",
+      "levels": [
+        "automatic",
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "The no-date Submariner reborn for the modern era: sapphire crystal, 904L steel and the calibre 3000. Unlike its date sibling it was not chronometer-certified.",
+      "look": {
+        "dial": "#08090b",
+        "accent": "#f2ede2",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://www.fratellowatches.com/rolex-14060-submariner-52mondayz-week-17/",
+        "https://www.luxurybazaar.com/grey-market/rolex-submariner-14060-14060m/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-14060m",
+      "brand": "rolex",
+      "name": "Submariner",
+      "reference": "14060M",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [],
+      "caliber": "Rolex 3130",
+      "case": {
+        "material": "Stainless steel (904L)",
+        "diameter_mm": 40
+      },
+      "water_resistance_m": 300,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 1999,
+        "discontinued": 2012
+      },
+      "price_tier": "luxury",
+      "levels": [
+        "automatic",
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "The 14060 updated with the calibre 3130, later chronometer-certified and with an engraved rehaut. It was the last no-date Submariner with an aluminium bezel; sources date its end to 2009 or 2012.",
+      "look": {
+        "dial": "#08090b",
+        "accent": "#f2ede2",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://www.luxurybazaar.com/grey-market/rolex-submariner-14060-14060m/",
+        "https://www.fratellowatches.com/rolex-14060-submariner-52mondayz-week-17/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-16610",
+      "brand": "rolex",
+      "name": "Submariner Date",
+      "reference": "16610",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [
+        "date"
+      ],
+      "caliber": "Rolex 3135",
+      "case": {
+        "material": "Stainless steel (904L)",
+        "diameter_mm": 40
+      },
+      "water_resistance_m": 300,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 1988,
+        "discontinued": 2010
+      },
+      "price_tier": "luxury",
+      "levels": [
+        "automatic",
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "For two decades the definitive Submariner Date: calibre 3135, an aluminium bezel insert and the classic slim-lug 40 mm case. Many collectors consider it the last \"traditional\" Submariner.",
+      "look": {
+        "dial": "#08090b",
+        "accent": "#f2ede2",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://www.watchguys.com/blogs/watch-comparisons/rolex-16610-vs-126610ln",
+        "https://authenticwrist.com/guides/every-rolex-submariner-reference-explained/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-16610lv",
+      "brand": "rolex",
+      "name": "Submariner Date \"Kermit\"",
+      "reference": "16610LV",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [
+        "date"
+      ],
+      "caliber": "Rolex 3135",
+      "case": {
+        "material": "Stainless steel (904L)",
+        "diameter_mm": 40
+      },
+      "water_resistance_m": 300,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 2003,
+        "discontinued": 2010
+      },
+      "price_tier": "luxury",
+      "levels": [
+        "automatic",
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "Launched for the Submariner's 50th anniversary as the first Submariner with a green bezel: a green aluminium insert over a black dial. Early \"Flat 4\" bezels are especially sought after.",
+      "look": {
+        "dial": "#08090b",
+        "accent": "#f2ede2",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://www.bobswatches.com/rolex-blog/editorial/rolex-kermit-vs-starbucks.html",
+        "https://www.aviandco.com/rolex-kermit-hulk-starbucks-submariner-collection"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-1680",
+      "brand": "rolex",
+      "name": "Submariner Date",
+      "reference": "1680",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [
+        "date"
+      ],
+      "caliber": "Rolex 1575",
+      "case": {
+        "material": "Stainless steel",
+        "diameter_mm": 40
+      },
+      "water_resistance_m": 200,
+      "crystal": "Acrylic with Cyclops lens",
+      "years": {
+        "introduced": 1967,
+        "discontinued": 1979
+      },
+      "price_tier": "luxury",
+      "levels": [
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "The first Submariner with a date and Cyclops magnifier, launching the line that leads to today's Submariner Date. Early dials carry the prized red \"Submariner\" script. Sources give its launch as 1967 or 1969.",
+      "look": {
+        "dial": "#0c0d0f",
+        "accent": "#efe6cf",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://www.bobswatches.com/rolex-blog/watch-review/appeal-reference-submariner-1680.html",
+        "https://www.sothebys.com/en/buy/auction/2019/watches-online-8/rolex-submariner-reference-1680-stainless-steel",
+        "https://authenticwrist.com/guides/every-rolex-submariner-reference-explained/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-16800",
+      "brand": "rolex",
+      "name": "Submariner Date",
+      "reference": "16800",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [
+        "date"
+      ],
+      "caliber": "Rolex 3035",
+      "case": {
+        "material": "Stainless steel",
+        "diameter_mm": 40
+      },
+      "water_resistance_m": 300,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 1979,
+        "discontinued": 1988
+      },
+      "price_tier": "luxury",
+      "levels": [
+        "automatic",
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "The transitional Submariner Date: sapphire crystal, 300 m water resistance (still the standard today), a quickset date and a high-beat calibre 3035. Matte dials gave way to glossy dials with white-gold surrounds in the mid-1980s.",
+      "look": {
+        "dial": "#0c0d0f",
+        "accent": "#efe6cf",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://www.bobswatches.com/rolex-blog/watch-review/rolex-submariner-stainless-steel-16800.html",
+        "https://blog.craftandtailored.com/the-crossroads-of-vintage-and-contemporary-the-reference-16800-rolex-submariner/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-168000",
+      "brand": "rolex",
+      "name": "Submariner Date \"Triple Zero\"",
+      "reference": "168000",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [
+        "date"
+      ],
+      "caliber": "Rolex 3035",
+      "case": {
+        "material": "Stainless steel (904L)",
+        "diameter_mm": 40
+      },
+      "water_resistance_m": 300,
+      "crystal": "Sapphire",
+      "years": {
+        "introduced": 1987
+      },
+      "price_tier": "luxury",
+      "levels": [
+        "automatic",
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "A very short-lived reference marking Rolex's switch to 904L steel; otherwise essentially a 16800. Sources describe production lasting from about nine months to two years.",
+      "look": {
+        "dial": "#08090b",
+        "accent": "#f2ede2",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://www.sothebys.com/en/buy/_rolex-submariner-ref-16800-0acc",
+        "https://www.bobswatches.com/rolex-blog/watch-review/rolex-submariner-stainless-steel-16800.html"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-5508",
+      "brand": "rolex",
+      "name": "Submariner",
+      "reference": "5508",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [],
+      "caliber": "Rolex 1530",
+      "case": {
+        "material": "Stainless steel"
+      },
+      "crystal": "Acrylic",
+      "years": {
+        "introduced": 1957,
+        "discontinued": 1962
+      },
+      "price_tier": "haute-horlogerie",
+      "levels": [
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "A small-crown Submariner with a 6 mm crown and the calibre 1530, bridging the first generation and the crown-guard era. Sources disagree on its depth rating (100 m or 200 m) and on its exact production years, so neither is stated here.",
+      "look": {
+        "dial": "#0b0c0e",
+        "accent": "#d9bd7f",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rolex_Submariner",
+        "https://www.watchprozine.com/digest/rolex-submariner-5508-vintage-overview/",
+        "https://professionalwatches.com/rolex-submariner-reference-guide"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-5510",
+      "brand": "rolex",
+      "name": "Submariner \"Big Crown\"",
+      "reference": "5510",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [],
+      "caliber": "Rolex 1530",
+      "case": {
+        "material": "Stainless steel"
+      },
+      "water_resistance_m": 200,
+      "crystal": "Acrylic",
+      "years": {
+        "introduced": 1958
+      },
+      "price_tier": "haute-horlogerie",
+      "levels": [
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "A short-lived, rare reference: effectively the 6200/6538 big-crown architecture updated with the calibre 1530.",
+      "look": {
+        "dial": "#0b0c0e",
+        "accent": "#d9bd7f",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rolex_Submariner",
+        "https://www.aviandco.com/rolex-submariner-reference-guide",
+        "https://professionalwatches.com/rolex-submariner-reference-guide"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-5512",
+      "brand": "rolex",
+      "name": "Submariner",
+      "reference": "5512",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [],
+      "caliber": "Rolex 1530 / 1560 / 1570",
+      "case": {
+        "material": "Stainless steel",
+        "diameter_mm": 40
+      },
+      "water_resistance_m": 200,
+      "crystal": "Acrylic",
+      "years": {
+        "introduced": 1959,
+        "discontinued": 1978
+      },
+      "price_tier": "luxury",
+      "levels": [
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "The first Submariner with crown guards and a 40 mm case, and the first chronometer-certified Submariner. The guards evolved from square to pointed to rounded. Sources give the end of production as 1978, 1979 or 1980.",
+      "look": {
+        "dial": "#0c0d0f",
+        "accent": "#efe6cf",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://www.bobswatches.com/rolex-blog/watch-review/rolex-submariner-5512.html",
+        "https://amsterdamvintagewatches.com/shop/rolex-submariner-5512",
+        "https://en.wikipedia.org/wiki/Rolex_Submariner"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-5513",
+      "brand": "rolex",
+      "name": "Submariner",
+      "reference": "5513",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [],
+      "caliber": "Rolex 1530 / 1520",
+      "case": {
+        "material": "Stainless steel",
+        "diameter_mm": 40
+      },
+      "water_resistance_m": 200,
+      "crystal": "Acrylic",
+      "years": {
+        "introduced": 1962,
+        "discontinued": 1989
+      },
+      "price_tier": "luxury",
+      "levels": [
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "The non-chronometer sibling of the 5512 and one of Rolex's longest-running references, produced for almost three decades. It is the classic vintage Submariner and the basis of the military MilSub.",
+      "look": {
+        "dial": "#0c0d0f",
+        "accent": "#efe6cf",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://www.bobswatches.com/rolex-blog/rolex-info/vintage-week-rolex-submariner-5513.html",
+        "https://rdavidoff.photobiz.com/our-archive/rolex-submariner-5513-1971",
+        "https://en.wikipedia.org/wiki/Rolex_Submariner"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-5517",
+      "brand": "rolex",
+      "name": "Submariner \"MilSub\"",
+      "reference": "5517",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool",
+        "military"
+      ],
+      "complications": [],
+      "caliber": "Rolex 1520",
+      "case": {
+        "material": "Stainless steel",
+        "diameter_mm": 39
+      },
+      "water_resistance_m": 200,
+      "crystal": "Acrylic",
+      "years": {
+        "introduced": 1971,
+        "discontinued": 1979
+      },
+      "price_tier": "haute-horlogerie",
+      "levels": [
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "Made for the British Ministry of Defence: sword hands, a full-graduation bezel, fixed spring bars and a circled T for tritium on the dial. Only about 1,200 to 1,250 were delivered, making it one of the rarest Submariners.",
+      "look": {
+        "dial": "#0c0d0f",
+        "accent": "#efe6cf",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://www.bobswatches.com/rolex-blog/resources/rolex-milsub-submariner-ref-5517.html",
+        "https://www.phillips.com/detail/rolex/214905"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-6200",
+      "brand": "rolex",
+      "name": "Submariner \"Big Crown\"",
+      "reference": "6200",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [],
+      "caliber": "Rolex A296",
+      "case": {
+        "material": "Stainless steel"
+      },
+      "water_resistance_m": 200,
+      "crystal": "Acrylic",
+      "years": {
+        "introduced": 1954,
+        "discontinued": 1958
+      },
+      "price_tier": "haute-horlogerie",
+      "levels": [
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "The first 200 m Submariner, with an 8 mm \"big crown\" and an Explorer-style 3-6-9 dial; it did not yet carry the Submariner name on the dial. Sources date its launch between 1953 and 1955, and it was succeeded by the 5510 in 1958.",
+      "look": {
+        "dial": "#0b0c0e",
+        "accent": "#d9bd7f",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rolex_Submariner",
+        "https://www.watchprosite.com/digest/rolex-submariner-6204-6200-6205-history-guide/",
+        "https://www.fratellowatches.com/the-history-of-the-rolex-submariner/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-6204",
+      "brand": "rolex",
+      "name": "Submariner (first series)",
+      "reference": "6204",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [],
+      "caliber": "Rolex A260",
+      "case": {
+        "material": "Stainless steel",
+        "diameter_mm": 37
+      },
+      "water_resistance_m": 100,
+      "crystal": "Acrylic",
+      "years": {
+        "introduced": 1953,
+        "discontinued": 1954
+      },
+      "price_tier": "haute-horlogerie",
+      "levels": [
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "The first Submariner, shown at the 1954 Basel fair and rated to 100 m. A 37 mm case, small unprotected crown and straight pencil hands; whether the 6204 or the near-identical 6205 came first is still debated.",
+      "look": {
+        "dial": "#0b0c0e",
+        "accent": "#d9bd7f",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rolex_Submariner",
+        "https://www.watchprosite.com/digest/rolex-submariner-6204-6200-6205-history-guide/",
+        "https://www.fratellowatches.com/the-history-of-the-rolex-submariner/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-6205",
+      "brand": "rolex",
+      "name": "Submariner",
+      "reference": "6205",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [],
+      "caliber": "Rolex A260",
+      "case": {
+        "material": "Stainless steel",
+        "diameter_mm": 37
+      },
+      "water_resistance_m": 100,
+      "crystal": "Acrylic",
+      "years": {
+        "introduced": 1954,
+        "discontinued": 1955
+      },
+      "price_tier": "haute-horlogerie",
+      "levels": [
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "A near twin of the 6204 with the same A260 movement and 37 mm case, and still no depth rating on the dial. In 1955 it evolved into the 6536.",
+      "look": {
+        "dial": "#0b0c0e",
+        "accent": "#d9bd7f",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rolex_Submariner",
+        "https://www.watchprosite.com/digest/rolex-submariner-6204-6200-6205-history-guide/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-6536",
+      "brand": "rolex",
+      "name": "Submariner",
+      "reference": "6536",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [],
+      "caliber": "Rolex 1030",
+      "case": {
+        "material": "Stainless steel"
+      },
+      "water_resistance_m": 100,
+      "crystal": "Acrylic",
+      "years": {
+        "introduced": 1955
+      },
+      "price_tier": "haute-horlogerie",
+      "levels": [
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "The small-crown successor to the 6205, upgraded to the full-rotor calibre 1030; a chronometer version was sold as the 6536/1. Most sources rate it to 100 m, and its exact launch year (1955 or 1956) varies between them.",
+      "look": {
+        "dial": "#0b0c0e",
+        "accent": "#d9bd7f",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rolex_Submariner",
+        "https://www.aviandco.com/rolex-submariner-reference-guide",
+        "https://www.fratellowatches.com/the-history-of-the-rolex-submariner/"
+      ],
+      "last_reviewed": "2026-10-16"
+    },
+    {
+      "id": "rolex-submariner-6538",
+      "brand": "rolex",
+      "name": "Submariner \"Big Crown\"",
+      "reference": "6538",
+      "type": "mechanical/automatic",
+      "styles": [
+        "diver",
+        "tool"
+      ],
+      "complications": [],
+      "caliber": "Rolex 1030",
+      "case": {
+        "material": "Stainless steel"
+      },
+      "water_resistance_m": 200,
+      "crystal": "Acrylic",
+      "years": {
+        "introduced": 1956
+      },
+      "price_tier": "haute-horlogerie",
+      "levels": [
+        "complication"
+      ],
+      "region": "Switzerland",
+      "summary": "The big-crown, 200 m reference famously associated with Sean Connery in Dr. No (1962), although some sources attribute the film watch to a 6536. Today it is among the most valuable Submariners at auction.",
+      "look": {
+        "dial": "#0b0c0e",
+        "accent": "#d9bd7f",
+        "metal": "steel",
+        "bezel": "dive"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rolex_Submariner",
+        "https://www.phillips.com/detail/rolex/165500",
+        "https://www.aviandco.com/rolex-submariner-reference-guide"
+      ],
       "last_reviewed": "2026-10-16"
     },
     {
