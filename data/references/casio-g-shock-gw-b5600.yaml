@@ -1,0 +1,38 @@
+brand: "casio"
+name: "G-Shock GW-B5600"
+reference: "GW-B5600BC-1"
+type: "digital/lcd"
+styles:
+  - "tool"
+  - "sport"
+complications:
+  - "alarm"
+  - "stopwatch"
+  - "countdown timer"
+  - "backlight"
+  - "Tough Solar"
+  - "Multi-Band 6 radio sync"
+  - "world time"
+  - "Bluetooth sync"
+caliber: "Casio module 3461"
+case:
+  material: "Resin"
+  diameter_mm: 42.8
+  lug_to_lug_mm: 48.9
+  thickness_mm: 13.4
+water_resistance_m: 200
+years:
+  introduced: 2018
+price_tier: "entry"
+levels:
+  - "first-wind"
+region: "Japan"
+summary: "The resin twin of the full-metal GMW-B5000: the same solar, Multi-Band 6 and Bluetooth functions in the classic lightweight 5600 case, announced in Japan in October 2018."
+look:
+  dial: "#0d0e10"
+  accent: "#e9e6dc"
+  metal: "resin"
+sources:
+  - "https://www.g-central.com/g-shock-gw-b5600-and-gw-b5600bc-tough-solar-bluetooth-resin-squares/comment-page-2/"
+  - "https://www.g-central.com/g-shock-5000-5600-origin-square-series-shopping-guide/"
+last_reviewed: "2026-10-16"

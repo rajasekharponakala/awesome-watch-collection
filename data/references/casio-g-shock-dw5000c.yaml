@@ -1,0 +1,30 @@
+brand: "casio"
+name: "G-Shock DW-5000C"
+reference: "DW-5000C"
+type: "digital/lcd"
+styles:
+  - "tool"
+  - "sport"
+complications:
+  - "alarm"
+  - "stopwatch"
+caliber: "Casio module 240"
+case:
+  material: "Resin over a floating module, stainless steel screw-back"
+years:
+  introduced: 1983
+price_tier: "affordable"
+levels:
+  - "first-wind"
+  - "complication"
+region: "Japan"
+summary: "The first G-Shock, launched in April 1983. Kikuo Ibe's brief was a single line: \"a durable watch that would not break even if dropped\". The module floats inside a hollow, shock-absorbing resin case. Sources disagree on its original depth rating (100 m or 200 m), so it is not stated here."
+look:
+  dial: "#a7ab95"
+  accent: "#15160f"
+  metal: "resin"
+sources:
+  - "https://gshock.casio.com/intl/identity/"
+  - "https://www.g-central.com/g-shock-history/"
+  - "https://www.fratellowatches.com/celebrating-40-years-of-casio-g-shock-a-concise-overview-of-g-shock-history/"
+last_reviewed: "2026-10-16"

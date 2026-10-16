@@ -1,0 +1,27 @@
+brand: "casio"
+name: "G-Shock DW-5500C"
+reference: "DW-5500C"
+type: "digital/lcd"
+styles:
+  - "tool"
+  - "sport"
+complications:
+  - "alarm"
+  - "stopwatch"
+case:
+  material: "Two-tone moulded resin"
+years:
+  introduced: 1985
+price_tier: "affordable"
+levels:
+  - "complication"
+region: "Japan"
+summary: "Casio's first Mud Resist G-Shock, using two-tone moulding to seal the square case against mud and dust: the ancestor of the later Mudman line."
+look:
+  dial: "#a7ab95"
+  accent: "#15160f"
+  metal: "resin"
+sources:
+  - "https://gshock.casio.com/intl/identity/"
+  - "https://www.g-central.com/g-shock-history/"
+last_reviewed: "2026-10-16"

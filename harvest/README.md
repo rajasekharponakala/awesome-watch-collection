@@ -18,3 +18,4 @@ Once a reference has been exported, edit its YAML file, not the batch.
 | Batch | Rows | Notes |
 |---|---|---|
 | `rolex-submariner.ndjson` | 23 | Steel Submariner lineage, 1953 to today. Gold and two-tone variants are not included yet. Where sources disagree, the most-supported value is used and the disagreement is noted in `summary`; values that could not be settled are omitted. |
+| `casio-g-shock-origin.csv` | 11 | G-Shock Origin square line (5000/5600), 1983 to today. CSV with `;`-separated lists. Unconfirmed values (DW-5000C depth rating, GW-M5610 launch year, original GW-5000 module) are omitted and noted in `summary`. |

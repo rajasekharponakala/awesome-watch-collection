@@ -1,0 +1,28 @@
+brand: "casio"
+name: "G-Shock DW-5200C"
+reference: "DW-5200C"
+type: "digital/lcd"
+styles:
+  - "tool"
+  - "sport"
+complications:
+  - "alarm"
+  - "stopwatch"
+caliber: "Casio module 240"
+case:
+  material: "Resin, stainless steel screw-back"
+years:
+  introduced: 1984
+price_tier: "affordable"
+levels:
+  - "complication"
+region: "Japan"
+summary: "A near-identical successor to the DW-5000C, released in 1984, the year a US television advert that used the watch as a hockey puck helped turn G-Shock into a hit."
+look:
+  dial: "#a7ab95"
+  accent: "#15160f"
+  metal: "resin"
+sources:
+  - "https://www.g-central.com/g-shock-history/"
+  - "https://www.fratellowatches.com/evolution-of-the-casio-g-shock-watches/"
+last_reviewed: "2026-10-16"

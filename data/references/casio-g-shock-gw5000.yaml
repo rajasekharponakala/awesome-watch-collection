@@ -1,0 +1,37 @@
+brand: "casio"
+name: "G-Shock GW-5000"
+reference: "GW-5000-1JF"
+type: "digital/lcd"
+styles:
+  - "tool"
+  - "sport"
+complications:
+  - "alarm"
+  - "stopwatch"
+  - "countdown timer"
+  - "backlight"
+  - "Tough Solar"
+  - "Multi-Band 6 radio sync"
+  - "world time"
+case:
+  material: "Resin with stainless steel case and screw-back (DLC)"
+water_resistance_m: 200
+crystal: "Mineral"
+years:
+  introduced: 2009
+  discontinued: 2021
+price_tier: "affordable"
+levels:
+  - "automatic"
+  - "complication"
+region: "Japan"
+summary: "A made-in-Japan homage to the 1983 original, with a screw-lock back, solar power and radio sync. It is held in the Victoria and Albert Museum's collection as a 2009 design, and was succeeded by the GW-5000U."
+look:
+  dial: "#a7ab95"
+  accent: "#15160f"
+  metal: "resin"
+sources:
+  - "https://collections.vam.ac.uk/item/O1360467/"
+  - "https://www.g-central.com/japan-only-g-shock-5000-series-watches-to-consider/"
+  - "https://g-central.com/g-shock-5000-u-series-including-gw-5000u-1/"
+last_reviewed: "2026-10-16"

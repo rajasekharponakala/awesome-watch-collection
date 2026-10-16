@@ -1,0 +1,37 @@
+brand: "casio"
+name: "G-Shock DW-5000R \"Origin Revival\""
+reference: "DW-5000R-1A"
+type: "digital/lcd"
+styles:
+  - "tool"
+  - "sport"
+complications:
+  - "alarm"
+  - "stopwatch"
+  - "countdown timer"
+  - "backlight"
+caliber: "Casio module 3576"
+case:
+  material: "Bio-based resin bezel over stainless steel case, screw-lock back"
+  diameter_mm: 42.3
+  lug_to_lug_mm: 48.9
+  thickness_mm: 13.1
+water_resistance_m: 200
+crystal: "Mineral"
+years:
+  introduced: 2024
+price_tier: "affordable"
+levels:
+  - "first-wind"
+  - "complication"
+region: "Japan"
+summary: "A standard-issue (non-limited) re-creation of the 1983 DW-5000C, made at Yamagata Casio in Japan, with the screw-lock steel case of the original and a bio-based resin band and bezel."
+look:
+  dial: "#a7ab95"
+  accent: "#15160f"
+  metal: "resin"
+sources:
+  - "https://www.g-central.com/casio-officially-announces-dw-5000r-1a-standard-issue-re-creation-of-the-first-generation-g-shock/"
+  - "https://www.fratellowatches.com/hands-on-g-shock-dw-5000r-1a-origin-revival/"
+  - "https://gshock.casio.com/us/products/collection/origin/5000_5600/"
+last_reviewed: "2026-10-16"

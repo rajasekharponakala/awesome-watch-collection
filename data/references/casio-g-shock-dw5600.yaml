@@ -1,5 +1,5 @@
 brand: "casio"
-name: "G-Shock DW-5600"
+name: "G-Shock DW-5600E"
 reference: "DW-5600E-1V"
 type: "digital/lcd"
 styles:
@@ -20,14 +20,17 @@ case:
 water_resistance_m: 200
 crystal: "Mineral"
 years:
-  introduced: 1987
+  introduced: 1996
 price_tier: "entry"
 levels:
   - "first-wind"
 region: "Japan"
-summary: "The square descendant of Kikuo Ibe's original 1983 G-Shock. A suspended module and resin armour make it one of the toughest watches you can buy, at any price."
+summary: "The square descendant of Kikuo Ibe's original 1983 G-Shock, introduced in 1996 to replace the DW-5600C with an EL backlight and module 3229. A suspended module and resin armour make it one of the toughest watches you can buy, at any price."
 look:
   dial: "#9ea18e"
   accent: "#151612"
   metal: "resin"
+sources:
+  - "https://gshock.casio.com/intl/identity/"
+  - "https://weknowwatches.com/casio-g-shock-dw5600-guide/"
 last_reviewed: "2026-10-16"

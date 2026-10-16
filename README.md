@@ -32,7 +32,7 @@
 
 | Collection | Where | Entries |
 |---|---|---|
-| Watch references | [`data/references/`](data/references) | 38 (incl. the full steel Rolex Submariner lineage, 1953 to today) |
+| Watch references | [`data/references/`](data/references) | 49 (incl. the steel Rolex Submariner lineage and the G-Shock Origin square line, 1953 to today) |
 | Calibers (movements) | [`data/calibers/`](data/calibers) | 14 |
 | Brands | [`data/brands/`](data/brands) | 25 |
 | Glossary | [`data/glossary.yaml`](data/glossary.yaml) | 88 terms |

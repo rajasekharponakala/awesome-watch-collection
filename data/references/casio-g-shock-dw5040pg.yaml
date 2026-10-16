@@ -1,0 +1,29 @@
+brand: "casio"
+name: "G-Shock DW-5040PG \"Recrystallized\""
+reference: "DW-5040PG"
+type: "digital/lcd"
+styles:
+  - "tool"
+  - "sport"
+complications:
+  - "alarm"
+  - "stopwatch"
+  - "backlight"
+case:
+  material: "Resin; recrystallised, deep-layer-hardened stainless steel back, buckle and loop"
+water_resistance_m: 200
+years:
+  introduced: 2023
+price_tier: "affordable"
+levels:
+  - "complication"
+region: "Japan"
+summary: "A 40th-anniversary limited edition from the Recrystallized series (2023): the original DW-5000 design, with a case back, buckle and loop in steel treated by recrystallisation and deep-layer hardening."
+look:
+  dial: "#a7ab95"
+  accent: "#15160f"
+  metal: "resin"
+sources:
+  - "https://www.casio.com/za/news/2023/0315-recrystallized/"
+  - "https://www.fratellowatches.com/celebrating-40-years-of-casio-g-shock-a-concise-overview-of-g-shock-history/"
+last_reviewed: "2026-10-16"

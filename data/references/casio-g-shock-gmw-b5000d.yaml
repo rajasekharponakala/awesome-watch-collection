@@ -1,0 +1,41 @@
+brand: "casio"
+name: "G-Shock GMW-B5000D \"Full Metal\""
+reference: "GMW-B5000D-1"
+type: "digital/lcd"
+styles:
+  - "tool"
+  - "everyday"
+complications:
+  - "alarm"
+  - "stopwatch"
+  - "countdown timer"
+  - "backlight"
+  - "Tough Solar"
+  - "Multi-Band 6 radio sync"
+  - "world time"
+  - "Bluetooth sync"
+caliber: "Casio module 3459 (3539 on releases from 2023)"
+case:
+  material: "Stainless steel, screw-lock back (DLC)"
+  diameter_mm: 43.2
+  lug_to_lug_mm: 49.3
+  thickness_mm: 13
+water_resistance_m: 200
+crystal: "Mineral"
+years:
+  introduced: 2018
+price_tier: "affordable"
+levels:
+  - "first-wind"
+  - "automatic"
+region: "Japan"
+summary: "The first full-metal 5000-series G-Shock, released in Japan in April 2018 for the 35th anniversary: the 1983 shape rebuilt in steel with resin shock absorbers between case and bezel, solar power, radio sync and Bluetooth."
+look:
+  dial: "#9fa391"
+  accent: "#15160f"
+  metal: "steel"
+sources:
+  - "https://www.g-central.com/g-shock-gmw-b5000-metal-screw-back-bluetooth-solar/"
+  - "https://deployant.com/new-release-casios-first-5000-series-g-shock-with-full-metal-construction/"
+  - "https://gshock.casio.com/sg/g-news/gmw-b5000-stories/ep1/"
+last_reviewed: "2026-10-16"

@@ -1,0 +1,33 @@
+brand: "casio"
+name: "G-Shock DW-5600C"
+reference: "DW-5600C"
+type: "digital/lcd"
+styles:
+  - "tool"
+  - "sport"
+complications:
+  - "alarm"
+  - "stopwatch"
+  - "countdown timer"
+  - "backlight"
+caliber: "Casio module 691 (later 901)"
+case:
+  material: "Resin, stainless steel screw-back"
+years:
+  introduced: 1987
+  discontinued: 1996
+price_tier: "affordable"
+levels:
+  - "first-wind"
+  - "complication"
+region: "Japan"
+summary: "The first \"5600\", the shape that became the definitive square G-Shock. It sold for nine years until the EL-backlit DW-5600E replaced it in 1996; the module changed from 691 to 901 around 1989 or 1990, depending on the source."
+look:
+  dial: "#a7ab95"
+  accent: "#15160f"
+  metal: "resin"
+sources:
+  - "https://gshock.casio.com/intl/identity/"
+  - "https://www.g-central.com/g-shock-history/"
+  - "https://weknowwatches.com/casio-g-shock-dw5600-guide/"
+last_reviewed: "2026-10-16"

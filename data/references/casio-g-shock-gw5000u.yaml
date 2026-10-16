@@ -1,0 +1,37 @@
+brand: "casio"
+name: "G-Shock GW-5000U"
+reference: "GW-5000U-1JF"
+type: "digital/lcd"
+styles:
+  - "tool"
+  - "sport"
+complications:
+  - "alarm"
+  - "stopwatch"
+  - "countdown timer"
+  - "backlight"
+  - "Tough Solar"
+  - "Multi-Band 6 radio sync"
+  - "world time"
+caliber: "Casio module 3495"
+case:
+  material: "Resin with stainless steel case and screw-back (DLC)"
+water_resistance_m: 200
+crystal: "Mineral"
+years:
+  introduced: 2021
+price_tier: "affordable"
+levels:
+  - "automatic"
+  - "complication"
+region: "Japan"
+summary: "The updated, made-in-Japan GW-5000: the new module 3495 adds a full auto LED backlight with adjustable afterglow and an adjustable date format, while keeping the screw-back, solar charging and Multi-Band 6."
+look:
+  dial: "#a7ab95"
+  accent: "#15160f"
+  metal: "resin"
+sources:
+  - "https://g-central.com/g-shock-5000-u-series-including-gw-5000u-1/"
+  - "https://www.fratellowatches.com/why-i-bought-it-the-g-shock-gw-5000u-1jf/"
+  - "https://www.g-central.com/japan-only-g-shock-5000-series-watches-to-consider/"
+last_reviewed: "2026-10-16"
