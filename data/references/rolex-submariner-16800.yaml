@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner Date"
 reference: "16800"
+lineage: "rolex-submariner"
+milestone: "Sapphire crystal, 300 m and a quickset date"
 type: "mechanical/automatic"
 styles:
   - "diver"

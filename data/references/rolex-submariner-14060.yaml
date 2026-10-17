@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner"
 reference: "14060"
+lineage: "rolex-submariner"
+milestone: "The no-date returns with sapphire and 904L steel"
 type: "mechanical/automatic"
 styles:
   - "diver"

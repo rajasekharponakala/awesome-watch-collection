@@ -1,0 +1,10 @@
+name: "Rolex Submariner"
+brand: "rolex"
+tagline: "Seventy years of the dive watch that defined the dive watch."
+intro: "Shown at the 1954 Basel fair, the Submariner set the template every dive watch still follows: a rotating timing bezel, a legible luminous dial and a sealed Oyster case. Follow it from the 37 mm 6204 through crown guards, the date window, sapphire crystal and ceramic bezels to today's 41 mm references."
+order: 1
+sources:
+  - "https://en.wikipedia.org/wiki/Rolex_Submariner"
+  - "https://www.fratellowatches.com/the-history-of-the-rolex-submariner/"
+  - "https://authenticwrist.com/guides/every-rolex-submariner-reference-explained/"
+last_reviewed: "2026-10-17"

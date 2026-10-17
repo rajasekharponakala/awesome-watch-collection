@@ -1,6 +1,8 @@
 brand: "casio"
 name: "G-Shock GW-5000U"
 reference: "GW-5000U-1JF"
+lineage: "casio-g-shock-origin"
+milestone: "Module 3495 brings a full auto LED backlight"
 type: "digital/lcd"
 styles:
   - "tool"
@@ -20,6 +22,7 @@ water_resistance_m: 200
 crystal: "Mineral"
 years:
   introduced: 2021
+  current: true
 price_tier: "affordable"
 levels:
   - "automatic"

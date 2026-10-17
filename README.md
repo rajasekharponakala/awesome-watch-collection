@@ -33,6 +33,7 @@
 | Collection | Where | Entries |
 |---|---|---|
 | Watch references | [`data/references/`](data/references) | 49 (incl. the steel Rolex Submariner lineage and the G-Shock Origin square line, 1953 to today) |
+| Lineages | [`data/lineages/`](data/lineages) | 2 (Rolex Submariner, G-Shock Origin), each a scroll-through timeline on the site |
 | Calibers (movements) | [`data/calibers/`](data/calibers) | 14 |
 | Brands | [`data/brands/`](data/brands) | 25 |
 | Glossary | [`data/glossary.yaml`](data/glossary.yaml) | 88 terms |
@@ -70,7 +71,8 @@ On every push to `main`, [`deploy.yml`](.github/workflows/deploy.yml) runs one o
 | **Bezel** | Rotating catalogue filter |
 | **Lume** | Night theme (the day dial is the light theme) |
 | **Power reserve** | Reading progress on guides |
-| **Jewels** | Difficulty level |
+| **Jewels** | Difficulty level, and the reader's own level (asked once, gently, on a first visit) |
+| **Lineages** | A model line traced reference by reference, with what each one changed |
 | **Hacking seconds** | Pause all motion |
 | **Caseback** | About page |
 | **Out of beat** | 404 page |

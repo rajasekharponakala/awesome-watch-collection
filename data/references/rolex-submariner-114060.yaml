@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner"
 reference: "114060"
+lineage: "rolex-submariner"
+milestone: "Ceramic bezel and Super Case come to the no-date"
 type: "mechanical/automatic"
 styles:
   - "diver"

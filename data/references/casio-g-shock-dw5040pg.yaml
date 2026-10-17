@@ -1,6 +1,8 @@
 brand: "casio"
 name: "G-Shock DW-5040PG \"Recrystallized\""
 reference: "DW-5040PG"
+lineage: "casio-g-shock-origin"
+milestone: "40th anniversary: recrystallised, hardened steel"
 type: "digital/lcd"
 styles:
   - "tool"

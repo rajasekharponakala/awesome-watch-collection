@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner"
 reference: "5512"
+lineage: "rolex-submariner"
+milestone: "First with crown guards, a 40 mm case and chronometer certification"
 type: "mechanical/automatic"
 styles:
   - "diver"

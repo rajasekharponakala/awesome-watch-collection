@@ -5,6 +5,7 @@ import Watch from '../components/Watch.astro';
 import Rings from '../components/Rings.astro';
 import TypeGlyph from '../components/TypeGlyph.astro';
 import RefCard from '../components/RefCard.astro';
+import RefVisual from '../components/RefVisual.astro';
 import Icon from '../components/Icon.astro';
 import { u, LEVELS, LEVEL_META, TYPE_META } from '../lib/meta';
 
@@ -13,6 +14,10 @@ const types = (await getCollection('types')).sort((a, b) => a.data.order - b.dat
 const brands = await getCollection('brands');
 const calibers = await getCollection('calibers');
 const refs = await getCollection('references');
+const lineageList = (await getCollection('lineages')).sort((a, b) => a.data.order - b.data.order);
+const evolution = ['rolex-submariner-6204', 'rolex-submariner-5512', 'rolex-submariner-1680', 'rolex-submariner-16610', 'rolex-submariner-126610ln']
+  .map((id) => refs.find((r) => r.id === id))
+  .filter((r): r is NonNullable<typeof r> => !!r);
 const glossary = await getCollection('glossary');
 const timeline = (await getCollection('timeline')).sort((a, b) => a.data.year - b.data.year);
 const brandName = (id: string) => brands.find((b) => b.id === id)?.data.name ?? id;
@@ -63,7 +68,7 @@ const tlData = JSON.stringify(timeline.map((t) => t.data));
 const marquee = brands.map((b) => b.data.name);
 ---
 
-<Base>
+<Base page="home">
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="hero__bg" aria-hidden="true">
@@ -86,7 +91,7 @@ const marquee = brands.map((b) => b.data.name);
           takes you from your first wind to grand complications.
         </p>
         <div class="hero__ctas" data-reveal style="--d:.45s">
-          <a class="btn btn--gold" href={u('learn/')} data-magnetic>Start winding <Icon name="arrow" /></a>
+          <a class="btn btn--gold" href={u('learn/')} data-magnetic data-level-cta><span data-label>Start winding</span> <Icon name="arrow" /></a>
           <a class="btn btn--ghost" href={u('catalogue/')} data-magnetic>Explore the catalogue</a>
         </div>
         <dl class="hero__readout mono" data-reveal="fade" style="--d:.6s">
@@ -189,7 +194,7 @@ const marquee = brands.map((b) => b.data.name);
           const meta = LEVEL_META[lv];
           const list = guides.filter((g) => g.data.level === lv);
           return (
-            <a href={u(`learn/${lv}/`)} class="stack__card" style={`--i:${i}`}>
+            <a href={u(`learn/${lv}/`)} class="stack__card" style={`--i:${i}`} data-level-card={lv}>
               <div class="stack__num display">{['I', 'II', 'III', 'IV'][i]}</div>
               <div class="stack__body">
                 <div class="stack__top">
@@ -197,6 +202,7 @@ const marquee = brands.map((b) => b.data.name);
                     {[1, 2, 3, 4].map((j) => <i class={j > meta.jewels ? 'off' : ''} />)}
                   </span>
                   <span class="mono muted">{meta.stage} · {list.length} guides</span>
+                  <span class="mine-badge">Your level</span>
                 </div>
                 <h3 class="display h3">{meta.name}</h3>
                 <p class="lede">{meta.blurb}</p>
@@ -290,6 +296,34 @@ const marquee = brands.map((b) => b.data.name);
       </ol>
     </div>
     <script type="application/json" id="tl-data" set:html={tlData} />
+  </section>
+
+  <!-- ============ LINEAGES ============ -->
+  <section class="section evo">
+    <div class="container">
+      <div class="sec-head sec-head--row">
+        <div>
+          <span class="eyebrow" data-reveal="fade">Lineages</span>
+          <h2 class="display h2" data-reveal>Every icon has <em>ancestors.</em></h2>
+          <p class="lede" data-reveal>Seventy years of the Submariner in five steps. Each lineage page traces every reference, and what it changed.</p>
+        </div>
+        <div class="evo__links" data-reveal>
+          {lineageList.map((l) => <a class="btn btn--ghost" href={u(`lineages/${l.id}/`)} data-magnetic>{l.data.name} <Icon name="arrow" /></a>)}
+        </div>
+      </div>
+      <ol class="evo__row" data-reveal="fade">
+        {evolution.map((r, i) => (
+          <li style={`--d:${0.15 + i * 0.14}s`}>
+            <a href={u(`lineages/rolex-submariner/#${r.id}`)} data-tilt="8">
+              <RefVisual ref={r} brandName="Rolex" size="min(190px, 40vw)" />
+              <span class="display evo__year">{r.data.years.introduced}</span>
+              <span class="mono evo__ref">Ref. {r.data.reference}</span>
+              <span class="evo__ms">{r.data.milestone}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </div>
   </section>
 
   <!-- ============ FEATURED ============ -->
@@ -973,4 +1007,40 @@ const marquee = brands.map((b) => b.data.name);
   .escapement h2 { margin: 24px 0; }
   .escapement .lede { margin: 0 auto; }
   .escapement .hero__ctas { justify-content: center; }
+
+  /* ---------- Lineage teaser ---------- */
+  .evo__links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .evo__row {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .evo__row::before {
+    content: '';
+    position: absolute;
+    left: 6%;
+    right: 6%;
+    top: min(95px, 20vw);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    transition: transform 2.2s var(--ease);
+  }
+  .evo__row.is-in::before { transform: scaleX(1); }
+  .evo__row li { opacity: 0; transform: translateY(30px) scale(0.92); transition: opacity 1s var(--ease), transform 1s var(--ease); transition-delay: var(--d); }
+  .evo__row.is-in li { opacity: 1; transform: none; }
+  .evo__row a { position: relative; display: grid; justify-items: center; text-align: center; gap: 6px; }
+  .evo__year { font-size: clamp(30px, 3vw, 44px); line-height: 1; margin-top: 10px; font-variant-numeric: lining-nums; }
+  .evo__ref { font-size: 11px; color: var(--gold); letter-spacing: 0.08em; }
+  .evo__ms { font-size: 13.5px; color: var(--muted); line-height: 1.45; max-width: 22ch; }
+  @media (max-width: 900px) {
+    .evo__row { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(200px, 62vw); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; }
+    .evo__row li { scroll-snap-align: center; }
+    .evo__row::before { display: none; }
+  }
 </style>

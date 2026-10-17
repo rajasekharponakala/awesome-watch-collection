@@ -1,6 +1,8 @@
 brand: "casio"
 name: "G-Shock GW-B5600"
 reference: "GW-B5600BC-1"
+lineage: "casio-g-shock-origin"
+milestone: "Full-metal functions in a lightweight resin case"
 type: "digital/lcd"
 styles:
   - "tool"
@@ -23,6 +25,7 @@ case:
 water_resistance_m: 200
 years:
   introduced: 2018
+  current: true
 price_tier: "entry"
 levels:
   - "first-wind"

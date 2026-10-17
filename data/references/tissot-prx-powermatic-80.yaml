@@ -16,6 +16,7 @@ water_resistance_m: 100
 crystal: "Sapphire"
 years:
   introduced: 2021
+  current: true
 price_tier: "affordable"
 levels:
   - "first-wind"

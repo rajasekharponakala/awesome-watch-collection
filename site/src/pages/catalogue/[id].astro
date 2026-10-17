@@ -5,6 +5,7 @@ import RefVisual from '../../components/RefVisual.astro';
 import RefCard from '../../components/RefCard.astro';
 import Rings from '../../components/Rings.astro';
 import { u, typeOf, subtypeOf, TYPE_META, TIER_META, LEVEL_META } from '../../lib/meta';
+import { lineageMembers } from '../../lib/lineage';
 
 export async function getStaticPaths() {
   const refs = await getCollection('references');
@@ -17,7 +18,14 @@ const brand = brands.find((b) => b.id === d.brand);
 const calibers = await getCollection('calibers');
 const cal = d.caliber_id ? calibers.find((c) => c.id === d.caliber_id) : undefined;
 const t = typeOf(d.type);
-const related = (await getCollection('references')).filter((r) => r.id !== ref.id && (r.data.brand === d.brand || typeOf(r.data.type) === t)).slice(0, 3);
+const lineage = d.lineage ? (await getCollection('lineages')).find((l) => l.id === d.lineage) : undefined;
+const members = lineage ? await lineageMembers(lineage.id) : [];
+const pos = members.findIndex((m) => m.id === ref.id);
+const prevRef = pos > 0 ? members[pos - 1] : undefined;
+const nextRef = pos >= 0 && pos < members.length - 1 ? members[pos + 1] : undefined;
+const related = (await getCollection('references'))
+  .filter((r) => r.id !== ref.id && !members.some((m) => m.id === r.id) && (r.data.brand === d.brand || typeOf(r.data.type) === t))
+  .slice(0, 3);
 const brandName = (id: string) => brands.find((b) => b.id === id)?.data.name ?? id;
 
 const specs: [string, string | undefined][] = [
@@ -33,7 +41,7 @@ const specs: [string, string | undefined][] = [
   ['Crystal', d.crystal],
   ['Functions', d.complications.length ? d.complications.join(', ') : undefined],
   ['Style', d.styles.join(', ')],
-  ['Produced', d.years.introduced ? `${d.years.introduced}${d.years.discontinued ? `–${d.years.discontinued}` : '–present'}` : undefined],
+  ['Produced', d.years.introduced ? (d.years.discontinued ? `${d.years.introduced}–${d.years.discontinued}` : d.years.current ? `${d.years.introduced}–present` : `From ${d.years.introduced}`) : undefined],
   ['Origin', d.region],
   ['Price tier', `${TIER_META[d.price_tier].name} (${TIER_META[d.price_tier].range})`],
 ];
@@ -82,6 +90,28 @@ const specs: [string, string | undefined][] = [
     </div></div>
   </section>
 
+  {lineage && (
+    <section class="section--tight">
+      <div class="container" data-reveal>
+        <div class="lin-panel">
+          <div class="lin-panel__head">
+            <span class="eyebrow">Part of a lineage</span>
+            <a href={u(`lineages/${lineage.id}/#${ref.id}`)} class="display h4 lin-panel__title">{lineage.data.name}: {pos + 1} of {members.length} →</a>
+            {d.milestone && <p class="muted">{d.milestone}</p>}
+          </div>
+          <div class="lin-panel__nav">
+            {prevRef ? (
+              <a href={u(`catalogue/${prevRef.id}/`)} class="card"><span class="mono muted">← Before · {prevRef.data.years.introduced ?? '?'}</span><strong>Ref. {prevRef.data.reference}</strong></a>
+            ) : <span class="lin-panel__end mono muted">The first of the line</span>}
+            {nextRef ? (
+              <a href={u(`catalogue/${nextRef.id}/`)} class="card lin-panel__next"><span class="mono muted">After · {nextRef.data.years.introduced ?? '?'} →</span><strong>Ref. {nextRef.data.reference}</strong></a>
+            ) : <span class="lin-panel__end mono muted">The latest of the line</span>}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
   {related.length > 0 && (
     <section class="section--tight">
       <div class="container">
@@ -112,6 +142,16 @@ const specs: [string, string | undefined][] = [
       linear-gradient(180deg, var(--surface-2), var(--surface));
   }
   .warranty__head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-bottom: 26px; }
+  .lin-panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: center; max-width: 920px; padding: clamp(22px, 3vw, 36px); border: 1px solid var(--line-2); border-radius: 26px; background: linear-gradient(160deg, var(--surface-2), var(--surface)); }
+  .lin-panel__title { display: block; margin: 12px 0 8px; transition: color 0.3s; }
+  .lin-panel__title:hover { color: var(--gold); }
+  .lin-panel__head p { margin: 0; font-size: 15px; }
+  .lin-panel__nav { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .lin-panel__nav .card { display: grid; gap: 6px; padding: 16px 18px; }
+  .lin-panel__nav .mono { font-size: 11px; }
+  .lin-panel__next { text-align: right; }
+  .lin-panel__end { display: grid; place-items: center; padding: 16px; border: 1px dashed var(--line-2); border-radius: var(--radius); font-size: 11px; text-align: center; }
+  @media (max-width: 760px) { .lin-panel { grid-template-columns: minmax(0, 1fr); } }
   .gold-link { color: var(--gold); border-bottom: 1px solid currentColor; }
   .sources { margin: 22px 0 0; font-size: 12px; display: flex; flex-wrap: wrap; gap: 12px; }
   .sources a { color: var(--gold); }

@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner (first series)"
 reference: "6204"
+lineage: "rolex-submariner"
+milestone: "The first Submariner: 37 mm, 100 m, a rotating timing bezel"
 type: "mechanical/automatic"
 styles:
   - "diver"

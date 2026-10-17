@@ -12,6 +12,7 @@ import {
   glossarySchema,
   timelineSchema,
   resourcesSchema,
+  lineagesSchema,
 } from './lib/schemas';
 
 const guides = defineCollection({
@@ -39,6 +40,11 @@ const references = defineCollection({
   schema: referencesSchema,
 });
 
+const lineages = defineCollection({
+  loader: glob({ pattern: '*.yaml', base: '../data/lineages' }),
+  schema: lineagesSchema,
+});
+
 const glossary = defineCollection({
   loader: file('../data/glossary.yaml'),
   schema: glossarySchema,
@@ -54,4 +60,4 @@ const resources = defineCollection({
   schema: resourcesSchema,
 });
 
-export const collections = { guides, types, brands, calibers, references, glossary, timeline, resources };
+export const collections = { guides, types, brands, calibers, references, lineages, glossary, timeline, resources };

@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner Date"
 reference: "116610LN"
+lineage: "rolex-submariner"
+milestone: "Cerachrom ceramic bezel and the thick-lugged Super Case"
 type: "mechanical/automatic"
 styles:
   - "diver"

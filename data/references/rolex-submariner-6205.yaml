@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner"
 reference: "6205"
+lineage: "rolex-submariner"
+milestone: "A near twin of the 6204, still without a depth rating on the dial"
 type: "mechanical/automatic"
 styles:
   - "diver"

@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner Date \"Hulk\""
 reference: "116610LV"
+lineage: "rolex-submariner"
+milestone: "\"Hulk\": green dial and green ceramic bezel"
 type: "mechanical/automatic"
 styles:
   - "diver"

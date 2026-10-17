@@ -8,6 +8,7 @@ const links = [
   ['types/', 'Types'],
   ['catalogue/', 'Catalogue'],
   ['calibers/', 'Calibers'],
+  ['lineages/', 'Lineages'],
   ['brands/', 'Brands'],
   ['history/', 'History'],
   ['glossary/', 'Glossary'],
@@ -27,6 +28,7 @@ const path = Astro.url.pathname;
       ))}
     </nav>
     <div class="header-tools">
+      <button class="level-btn hdr-opt" data-level-open data-level-badge aria-label="Your watch knowledge level" title="Your level"><span>Set your level</span></button>
       <button class="crown-btn" data-crown-open aria-label="Search (pull the crown)">
         <Icon name="crown" /><span>Pull the crown</span><kbd>⌘K</kbd>
       </button>
@@ -49,6 +51,7 @@ const path = Astro.url.pathname;
   ))}
   <a href={u('about/')}><span>60′</span>Caseback</a>
   <div class="mobile-menu__tools">
+    <button class="btn btn--ghost" data-level-open>Your level: <span data-level-badge>Set your level</span></button>
     <button class="btn btn--ghost" data-theme-toggle><span class="t-moon">Lume</span><span class="t-sun">Day dial</span> theme</button>
     <button class="btn btn--ghost" data-hack-toggle aria-pressed="false"><span class="t-pause">Pause motion</span><span class="t-play">Resume motion</span></button>
   </div>

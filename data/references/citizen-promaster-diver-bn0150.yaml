@@ -13,6 +13,8 @@ case:
   diameter_mm: 44
 water_resistance_m: 200
 crystal: "Mineral"
+years:
+  current: true
 price_tier: "entry"
 levels:
   - "first-wind"

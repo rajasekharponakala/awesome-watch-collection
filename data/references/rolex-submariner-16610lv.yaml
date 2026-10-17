@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner Date \"Kermit\""
 reference: "16610LV"
+lineage: "rolex-submariner"
+milestone: "The 50th-anniversary \"Kermit\": the first green bezel"
 type: "mechanical/automatic"
 styles:
   - "diver"

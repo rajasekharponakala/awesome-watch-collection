@@ -1,6 +1,8 @@
 brand: "casio"
 name: "G-Shock DW-5600C"
 reference: "DW-5600C"
+lineage: "casio-g-shock-origin"
+milestone: "The first \"5600\": the definitive square shape"
 type: "digital/lcd"
 styles:
   - "tool"

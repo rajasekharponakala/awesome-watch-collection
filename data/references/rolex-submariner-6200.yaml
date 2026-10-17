@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner \"Big Crown\""
 reference: "6200"
+lineage: "rolex-submariner"
+milestone: "First 200 m Submariner, with an 8 mm \"big crown\""
 type: "mechanical/automatic"
 styles:
   - "diver"

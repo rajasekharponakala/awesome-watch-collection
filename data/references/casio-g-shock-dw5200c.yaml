@@ -1,6 +1,8 @@
 brand: "casio"
 name: "G-Shock DW-5200C"
 reference: "DW-5200C"
+lineage: "casio-g-shock-origin"
+milestone: "The near-identical successor that broke through in the US"
 type: "digital/lcd"
 styles:
   - "tool"

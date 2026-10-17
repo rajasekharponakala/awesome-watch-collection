@@ -5,7 +5,7 @@ import { getCollection, type CollectionKey } from 'astro:content';
 // Served at /api/<name>.json and mirrored into the repo's /api folder by CI.
 // Output is deterministic (sorted, no timestamps) so the committed copy only changes when the data does.
 
-export const API_COLLECTIONS = ['brands', 'calibers', 'references', 'glossary', 'timeline', 'resources', 'types', 'guides'] as const;
+export const API_COLLECTIONS = ['brands', 'calibers', 'references', 'lineages', 'glossary', 'timeline', 'resources', 'types', 'guides'] as const;
 
 export const getStaticPaths = (() => API_COLLECTIONS.map((name) => ({ params: { name } }))) satisfies GetStaticPaths;
 

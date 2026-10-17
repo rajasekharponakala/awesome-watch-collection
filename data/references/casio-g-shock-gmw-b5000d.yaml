@@ -1,6 +1,8 @@
 brand: "casio"
 name: "G-Shock GMW-B5000D \"Full Metal\""
 reference: "GMW-B5000D-1"
+lineage: "casio-g-shock-origin"
+milestone: "First full-metal square, with Bluetooth"
 type: "digital/lcd"
 styles:
   - "tool"
@@ -24,6 +26,7 @@ water_resistance_m: 200
 crystal: "Mineral"
 years:
   introduced: 2018
+  current: true
 price_tier: "affordable"
 levels:
   - "first-wind"

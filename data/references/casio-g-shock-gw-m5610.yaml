@@ -1,6 +1,8 @@
 brand: "casio"
 name: "G-Shock GW-M5610"
 reference: "GW-M5610"
+lineage: "casio-g-shock-origin"
+milestone: "Solar and atomic radio sync for an everyday price"
 type: "digital/lcd"
 styles:
   - "tool"

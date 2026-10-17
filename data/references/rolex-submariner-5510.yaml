@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner \"Big Crown\""
 reference: "5510"
+lineage: "rolex-submariner"
+milestone: "Short-lived big-crown model with the calibre 1530"
 type: "mechanical/automatic"
 styles:
   - "diver"

@@ -1,6 +1,8 @@
 brand: "casio"
 name: "G-Shock GW-5000"
 reference: "GW-5000-1JF"
+lineage: "casio-g-shock-origin"
+milestone: "Made in Japan with a screw-back, solar power and radio sync"
 type: "digital/lcd"
 styles:
   - "tool"

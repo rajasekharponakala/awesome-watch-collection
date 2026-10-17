@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner Date"
 reference: "16610"
+lineage: "rolex-submariner"
+milestone: "Calibre 3135: the classic Submariner Date for two decades"
 type: "mechanical/automatic"
 styles:
   - "diver"

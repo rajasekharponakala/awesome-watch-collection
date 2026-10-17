@@ -14,6 +14,8 @@ case:
   lug_width_mm: 20
 water_resistance_m: 50
 crystal: "Hardlex (box-shaped)"
+years:
+  current: true
 price_tier: "affordable"
 levels:
   - "first-wind"

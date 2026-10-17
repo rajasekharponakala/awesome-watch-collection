@@ -1,0 +1,243 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Rings from '../../components/Rings.astro';
+import RefVisual from '../../components/RefVisual.astro';
+import Icon from '../../components/Icon.astro';
+import { u, TYPE_META, typeOf } from '../../lib/meta';
+import { lineageMembers, changesFrom, lineageSpan, predecessors } from '../../lib/lineage';
+
+export async function getStaticPaths() {
+  const lineages = await getCollection('lineages');
+  return lineages.map((l) => ({ params: { id: l.id }, props: { lineage: l } }));
+}
+const { lineage } = Astro.props;
+const d = lineage.data;
+const members = await lineageMembers(lineage.id);
+const brand = (await getCollection('brands')).find((b) => b.id === d.brand);
+const span = lineageSpan(members);
+const families = [...new Set(members.map((m) => TYPE_META[typeOf(m.data.type)].name))];
+const preds = predecessors(members);
+const steps = members.map((m, i) => ({ m, changes: changesFrom(preds[i], m), gap: i && m.data.years.introduced && members[i - 1].data.years.introduced ? m.data.years.introduced - members[i - 1].data.years.introduced! : null }));
+---
+
+<Base title={`${d.name} lineage`} description={d.tagline}>
+  <section class="lh">
+    <div class="lh__rings" data-parallax="0.3" aria-hidden="true"><Rings spin={200} /></div>
+    <div class="lh__years display" data-parallax="-0.18" aria-hidden="true">{span.from}<br />{span.to === 'today' ? 'Now' : span.to}</div>
+    <div class="container lh__inner">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" data-reveal="fade">
+        <a href={u()}>Dial</a><span>/</span><a href={u('lineages/')}>Lineages</a><span>/</span><a href={u(`lineages/${lineage.id}/`)}>{d.name}</a>
+      </nav>
+      <span class="eyebrow" data-reveal="fade">{brand?.data.name} · Lineage</span>
+      <h1 class="display h1" data-reveal style="margin:22px 0 0">{d.name}</h1>
+      <p class="lede lh__tag" data-reveal style="--d:.1s">{d.tagline}</p>
+      <p class="lh__intro" data-reveal style="--d:.18s">{d.intro}</p>
+      <dl class="lh__stats" data-reveal style="--d:.26s">
+        <div><dt class="mono">Span</dt><dd class="display">{span.from}–{span.to}</dd></div>
+        <div><dt class="mono">References</dt><dd class="display" data-count={members.length}>{members.length}</dd></div>
+        <div><dt class="mono">Family</dt><dd class="display">{families.join(', ')}</dd></div>
+      </dl>
+      <ol class="strip" aria-label="Jump to a reference" data-reveal="fade" style="--d:.34s">
+        {members.map((m) => (
+          <li><a href={`#${m.id}`} title={`${m.data.reference ?? m.data.name}`}><span class="mono">{m.data.years.introduced ?? '?'}</span><i></i></a></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="lt" data-scene>
+    <div class="container lt__grid">
+      <aside class="lt__aside" aria-hidden="true">
+        <div class="lt__now">
+          <span class="mono">Now winding</span>
+          <b class="display" data-lt-year>{members[0]?.data.years.introduced ?? ''}</b>
+          <span class="lt__ref mono" data-lt-ref>{members[0]?.data.reference}</span>
+          <div class="lt__bar"><i></i></div>
+          <span class="mono lt__count"><span data-lt-index>1</span> / {members.length}</span>
+        </div>
+      </aside>
+
+      <ol class="lt__list">
+        {steps.map(({ m, changes, gap }, i) => (
+          <>
+            {gap != null && gap >= 5 && (
+              <li class="lt__gap mono" aria-hidden="true"><span>{gap} years later</span></li>
+            )}
+            <li class="lt__item" id={m.id} data-lt-item data-year={m.data.years.introduced ?? '?'} data-ref={m.data.reference ?? ''}>
+              <span class="lt__dot" aria-hidden="true"></span>
+              <a href={u(`catalogue/${m.id}/`)} class="lt__visual" data-tilt="8" data-reveal="scale" aria-label={`${m.data.name} ${m.data.reference ?? ''} spec sheet`}>
+                <RefVisual ref={m} brandName={brand?.data.name ?? ''} size="min(240px, 62vw)" />
+              </a>
+              <div class="lt__body" data-reveal style="--d:.08s">
+                <div class="lt__when">
+                  <span class="display lt__year">{m.data.years.introduced ?? 'Year unconfirmed'}</span>
+                  {m.data.years.discontinued && <span class="mono muted">to {m.data.years.discontinued}</span>}
+                  {m.data.years.current && <span class="mono lt__live">In production</span>}
+                </div>
+                <span class="eyebrow">Ref. {m.data.reference ?? '—'} · {m.data.name}</span>
+                <h2 class="display h4 lt__milestone">{m.data.milestone ?? m.data.name}</h2>
+                {changes.length > 0 && (
+                  <ul class="lt__changes" aria-label="What changed">
+                    {changes.map((c) => <li class="chip">{c}</li>)}
+                  </ul>
+                )}
+                <p class="muted">{m.data.summary}</p>
+                <a class="lt__link" href={u(`catalogue/${m.id}/`)}>Spec sheet <Icon name="arrow" /></a>
+              </div>
+            </li>
+          </>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container lt__end" data-reveal>
+      <span class="eyebrow">Sources</span>
+      <p class="mono muted lt__sources">{d.sources.map((s) => <a href={s}>{new URL(s).hostname}</a>)} · Each reference lists its own sources on its spec sheet.</p>
+      <a class="btn btn--ghost" href={u('lineages/')} data-magnetic>All lineages <Icon name="arrow" /></a>
+    </div>
+  </section>
+</Base>
+
+<script>
+  // Sticky "now winding" readout follows the reference nearest the middle of the screen.
+  const items = Array.from(document.querySelectorAll<HTMLElement>('[data-lt-item]'));
+  const yearEl = document.querySelector('[data-lt-year]');
+  const refEl = document.querySelector('[data-lt-ref]');
+  const idxEl = document.querySelector('[data-lt-index]');
+  let current = -1;
+  function update() {
+    const mid = window.innerHeight * 0.5;
+    let idx = 0;
+    items.forEach((it, i) => {
+      if (it.getBoundingClientRect().top < mid) idx = i;
+    });
+    if (idx === current) return;
+    current = idx;
+    items.forEach((it, i) => it.classList.toggle('is-current', i === idx));
+    const it = items[idx];
+    if (yearEl) yearEl.textContent = it.dataset.year ?? '';
+    if (refEl) refEl.textContent = it.dataset.ref ?? '';
+    if (idxEl) idxEl.textContent = String(idx + 1);
+  }
+  window.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+  update();
+</script>
+
+<style>
+  /* ---------- Hero ---------- */
+  .lh { position: relative; padding: calc(var(--header-h) + clamp(50px, 8vw, 110px)) 0 clamp(40px, 6vw, 80px); overflow: hidden; }
+  .lh__rings { position: absolute; right: -14vw; top: 0; width: min(1000px, 110vw); opacity: 0.45; pointer-events: none; }
+  .lh__years {
+    position: absolute;
+    right: var(--gutter);
+    top: calc(var(--header-h) + 30px);
+    font-size: clamp(90px, 15vw, 240px);
+    line-height: 0.85;
+    font-style: italic;
+    text-align: right;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--line-2);
+    pointer-events: none;
+    font-variant-numeric: lining-nums;
+  }
+  .lh__inner { position: relative; }
+  .lh__tag { margin: 22px 0 0; }
+  .lh__intro { max-width: 68ch; color: var(--muted); margin: 18px 0 0; }
+  .lh__stats { display: flex; flex-wrap: wrap; gap: clamp(24px, 5vw, 70px); margin: 40px 0 0; }
+  .lh__stats dt { font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
+  .lh__stats dd { margin: 6px 0 0; font-size: clamp(26px, 3vw, 40px); line-height: 1.05; font-variant-numeric: lining-nums; }
+  .strip {
+    list-style: none;
+    display: flex;
+    gap: 4px;
+    margin: 46px 0 0;
+    padding: 0 0 6px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+  .strip a { display: grid; justify-items: center; gap: 6px; min-width: 46px; padding: 8px 4px; border-radius: 10px; color: var(--muted); transition: color 0.3s, background 0.3s; }
+  .strip a:hover { color: var(--gold); background: var(--surface); }
+  .strip span { font-size: 11px; }
+  .strip i { width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--gold); }
+  .strip a:hover i { background: var(--gold); box-shadow: 0 0 10px var(--gold); }
+
+  /* ---------- Timeline ---------- */
+  .lt { position: relative; padding: 20px 0 60px; }
+  .lt__grid { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: clamp(30px, 5vw, 70px); }
+  .lt__aside { position: relative; }
+  .lt__now { position: sticky; top: calc(var(--header-h) + 40px); display: grid; gap: 6px; }
+  .lt__now > .mono:first-child { font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
+  .lt__now b { font-size: 84px; line-height: 0.95; font-weight: 500; font-style: italic; font-variant-numeric: lining-nums; }
+  .lt__ref { color: var(--muted); font-size: 14px; min-height: 1.4em; }
+  .lt__bar { height: 2px; background: var(--line-2); margin: 14px 0 6px; }
+  .lt__bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--gold-3), var(--gold-2)); transform-origin: 0 50%; transform: scaleX(var(--p, 0)); }
+  .lt__count { font-size: 12px; color: var(--faint); }
+
+  .lt__list { position: relative; list-style: none; margin: 0; padding: 0 0 0 34px; }
+  .lt__list::before { content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 1px; background: var(--line-2); }
+  .lt__list::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 0;
+    width: 1px;
+    height: calc(var(--p, 0) * 100%);
+    background: linear-gradient(var(--gold-3), var(--gold-2));
+    box-shadow: 0 0 12px var(--gold);
+  }
+  .lt__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: clamp(20px, 4vw, 50px);
+    align-items: center;
+    padding: clamp(34px, 5vw, 60px) 0;
+    border-bottom: 1px solid var(--line);
+    scroll-margin-top: calc(var(--header-h) + 30px);
+  }
+  .lt__dot {
+    position: absolute;
+    left: -34px;
+    top: 50%;
+    width: 13px;
+    height: 13px;
+    margin-top: -6px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    background: var(--bg);
+    transition: background 0.4s, box-shadow 0.4s, transform 0.4s var(--ease);
+  }
+  .lt__item.is-current .lt__dot { background: var(--gold); box-shadow: 0 0 16px var(--gold); transform: scale(1.3); }
+  .lt__visual { display: grid; place-items: center; transform-style: preserve-3d; }
+  .lt__visual :global(.watch), .lt__visual :global(.dface) { filter: drop-shadow(0 26px 30px rgba(0, 0, 0, 0.45)); transition: transform 0.7s var(--ease); }
+  .lt__item.is-current .lt__visual :global(.watch), .lt__item.is-current .lt__visual :global(.dface) { transform: scale(1.04); }
+  .lt__when { display: flex; flex-wrap: wrap; align-items: baseline; gap: 14px; margin-bottom: 10px; }
+  .lt__year { font-size: clamp(44px, 5vw, 68px); line-height: 1; font-variant-numeric: lining-nums; }
+  .lt__live { color: var(--lume); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .lt__milestone { margin: 12px 0 14px; }
+  .lt__changes { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; padding: 0; }
+  .lt__changes .chip { white-space: normal; max-width: 100%; line-height: 1.4; text-transform: none; letter-spacing: 0.02em; font-size: 11.5px; color: var(--text); border-color: color-mix(in srgb, var(--gold) 45%, transparent); }
+  .lt__body p { margin: 0 0 14px; font-size: 15.5px; }
+  .lt__link { display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font-size: 14px; }
+  .lt__link :global(svg) { width: 16px; height: 16px; transition: transform 0.3s var(--ease); }
+  .lt__link:hover :global(svg) { transform: translateX(4px); }
+  .lt__gap { position: relative; padding: 18px 0; color: var(--faint); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+  .lt__gap span { padding: 4px 10px; border: 1px dashed var(--line-2); border-radius: 999px; }
+  .lt__end { display: grid; gap: 16px; justify-items: start; }
+  .lt__sources { display: flex; flex-wrap: wrap; gap: 6px 12px; margin: 0; font-size: 12px; }
+  .lt__sources a { color: var(--gold); }
+
+  @media (max-width: 900px) {
+    .lt__grid { grid-template-columns: minmax(0, 1fr); }
+    .lt__aside { display: none; }
+    .lt__item { grid-template-columns: minmax(0, 1fr); }
+    .lt__visual { justify-self: start; }
+    .lh__years { opacity: 0.5; }
+  }
+  @media (max-width: 600px) {
+    .lh__years { display: none; }
+  }
+</style>

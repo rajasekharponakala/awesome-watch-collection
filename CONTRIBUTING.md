@@ -10,6 +10,7 @@ correction, reference or guide is a beat. Thank you for adding yours.
 | Add a watch to the catalogue | `data/references/<brand>-<model>.yaml` |
 | Add a movement | `data/calibers/<maker>-<calibre>.yaml` |
 | Add a brand | `data/brands/<brand>.yaml` |
+| Add a lineage (a model line) | `data/lineages/<id>.yaml`, then tag members with `lineage` |
 | Add a glossary term | `data/glossary.yaml` (keep it alphabetical) |
 | Add a history event | `data/timeline.yaml` |
 | Add a book, channel, museum… | `data/resources.yaml` |
@@ -38,6 +39,23 @@ Every guide, term and reference is tagged with one or more levels:
 A reference's `type` is `<family>/<subtype>`, where the family is one of
 `mechanical`, `quartz`, `digital`, `smart`, `hybrid` or `exotic`. Examples: `mechanical/automatic`,
 `quartz/solar`, `digital/lcd`, `smart/full-os`, `hybrid/spring-drive`.
+
+### Lineages
+
+A lineage is a model line followed through time, such as the Rolex Submariner. Create `data/lineages/<id>.yaml`
+(name, brand, tagline, intro, sources), then on each member reference set:
+
+```yaml
+lineage: "rolex-submariner"
+milestone: "First with crown guards, a 40 mm case and chronometer certification"   # one line: what this reference changed
+years:
+  introduced: 1959
+  discontinued: 1978
+  current: true     # only if it is known to be in production today; a missing end year does NOT mean "current"
+```
+
+The lineage page orders members by year and works out the "what changed" chips (size, depth rating, crystal,
+case material, movement, added or removed features) by comparing each reference with its own predecessor.
 
 ### The `look` block
 

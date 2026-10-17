@@ -62,6 +62,10 @@ export const referencesSchema = z.object({
   brand: z.string(),
   name: z.string(),
   reference: z.string().optional(),
+  /** Id of a file in data/lineages/ when the watch belongs to a model line (e.g. "rolex-submariner"). */
+  lineage: z.string().optional(),
+  /** One line on what this reference changed in its lineage, e.g. "First Submariner with crown guards". */
+  milestone: z.string().optional(),
   type: z.string().regex(/^(mechanical|quartz|digital|smart|hybrid|exotic)\/[a-z-]+$/),
   styles: z.array(z.string()).default([]),
   complications: z.array(z.string()).default([]),
@@ -78,7 +82,14 @@ export const referencesSchema = z.object({
     .default({}),
   water_resistance_m: z.number().optional(),
   crystal: z.string().optional(),
-  years: z.object({ introduced: z.number().optional(), discontinued: z.number().optional() }).default({}),
+  years: z
+    .object({
+      introduced: z.number().optional(),
+      discontinued: z.number().optional(),
+      /** True only when the reference is known to be in production today. A missing end year does not imply this. */
+      current: z.boolean().optional(),
+    })
+    .default({}),
   price_tier: z.enum(TIERS),
   levels: z.array(z.enum(LEVELS)).default([]),
   region: z.string(),
@@ -117,4 +128,14 @@ export const resourcesSchema = z.object({
   url: z.string().url().optional(),
   level: z.enum(LEVELS),
   text: z.string(),
+});
+
+export const lineagesSchema = z.object({
+  name: z.string(),
+  brand: z.string(),
+  tagline: z.string(),
+  intro: z.string(),
+  order: z.number().default(100),
+  sources: z.array(z.string().url()).default([]),
+  last_reviewed: z.coerce.date(),
 });

@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner Date"
 reference: "1680"
+lineage: "rolex-submariner"
+milestone: "First Submariner with a date and Cyclops lens"
 type: "mechanical/automatic"
 styles:
   - "diver"

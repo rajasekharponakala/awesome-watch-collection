@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner"
 reference: "124060"
+lineage: "rolex-submariner"
+milestone: "41 mm, slimmer lugs and the 70-hour calibre 3230"
 type: "mechanical/automatic"
 styles:
   - "diver"
@@ -13,6 +15,7 @@ water_resistance_m: 300
 crystal: "Sapphire"
 years:
   introduced: 2020
+  current: true
 price_tier: "luxury"
 levels:
   - "automatic"

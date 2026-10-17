@@ -18,6 +18,7 @@ water_resistance_m: 50
 crystal: "Hesalite"
 years:
   introduced: 2021
+  current: true
 price_tier: "luxury"
 levels:
   - "first-wind"

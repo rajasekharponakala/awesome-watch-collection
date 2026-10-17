@@ -8,7 +8,7 @@
 //
 // CLI (run from site/):
 //   node scripts/duck_bridge.js check                      Ingest + SQL integrity checks (exit 1 on errors)
-//   node scripts/duck_bridge.js query "<SQL>"              Ingest + run any SQL (tables: brands, calibers, refs, timeline)
+//   node scripts/duck_bridge.js query "<SQL>"              Ingest + run any SQL (tables: brands, calibers, lineages, refs, timeline)
 //   node scripts/duck_bridge.js export <batch> [options]   Load a batch file (.json/.ndjson/.csv/.parquet) as table
 //                                                          `harvest` and export it to data/references/*.yaml
 //     --sql "<SQL>"    export the result of this query instead of the whole `harvest` table
@@ -27,7 +27,7 @@ import { join, extname, basename, resolve } from 'node:path';
 import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { isDeepStrictEqual } from 'node:util';
-import { brandsSchema, calibersSchema, referencesSchema, timelineSchema } from '../src/lib/schemas.ts';
+import { brandsSchema, calibersSchema, referencesSchema, timelineSchema, lineagesSchema } from '../src/lib/schemas.ts';
 
 const ROOT = fileURLToPath(new URL('../../', import.meta.url));
 const DATA = join(ROOT, 'data');
@@ -37,6 +37,7 @@ const REFS_DIR = join(DATA, 'references');
 const SOURCES = [
   { table: 'brands', dir: 'brands', schema: brandsSchema },
   { table: 'calibers', dir: 'calibers', schema: calibersSchema },
+  { table: 'lineages', dir: 'lineages', schema: lineagesSchema },
   { table: 'refs', dir: 'references', schema: referencesSchema },
   { table: 'timeline', file: 'timeline.yaml', schema: timelineSchema },
 ];
@@ -82,7 +83,7 @@ function readCollection(src) {
   const raw = [];
   if (src.dir) {
     const dir = join(DATA, src.dir);
-    for (const f of readdirSync(dir).filter((f) => f.endsWith('.yaml')).sort()) {
+    for (const f of (existsSync(dir) ? readdirSync(dir) : []).filter((f) => f.endsWith('.yaml')).sort()) {
       raw.push({ id: basename(f, '.yaml'), file: `data/${src.dir}/${f}`, data: parseYaml(readFileSync(join(dir, f), 'utf8')) });
     }
   } else {
@@ -120,7 +121,9 @@ export async function openLibrary() {
       const { rows, issues } = readCollection(src);
       allIssues.push(...issues);
       counts[src.table] = rows.length;
-      if (rows.length) await loadRows(conn, src.table, rows, scratch);
+      // An empty collection still gets a table (with the schema's columns) so every check can run.
+      await loadRows(conn, src.table, rows.length ? rows : [{ id: '', ...fillShape(src.schema, {}) }], scratch);
+      if (!rows.length) await conn.run(`DELETE FROM ${src.table}`);
     }
     await conn.run('CREATE TABLE _issues (collection VARCHAR, id VARCHAR, file VARCHAR, problem VARCHAR)');
     if (allIssues.length) await loadRows(conn, '_issues', allIssues, scratch);
@@ -151,6 +154,23 @@ export const CHECKS = [
     name: 'Reference points to an unknown caliber_id',
     sql: `SELECT r.id, r.caliber_id FROM refs r WHERE r.caliber_id IS NOT NULL
           AND r.caliber_id NOT IN (SELECT id FROM calibers) ORDER BY 1`,
+  },
+  {
+    level: 'error',
+    name: 'Reference points to an unknown lineage',
+    sql: `SELECT r.id, r.lineage FROM refs r WHERE r.lineage IS NOT NULL
+          AND r.lineage NOT IN (SELECT id FROM lineages) ORDER BY 1`,
+  },
+  {
+    level: 'error',
+    name: 'Lineage belongs to an unknown brand',
+    sql: `SELECT l.id, l.brand FROM lineages l ANTI JOIN brands b ON b.id = l.brand ORDER BY 1`,
+  },
+  {
+    level: 'warning',
+    name: 'Lineage member from a different brand',
+    sql: `SELECT r.id, r.brand, l.brand AS lineage_brand FROM refs r JOIN lineages l ON l.id = r.lineage
+          WHERE r.brand <> l.brand ORDER BY 1`,
   },
   {
     level: 'error',
@@ -229,19 +249,22 @@ export function rowToReference(row, schema = referencesSchema) {
     if (v == null || v === '') continue;
     out[key] = v;
   }
-  // Numbers from CSV arrive as text; coerce wherever the schema wants a number.
-  coerceNumbers(out, schema);
+  // Numbers and booleans from CSV arrive as text; coerce wherever the schema wants them.
+  coerceScalars(out, schema);
   if (!out.last_reviewed) out.last_reviewed = new Date().toISOString().slice(0, 10);
   return out;
 }
 
-function coerceNumbers(obj, schema) {
+function coerceScalars(obj, schema) {
   for (const [key, field] of Object.entries(shapeOf(schema))) {
     if (obj[key] == null) continue;
-    if (isObjectSchema(field)) coerceNumbers(obj[key], field);
+    if (isObjectSchema(field)) coerceScalars(obj[key], field);
     else if (unwrap(field)?._def?.typeName === 'ZodNumber' && typeof obj[key] === 'string' && obj[key].trim() !== '') {
       const n = Number(obj[key]);
       if (!Number.isNaN(n)) obj[key] = n;
+    } else if (unwrap(field)?._def?.typeName === 'ZodBoolean' && typeof obj[key] === 'string') {
+      const t = obj[key].trim().toLowerCase();
+      if (t === 'true' || t === 'false') obj[key] = t === 'true';
     }
   }
 }
@@ -286,6 +309,7 @@ export async function exportReferences(conn, source, { overwrite = false, dryRun
   const rows = await rowsOf(conn, sql);
   const brands = new Set((await rowsOf(conn, 'SELECT id FROM brands')).map((r) => r.id));
   const calibers = new Set((await rowsOf(conn, 'SELECT id FROM calibers')).map((r) => r.id));
+  const lineages = new Set((await rowsOf(conn, 'SELECT id FROM lineages')).map((r) => r.id));
   const report = { written: [], skipped: [], invalid: [] };
   const seen = new Set();
 
@@ -302,6 +326,7 @@ export async function exportReferences(conn, source, { overwrite = false, dryRun
     if (!parsed.success) { fail(formatIssues(parsed.error)); continue; }
     if (!brands.has(ref.brand)) { fail(`unknown brand "${ref.brand}" (add data/brands/${ref.brand}.yaml first)`); continue; }
     if (ref.caliber_id && !calibers.has(ref.caliber_id)) { fail(`unknown caliber_id "${ref.caliber_id}"`); continue; }
+    if (ref.lineage && !lineages.has(ref.lineage)) { fail(`unknown lineage "${ref.lineage}" (add data/lineages/${ref.lineage}.yaml first)`); continue; }
 
     const yaml = toYaml(ref, referencesSchema) + '\n';
     const reparsed = referencesSchema.safeParse(parseYaml(yaml));

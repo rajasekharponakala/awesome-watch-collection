@@ -1,6 +1,8 @@
 brand: "casio"
 name: "G-Shock DW-5000R \"Origin Revival\""
 reference: "DW-5000R-1A"
+lineage: "casio-g-shock-origin"
+milestone: "A standard-issue re-creation of the 1983 original"
 type: "digital/lcd"
 styles:
   - "tool"
@@ -20,6 +22,7 @@ water_resistance_m: 200
 crystal: "Mineral"
 years:
   introduced: 2024
+  current: true
 price_tier: "affordable"
 levels:
   - "first-wind"

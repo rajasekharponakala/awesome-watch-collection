@@ -1,0 +1,10 @@
+name: "G-Shock Origin"
+brand: "casio"
+tagline: "One square shape, from a single-line brief in 1983 to full metal."
+intro: "In 1981 Kikuo Ibe proposed \"a durable watch that would not break even if dropped\". The result, the DW-5000C, floats its module inside a shock-absorbing case. Its square shape has been in production ever since, gaining backlights, solar power, radio time-sync, Bluetooth and finally a full-metal case."
+order: 2
+sources:
+  - "https://gshock.casio.com/intl/identity/"
+  - "https://www.g-central.com/g-shock-history/"
+  - "https://www.g-central.com/g-shock-5000-5600-origin-square-series-shopping-guide/"
+last_reviewed: "2026-10-17"

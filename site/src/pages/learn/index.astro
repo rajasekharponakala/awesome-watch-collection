@@ -21,13 +21,13 @@ const guides = (await getCollection('guides')).sort((a, b) => a.data.order - b.d
         const meta = LEVEL_META[lv];
         const list = guides.filter((g) => g.data.level === lv);
         return (
-          <article class="level card" data-reveal style={`--d:${i * 0.08}s`}>
+          <article class="level card" data-reveal style={`--d:${i * 0.08}s`} data-level-card={lv}>
             <a href={u(`learn/${lv}/`)} class="level__head">
               <span class="level__num display">{['I', 'II', 'III', 'IV'][i]}</span>
               <div>
                 <span class="jewels">{[1, 2, 3, 4].map((j) => <i class={j > meta.jewels ? 'off' : ''} />)}</span>
                 <h2 class="display h3">{meta.name}</h2>
-                <p class="mono muted">{meta.stage} · {list.length} guides</p>
+                <p class="mono muted">{meta.stage} · {list.length} guides <span class="mine-badge">Your level</span></p>
               </div>
             </a>
             <p class="lede">{meta.blurb}</p>

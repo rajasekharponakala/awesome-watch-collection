@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner"
 reference: "5508"
+lineage: "rolex-submariner"
+milestone: "Small 6 mm crown and the new calibre 1530"
 type: "mechanical/automatic"
 styles:
   - "diver"

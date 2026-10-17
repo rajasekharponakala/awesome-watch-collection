@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner Date \"Triple Zero\""
 reference: "168000"
+lineage: "rolex-submariner"
+milestone: "The switch to 904L steel"
 type: "mechanical/automatic"
 styles:
   - "diver"

@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner \"Big Crown\""
 reference: "6538"
+lineage: "rolex-submariner"
+milestone: "The big-crown 200 m reference linked to Dr. No"
 type: "mechanical/automatic"
 styles:
   - "diver"

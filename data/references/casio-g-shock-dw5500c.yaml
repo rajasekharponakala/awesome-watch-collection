@@ -1,6 +1,8 @@
 brand: "casio"
 name: "G-Shock DW-5500C"
 reference: "DW-5500C"
+lineage: "casio-g-shock-origin"
+milestone: "First Mud Resist G-Shock"
 type: "digital/lcd"
 styles:
   - "tool"

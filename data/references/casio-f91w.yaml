@@ -19,6 +19,7 @@ case:
 crystal: "Resin"
 years:
   introduced: 1989
+  current: true
 price_tier: "entry"
 levels:
   - "first-wind"

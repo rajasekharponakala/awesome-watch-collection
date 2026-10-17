@@ -308,6 +308,8 @@ applied-index bullet points, sunburst / guilloché background textures used spar
 
 ### Phase 3 — Complication (Interactive) · Months 4–6
 - [ ] Level 3 guides
+- [x] Lineage timelines (model lines traced reference by reference)
+- [x] Reader level: gentle first-visit picker + quiz that personalises the site
 - [ ] Watch Box (collection builder) and wrist-shot size visualiser
 - [ ] Interactive movement explorer (animated SVG of the gear train and escapement)
 - [ ] GMT world map; tools/calculators

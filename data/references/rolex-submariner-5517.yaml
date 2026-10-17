@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner \"MilSub\""
 reference: "5517"
+lineage: "rolex-submariner"
+milestone: "Military issue: sword hands, fixed bars and tritium"
 type: "mechanical/automatic"
 styles:
   - "diver"

@@ -1,3 +1,5 @@
+import './level';
+
 // Awesome Watch Collection: site runtime.
 // Everything is progressive enhancement: pages read fine without it.
 

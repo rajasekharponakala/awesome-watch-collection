@@ -1,6 +1,8 @@
 brand: "casio"
 name: "G-Shock DW-5000C"
 reference: "DW-5000C"
+lineage: "casio-g-shock-origin"
+milestone: "The first G-Shock: a module floating inside a shock-absorbing case"
 type: "digital/lcd"
 styles:
   - "tool"

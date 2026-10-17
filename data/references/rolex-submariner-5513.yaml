@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner"
 reference: "5513"
+lineage: "rolex-submariner"
+milestone: "The non-chronometer workhorse, made for almost three decades"
 type: "mechanical/automatic"
 styles:
   - "diver"

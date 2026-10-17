@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner"
 reference: "6536"
+lineage: "rolex-submariner"
+milestone: "Upgraded to the full-rotor calibre 1030"
 type: "mechanical/automatic"
 styles:
   - "diver"

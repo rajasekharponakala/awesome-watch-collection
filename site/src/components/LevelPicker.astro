@@ -1,0 +1,171 @@
+---
+// "How well do you know watches?" onboarding sheet.
+// Non-blocking: slides up on a first visit to the home page, never again once answered or dismissed,
+// and can be reopened from the header badge or the mobile menu. Choice is stored in localStorage only.
+import { u, LEVELS, LEVEL_META } from '../lib/meta';
+
+const levels = LEVELS.map((id) => ({ id, ...LEVEL_META[id], href: u(`learn/${id}/`) }));
+const SELF: Record<string, string> = {
+  'first-wind': "I'm new to watches and want to know what to look for.",
+  automatic: 'I own a watch or two and want to understand how they work.',
+  complication: 'I know my movements; I want finishing, vintage and value.',
+  'grande-complication': 'I collect seriously or work on movements myself.',
+};
+const QUIZ = [
+  { q: 'An automatic watch is powered by…', a: ['A battery', "Your wrist's motion winding a spring", 'A small solar panel'], ok: 1 },
+  { q: 'In watchmaking, a "complication" is…', a: ['A fault that needs repair', 'Any function beyond telling the time', 'A dial that is hard to read'], ok: 1 },
+  { q: 'A watch that beats at 28,800 vph is…', a: ['Ticking eight times per second', 'Water resistant to 288 m', 'Accurate to ±8 seconds a day'], ok: 0 },
+  { q: 'What does a tourbillon do?', a: ['Shows the phases of the moon', "Averages out gravity's effect on the escapement", 'Measures speed over a distance'], ok: 1 },
+];
+---
+
+<div class="lp" data-level-sheet role="dialog" aria-modal="false" aria-labelledby="lp-title" hidden>
+  <div class="lp__panel">
+    <button class="lp__close" data-level-dismiss aria-label="Close">×</button>
+
+    <section class="lp__step" data-lp-step="pick">
+      <span class="eyebrow">Welcome to the collection</span>
+      <h2 class="display lp__title" id="lp-title">How well do you know <em>watches?</em></h2>
+      <p class="muted lp__sub">We'll point you to the right starting place. You can change this at any time.</p>
+      <div class="lp__levels">
+        {levels.map((l) => (
+          <button class="lp__level" data-level-choose={l.id}>
+            <span class="jewels" aria-hidden="true">{[1, 2, 3, 4].map((j) => <i class={j > l.jewels ? 'off' : ''} />)}</span>
+            <strong>{l.name} <small class="mono">{l.stage}</small></strong>
+            <span>{SELF[l.id]}</span>
+          </button>
+        ))}
+      </div>
+      <div class="lp__foot">
+        <button class="btn btn--ghost lp__quizbtn" data-lp-go="quiz-0">Not sure? Take a 30-second quiz</button>
+        <button class="lp__skip mono" data-level-dismiss>Just browsing</button>
+      </div>
+    </section>
+
+    {QUIZ.map((q, i) => (
+      <section class="lp__step" data-lp-step={`quiz-${i}`} hidden>
+        <span class="eyebrow">Question {i + 1} of {QUIZ.length}</span>
+        <div class="lp__progress" aria-hidden="true"><i style={`--w:${(i + 1) / QUIZ.length}`}></i></div>
+        <h2 class="display lp__q">{q.q}</h2>
+        <div class="lp__answers">
+          {q.a.map((a, k) => (
+            <button class="lp__answer" data-lp-answer={i} data-lp-correct={String(k === q.ok)}>{a}</button>
+          ))}
+          <button class="lp__answer lp__answer--idk" data-lp-answer={i} data-lp-correct="false">I don't know yet</button>
+        </div>
+      </section>
+    ))}
+
+    <section class="lp__step" data-lp-step="result" hidden>
+      <span class="eyebrow">Your starting point</span>
+      <h2 class="display lp__title"><span data-lp-result-name></span></h2>
+      <div class="jewels lp__resjewels" data-lp-result-jewels aria-hidden="true"></div>
+      <p class="muted" data-lp-result-blurb></p>
+      <div class="lp__foot">
+        <a class="btn btn--gold" data-lp-result-link href="#">Start here</a>
+        <button class="lp__skip mono" data-level-close>Keep browsing</button>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script type="application/json" id="lp-levels" set:html={JSON.stringify(levels)} />
+
+<style>
+  .lp {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    z-index: 150;
+    width: min(620px, calc(100vw - 24px));
+    translate: -50% 0;
+    animation: lp-in 0.7s var(--ease) both;
+  }
+  .lp[hidden] { display: none; }
+  @keyframes lp-in { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+  .lp__panel {
+    position: relative;
+    max-height: calc(100svh - 110px);
+    overflow-y: auto;
+    padding: clamp(22px, 4vw, 34px);
+    border-radius: 26px;
+    border: 1px solid var(--line-2);
+    background: color-mix(in srgb, var(--surface) 94%, transparent);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: var(--shadow), 0 0 0 1px color-mix(in srgb, var(--gold) 18%, transparent);
+  }
+  .lp__close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--line-2);
+    background: transparent;
+    color: var(--muted);
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .lp__close:hover { color: var(--text); border-color: var(--gold); }
+  .lp__title { font-size: clamp(30px, 4.6vw, 44px); line-height: 1.05; margin: 12px 0 8px; padding-right: 30px; }
+  .lp__sub { margin: 0 0 18px; font-size: 15px; }
+  .lp__levels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .lp__level {
+    display: grid;
+    gap: 6px;
+    align-content: start;
+    text-align: left;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid var(--line-2);
+    background: var(--surface-2);
+    color: var(--text);
+    font: inherit;
+    font-size: 13.5px;
+    line-height: 1.45;
+    cursor: pointer;
+    transition: border-color 0.3s, transform 0.3s var(--ease);
+  }
+  .lp__level:hover, .lp__level:focus-visible { border-color: var(--gold); transform: translateY(-2px); }
+  .lp__level[aria-pressed='true'] { border-color: var(--gold); box-shadow: inset 0 0 0 1px var(--gold); }
+  .lp__level strong { font-family: var(--serif); font-size: 21px; font-weight: 600; }
+  .lp__level small { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-left: 6px; }
+  .lp__level > span:last-child { color: var(--muted); }
+  .lp__foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 18px; }
+  .lp__quizbtn { padding: 12px 18px; font-size: 14px; }
+  .lp__skip { border: 0; background: none; color: var(--muted); font-size: 12px; letter-spacing: 0.08em; cursor: pointer; padding: 8px 4px; }
+  .lp__skip:hover { color: var(--text); }
+  .lp__progress { height: 2px; background: var(--line-2); margin: 14px 0 6px; }
+  .lp__progress i { display: block; height: 100%; width: calc(var(--w) * 100%); background: var(--gold); transition: width 0.5s var(--ease); }
+  .lp__q { font-size: clamp(24px, 3.4vw, 32px); line-height: 1.15; margin: 16px 0 18px; padding-right: 30px; }
+  .lp__answers { display: grid; gap: 8px; }
+  .lp__answer {
+    text-align: left;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--line-2);
+    background: var(--surface-2);
+    color: var(--text);
+    font: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .lp__answer:hover, .lp__answer:focus-visible { border-color: var(--gold); }
+  .lp__answer--idk { color: var(--muted); border-style: dashed; }
+  .lp__resjewels { margin: 4px 0 14px; }
+  .lp__resjewels i { width: 12px; height: 12px; }
+  @media (max-width: 520px) {
+    .lp { bottom: 10px; }
+    .lp__levels { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+    /* Compact on phones: name + jewels only, so the sheet never covers the whole screen. */
+    .lp__level { grid-template-columns: auto 1fr; align-items: center; gap: 4px 12px; padding: 11px 14px; }
+    .lp__level > span:last-child { display: none; }
+    .lp__level strong { font-size: 18px; }
+    .lp__sub { display: none; }
+    .lp__title { font-size: 28px; }
+  }
+</style>

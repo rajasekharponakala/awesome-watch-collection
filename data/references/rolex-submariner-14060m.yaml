@@ -1,6 +1,8 @@
 brand: "rolex"
 name: "Submariner"
 reference: "14060M"
+lineage: "rolex-submariner"
+milestone: "Calibre 3130; the last no-date with an aluminium bezel"
 type: "mechanical/automatic"
 styles:
   - "diver"

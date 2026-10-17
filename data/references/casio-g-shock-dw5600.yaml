@@ -1,6 +1,8 @@
 brand: "casio"
 name: "G-Shock DW-5600E"
 reference: "DW-5600E-1V"
+lineage: "casio-g-shock-origin"
+milestone: "EL backlight and module 3229"
 type: "digital/lcd"
 styles:
   - "tool"
@@ -21,6 +23,7 @@ water_resistance_m: 200
 crystal: "Mineral"
 years:
   introduced: 1996
+  current: true
 price_tier: "entry"
 levels:
   - "first-wind"

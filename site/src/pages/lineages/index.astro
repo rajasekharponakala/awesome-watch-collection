@@ -1,0 +1,89 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import RefVisual from '../../components/RefVisual.astro';
+import Icon from '../../components/Icon.astro';
+import { u } from '../../lib/meta';
+import { lineageMembers, lineageSpan } from '../../lib/lineage';
+
+const lineages = (await getCollection('lineages')).sort((a, b) => a.data.order - b.data.order);
+const brands = await getCollection('brands');
+const cards = await Promise.all(
+  lineages.map(async (l) => {
+    const members = await lineageMembers(l.id);
+    const dated = members.filter((m) => m.data.years.introduced != null);
+    const picks = [dated[0], dated[Math.floor(dated.length / 2)], dated[dated.length - 1]].filter(Boolean);
+    return { l, members, picks, span: lineageSpan(members), brand: brands.find((b) => b.id === l.data.brand)?.data.name ?? '' };
+  }),
+);
+---
+
+<Base title="Lineages" description="Follow famous watch lines reference by reference, from their first model to today.">
+  <PageHero
+    eyebrow="Lineages"
+    title="Every icon has <em>ancestors.</em>"
+    lede="Follow a model line reference by reference: what each one changed, when, and why it matters to collectors."
+    crumbs={[[u(), 'Dial'], [u('lineages/'), 'Lineages']]}
+  />
+  <section class="section--tight">
+    <div class="container lin">
+      {cards.map(({ l, members, picks, span, brand }, i) => (
+        <a href={u(`lineages/${l.id}/`)} class="lin__card" data-reveal style={`--d:${i * 0.08}s`}>
+          <div class="lin__visuals" aria-hidden="true">
+            {picks.map((p, k) => (
+              <div class={`lin__w lin__w--${k}`} data-parallax={String([0.06, -0.04, 0.1][k])}>
+                <RefVisual ref={p} brandName={brand} size="min(210px, 34vw)" />
+                <span class="mono">{p.data.years.introduced}</span>
+              </div>
+            ))}
+          </div>
+          <div class="lin__text">
+            <span class="eyebrow">{brand} · {span.from}–{span.to}</span>
+            <h2 class="display h3">{l.data.name}</h2>
+            <p class="lede">{l.data.tagline}</p>
+            <p class="mono muted">{members.length} references</p>
+            <span class="btn btn--ghost">Follow the lineage <Icon name="arrow" /></span>
+          </div>
+        </a>
+      ))}
+      <p class="lin__more mono muted" data-reveal>
+        More lineages are added by harvesting a model line into <a href="https://github.com/rajasekharponakala/awesome-watch-collection/tree/main/harvest">harvest/</a> and tagging each reference with <code>lineage</code>.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .lin { display: grid; gap: 30px; }
+  .lin__card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: clamp(20px, 4vw, 60px);
+    align-items: center;
+    padding: clamp(26px, 4vw, 56px);
+    border-radius: 30px;
+    border: 1px solid var(--line-2);
+    background: radial-gradient(700px circle at 10% 0%, var(--glow), transparent 60%), linear-gradient(160deg, var(--surface-2), var(--surface));
+    overflow: hidden;
+    transition: border-color 0.4s;
+  }
+  .lin__card:hover { border-color: var(--gold); }
+  .lin__visuals { position: relative; display: flex; justify-content: center; align-items: center; min-height: 260px; }
+  .lin__w { position: relative; display: grid; justify-items: center; gap: 8px; margin: 0 -26px; transition: transform 0.7s var(--ease); }
+  .lin__w .mono { font-size: 12px; color: var(--gold); }
+  .lin__w--0 { z-index: 1; opacity: 0.85; }
+  .lin__w--1 { z-index: 2; }
+  .lin__w--2 { z-index: 3; }
+  .lin__card:hover .lin__w--0 { transform: translateX(-14px) rotate(-6deg); }
+  .lin__card:hover .lin__w--2 { transform: translateX(14px) rotate(6deg); }
+  .lin__text h2 { margin: 16px 0 10px; }
+  .lin__text .lede { margin: 0 0 12px; font-size: 18px; }
+  .lin__text .mono { margin: 0 0 22px; }
+  .lin__more { font-size: 12px; }
+  .lin__more a { color: var(--gold); }
+  @media (max-width: 860px) {
+    .lin__card { grid-template-columns: minmax(0, 1fr); }
+    .lin__w { margin: 0 -18px; }
+  }
+</style>
