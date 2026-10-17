@@ -68,7 +68,7 @@ On every push to `main`, [`deploy.yml`](.github/workflows/deploy.yml) runs one o
 |---|---|
 | **Dial** | Home page, with 12 hour markers leading to 12 sections |
 | **Crown** | Search: press `⌘K` or `/` |
-| **Bezel** | Rotating catalogue filter |
+| **Bezel** | The catalogue's filters: a rotating family bezel plus brand, lineage, decade, case size, depth rating, features, crystal, material and more, with live counts and shareable URLs |
 | **Lume** | Night theme (the day dial is the light theme) |
 | **Power reserve** | Reading progress on guides |
 | **Jewels** | Difficulty level, and the reader's own level (asked once, gently, on a first visit) |

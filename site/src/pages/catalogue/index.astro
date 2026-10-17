@@ -1,146 +1,648 @@
 ---
+// The catalogue: a faceted explorer over every reference.
+// Cards are rendered at build time; the client script only shows, hides and reorders them,
+// so the page works (unfiltered) without JavaScript and every filter state is a shareable URL.
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import PageHero from '../../components/PageHero.astro';
 import RefCard from '../../components/RefCard.astro';
-import { u, TYPES, TYPE_META, TIERS, TIER_META, LEVELS, LEVEL_META } from '../../lib/meta';
+import { u, TYPES, TYPE_META, TIERS, TIER_META, LEVELS, LEVEL_META, typeOf } from '../../lib/meta';
 
 const refs = (await getCollection('references')).sort((a, b) => a.data.name.localeCompare(b.data.name));
 const brands = await getCollection('brands');
+const lineages = await getCollection('lineages');
 const brandName = (id: string) => brands.find((b) => b.id === id)?.data.name ?? id;
+
+const crystalKey = (c?: string) => {
+  const s = (c ?? '').toLowerCase();
+  if (!s) return undefined;
+  if (s.startsWith('sapphire')) return 'sapphire';
+  if (s.startsWith('acrylic') || s.startsWith('hesalite')) return 'acrylic';
+  if (s.startsWith('mineral') || s.startsWith('hardlex') || s.startsWith('gorilla')) return 'mineral';
+  if (s.startsWith('resin')) return 'resin';
+  return undefined;
+};
+const MATERIALS = { steel: 'Steel', titanium: 'Titanium', resin: 'Resin', gold: 'Gold', ceramic: 'Ceramic' } as const;
+const materialKeys = (m?: string) => {
+  const s = (m ?? '').toLowerCase().replace('oystersteel', 'steel');
+  return Object.keys(MATERIALS).filter((k) => s.includes(k));
+};
+const CRYSTALS = { sapphire: 'Sapphire', acrylic: 'Acrylic / Hesalite', mineral: 'Mineral / Hardlex', resin: 'Resin' } as const;
+
+/** Flat, filter-friendly view of each reference, shipped to the client as JSON. */
+const items = refs.map((r) => {
+  const d = r.data;
+  return {
+    id: r.id,
+    name: d.name,
+    brand: d.brand,
+    brandName: brandName(d.brand),
+    type: typeOf(d.type),
+    tier: d.price_tier,
+    levels: d.levels,
+    styles: d.styles,
+    features: d.complications,
+    lineage: d.lineage ?? null,
+    year: d.years.introduced ?? null,
+    decade: d.years.introduced ? Math.floor(d.years.introduced / 10) * 10 : null,
+    diameter: d.case.diameter_mm ?? null,
+    wr: d.water_resistance_m ?? null,
+    crystal: crystalKey(d.crystal) ?? null,
+    materials: materialKeys(d.case.material),
+    current: d.years.current === true,
+    text: [d.name, d.reference, brandName(d.brand), d.caliber, ...d.styles, d.lineage].filter(Boolean).join(' ').toLowerCase(),
+  };
+});
+
+const countBy = (vals: (string | number | null)[]) => {
+  const m = new Map<string, number>();
+  for (const v of vals) if (v != null) m.set(String(v), (m.get(String(v)) ?? 0) + 1);
+  return [...m.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+};
+const brandOpts = countBy(items.map((i) => i.brand)).map(([id]) => ({ id, label: brandName(id) })).sort((a, b) => a.label.localeCompare(b.label));
+const lineageOpts = lineages.map((l) => ({ id: l.id, label: l.data.name }));
+const decadeOpts = countBy(items.map((i) => i.decade)).map(([d]) => d).sort();
+const featureOpts = countBy(items.flatMap((i) => i.features)).map(([f]) => f);
+const styleOpts = countBy(items.flatMap((i) => i.styles)).map(([s]) => s);
+const crystalOpts = Object.entries(CRYSTALS).filter(([k]) => items.some((i) => i.crystal === k));
+const materialOpts = Object.entries(MATERIALS).filter(([k]) => items.some((i) => i.materials.includes(k)));
+const diameters = items.map((i) => i.diameter).filter((d): d is number => d != null);
+const dMin = Math.floor(Math.min(...diameters));
+const dMax = Math.ceil(Math.max(...diameters));
+const WR_STEPS = [0, 50, 100, 200, 300];
 const ring = ['all', ...TYPES] as const;
 const step = 360 / ring.length;
+const title = (s: string) => s.replace(/-/g, ' ');
 ---
 
-<Base title="Catalogue" description="Iconic watch references across every type, style and price tier.">
+<Base title="Catalogue" description="Filter every watch in the library by brand, lineage, era, movement, size, water resistance, features and more.">
   <PageHero
     eyebrow="The catalogue"
     title="Turn the <em>bezel.</em>"
-    lede="Rotate the bezel to filter by family, then refine by price tier and level. Every card shows the current time."
+    lede="Filter the whole library by family, brand, era, size, depth rating, features and more. Every combination has its own link you can share."
     crumbs={[[u(), 'Dial'], [u('catalogue/'), 'Catalogue']]}
   />
 
-  <section class="section--tight cat">
-    <div class="container cat__grid">
-      <aside class="cat__filters" data-filters>
-        <div class="bezel" data-bezel style="--rot:0deg">
-          <svg viewBox="0 0 300 300" class="bezel__ring" aria-hidden="true">
-            <circle cx="150" cy="150" r="140" fill="var(--surface-2)" stroke="var(--line-2)" />
-            <circle cx="150" cy="150" r="96" fill="var(--bg)" stroke="var(--line-2)" />
-            {Array.from({ length: 60 }, (_, i) => (
-              <line x1="150" y1="14" x2="150" y2={i % 5 ? 20 : 26} stroke="var(--faint)" stroke-width={i % 5 ? 0.8 : 1.4} transform={`rotate(${i * 6} 150 150)`} />
-            ))}
-          </svg>
-          <div class="bezel__labels">
-            {ring.map((t, i) => (
-              <button
-                class="bezel__label"
-                style={`--a:${i * step}deg`}
-                data-type-btn={t}
-                data-angle={i * step}
-                aria-pressed={i === 0 ? 'true' : 'false'}
-              >
-                <span>{t === 'all' ? 'All' : TYPE_META[t].name.split(' ')[0]}</span>
-              </button>
-            ))}
-          </div>
-          <div class="bezel__pip" aria-hidden="true"></div>
-          <div class="bezel__center">
-            <b class="display" data-count-out>{refs.length}</b>
-            <span class="mono">references</span>
-          </div>
+  <section class="section--tight cx" data-catalogue>
+    <div class="container cx__grid">
+      <!-- ================= FILTERS ================= -->
+      <aside class="cx__filters" id="cx-panel" data-cx-panel aria-label="Filters">
+        <div class="cx__drawerhead">
+          <strong class="display">Filters</strong>
+          <button class="icon-btn" data-cx-close aria-label="Close filters">×</button>
         </div>
 
-        <div class="cat__group">
-          <span class="eyebrow">Price tier</span>
-          <div class="cat__chips">
-            {TIERS.map((t) => <button class="chip" data-tier-btn={t} aria-pressed="false">{TIER_META[t].name}</button>)}
+        <div class="cx__scroll">
+          <label class="cx__search">
+            <span class="sr-only">Search the catalogue</span>
+            <input type="search" placeholder="Search name, reference, calibre…" data-f-q autocomplete="off" />
+          </label>
+
+          <div class="bezel" data-bezel style="--rot:0deg">
+            <svg viewBox="0 0 300 300" class="bezel__ring" aria-hidden="true">
+              <circle cx="150" cy="150" r="140" fill="var(--surface-2)" stroke="var(--line-2)" />
+              <circle cx="150" cy="150" r="96" fill="var(--bg)" stroke="var(--line-2)" />
+              {Array.from({ length: 60 }, (_, i) => (
+                <line x1="150" y1="14" x2="150" y2={i % 5 ? 20 : 26} stroke="var(--faint)" stroke-width={i % 5 ? 0.8 : 1.4} transform={`rotate(${i * 6} 150 150)`} />
+              ))}
+            </svg>
+            <div class="bezel__labels" role="radiogroup" aria-label="Watch family">
+              {ring.map((t, i) => (
+                <button class="bezel__label" style={`--a:${i * step}deg`} data-type-btn={t} data-angle={i * step} role="radio" aria-checked={i === 0 ? 'true' : 'false'}>
+                  <span>{t === 'all' ? 'All' : TYPE_META[t].name.split(' ')[0]}</span>
+                </button>
+              ))}
+            </div>
+            <div class="bezel__pip" aria-hidden="true"></div>
+            <div class="bezel__center" aria-hidden="true">
+              <b class="display" data-cx-count-ring>{items.length}</b>
+              <span class="mono">watches</span>
+            </div>
           </div>
+
+          <details class="fg" open>
+            <summary>Brand</summary>
+            <div class="fg__list">
+              {brandOpts.map((b) => (
+                <label class="fo"><input type="checkbox" data-f="brand" value={b.id} /><span>{b.label}</span><em data-c></em></label>
+              ))}
+            </div>
+          </details>
+
+          <details class="fg" open>
+            <summary>Lineage</summary>
+            <div class="fg__list">
+              {lineageOpts.map((l) => (
+                <label class="fo"><input type="checkbox" data-f="lineage" value={l.id} /><span>{l.label}</span><em data-c></em></label>
+              ))}
+            </div>
+          </details>
+
+          <details class="fg" open>
+            <summary>Introduced</summary>
+            <div class="fg__chips">
+              {decadeOpts.map((d) => <button class="chip" data-f="decade" value={d} aria-pressed="false">{d}s <em data-c></em></button>)}
+            </div>
+          </details>
+
+          <details class="fg" open>
+            <summary>Case diameter</summary>
+            <div class="range" data-range style={`--min:${dMin};--max:${dMax}`}>
+              <div class="range__vals mono"><span data-range-lo>{dMin} mm</span><span data-range-hi>{dMax} mm</span></div>
+              <div class="range__track"><i data-range-fill></i>
+                <input type="range" min={dMin} max={dMax} step="1" value={dMin} data-f-dmin aria-label="Minimum case diameter in millimetres" />
+                <input type="range" min={dMin} max={dMax} step="1" value={dMax} data-f-dmax aria-label="Maximum case diameter in millimetres" />
+              </div>
+            </div>
+          </details>
+
+          <details class="fg" open>
+            <summary>Water resistance</summary>
+            <div class="fg__chips" role="radiogroup" aria-label="Minimum water resistance">
+              {WR_STEPS.map((w) => (
+                <button class="chip" data-f-wr={w} role="radio" aria-checked={w === 0 ? 'true' : 'false'} aria-pressed={w === 0 ? 'true' : 'false'}>{w === 0 ? 'Any' : `${w} m+`}</button>
+              ))}
+            </div>
+          </details>
+
+          <details class="fg" open>
+            <summary>Features</summary>
+            <div class="fg__chips" data-more-wrap>
+              {featureOpts.map((f, i) => (
+                <button class={`chip ${i >= 8 ? 'is-extra' : ''}`} data-f="feature" value={f} aria-pressed="false">{f} <em data-c></em></button>
+              ))}
+              {featureOpts.length > 8 && <button class="cx__more mono" data-more data-n={featureOpts.length - 8} aria-expanded="false">+ {featureOpts.length - 8} more</button>}
+            </div>
+            <p class="fg__hint mono">Pick several to require all of them.</p>
+          </details>
+
+          <details class="fg">
+            <summary>Price tier</summary>
+            <div class="fg__chips">
+              {TIERS.map((t) => <button class="chip" data-f="tier" value={t} aria-pressed="false">{TIER_META[t].name} <em data-c></em></button>)}
+            </div>
+          </details>
+
+          <details class="fg">
+            <summary>Level</summary>
+            <div class="fg__chips">
+              {LEVELS.map((l) => <button class="chip" data-f="level" value={l} aria-pressed="false">{LEVEL_META[l].name} <em data-c></em></button>)}
+            </div>
+            <button class="cx__mine" data-my-level hidden>Match my level</button>
+          </details>
+
+          <details class="fg">
+            <summary>Style</summary>
+            <div class="fg__chips">
+              {styleOpts.map((s) => <button class="chip" data-f="style" value={s} aria-pressed="false">{title(s)} <em data-c></em></button>)}
+            </div>
+          </details>
+
+          <details class="fg">
+            <summary>Crystal</summary>
+            <div class="fg__list">
+              {crystalOpts.map(([k, label]) => (
+                <label class="fo"><input type="checkbox" data-f="crystal" value={k} /><span>{label}</span><em data-c></em></label>
+              ))}
+            </div>
+          </details>
+
+          <details class="fg">
+            <summary>Case material</summary>
+            <div class="fg__list">
+              {materialOpts.map(([k, label]) => (
+                <label class="fo"><input type="checkbox" data-f="material" value={k} /><span>{label}</span><em data-c></em></label>
+              ))}
+            </div>
+          </details>
+
+          <label class="cx__toggle">
+            <input type="checkbox" data-f-current />
+            <span class="cx__switch" aria-hidden="true"></span>
+            <span>Only watches in production today</span>
+          </label>
         </div>
-        <div class="cat__group">
-          <span class="eyebrow">Level</span>
-          <div class="cat__chips">
-            {LEVELS.map((l) => <button class="chip" data-level-btn={l} aria-pressed="false">{LEVEL_META[l].name}</button>)}
-          </div>
+
+        <div class="cx__drawerfoot">
+          <button class="btn btn--ghost" data-cx-clear>Clear all</button>
+          <button class="btn btn--gold" data-cx-close>Show <span data-cx-count-btn>{items.length}</span> watches</button>
         </div>
-        <button class="btn btn--ghost cat__reset" data-reset>Reset to 12 o'clock</button>
       </aside>
 
-      <div class="grid grid--3 cat__cards" data-cards>
-        {refs.map((r) => <RefCard ref={r} brandName={brandName(r.data.brand)} />)}
-        <p class="cat__empty muted" data-empty hidden>No references match these settings yet. <a href="https://github.com/rajasekharponakala/awesome-watch-collection/blob/main/CONTRIBUTING.md">Add one →</a></p>
+      <!-- ================= RESULTS ================= -->
+      <div class="cx__results">
+        <div class="cx__bar">
+          <p class="cx__count" aria-live="polite"><b class="display" data-cx-count>{items.length}</b> <span data-cx-noun>watches</span></p>
+          <div class="cx__tools">
+            <button class="btn btn--ghost cx__open" data-cx-open aria-controls="cx-panel">Filters <span class="cx__badge" data-cx-active-n hidden></span></button>
+            <label class="cx__sort">
+              <span class="mono">Sort</span>
+              <select data-cx-sort>
+                <option value="name">Name A–Z</option>
+                <option value="newest">Newest first</option>
+                <option value="oldest">Oldest first</option>
+                <option value="size-asc">Smallest case</option>
+                <option value="size-desc">Largest case</option>
+                <option value="wr-desc">Deepest rated</option>
+                <option value="brand">Brand</option>
+              </select>
+            </label>
+            <div class="cx__views" role="group" aria-label="View">
+              <button class="icon-btn" data-cx-view="grid" aria-pressed="true" title="Grid view" aria-label="Grid view">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="7" height="7" rx="1.5" /><rect x="13" y="4" width="7" height="7" rx="1.5" /><rect x="4" y="13" width="7" height="7" rx="1.5" /><rect x="13" y="13" width="7" height="7" rx="1.5" /></svg>
+              </button>
+              <button class="icon-btn" data-cx-view="list" aria-pressed="false" title="List view" aria-label="List view">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6h11M9 12h11M9 18h11" /><circle cx="5" cy="6" r="1.2" /><circle cx="5" cy="12" r="1.2" /><circle cx="5" cy="18" r="1.2" /></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cx__pills" data-cx-pills hidden></div>
+
+        <div class="grid grid--3 cx__cards" data-cx-cards>
+          {refs.map((r) => <RefCard ref={r} brandName={brandName(r.data.brand)} />)}
+        </div>
+
+        <div class="cx__empty" data-cx-empty hidden>
+          <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--gold)" /><path d="M60 60V22M60 60l22 14" stroke="var(--text)" stroke-width="3" stroke-linecap="round" /><circle cx="60" cy="60" r="4" fill="var(--gold)" /></svg>
+          <h2 class="display h4">No watch matches all of that.</h2>
+          <p class="muted">Remove a filter above, or <button class="cx__link" data-cx-clear>clear everything</button>.</p>
+          <p class="mono muted">Know one that belongs here? <a href="https://github.com/rajasekharponakala/awesome-watch-collection/blob/main/CONTRIBUTING.md">Add it →</a></p>
+        </div>
       </div>
     </div>
+    <div class="cx__scrim" data-cx-close aria-hidden="true"></div>
   </section>
+
+  <script type="application/json" id="cx-items" set:html={JSON.stringify(items)} />
+  <script type="application/json" id="cx-labels"
+    set:html={JSON.stringify({
+      brand: Object.fromEntries(brandOpts.map((b) => [b.id, b.label])),
+      lineage: Object.fromEntries(lineageOpts.map((l) => [l.id, l.label])),
+      tier: Object.fromEntries(TIERS.map((t) => [t, TIER_META[t].name])),
+      level: Object.fromEntries(LEVELS.map((l) => [l, LEVEL_META[l].name])),
+      crystal: CRYSTALS,
+      material: MATERIALS,
+      type: Object.fromEntries(TYPES.map((t) => [t, TYPE_META[t].name])),
+      dMin,
+      dMax,
+    })} />
 </Base>
 
 <script>
-  const bezel = document.querySelector<HTMLElement>('[data-bezel]');
-  const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-cards] .ref-card'));
-  const out = document.querySelector('[data-count-out]');
-  const empty = document.querySelector<HTMLElement>('[data-empty]');
-  let type = 'all';
-  const tiers = new Set<string>();
-  const levels = new Set<string>();
-  let rot = 0;
+  type Item = {
+    id: string; name: string; brand: string; brandName: string; type: string; tier: string; levels: string[];
+    styles: string[]; features: string[]; lineage: string | null; year: number | null; decade: number | null;
+    diameter: number | null; wr: number | null; crystal: string | null; materials: string[]; current: boolean; text: string;
+  };
+  const items: Item[] = JSON.parse(document.getElementById('cx-items')!.textContent!);
+  const L = JSON.parse(document.getElementById('cx-labels')!.textContent!);
+  const root = document.querySelector<HTMLElement>('[data-catalogue]')!;
+  const grid = root.querySelector<HTMLElement>('[data-cx-cards]')!;
+  const cards = new Map(Array.from(grid.querySelectorAll<HTMLElement>('.ref-card')).map((c) => [c.dataset.id!, c]));
+  const $ = <T extends Element = HTMLElement>(s: string) => root.querySelector<T>(s)!;
+  const $$ = <T extends Element = HTMLElement>(s: string) => Array.from(root.querySelectorAll<T>(s));
 
-  function apply() {
-    let n = 0;
-    for (const c of cards) {
-      const ok =
-        (type === 'all' || c.dataset.type === type) &&
-        (!tiers.size || tiers.has(c.dataset.tier || '')) &&
-        (!levels.size || (c.dataset.levels || '').split(' ').some((l) => levels.has(l)));
-      c.classList.toggle('is-filtered', !ok);
-      if (ok) n++;
+  // ---------------- State ----------------
+  const MULTI = ['brand', 'lineage', 'decade', 'tier', 'level', 'feature', 'style', 'crystal', 'material'] as const;
+  type Multi = (typeof MULTI)[number];
+  const state = {
+    q: '',
+    type: 'all',
+    sel: Object.fromEntries(MULTI.map((k) => [k, new Set<string>()])) as Record<Multi, Set<string>>,
+    wr: 0,
+    dmin: L.dMin as number,
+    dmax: L.dMax as number,
+    current: false,
+    sort: 'name',
+    view: 'grid',
+  };
+
+  // How each multi-select facet reads an item. Features use AND (must have every selected feature);
+  // every other facet uses OR within itself. All facets combine with AND.
+  const read: Record<Multi, (i: Item) => string[]> = {
+    brand: (i) => [i.brand],
+    lineage: (i) => (i.lineage ? [i.lineage] : []),
+    decade: (i) => (i.decade != null ? [String(i.decade)] : []),
+    tier: (i) => [i.tier],
+    level: (i) => i.levels,
+    feature: (i) => i.features,
+    style: (i) => i.styles,
+    crystal: (i) => (i.crystal ? [i.crystal] : []),
+    material: (i) => i.materials,
+  };
+  const AND_FACETS = new Set<Multi>(['feature']);
+
+  function passes(i: Item, skip?: Multi) {
+    if (state.q && !state.q.split(/\s+/).every((t) => i.text.includes(t))) return false;
+    if (state.type !== 'all' && i.type !== state.type) return false;
+    for (const k of MULTI) {
+      if (k === skip) continue;
+      const sel = state.sel[k];
+      if (!sel.size) continue;
+      const vals = read[k](i);
+      const ok = AND_FACETS.has(k) ? [...sel].every((v) => vals.includes(v)) : vals.some((v) => sel.has(v));
+      if (!ok) return false;
     }
-    if (out) out.textContent = String(n);
-    if (empty) empty.hidden = n > 0;
+    if (state.wr > 0 && (i.wr == null || i.wr < state.wr)) return false;
+    const narrowed = state.dmin > L.dMin || state.dmax < L.dMax;
+    if (narrowed && (i.diameter == null || i.diameter < state.dmin || i.diameter > state.dmax)) return false;
+    if (state.current && !i.current) return false;
+    return true;
   }
 
-  document.querySelectorAll<HTMLButtonElement>('[data-type-btn]').forEach((b) =>
-    b.addEventListener('click', () => {
-      type = b.dataset.typeBtn || 'all';
-      const target = -parseFloat(b.dataset.angle || '0');
-      // rotate the shortest way, like a real bezel
-      let delta = ((target - rot) % 360 + 540) % 360 - 180;
-      rot += delta;
-      bezel?.style.setProperty('--rot', `${rot}deg`);
-      document.querySelectorAll('[data-type-btn]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
-      apply();
-    }),
-  );
-  const toggler = (attr: string, set: Set<string>) =>
-    document.querySelectorAll<HTMLButtonElement>(`[${attr}]`).forEach((b) =>
+  // ---------------- URL ----------------
+  const PARAM: Record<Multi, string> = { brand: 'brand', lineage: 'lineage', decade: 'decade', tier: 'tier', level: 'level', feature: 'feat', style: 'style', crystal: 'crystal', material: 'mat' };
+  function toURL() {
+    const p = new URLSearchParams();
+    if (state.q) p.set('q', state.q);
+    if (state.type !== 'all') p.set('type', state.type);
+    for (const k of MULTI) if (state.sel[k].size) p.set(PARAM[k], [...state.sel[k]].join(','));
+    if (state.wr) p.set('wr', String(state.wr));
+    if (state.dmin > L.dMin) p.set('dmin', String(state.dmin));
+    if (state.dmax < L.dMax) p.set('dmax', String(state.dmax));
+    if (state.current) p.set('current', '1');
+    if (state.sort !== 'name') p.set('sort', state.sort);
+    if (state.view !== 'grid') p.set('view', state.view);
+    const qs = p.toString();
+    history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
+  }
+  function fromURL() {
+    const p = new URLSearchParams(location.search);
+    state.q = (p.get('q') ?? '').toLowerCase();
+    state.type = p.get('type') ?? 'all';
+    for (const k of MULTI) state.sel[k] = new Set((p.get(PARAM[k]) ?? '').split(',').filter(Boolean));
+    state.wr = Number(p.get('wr') ?? 0) || 0;
+    state.dmin = Math.max(L.dMin, Number(p.get('dmin') ?? L.dMin) || L.dMin);
+    state.dmax = Math.min(L.dMax, Number(p.get('dmax') ?? L.dMax) || L.dMax);
+    state.current = p.get('current') === '1';
+    state.sort = p.get('sort') ?? 'name';
+    state.view = p.get('view') ?? 'grid';
+  }
+
+  // ---------------- Render ----------------
+  const SORTS: Record<string, (a: Item, b: Item) => number> = {
+    name: (a, b) => a.name.localeCompare(b.name),
+    newest: (a, b) => (b.year ?? -1) - (a.year ?? -1),
+    oldest: (a, b) => (a.year ?? 9999) - (b.year ?? 9999),
+    'size-asc': (a, b) => (a.diameter ?? 999) - (b.diameter ?? 999),
+    'size-desc': (a, b) => (b.diameter ?? -1) - (a.diameter ?? -1),
+    'wr-desc': (a, b) => (b.wr ?? -1) - (a.wr ?? -1),
+    brand: (a, b) => a.brandName.localeCompare(b.brandName) || a.name.localeCompare(b.name),
+  };
+  let lastVisible = new Set<string>();
+
+  function render() {
+    const visible = items.filter((i) => passes(i)).sort((a, b) => SORTS[state.sort](a, b) || a.name.localeCompare(b.name));
+    const ids = new Set(visible.map((i) => i.id));
+    // reorder + show/hide
+    const frag = document.createDocumentFragment();
+    for (const i of visible) frag.appendChild(cards.get(i.id)!);
+    for (const [id, c] of cards) if (!ids.has(id)) frag.appendChild(c);
+    grid.appendChild(frag);
+    for (const [id, c] of cards) {
+      const show = ids.has(id);
+      c.classList.toggle('is-filtered', !show);
+      if (show && !lastVisible.has(id)) {
+        c.classList.remove('is-entering');
+        void c.offsetWidth;
+        c.classList.add('is-entering');
+      }
+    }
+    lastVisible = ids;
+    grid.classList.toggle('is-list', state.view === 'list');
+
+    // counts
+    const n = visible.length;
+    $('[data-cx-count]').textContent = String(n);
+    $('[data-cx-noun]').textContent = n === 1 ? 'watch' : 'watches';
+    $('[data-cx-count-ring]').textContent = String(n);
+    $('[data-cx-count-btn]').textContent = String(n);
+    $<HTMLElement>('[data-cx-empty]').hidden = n > 0;
+
+    // facet counts: how many results each option would give, keeping the other filters
+    for (const k of MULTI) {
+      const base = items.filter((i) => passes(i, AND_FACETS.has(k) ? undefined : k));
+      for (const el of $$<HTMLInputElement | HTMLButtonElement>(`[data-f="${k}"]`)) {
+        const v = el.value;
+        const c = base.filter((i) => read[k](i).includes(v)).length;
+        const selected = state.sel[k].has(v);
+        const holder = el.closest('label') ?? el;
+        const em = holder.querySelector('[data-c]');
+        if (em) em.textContent = String(c);
+        holder.classList.toggle('is-zero', c === 0 && !selected);
+        if (el instanceof HTMLInputElement) el.checked = selected;
+        else el.setAttribute('aria-pressed', String(selected));
+      }
+    }
+
+    // controls reflect state
+    $<HTMLInputElement>('[data-f-q]').value = state.q;
+    $$<HTMLButtonElement>('[data-f-wr]').forEach((b) => {
+      const on = Number(b.dataset.fWr) === state.wr;
+      b.setAttribute('aria-pressed', String(on));
+      b.setAttribute('aria-checked', String(on));
+    });
+    $<HTMLInputElement>('[data-f-dmin]').value = String(state.dmin);
+    $<HTMLInputElement>('[data-f-dmax]').value = String(state.dmax);
+    $('[data-range-lo]').textContent = `${state.dmin} mm`;
+    $('[data-range-hi]').textContent = `${state.dmax} mm`;
+    const span = L.dMax - L.dMin || 1;
+    $<HTMLElement>('[data-range-fill]').style.cssText = `left:${((state.dmin - L.dMin) / span) * 100}%;right:${((L.dMax - state.dmax) / span) * 100}%`;
+    $<HTMLInputElement>('[data-f-current]').checked = state.current;
+    $<HTMLSelectElement>('[data-cx-sort]').value = state.sort;
+    $$<HTMLButtonElement>('[data-cx-view]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cxView === state.view)));
+    setBezel(state.type);
+    renderPills();
+    updateMyLevel();
+    toURL();
+  }
+
+  // ---------------- Active filter pills ----------------
+  function renderPills() {
+    const pills: { label: string; clear: () => void }[] = [];
+    if (state.q) pills.push({ label: `“${state.q}”`, clear: () => (state.q = '') });
+    if (state.type !== 'all') pills.push({ label: L.type[state.type], clear: () => (state.type = 'all') });
+    for (const k of MULTI)
+      for (const v of state.sel[k]) {
+        const label = k === 'decade' ? `${v}s` : (L[k]?.[v] ?? v.replace(/-/g, ' '));
+        pills.push({ label, clear: () => state.sel[k].delete(v) });
+      }
+    if (state.wr) pills.push({ label: `${state.wr} m+`, clear: () => (state.wr = 0) });
+    if (state.dmin > L.dMin || state.dmax < L.dMax) pills.push({ label: `${state.dmin}–${state.dmax} mm`, clear: () => ((state.dmin = L.dMin), (state.dmax = L.dMax)) });
+    if (state.current) pills.push({ label: 'In production', clear: () => (state.current = false) });
+
+    const box = $('[data-cx-pills]');
+    box.hidden = pills.length === 0;
+    box.innerHTML = '';
+    pills.forEach((p) => {
+      const b = document.createElement('button');
+      b.className = 'cx__pill';
+      b.innerHTML = `<span></span><i aria-hidden="true">×</i>`;
+      b.querySelector('span')!.textContent = p.label;
+      b.setAttribute('aria-label', `Remove filter: ${p.label}`);
       b.addEventListener('click', () => {
-        const v = b.getAttribute(attr) || '';
-        set.has(v) ? set.delete(v) : set.add(v);
-        b.setAttribute('aria-pressed', String(set.has(v)));
-        apply();
-      }),
-    );
-  toggler('data-tier-btn', tiers);
-  toggler('data-level-btn', levels);
-  document.querySelector('[data-reset]')?.addEventListener('click', () => {
-    tiers.clear();
-    levels.clear();
-    document.querySelectorAll('[data-tier-btn],[data-level-btn]').forEach((x) => x.setAttribute('aria-pressed', 'false'));
-    (document.querySelector('[data-type-btn="all"]') as HTMLButtonElement | null)?.click();
+        p.clear();
+        render();
+      });
+      box.appendChild(b);
+    });
+    if (pills.length > 1) {
+      const c = document.createElement('button');
+      c.className = 'cx__link';
+      c.textContent = 'Clear all';
+      c.addEventListener('click', clearAll);
+      box.appendChild(c);
+    }
+    const badge = $<HTMLElement>('[data-cx-active-n]');
+    badge.hidden = pills.length === 0;
+    badge.textContent = String(pills.length);
+  }
+
+  function clearAll() {
+    state.q = '';
+    state.type = 'all';
+    for (const k of MULTI) state.sel[k].clear();
+    state.wr = 0;
+    state.dmin = L.dMin;
+    state.dmax = L.dMax;
+    state.current = false;
+    render();
+  }
+
+  // ---------------- Bezel ----------------
+  let rot = 0;
+  function setBezel(type: string) {
+    const btn = root.querySelector<HTMLElement>(`[data-type-btn="${CSS.escape(type)}"]`);
+    if (!btn) return;
+    const target = -parseFloat(btn.dataset.angle || '0');
+    rot += ((((target - rot) % 360) + 540) % 360) - 180; // turn the short way, like a real bezel
+    $<HTMLElement>('[data-bezel]').style.setProperty('--rot', `${rot}deg`);
+    $$('[data-type-btn]').forEach((b) => b.setAttribute('aria-checked', String(b === btn)));
+  }
+
+  // ---------------- "Match my level" (from the onboarding picker) ----------------
+  function myLevel() {
+    try { return localStorage.getItem('awc-level'); } catch { return null; }
+  }
+  function updateMyLevel() {
+    const lvl = myLevel();
+    const b = $<HTMLButtonElement>('[data-my-level]');
+    b.hidden = !lvl;
+    if (lvl) {
+      const on = state.sel.level.size === 1 && state.sel.level.has(lvl);
+      b.textContent = on ? `Matching your level: ${L.level[lvl]} ✓` : `Match my level (${L.level[lvl]})`;
+      b.setAttribute('aria-pressed', String(on));
+    }
+  }
+
+  // ---------------- Events ----------------
+  root.addEventListener('click', (e) => {
+    const t = (e.target as HTMLElement).closest<HTMLElement>('button');
+    if (!t) return;
+    if (t.dataset.typeBtn) {
+      state.type = t.dataset.typeBtn;
+    } else if (t.dataset.f && t instanceof HTMLButtonElement) {
+      const set = state.sel[t.dataset.f as Multi];
+      set.has(t.value) ? set.delete(t.value) : set.add(t.value);
+    } else if (t.dataset.fWr != null) {
+      state.wr = Number(t.dataset.fWr);
+    } else if (t.hasAttribute('data-cx-clear')) {
+      clearAll();
+      return;
+    } else if (t.dataset.cxView) {
+      state.view = t.dataset.cxView;
+    } else if (t.hasAttribute('data-my-level')) {
+      const lvl = myLevel();
+      if (!lvl) return;
+      const on = state.sel.level.size === 1 && state.sel.level.has(lvl);
+      state.sel.level = on ? new Set() : new Set([lvl]);
+    } else if (t.hasAttribute('data-more')) {
+      const open = t.getAttribute('aria-expanded') !== 'true';
+      t.setAttribute('aria-expanded', String(open));
+      t.closest('[data-more-wrap]')!.classList.toggle('is-open', open);
+      t.textContent = open ? '− fewer' : `+ ${t.dataset.n} more`;
+      return;
+    } else return;
+    render();
   });
-  const pre = new URLSearchParams(location.search).get('type');
-  if (pre) (document.querySelector(`[data-type-btn="${CSS.escape(pre)}"]`) as HTMLButtonElement | null)?.click();
+  root.addEventListener('change', (e) => {
+    const t = e.target as HTMLInputElement;
+    if (t.dataset.f) {
+      const set = state.sel[t.dataset.f as Multi];
+      t.checked ? set.add(t.value) : set.delete(t.value);
+    } else if (t.hasAttribute('data-f-current')) state.current = t.checked;
+    else if (t.hasAttribute('data-cx-sort')) state.sort = t.value;
+    else return;
+    render();
+  });
+  let qTimer = 0;
+  $<HTMLInputElement>('[data-f-q]').addEventListener('input', (e) => {
+    clearTimeout(qTimer);
+    qTimer = window.setTimeout(() => {
+      state.q = (e.target as HTMLInputElement).value.toLowerCase().trim();
+      render();
+    }, 120);
+  });
+  const lo = $<HTMLInputElement>('[data-f-dmin]');
+  const hi = $<HTMLInputElement>('[data-f-dmax]');
+  const onRange = () => {
+    state.dmin = Math.min(Number(lo.value), Number(hi.value));
+    state.dmax = Math.max(Number(lo.value), Number(hi.value));
+    render();
+  };
+  lo.addEventListener('input', onRange);
+  hi.addEventListener('input', onRange);
+
+  // Mobile drawer
+  const panel = $<HTMLElement>('[data-cx-panel]');
+  const openDrawer = (open: boolean) => {
+    root.classList.toggle('is-drawer', open);
+    // The drawer lives inside <main>, whose stacking context sits under the fixed header; lift it while open.
+    document.documentElement.classList.toggle('cx-drawer-open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+    syncInert();
+    if (open) panel.querySelector<HTMLElement>('input, button')?.focus({ preventScroll: true });
+    else $<HTMLElement>('[data-cx-open]').focus({ preventScroll: true });
+  };
+  // While the off-canvas drawer is closed on small screens, keep it out of the tab order.
+  const narrow = window.matchMedia('(max-width: 960px)');
+  const syncInert = () => (panel.inert = narrow.matches && !root.classList.contains('is-drawer'));
+  narrow.addEventListener('change', syncInert);
+  $$('[data-cx-open]').forEach((b) => b.addEventListener('click', () => openDrawer(true)));
+  $$('[data-cx-close]').forEach((b) => b.addEventListener('click', () => openDrawer(false)));
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && root.classList.contains('is-drawer')) openDrawer(false);
+  });
+
+  fromURL();
+  syncInert();
+  if (state.view === 'list') grid.classList.add('is-list');
+  render();
 </script>
 
 <style>
-  .cat__grid { display: grid; grid-template-columns: 320px 1fr; gap: 48px; align-items: start; }
-  .cat__filters { position: sticky; top: calc(var(--header-h) + 24px); display: grid; gap: 30px; }
-  .bezel { position: relative; width: 300px; max-width: 100%; aspect-ratio: 1; margin: 0 auto; }
-  .bezel__ring, .bezel__labels {
-    position: absolute;
-    inset: 0;
-    transform: rotate(var(--rot));
-    transition: transform 1.1s cubic-bezier(0.34, 1.4, 0.64, 1);
+  .cx__grid { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: clamp(28px, 4vw, 52px); align-items: start; }
+
+  /* ---------- Filter panel ---------- */
+  .cx__filters { position: sticky; top: calc(var(--header-h) + 20px); max-height: calc(100vh - var(--header-h) - 40px); display: flex; flex-direction: column; }
+  .cx__scroll { overflow-y: auto; overscroll-behavior: contain; padding: 2px 10px 20px 2px; display: grid; gap: 6px; scrollbar-width: thin; }
+  .cx__drawerhead, .cx__drawerfoot { display: none; }
+  .cx__search input {
+    width: 100%;
+    height: 46px;
+    padding: 0 16px;
+    border-radius: 999px;
+    border: 1px solid var(--line-2);
+    background: var(--surface);
+    color: var(--text);
+    font: 15px var(--sans);
   }
+  .cx__search input:focus { outline: none; border-color: var(--gold); }
+
+  .bezel { position: relative; width: 250px; max-width: 100%; aspect-ratio: 1; margin: 14px auto 10px; }
+  .bezel__ring, .bezel__labels { position: absolute; inset: 0; transform: rotate(var(--rot)); transition: transform 1.1s cubic-bezier(0.34, 1.4, 0.64, 1); }
   .bezel__ring { width: 100%; height: 100%; }
   .bezel__label {
     position: absolute;
@@ -154,35 +656,162 @@ const step = 360 / ring.length;
     padding: 0;
     cursor: pointer;
     color: var(--muted);
-    font: 500 10.5px var(--mono);
+    font: 500 10px var(--mono);
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    transform: rotate(var(--a)) translateY(-118px);
-    transition: color 0.3s;
+    transform: rotate(var(--a)) translateY(-98px);
   }
-  .bezel__label:hover, .bezel__label[aria-pressed='true'] { color: var(--gold); }
-  .bezel__label[aria-pressed='true'] span { font-weight: 600; }
-  .bezel__pip {
-    position: absolute;
-    left: 50%;
-    top: -10px;
-    width: 0;
-    height: 0;
-    margin-left: -8px;
-    border: 8px solid transparent;
-    border-top: 12px solid var(--gold);
-    filter: drop-shadow(0 0 8px var(--gold));
-  }
+  .bezel__label:hover, .bezel__label[aria-checked='true'] { color: var(--gold); }
+  .bezel__pip { position: absolute; left: 50%; top: -10px; margin-left: -8px; border: 8px solid transparent; border-top: 12px solid var(--gold); filter: drop-shadow(0 0 8px var(--gold)); }
   .bezel__center { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; pointer-events: none; }
-  .bezel__center b { font-size: 64px; line-height: 1; font-weight: 500; }
+  .bezel__center b { font-size: 54px; line-height: 1; font-weight: 500; font-variant-numeric: lining-nums; }
   .bezel__center span { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--faint); }
-  .cat__group { display: grid; gap: 12px; }
-  .cat__chips { display: flex; flex-wrap: wrap; gap: 6px; }
-  .cat__reset { justify-content: center; }
-  .cat__empty { grid-column: 1 / -1; }
-  .cat__empty a { color: var(--gold); }
+
+  .fg { border-bottom: 1px solid var(--line); padding: 4px 0 14px; }
+  .fg summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 2px 8px;
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .fg summary::-webkit-details-marker { display: none; }
+  .fg summary::after { content: '+'; font-size: 16px; color: var(--muted); transition: transform 0.3s var(--ease); }
+  .fg[open] summary::after { transform: rotate(45deg); }
+  .fg__list { display: grid; gap: 2px; }
+  .fo { display: grid; grid-template-columns: 18px 1fr auto; align-items: center; gap: 10px; padding: 6px 4px; border-radius: 8px; cursor: pointer; font-size: 14.5px; transition: background 0.2s, opacity 0.2s; }
+  .fo:hover { background: var(--surface); }
+  .fo input { accent-color: var(--gold); width: 16px; height: 16px; margin: 0; }
+  .fo em, .chip em { font-style: normal; font-family: var(--mono); font-size: 10.5px; color: var(--faint); }
+  .fg__chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .fg__chips .chip { text-transform: none; letter-spacing: 0.02em; font-size: 12px; }
+  .fg__chips .chip[aria-pressed='true'] em { color: #120f08; }
+  .is-zero { opacity: 0.38; }
+  .chip.is-extra { display: none; }
+  .is-open .chip.is-extra { display: inline-flex; }
+  .cx__more { border: 0; background: none; color: var(--gold); font-size: 11px; cursor: pointer; padding: 6px 4px; }
+  .fg__hint { margin: 10px 0 0; font-size: 10.5px; color: var(--faint); }
+  .cx__mine { margin-top: 10px; border: 1px dashed var(--gold); background: none; color: var(--gold); border-radius: 999px; padding: 7px 12px; font: 12px var(--sans); cursor: pointer; }
+  .cx__mine[aria-pressed='true'] { background: var(--gold); color: #120f08; border-style: solid; }
+
+  .range { padding: 4px 4px 2px; }
+  .range__vals { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+  .range__track { position: relative; height: 22px; }
+  .range__track::before { content: ''; position: absolute; left: 0; right: 0; top: 10px; height: 2px; background: var(--line-2); border-radius: 2px; }
+  .range__track i { position: absolute; top: 10px; height: 2px; background: var(--gold); }
+  .range__track input { position: absolute; inset: 0; width: 100%; margin: 0; background: none; pointer-events: none; -webkit-appearance: none; appearance: none; }
+  .range__track input::-webkit-slider-thumb { -webkit-appearance: none; pointer-events: auto; width: 20px; height: 20px; border-radius: 50%; background: var(--bg); border: 2px solid var(--gold); cursor: grab; box-shadow: 0 0 10px var(--glow); }
+  .range__track input::-moz-range-thumb { pointer-events: auto; width: 18px; height: 18px; border-radius: 50%; background: var(--bg); border: 2px solid var(--gold); cursor: grab; }
+  .range__track input:focus-visible::-webkit-slider-thumb { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  .cx__toggle { display: flex; align-items: center; gap: 12px; padding: 16px 2px; cursor: pointer; font-size: 14.5px; }
+  .cx__toggle input { position: absolute; opacity: 0; pointer-events: none; }
+  .cx__switch { position: relative; flex: none; width: 40px; height: 22px; border-radius: 999px; background: var(--line-2); transition: background 0.3s; }
+  .cx__switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: var(--text); transition: transform 0.3s var(--ease); }
+  .cx__toggle input:checked + .cx__switch { background: var(--gold); }
+  .cx__toggle input:checked + .cx__switch::after { transform: translateX(18px); background: #120f08; }
+  .cx__toggle input:focus-visible + .cx__switch { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  /* ---------- Results ---------- */
+  .cx__bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .cx__count { margin: 0; display: flex; align-items: baseline; gap: 10px; color: var(--muted); }
+  .cx__count b { font-size: 44px; line-height: 1; color: var(--text); font-weight: 500; font-variant-numeric: lining-nums; }
+  .cx__tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .cx__open { display: none; padding: 10px 18px; }
+  .cx__badge { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; background: var(--gold); color: #120f08; font: 600 11px var(--mono); }
+  .cx__badge[hidden] { display: none; }
+  .cx__sort { display: flex; align-items: center; gap: 8px; }
+  .cx__sort .mono { font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
+  .cx__sort select {
+    height: 42px;
+    padding: 0 34px 0 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line-2);
+    background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23cfae6b' fill='none' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 14px center;
+    -webkit-appearance: none;
+    appearance: none;
+    color: var(--text);
+    font: 14px var(--sans);
+    cursor: pointer;
+  }
+  .cx__sort select:focus { outline: none; border-color: var(--gold); }
+  .cx__views { display: flex; gap: 6px; }
+  .cx__views .icon-btn[aria-pressed='true'] { border-color: var(--gold); color: var(--gold); }
+
+  .cx__pills { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 22px; }
+  .cx__pills[hidden] { display: none; }
+  .cx__pills :global(.cx__pill) {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px 6px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--gold);
+    background: color-mix(in srgb, var(--gold) 12%, transparent);
+    color: var(--text);
+    font: 13px var(--sans);
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .cx__pills :global(.cx__pill:hover) { background: color-mix(in srgb, var(--gold) 25%, transparent); }
+  .cx__pills :global(.cx__pill i) { font-style: normal; display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: var(--gold); color: #120f08; font-size: 13px; line-height: 1; }
+  .cx__link, .cx__pills :global(.cx__link) { border: 0; background: none; padding: 0; color: var(--gold); font: inherit; font-size: 13px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+  .cx__cards :global(.ref-card.is-entering) { animation: cx-in 0.55s var(--ease) both; }
+  @keyframes cx-in { from { opacity: 0; transform: translateY(16px) scale(0.98); } to { opacity: 1; transform: none; } }
+
+  /* List view: compact rows */
+  .cx__cards.is-list { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .cx__cards.is-list :global(.ref-card) { flex-direction: row; align-items: center; gap: 20px; padding: 14px 20px; transform: none !important; }
+  .cx__cards.is-list :global(.ref-card__visual) { padding: 0; flex: none; transform: none; }
+  .cx__cards.is-list :global(.ref-card__visual .watch), .cx__cards.is-list :global(.ref-card__visual .dface) { --size: 96px !important; }
+  .cx__cards.is-list :global(.ref-card h3) { margin: 4px 0; font-size: 22px; }
+  .cx__cards.is-list :global(.ref-card p) { margin: 0 0 8px; }
+
+  .cx__empty { display: grid; justify-items: center; gap: 10px; text-align: center; padding: 70px 20px; border: 1px dashed var(--line-2); border-radius: var(--radius); }
+  .cx__empty[hidden] { display: none; }
+  .cx__empty svg { width: 90px; margin-bottom: 8px; }
+  .cx__empty p { margin: 0; }
+  .cx__empty a { color: var(--gold); }
+  .cx__scrim { display: none; }
+  :global(.cx-drawer-open main) { z-index: 130; }
+
+  /* ---------- Phones & tablets: filters become a drawer ---------- */
   @media (max-width: 960px) {
-    .cat__grid { grid-template-columns: 1fr; }
-    .cat__filters { position: relative; top: 0; }
+    .cx__grid { grid-template-columns: minmax(0, 1fr); }
+    .cx__open { display: inline-flex; }
+    .cx__filters {
+      position: fixed;
+      inset: 0 auto 0 0;
+      z-index: 120;
+      width: min(400px, 92vw);
+      max-height: none;
+      top: 0;
+      background: var(--bg);
+      border-right: 1px solid var(--line-2);
+      transform: translateX(-102%);
+      transition: transform 0.5s var(--ease);
+      box-shadow: var(--shadow);
+    }
+    .is-drawer .cx__filters { transform: none; }
+    .cx__drawerhead { display: flex; justify-content: space-between; align-items: center; padding: 18px 20px 10px; }
+    .cx__drawerhead strong { font-size: 30px; font-weight: 500; }
+    .cx__scroll { flex: 1; padding: 0 20px 20px; }
+    .cx__drawerfoot { display: flex; gap: 10px; padding: 14px 20px 20px; border-top: 1px solid var(--line); background: var(--bg); }
+    .cx__drawerfoot .btn { flex: 1; justify-content: center; padding: 14px 10px; }
+    .cx__scrim { position: fixed; inset: 0; z-index: 110; background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(3px); }
+    .is-drawer .cx__scrim { display: block; }
+    .cx__cards.is-list :global(.ref-card) { padding: 12px 14px; gap: 14px; }
+    .cx__cards.is-list :global(.ref-card__visual .watch), .cx__cards.is-list :global(.ref-card__visual .dface) { --size: 76px !important; }
+  }
+  @media (max-width: 520px) {
+    .cx__sort .mono { display: none; }
+    .cx__count b { font-size: 36px; }
   }
 </style>
