@@ -22,6 +22,11 @@
       "count": 49
     },
     {
+      "name": "lineages",
+      "path": "lineages.json",
+      "count": 2
+    },
+    {
       "name": "glossary",
       "path": "glossary.json",
       "count": 88

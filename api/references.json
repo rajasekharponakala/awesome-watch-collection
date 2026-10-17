@@ -118,7 +118,8 @@
       },
       "crystal": "Resin",
       "years": {
-        "introduced": 1989
+        "introduced": 1989,
+        "current": true
       },
       "price_tier": "entry",
       "levels": [
@@ -144,6 +145,8 @@
       "brand": "casio",
       "name": "G-Shock DW-5000C",
       "reference": "DW-5000C",
+      "lineage": "casio-g-shock-origin",
+      "milestone": "The first G-Shock: a module floating inside a shock-absorbing case",
       "type": "digital/lcd",
       "styles": [
         "tool",
@@ -185,6 +188,8 @@
       "brand": "casio",
       "name": "G-Shock DW-5000R \"Origin Revival\"",
       "reference": "DW-5000R-1A",
+      "lineage": "casio-g-shock-origin",
+      "milestone": "A standard-issue re-creation of the 1983 original",
       "type": "digital/lcd",
       "styles": [
         "tool",
@@ -206,7 +211,8 @@
       "water_resistance_m": 200,
       "crystal": "Mineral",
       "years": {
-        "introduced": 2024
+        "introduced": 2024,
+        "current": true
       },
       "price_tier": "affordable",
       "levels": [
@@ -233,6 +239,8 @@
       "brand": "casio",
       "name": "G-Shock DW-5040PG \"Recrystallized\"",
       "reference": "DW-5040PG",
+      "lineage": "casio-g-shock-origin",
+      "milestone": "40th anniversary: recrystallised, hardened steel",
       "type": "digital/lcd",
       "styles": [
         "tool",
@@ -273,6 +281,8 @@
       "brand": "casio",
       "name": "G-Shock DW-5200C",
       "reference": "DW-5200C",
+      "lineage": "casio-g-shock-origin",
+      "milestone": "The near-identical successor that broke through in the US",
       "type": "digital/lcd",
       "styles": [
         "tool",
@@ -312,6 +322,8 @@
       "brand": "casio",
       "name": "G-Shock DW-5500C",
       "reference": "DW-5500C",
+      "lineage": "casio-g-shock-origin",
+      "milestone": "First Mud Resist G-Shock",
       "type": "digital/lcd",
       "styles": [
         "tool",
@@ -350,6 +362,8 @@
       "brand": "casio",
       "name": "G-Shock DW-5600E",
       "reference": "DW-5600E-1V",
+      "lineage": "casio-g-shock-origin",
+      "milestone": "EL backlight and module 3229",
       "type": "digital/lcd",
       "styles": [
         "tool",
@@ -372,7 +386,8 @@
       "water_resistance_m": 200,
       "crystal": "Mineral",
       "years": {
-        "introduced": 1996
+        "introduced": 1996,
+        "current": true
       },
       "price_tier": "entry",
       "levels": [
@@ -397,6 +412,8 @@
       "brand": "casio",
       "name": "G-Shock DW-5600C",
       "reference": "DW-5600C",
+      "lineage": "casio-g-shock-origin",
+      "milestone": "The first \"5600\": the definitive square shape",
       "type": "digital/lcd",
       "styles": [
         "tool",
@@ -441,6 +458,8 @@
       "brand": "casio",
       "name": "G-Shock GMW-B5000D \"Full Metal\"",
       "reference": "GMW-B5000D-1",
+      "lineage": "casio-g-shock-origin",
+      "milestone": "First full-metal square, with Bluetooth",
       "type": "digital/lcd",
       "styles": [
         "tool",
@@ -466,7 +485,8 @@
       "water_resistance_m": 200,
       "crystal": "Mineral",
       "years": {
-        "introduced": 2018
+        "introduced": 2018,
+        "current": true
       },
       "price_tier": "affordable",
       "levels": [
@@ -493,6 +513,8 @@
       "brand": "casio",
       "name": "G-Shock GW-B5600",
       "reference": "GW-B5600BC-1",
+      "lineage": "casio-g-shock-origin",
+      "milestone": "Full-metal functions in a lightweight resin case",
       "type": "digital/lcd",
       "styles": [
         "tool",
@@ -517,7 +539,8 @@
       },
       "water_resistance_m": 200,
       "years": {
-        "introduced": 2018
+        "introduced": 2018,
+        "current": true
       },
       "price_tier": "entry",
       "levels": [
@@ -542,6 +565,8 @@
       "brand": "casio",
       "name": "G-Shock GW-M5610",
       "reference": "GW-M5610",
+      "lineage": "casio-g-shock-origin",
+      "milestone": "Solar and atomic radio sync for an everyday price",
       "type": "digital/lcd",
       "styles": [
         "tool",
@@ -587,6 +612,8 @@
       "brand": "casio",
       "name": "G-Shock GW-5000",
       "reference": "GW-5000-1JF",
+      "lineage": "casio-g-shock-origin",
+      "milestone": "Made in Japan with a screw-back, solar power and radio sync",
       "type": "digital/lcd",
       "styles": [
         "tool",
@@ -635,6 +662,8 @@
       "brand": "casio",
       "name": "G-Shock GW-5000U",
       "reference": "GW-5000U-1JF",
+      "lineage": "casio-g-shock-origin",
+      "milestone": "Module 3495 brings a full auto LED backlight",
       "type": "digital/lcd",
       "styles": [
         "tool",
@@ -656,7 +685,8 @@
       "water_resistance_m": 200,
       "crystal": "Mineral",
       "years": {
-        "introduced": 2021
+        "introduced": 2021,
+        "current": true
       },
       "price_tier": "affordable",
       "levels": [
@@ -698,7 +728,9 @@
       },
       "water_resistance_m": 200,
       "crystal": "Mineral",
-      "years": {},
+      "years": {
+        "current": true
+      },
       "price_tier": "entry",
       "levels": [
         "first-wind"
@@ -905,7 +937,8 @@
       "water_resistance_m": 50,
       "crystal": "Hesalite",
       "years": {
-        "introduced": 2021
+        "introduced": 2021,
+        "current": true
       },
       "price_tier": "luxury",
       "levels": [
@@ -977,6 +1010,8 @@
       "brand": "rolex",
       "name": "Submariner",
       "reference": "114060",
+      "lineage": "rolex-submariner",
+      "milestone": "Ceramic bezel and Super Case come to the no-date",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1018,6 +1053,8 @@
       "brand": "rolex",
       "name": "Submariner Date",
       "reference": "116610LN",
+      "lineage": "rolex-submariner",
+      "milestone": "Cerachrom ceramic bezel and the thick-lugged Super Case",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1061,6 +1098,8 @@
       "brand": "rolex",
       "name": "Submariner Date \"Hulk\"",
       "reference": "116610LV",
+      "lineage": "rolex-submariner",
+      "milestone": "\"Hulk\": green dial and green ceramic bezel",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1104,6 +1143,8 @@
       "brand": "rolex",
       "name": "Submariner",
       "reference": "124060",
+      "lineage": "rolex-submariner",
+      "milestone": "41 mm, slimmer lugs and the 70-hour calibre 3230",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1118,7 +1159,8 @@
       "water_resistance_m": 300,
       "crystal": "Sapphire",
       "years": {
-        "introduced": 2020
+        "introduced": 2020,
+        "current": true
       },
       "price_tier": "luxury",
       "levels": [
@@ -1145,6 +1187,8 @@
       "brand": "rolex",
       "name": "Submariner Date",
       "reference": "126610LN",
+      "lineage": "rolex-submariner",
+      "milestone": "41 mm Submariner Date with the 70-hour calibre 3235",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1162,7 +1206,8 @@
       "water_resistance_m": 300,
       "crystal": "Sapphire",
       "years": {
-        "introduced": 2020
+        "introduced": 2020,
+        "current": true
       },
       "price_tier": "luxury",
       "levels": [
@@ -1188,6 +1233,8 @@
       "brand": "rolex",
       "name": "Submariner Date \"Starbucks\"",
       "reference": "126610LV",
+      "lineage": "rolex-submariner",
+      "milestone": "\"Starbucks\": green ceramic bezel over a black dial",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1205,7 +1252,8 @@
       "water_resistance_m": 300,
       "crystal": "Sapphire",
       "years": {
-        "introduced": 2020
+        "introduced": 2020,
+        "current": true
       },
       "price_tier": "luxury",
       "levels": [
@@ -1231,6 +1279,8 @@
       "brand": "rolex",
       "name": "Submariner",
       "reference": "14060",
+      "lineage": "rolex-submariner",
+      "milestone": "The no-date returns with sapphire and 904L steel",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1272,6 +1322,8 @@
       "brand": "rolex",
       "name": "Submariner",
       "reference": "14060M",
+      "lineage": "rolex-submariner",
+      "milestone": "Calibre 3130; the last no-date with an aluminium bezel",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1313,6 +1365,8 @@
       "brand": "rolex",
       "name": "Submariner Date",
       "reference": "16610",
+      "lineage": "rolex-submariner",
+      "milestone": "Calibre 3135: the classic Submariner Date for two decades",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1356,6 +1410,8 @@
       "brand": "rolex",
       "name": "Submariner Date \"Kermit\"",
       "reference": "16610LV",
+      "lineage": "rolex-submariner",
+      "milestone": "The 50th-anniversary \"Kermit\": the first green bezel",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1399,6 +1455,8 @@
       "brand": "rolex",
       "name": "Submariner Date",
       "reference": "1680",
+      "lineage": "rolex-submariner",
+      "milestone": "First Submariner with a date and Cyclops lens",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1442,6 +1500,8 @@
       "brand": "rolex",
       "name": "Submariner Date",
       "reference": "16800",
+      "lineage": "rolex-submariner",
+      "milestone": "Sapphire crystal, 300 m and a quickset date",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1485,6 +1545,8 @@
       "brand": "rolex",
       "name": "Submariner Date \"Triple Zero\"",
       "reference": "168000",
+      "lineage": "rolex-submariner",
+      "milestone": "The switch to 904L steel",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1527,6 +1589,8 @@
       "brand": "rolex",
       "name": "Submariner",
       "reference": "5508",
+      "lineage": "rolex-submariner",
+      "milestone": "Small 6 mm crown and the new calibre 1530",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1566,6 +1630,8 @@
       "brand": "rolex",
       "name": "Submariner \"Big Crown\"",
       "reference": "5510",
+      "lineage": "rolex-submariner",
+      "milestone": "Short-lived big-crown model with the calibre 1530",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1605,6 +1671,8 @@
       "brand": "rolex",
       "name": "Submariner",
       "reference": "5512",
+      "lineage": "rolex-submariner",
+      "milestone": "First with crown guards, a 40 mm case and chronometer certification",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1646,6 +1714,8 @@
       "brand": "rolex",
       "name": "Submariner",
       "reference": "5513",
+      "lineage": "rolex-submariner",
+      "milestone": "The non-chronometer workhorse, made for almost three decades",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1687,6 +1757,8 @@
       "brand": "rolex",
       "name": "Submariner \"MilSub\"",
       "reference": "5517",
+      "lineage": "rolex-submariner",
+      "milestone": "Military issue: sword hands, fixed bars and tritium",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1728,6 +1800,8 @@
       "brand": "rolex",
       "name": "Submariner \"Big Crown\"",
       "reference": "6200",
+      "lineage": "rolex-submariner",
+      "milestone": "First 200 m Submariner, with an 8 mm \"big crown\"",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1768,6 +1842,8 @@
       "brand": "rolex",
       "name": "Submariner (first series)",
       "reference": "6204",
+      "lineage": "rolex-submariner",
+      "milestone": "The first Submariner: 37 mm, 100 m, a rotating timing bezel",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1809,6 +1885,8 @@
       "brand": "rolex",
       "name": "Submariner",
       "reference": "6205",
+      "lineage": "rolex-submariner",
+      "milestone": "A near twin of the 6204, still without a depth rating on the dial",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1849,6 +1927,8 @@
       "brand": "rolex",
       "name": "Submariner",
       "reference": "6536",
+      "lineage": "rolex-submariner",
+      "milestone": "Upgraded to the full-rotor calibre 1030",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1888,6 +1968,8 @@
       "brand": "rolex",
       "name": "Submariner \"Big Crown\"",
       "reference": "6538",
+      "lineage": "rolex-submariner",
+      "milestone": "The big-crown 200 m reference linked to Dr. No",
       "type": "mechanical/automatic",
       "styles": [
         "diver",
@@ -1943,7 +2025,9 @@
       },
       "water_resistance_m": 50,
       "crystal": "Hardlex (box-shaped)",
-      "years": {},
+      "years": {
+        "current": true
+      },
       "price_tier": "affordable",
       "levels": [
         "first-wind",
@@ -2034,7 +2118,8 @@
       "water_resistance_m": 100,
       "crystal": "Sapphire",
       "years": {
-        "introduced": 2021
+        "introduced": 2021,
+        "current": true
       },
       "price_tier": "affordable",
       "levels": [
