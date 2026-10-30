@@ -23,7 +23,7 @@ const groupList = [...groups.entries()].sort((a, b) => b[1].length - a[1].length
   <section class="section--tight">
     <div class="container grid grid--3">
       {brands.map((b, i) => (
-        <a href={u(`brands/${b.id}/`)} class="card brand-card" data-reveal data-tilt="5" style={`--d:${(i % 3) * 0.06}s`}>
+        <a href={u(`brands/${b.id}/`)} class="card brand-card" data-reveal style={`--d:${(i % 3) * 0.06}s`}>
           <div class="bc-top mono"><span>Est. {b.data.founded}</span><span>{b.data.country}</span></div>
           <h2 class="display h3">{b.data.name}</h2>
           <p class="muted">{b.data.summary}</p>
@@ -53,16 +53,17 @@ const groupList = [...groups.entries()].sort((a, b) => b[1].length - a[1].length
 
 <style>
   .brand-card { display: flex; flex-direction: column; gap: 12px; }
-  .bc-top { display: flex; justify-content: space-between; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+  .bc-top { display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
   .brand-card h2 { margin: 4px 0 0; }
   .brand-card p { margin: 0; flex: 1; font-size: 15px; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
   .bc-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-  .groups { display: grid; gap: 0; border-top: 1px solid var(--line); }
-  .group { display: grid; grid-template-columns: 280px 1fr; gap: 24px; padding: 26px 0; border-bottom: 1px solid var(--line); }
-  .group h3 { margin: 6px 0 0; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); display: flex; gap: 12px; }
+  .groups { display: grid; gap: 0; border: var(--bw) solid var(--ink); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); overflow: hidden; }
+  .group { display: grid; grid-template-columns: 280px 1fr; gap: 24px; padding: 22px 24px; border-bottom: var(--bw-sm) solid var(--ink); }
+  .group:last-child { border-bottom: 0; }
+  .group h3 { margin: 6px 0 0; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text); display: flex; gap: 12px; }
   .group h3 span { color: var(--faint); }
   .group__list { display: flex; flex-wrap: wrap; gap: 6px 26px; }
-  .group__list a { font-size: clamp(24px, 2.6vw, 36px); line-height: 1.2; transition: color 0.3s; }
-  .group__list a:hover { color: var(--gold); font-style: italic; }
+  .group__list a { padding: 0 4px; font-size: clamp(24px, 2.6vw, 36px); line-height: 1.2; transition: background-color 0.15s, color 0.15s; }
+  .group__list a:hover { background: var(--c-yellow); color: #111; }
   @media (max-width: 760px) { .group { grid-template-columns: 1fr; gap: 8px; } }
 </style>

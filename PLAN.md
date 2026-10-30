@@ -250,9 +250,12 @@ The whole site is designed as a watch. Each concept maps to a part of the UI:
 | **Out of Beat** | 404 page: a watch with stopped hands. "This page has lost its power reserve." |
 | **Sweep seconds** | Loading indicator |
 
-**Visual language**: dial-inspired typography (clean sans for text, railroad-track minute scales as dividers),
-applied-index bullet points, sunburst / guilloché background textures used sparingly, and a dial colour palette
-(white, black, "Pepsi" blue/red, "Hulk" green, salmon, panda) as accent themes the visitor can choose.
+**Visual language**: neo-brutalism with a watchmaker's vocabulary. Flat, saturated colour blocks (yellow, pink,
+blue, green, orange, violet), thick ink outlines and hard offset shadows instead of blur, chunky grotesk display type
+(Archivo) over Space Grotesk text and Space Mono labels, sticker-style eyebrows and highlighter emphasis, and
+railroad-track minute scales as dividers. Two themes: "day dial" (cream paper, black ink) and "lume" (night ink,
+cream outlines). Tokens live in `site/src/styles/global.css`; anything set on a colour block uses the `.paint` scope
+so its copy stays dark and legible in both themes.
 
 ### 5.3 Key Pages
 

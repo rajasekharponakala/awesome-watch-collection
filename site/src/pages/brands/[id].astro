@@ -25,7 +25,7 @@ const refs = (await getCollection('references')).filter((r) => r.data.brand === 
         <div><dt>Price tier</dt><dd>{TIER_META[d.tier].name} ({TIER_META[d.tier].range})</dd></div>
         <div><dt>Makes</dt><dd>{d.types.map((t) => TYPE_META[t].name).join(', ')}</dd></div>
         {d.notable.length > 0 && <div><dt>Notable lines</dt><dd>{d.notable.join(' · ')}</dd></div>}
-        {d.website && <div><dt>Website</dt><dd><a href={d.website} style="color:var(--gold)">{new URL(d.website).hostname}</a></dd></div>}
+        {d.website && <div><dt>Website</dt><dd><a href={d.website} class="gold-link">{new URL(d.website).hostname}</a></dd></div>}
       </dl>
       <div class="since display" data-parallax="-0.08" aria-hidden="true">{d.founded}</div>
     </div>
@@ -42,6 +42,8 @@ const refs = (await getCollection('references')).filter((r) => r.data.brand === 
 
 <style>
   .brand-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: center; }
-  .since { font-size: clamp(110px, 18vw, 280px); font-style: italic; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--gold); text-align: right; }
+  .since { font-size: clamp(110px, 18vw, 280px); line-height: 1; color: var(--c-yellow); -webkit-text-stroke: 5px var(--ink); paint-order: stroke fill; text-shadow: 12px 12px 0 var(--ink); text-align: right; }
   @media (max-width: 860px) { .brand-grid { grid-template-columns: 1fr; } .since { text-align: left; } }
+  .gold-link { font-weight: 700; background: linear-gradient(var(--c-yellow), var(--c-yellow)) 0 100% / 100% 0.35em no-repeat; }
+  .gold-link:hover { background-size: 100% 100%; color: #111; }
 </style>

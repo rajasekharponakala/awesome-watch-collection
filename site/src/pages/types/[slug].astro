@@ -66,12 +66,13 @@ const brandName = (id: string) => brands.find((b) => b.id === id)?.data.name ?? 
 <style>
   .t-glyph { position: absolute; right: var(--gutter); top: calc(var(--header-h) + 60px); width: min(340px, 30vw); opacity: 0.9; }
   @media (max-width: 900px) { .t-glyph { position: relative; right: auto; top: auto; width: 160px; margin-top: 30px; } }
-  .t-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; margin: 0; border-top: 1px solid var(--line); }
-  .t-facts div { padding: 26px 24px 26px 0; border-bottom: 1px solid var(--line); }
-  .t-facts dt { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
-  .t-facts dd { margin: 10px 0 0; }
+  .t-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 18px; margin: 0; }
+  .t-facts div { padding: 20px 22px; border: var(--bw) solid var(--ink); border-radius: var(--radius-sm); background: var(--surface); box-shadow: var(--shadow); }
+  .t-facts div:nth-child(4n + 1) { border-top: 12px solid var(--ink); }
+  .t-facts dt { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+  .t-facts dd { margin: 10px 0 0; font-weight: 600; }
   .t-subs { margin-top: 28px; }
-  .t-sub-no { color: var(--gold); }
+  .t-sub-no { display: inline-block; padding: 1px 7px; background: var(--ink); color: var(--bg); font-weight: 700; }
   .t-subs h3 { margin: 10px 0 8px; }
   .t-subs p { margin: 0; }
 </style>

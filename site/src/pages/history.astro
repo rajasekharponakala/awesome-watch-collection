@@ -22,12 +22,12 @@ const M = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct',
       <aside class="chrono__dial" aria-hidden="true">
         <div class="chrono__face">
           <svg viewBox="0 0 200 200">
-            <circle cx="100" cy="100" r="94" fill="var(--surface)" stroke="var(--line-2)" />
+            <circle cx="104" cy="104" r="93" fill="var(--ink)" /><circle cx="100" cy="100" r="93" fill="var(--surface)" stroke="var(--ink)" stroke-width="4" />
             {Array.from({ length: 60 }, (_, i) => (
-              <line x1="100" y1="10" x2="100" y2={i % 5 ? 15 : 20} stroke="var(--muted)" stroke-width={i % 5 ? 0.6 : 1.4} transform={`rotate(${i * 6} 100 100)`} />
+              <line x1="100" y1="10" x2="100" y2={i % 5 ? 15 : 20} stroke="var(--ink)" stroke-width={i % 5 ? 1.2 : 3} transform={`rotate(${i * 6} 100 100)`} />
             ))}
-            <circle cx="100" cy="100" r="80" fill="none" stroke="var(--gold)" stroke-width="2" pathLength="100" stroke-dasharray="100" class="chrono__arc" transform="rotate(-90 100 100)" />
-            <g class="chrono__hand"><line x1="100" y1="118" x2="100" y2="16" stroke="var(--red)" stroke-width="1.6" /><circle cx="100" cy="100" r="4" fill="var(--red)" /></g>
+            <circle cx="100" cy="100" r="80" fill="none" stroke="var(--c-pink)" stroke-width="14" pathLength="100" stroke-dasharray="100" class="chrono__arc" transform="rotate(-90 100 100)" />
+            <g class="chrono__hand"><line x1="100" y1="118" x2="100" y2="16" stroke="var(--ink)" stroke-width="4" stroke-linecap="round" /><circle cx="100" cy="100" r="7" fill="var(--c-yellow)" stroke="var(--ink)" stroke-width="3" /></g>
           </svg>
           <div class="chrono__year display" data-chrono-year>{events[0].data.year}</div>
         </div>
@@ -84,19 +84,19 @@ const M = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct',
   .chrono__face { position: relative; width: 100%; max-width: 320px; }
   .chrono__arc { stroke-dashoffset: calc(100 - var(--p, 0) * 100); }
   .chrono__hand { transform-origin: 100px 100px; transform: rotate(calc(var(--p, 0) * 360deg)); }
-  .chrono__year { position: absolute; left: 0; right: 0; top: 60%; text-align: center; font-size: 46px; font-style: italic; }
-  .chrono__eras { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+  .chrono__year { position: absolute; left: 0; right: 0; top: 60%; text-align: center; font-size: 46px; }
+  .chrono__eras { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
   .tl { position: relative; list-style: none; margin: 0; padding: 0 0 0 34px; }
-  .tl::before { content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 1px; background: var(--line-2); }
-  .tl::after { content: ''; position: absolute; left: 6px; top: 0; width: 1px; height: calc(var(--p, 0) * 100%); background: linear-gradient(var(--gold-3), var(--gold-2)); box-shadow: 0 0 12px var(--gold); }
-  .tl__era { margin: 70px 0 30px; color: var(--gold); }
+  .tl::before { content: ''; position: absolute; left: 3px; top: 0; bottom: 0; width: 8px; border: var(--bw-sm) solid var(--ink); background: var(--surface); }
+  .tl::after { content: ''; position: absolute; left: 3px; top: 0; width: 8px; height: calc(var(--p, 0) * 100%); border: var(--bw-sm) solid var(--ink); background: var(--c-pink); }
+  .tl__era { margin: 70px 0 30px; }
   .tl__era:first-child { margin-top: 0; }
-  .tl__item { position: relative; display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 26px 0; border-bottom: 1px solid var(--line); scroll-margin-top: calc(var(--header-h) + 30px); }
-  .tl__item:target { background: linear-gradient(90deg, var(--glow), transparent); }
-  .tl__dot { position: absolute; left: -34px; top: 38px; width: 13px; height: 13px; border-radius: 50%; border: 1px solid var(--gold); background: var(--bg); }
-  .tl__item.is-in .tl__dot { background: var(--gold); box-shadow: 0 0 14px var(--gold); transition: all 0.6s 0.3s; }
-  .tl__when { color: var(--muted); font-size: 12px; }
-  .tl__when b { display: block; font-size: 44px; line-height: 1; color: var(--text); font-weight: 500; }
+  .tl__item { position: relative; display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 26px 0; border-bottom: var(--bw-sm) solid var(--line); scroll-margin-top: calc(var(--header-h) + 30px); }
+  .tl__item:target { background: var(--c-yellow); --text: #111; --muted: #2b2925; color: #111; box-shadow: -40px 0 0 var(--c-yellow), 12px 0 0 var(--c-yellow); }
+  .tl__dot { position: absolute; left: -39px; top: 34px; width: 22px; height: 22px; border-radius: 50%; border: var(--bw) solid var(--ink); background: var(--surface); }
+  .tl__item.is-in .tl__dot { background: var(--c-yellow); transition: background-color 0.3s 0.3s; }
+  .tl__when { color: var(--muted); font-size: 12px; font-weight: 700; }
+  .tl__when b { display: block; font-family: var(--display); font-size: 44px; line-height: 1; color: var(--text); font-weight: 900; letter-spacing: -0.03em; }
   .tl__body h3 { margin: 4px 0 8px; }
   .tl__body p { margin: 0; }
   @media (max-width: 900px) {

@@ -3,13 +3,11 @@
 ---
 
 <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
-  <circle cx="20" cy="20" r="18.5" fill="none" stroke="var(--gold)" stroke-width="1.2" />
-  <circle cx="20" cy="20" r="15" fill="none" stroke="var(--line-2)" />
   {Array.from({ length: 12 }, (_, i) => (
-    <line x1="20" y1="6.5" x2="20" y2={i % 3 ? 8.5 : 10} stroke="var(--text)" stroke-width={i % 3 ? 0.8 : 1.4} transform={`rotate(${i * 30} 20 20)`} />
+    <line x1="20" y1="6.5" x2="20" y2={i % 3 ? 8.5 : 10} stroke="#111" stroke-width={i % 3 ? 1.2 : 2.4} transform={`rotate(${i * 30} 20 20)`} />
   ))}
-  <g data-hand="h" data-cx="20" transform="rotate(305 20 20)"><line x1="20" y1="20" x2="20" y2="12" stroke="var(--text)" stroke-width="1.8" stroke-linecap="round" /></g>
-  <g data-hand="m" data-cx="20" transform="rotate(60 20 20)"><line x1="20" y1="20" x2="20" y2="8" stroke="var(--text)" stroke-width="1.2" stroke-linecap="round" /></g>
-  <g data-hand="s" data-cx="20" transform="rotate(180 20 20)"><line x1="20" y1="23" x2="20" y2="7" stroke="var(--gold)" stroke-width=".7" /></g>
-  <circle cx="20" cy="20" r="1.4" fill="var(--gold)" />
+  <g data-hand="h" data-cx="20" transform="rotate(305 20 20)"><line x1="20" y1="20" x2="20" y2="12" stroke="#111" stroke-width="2.8" stroke-linecap="round" /></g>
+  <g data-hand="m" data-cx="20" transform="rotate(60 20 20)"><line x1="20" y1="20" x2="20" y2="8" stroke="#111" stroke-width="2" stroke-linecap="round" /></g>
+  <g data-hand="s" data-cx="20" transform="rotate(180 20 20)"><line x1="20" y1="23" x2="20" y2="7" stroke="#e5372a" stroke-width="1.4" /></g>
+  <circle cx="20" cy="20" r="2" fill="#111" />
 </svg>

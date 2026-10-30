@@ -15,7 +15,7 @@ const t = typeOf(d.type);
   href={u(`catalogue/${ref.id}/`)}
   class="card ref-card"
   data-id={ref.id}
-  data-tilt="6"
+ 
   data-type={t}
   data-tier={d.price_tier}
   data-levels={d.levels.join(' ')}
@@ -40,21 +40,29 @@ const t = typeOf(d.type);
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    transition: border-color 0.4s, box-shadow 0.5s, opacity 0.5s, transform 0.5s var(--ease);
+    gap: 16px;
+    background-image: none;
+    transition: transform 0.18s var(--ease), box-shadow 0.18s var(--ease), opacity 0.3s;
   }
   .ref-card__visual {
     display: grid;
     place-items: center;
-    padding: 18px 0 6px;
-    transform: translateZ(40px);
-    transition: transform 0.7s var(--ease);
+    padding: 22px 0 18px;
+    border: var(--bw) solid var(--ink);
+    border-radius: 10px;
+    background-color: var(--stripe, var(--c-yellow));
+    background-image: radial-gradient(rgba(17, 17, 17, 0.16) 1.2px, transparent 1.4px);
+    background-size: 14px 14px;
+    transition: background-color 0.2s;
   }
-  .ref-card:hover .ref-card__visual {
-    transform: translateZ(40px) scale(1.04) rotate(-2deg);
+  .ref-card__visual > :global(*) {
+    transition: transform 0.35s var(--snap);
+  }
+  .ref-card:hover .ref-card__visual > :global(*) {
+    transform: rotate(-6deg) scale(1.03);
   }
   .ref-card h3 {
-    margin: 10px 0 6px;
+    margin: 12px 0 6px;
   }
   .ref-card p {
     margin: 0 0 14px;

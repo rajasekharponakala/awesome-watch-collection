@@ -91,8 +91,8 @@ const marquee = brands.map((b) => b.data.name);
           takes you from your first wind to grand complications.
         </p>
         <div class="hero__ctas" data-reveal style="--d:.45s">
-          <a class="btn btn--gold" href={u('learn/')} data-magnetic data-level-cta><span data-label>Start winding</span> <Icon name="arrow" /></a>
-          <a class="btn btn--ghost" href={u('catalogue/')} data-magnetic>Explore the catalogue</a>
+          <a class="btn btn--gold" href={u('learn/')} data-level-cta><span data-label>Start winding</span> <Icon name="arrow" /></a>
+          <a class="btn btn--ghost" href={u('catalogue/')}>Explore the catalogue</a>
         </div>
         <dl class="hero__readout mono" data-reveal="fade" style="--d:.6s">
           <div><dt>Local time</dt><dd data-readout>--:--:--</dd></div>
@@ -194,7 +194,7 @@ const marquee = brands.map((b) => b.data.name);
           const meta = LEVEL_META[lv];
           const list = guides.filter((g) => g.data.level === lv);
           return (
-            <a href={u(`learn/${lv}/`)} class="stack__card" style={`--i:${i}`} data-level-card={lv}>
+            <a href={u(`learn/${lv}/`)} class="stack__card paint" style={`--i:${i}`} data-level-card={lv}>
               <div class="stack__num display">{['I', 'II', 'III', 'IV'][i]}</div>
               <div class="stack__body">
                 <div class="stack__top">
@@ -229,7 +229,7 @@ const marquee = brands.map((b) => b.data.name);
           <div class="hs__bar"><i></i></div>
         </div>
         {types.map((t, i) => (
-          <a href={u(`types/${t.id}/`)} class="hs__panel">
+          <a href={u(`types/${t.id}/`)} class="hs__panel paint">
             <span class="hs__bigword display" aria-hidden="true">{t.data.title}</span>
             <div class="hs__glyph"><TypeGlyph type={t.data.glyph} /></div>
             <div class="hs__text">
@@ -255,7 +255,7 @@ const marquee = brands.map((b) => b.data.name);
       <div class="track" data-reveal="fade"></div>
       <div class="stats__grid">
         {stats.map((s, i) => (
-          <div class="stats__item" data-reveal style={`--d:${i * 0.08}s`}>
+          <div class="stats__item paint" data-reveal style={`--d:${i * 0.08}s`}>
             <span class="display stats__n" data-count={s.n}>0</span>
             <span class="mono muted">{s.l}</span>
           </div>
@@ -273,9 +273,9 @@ const marquee = brands.map((b) => b.data.name);
           <span class="eyebrow" data-reveal="fade">Chronograph</span>
           <h2 class="display h2" data-reveal>Five centuries<br /><em>in one sweep.</em></h2>
           <p class="lede" data-reveal>From Nuremberg's first portable clocks to the smartwatch on your wrist. Start, stop and reset the history of time.</p>
-          <a class="btn btn--ghost" href={u('history/')} data-reveal data-magnetic>Start the chronograph <Icon name="arrow" /></a>
+          <a class="btn btn--ghost" href={u('history/')} data-reveal>Start the chronograph <Icon name="arrow" /></a>
         </div>
-        <div class="card datewin" data-reveal="scale" data-tilt="5">
+        <div class="card datewin" data-reveal="scale">
           <div class="datewin__head">
             <span class="eyebrow" data-dw-kind>Today in watch history</span>
             <div class="datewin__window mono"><span data-dw-mon>OCT</span><b data-dw-day>16</b></div>
@@ -308,13 +308,13 @@ const marquee = brands.map((b) => b.data.name);
           <p class="lede" data-reveal>Seventy years of the Submariner in five steps. Each lineage page traces every reference, and what it changed.</p>
         </div>
         <div class="evo__links" data-reveal>
-          {lineageList.map((l) => <a class="btn btn--ghost" href={u(`lineages/${l.id}/`)} data-magnetic>{l.data.name} <Icon name="arrow" /></a>)}
+          {lineageList.map((l) => <a class="btn btn--ghost" href={u(`lineages/${l.id}/`)}>{l.data.name} <Icon name="arrow" /></a>)}
         </div>
       </div>
       <ol class="evo__row" data-reveal="fade">
         {evolution.map((r, i) => (
           <li style={`--d:${0.15 + i * 0.14}s`}>
-            <a href={u(`lineages/rolex-submariner/#${r.id}`)} data-tilt="8">
+            <a href={u(`lineages/rolex-submariner/#${r.id}`)}>
               <RefVisual ref={r} brandName="Rolex" size="min(190px, 40vw)" />
               <span class="display evo__year">{r.data.years.introduced}</span>
               <span class="mono evo__ref">Ref. {r.data.reference}</span>
@@ -355,8 +355,8 @@ const marquee = brands.map((b) => b.data.name);
         Every contribution is a beat.
       </p>
       <div class="hero__ctas" data-reveal>
-        <a class="btn btn--gold" href="https://github.com/rajasekharponakala/awesome-watch-collection" data-magnetic><Icon name="github" /> Contribute on GitHub</a>
-        <a class="btn btn--ghost" href={u('about/')} data-magnetic>Open the caseback</a>
+        <a class="btn btn--gold" href="https://github.com/rajasekharponakala/awesome-watch-collection"><Icon name="github" /> Contribute on GitHub</a>
+        <a class="btn btn--ghost" href={u('about/')}>Open the caseback</a>
       </div>
     </div>
   </section>
@@ -411,17 +411,17 @@ const marquee = brands.map((b) => b.data.name);
     inset: 0;
     pointer-events: none;
   }
+  /* Flat colour slab behind the watch instead of a soft glow. */
   .hero__glow {
     position: absolute;
-    inset: -20% -10% auto auto;
-    width: 90vw;
-    height: 90vw;
-    max-width: 1300px;
-    max-height: 1300px;
-    background: radial-gradient(circle at 60% 40%, rgba(207, 174, 107, 0.16), transparent 55%);
-  }
-  [data-theme='day'] .hero__glow {
-    background: radial-gradient(circle at 60% 40%, rgba(155, 116, 50, 0.16), transparent 55%);
+    right: calc(var(--gutter) * -1 - 6vw);
+    top: calc(var(--header-h) + 8%);
+    width: min(46vw, 640px);
+    aspect-ratio: 1;
+    border: var(--bw) solid var(--ink);
+    border-radius: 50%;
+    background: var(--c-blue);
+    box-shadow: var(--shadow-lg);
   }
   .hero__rings {
     position: absolute;
@@ -429,11 +429,11 @@ const marquee = brands.map((b) => b.data.name);
     top: 50%;
     width: min(1200px, 120vw);
     margin-top: calc(min(1200px, 120vw) / -2);
-    opacity: 0.6;
+    opacity: 0.22;
   }
   .hero__gear {
     position: absolute;
-    opacity: 0.18;
+    opacity: 0.3;
   }
   .hero__gear--1 { width: 220px; left: -60px; top: 18%; }
   .hero__gear--2 { width: 150px; left: 42%; bottom: 6%; }
@@ -447,7 +447,7 @@ const marquee = brands.map((b) => b.data.name);
   }
   .hero__title {
     margin: 26px 0 30px;
-    font-size: clamp(64px, 10.5vw, 176px);
+    font-size: clamp(56px, 8.6vw, 140px);
   }
   .hero__ctas {
     display: flex;
@@ -456,21 +456,33 @@ const marquee = brands.map((b) => b.data.name);
     margin-top: 40px;
   }
   .hero__readout {
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
-    gap: 34px;
-    margin: 56px 0 0;
+    margin: 48px 0 0;
+    border: var(--bw) solid var(--ink);
+    border-radius: 10px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
     font-size: 12px;
+    overflow: hidden;
+  }
+  .hero__readout > div {
+    padding: 10px 18px;
+  }
+  .hero__readout > div + div {
+    border-left: var(--bw) solid var(--ink);
   }
   .hero__readout dt {
-    color: var(--faint);
-    letter-spacing: 0.16em;
+    color: var(--muted);
+    font-weight: 700;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     font-size: 10px;
   }
   .hero__readout dd {
-    margin: 4px 0 0;
-    font-size: 15px;
+    margin: 2px 0 0;
+    font-size: 16px;
+    font-weight: 700;
     color: var(--text);
   }
   .hero__watch {
@@ -486,15 +498,10 @@ const marquee = brands.map((b) => b.data.name);
     animation: float 9s ease-in-out infinite;
   }
   .hero__halo {
-    position: absolute;
-    inset: 8%;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(207, 174, 107, 0.35), transparent 70%);
-    filter: blur(50px);
-    transform: translateZ(-80px);
+    display: none;
   }
   .hero__follow :global(.watch) {
-    filter: drop-shadow(0 50px 60px rgba(0, 0, 0, 0.55));
+    filter: drop-shadow(12px 12px 0 var(--ink));
   }
   @keyframes float {
     0%, 100% { translate: 0 0; }
@@ -509,15 +516,17 @@ const marquee = brands.map((b) => b.data.name);
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    color: var(--faint);
+    color: var(--text);
     font-size: 10px;
-    letter-spacing: 0.24em;
+    font-weight: 700;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
   }
   .hero__cue i {
-    width: 1px;
+    width: 6px;
     height: 54px;
-    background: linear-gradient(var(--gold), transparent);
+    border: var(--bw-sm) solid var(--ink);
+    background: var(--c-yellow);
     animation: cue 2.2s var(--ease) infinite;
     transform-origin: top;
   }
@@ -529,12 +538,14 @@ const marquee = brands.map((b) => b.data.name);
   @media (max-width: 960px) {
     .hero { min-height: auto; padding-bottom: 72px; }
     .hero__grid { grid-template-columns: minmax(0, 1fr); text-align: left; gap: 8px; }
-    .hero__watch { order: -1; }
+    .hero__watch { order: -1; margin-bottom: 28px; }
     .hero__follow :global(.watch) { --size: min(400px, 62vw) !important; }
     .hero__title { margin: 18px 0 20px; }
     .hero__ctas { margin-top: 28px; }
     .hero__readout { margin-top: 36px; gap: 22px; }
     .hero__cue { display: none; }
+    .hero__glow { width: 70vw; top: calc(var(--header-h) + 10px); right: -14vw; }
+    .hero__readout > div { padding: 8px 12px; }
   }
   @media (max-width: 600px) {
     .hero__follow :global(.watch) { --size: min(300px, 70vw) !important; }
@@ -546,20 +557,29 @@ const marquee = brands.map((b) => b.data.name);
   .marquee {
     position: relative;
     z-index: 2;
-    padding: 34px 0;
-    border-block: 1px solid var(--line);
+    padding: 0;
+    border-block: var(--bw) solid var(--ink);
     overflow: hidden;
-    background: var(--bg-2);
+    background: var(--c-yellow);
+    color: #111;
+    transform: rotate(-1.2deg);
+    margin: 20px -2vw;
+    box-shadow: 0 var(--sh) 0 var(--ink);
   }
   .marquee__row {
     display: flex;
     width: max-content;
     animation: marquee 60s linear infinite;
   }
+  .marquee__row {
+    padding: 12px 0;
+  }
   .marquee__row--rev {
     animation-direction: reverse;
     animation-duration: 75s;
-    opacity: 0.45;
+    background: #111;
+    color: var(--c-yellow);
+    border-top: var(--bw) solid #111;
   }
   .marquee__set {
     display: flex;
@@ -569,16 +589,18 @@ const marquee = brands.map((b) => b.data.name);
     align-items: center;
     gap: 34px;
     padding-right: 34px;
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: clamp(30px, 4vw, 56px);
-    line-height: 1.2;
+    font-family: var(--display);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    font-size: clamp(26px, 3.4vw, 46px);
+    line-height: 1.15;
     white-space: nowrap;
   }
   .marquee i {
     font-style: normal;
-    font-size: 12px;
-    color: var(--gold);
+    font-size: 18px;
+    color: currentColor;
   }
   @keyframes marquee {
     to { transform: translateX(-50%); }
@@ -608,18 +630,23 @@ const marquee = brands.map((b) => b.data.name);
     list-style: none;
     margin: 0;
     padding: 0;
-    border-top: 1px solid var(--line);
+    border: var(--bw) solid var(--ink);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    overflow: hidden;
   }
   .explode__parts li {
     display: grid;
     grid-template-columns: 34px 1fr;
     gap: 10px;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--line);
-    opacity: 0.4;
-    transition: opacity 0.5s, padding 0.5s var(--ease);
+    padding: 9px 14px;
+    border-bottom: var(--bw-sm) solid var(--ink);
+    opacity: 0.55;
+    transition: opacity 0.3s, padding 0.3s var(--ease), background-color 0.2s;
   }
-  .explode__parts li .mono { color: var(--gold); padding-top: 2px; }
+  .explode__parts li:last-child { border-bottom: 0; }
+  .explode__parts li .mono { font-weight: 700; padding-top: 2px; }
   .explode__parts li p {
     margin: 0;
     max-height: 0;
@@ -628,7 +655,7 @@ const marquee = brands.map((b) => b.data.name);
     color: var(--muted);
     transition: max-height 0.6s var(--ease), margin 0.6s var(--ease);
   }
-  .explode__parts li.is-active { opacity: 1; padding: 14px 0; }
+  .explode__parts li.is-active { opacity: 1; padding: 14px; background: var(--c-yellow); --muted: #2b2925; color: #111; }
   .explode__parts li.is-active p { max-height: 80px; margin-top: 4px; }
   .explode__view {
     display: grid;
@@ -650,7 +677,7 @@ const marquee = brands.map((b) => b.data.name);
   .explode__stage[data-active='5'] :global(.watch__layer[data-i='5']),
   .explode__stage[data-active='6'] :global(.watch__layer[data-i='6']) {
     opacity: 1;
-    filter: drop-shadow(0 0 28px rgba(207, 174, 107, 0.55));
+    filter: drop-shadow(8px 8px 0 var(--c-pink));
   }
   .explode__stage :global(.watch__layer) { transition: opacity 0.5s, filter 0.5s; }
   @media (max-width: 960px) {
@@ -662,7 +689,7 @@ const marquee = brands.map((b) => b.data.name);
     .explode__stage { --gap: 52px; }
     .explode__copy h2, .explode__copy .lede, .explode__copy .eyebrow { display: none; }
     .explode__parts li:not(.is-active) { display: none; }
-    .explode__parts { border: 0; min-height: 120px; max-width: 560px; margin: 0 auto; }
+    .explode__parts { min-height: 0; max-width: 560px; margin: 0 auto; }
   }
   @media (max-width: 600px) {
     .explode__stage :global(.watch) { --size: min(300px, 74vw) !important; }
@@ -685,17 +712,17 @@ const marquee = brands.map((b) => b.data.name);
     width: calc(var(--r) * 2 + 120px);
     aspect-ratio: 1;
     border-radius: 50%;
-    background: radial-gradient(circle at 40% 30%, var(--surface-2), var(--bg) 70%);
-    border: 1px solid var(--line-2);
-    box-shadow: var(--shadow), inset 0 0 0 14px var(--bg-2), inset 0 0 0 15px var(--line);
+    background: var(--surface);
+    border: 6px solid var(--ink);
+    box-shadow: var(--shadow-lg), inset 0 0 0 16px var(--c-yellow), inset 0 0 0 19px var(--ink);
   }
   .dialnav__track {
     position: absolute;
-    inset: 38px;
+    inset: 24px;
     border-radius: 50%;
-    background: repeating-conic-gradient(from -0.4deg, var(--line-2) 0 0.8deg, transparent 0.8deg 6deg);
-    -webkit-mask: radial-gradient(closest-side, transparent calc(100% - 14px), #000 calc(100% - 13px));
-    mask: radial-gradient(closest-side, transparent calc(100% - 14px), #000 calc(100% - 13px));
+    background: repeating-conic-gradient(from -0.6deg, var(--ink) 0 1.2deg, transparent 1.2deg 6deg);
+    -webkit-mask: radial-gradient(closest-side, transparent calc(100% - 11px), #000 calc(100% - 10px));
+    mask: radial-gradient(closest-side, transparent calc(100% - 11px), #000 calc(100% - 10px));
   }
   .dialnav__hand {
     position: absolute;
@@ -708,23 +735,24 @@ const marquee = brands.map((b) => b.data.name);
   }
   .dialnav__hand i {
     position: absolute;
-    left: -2px;
+    left: -5px;
     bottom: 0;
-    width: 4px;
+    width: 10px;
     height: calc(var(--r) - 46px);
-    border-radius: 4px;
-    background: linear-gradient(var(--gold-2), var(--gold-3));
-    box-shadow: 0 0 20px var(--glow);
+    border: var(--bw-sm) solid #111;
+    border-radius: 5px 5px 0 0;
+    background: var(--c-red);
   }
   .dialnav__hand::after {
     content: '';
     position: absolute;
-    left: -9px;
-    top: -9px;
-    width: 18px;
-    height: 18px;
+    left: -13px;
+    top: -13px;
+    width: 26px;
+    height: 26px;
+    border: var(--bw) solid #111;
     border-radius: 50%;
-    background: var(--gold);
+    background: var(--c-yellow);
   }
   .dialnav__info {
     position: absolute;
@@ -738,8 +766,7 @@ const marquee = brands.map((b) => b.data.name);
     justify-items: center;
     pointer-events: none;
   }
-  .dialnav__info .eyebrow::before { display: none; }
-  .dialnav__info strong { font-size: clamp(26px, 3vw, 40px); font-weight: 500; }
+  .dialnav__info strong { font-size: clamp(26px, 3vw, 40px); }
   .dialnav__info span[data-d] { font-size: 14px; color: var(--muted); line-height: 1.5; }
   .dialnav__idx {
     position: absolute;
@@ -755,33 +782,48 @@ const marquee = brands.map((b) => b.data.name);
     transition: color 0.3s;
   }
   .dialnav__n {
-    font-family: var(--serif);
-    font-size: 30px;
+    display: grid;
+    place-items: center;
+    min-width: 50px;
+    height: 40px;
+    padding: 0 6px;
+    border: var(--bw-sm) solid var(--ink);
+    border-radius: 8px;
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: 22px;
     line-height: 1;
-    transition: color 0.3s, transform 0.5s var(--ease);
+    transition: transform 0.2s var(--snap), background-color 0.15s, box-shadow 0.15s;
   }
   .dialnav__t {
+    margin-top: 4px;
     font-family: var(--mono);
     font-size: 10.5px;
-    letter-spacing: 0.16em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--text);
   }
   .dialnav__idx:hover .dialnav__n,
   .dialnav__idx:focus-visible .dialnav__n {
-    color: var(--gold);
-    transform: scale(1.18);
+    background: var(--c-yellow);
+    color: #111;
+    transform: translate(-2px, -2px) rotate(-6deg);
+    box-shadow: 5px 5px 0 var(--ink);
   }
   @media (max-width: 760px) {
     .dialnav__face {
       width: 100%;
       aspect-ratio: auto;
       border-radius: var(--radius);
+      border-width: var(--bw);
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 8px;
-      padding: 16px;
-      box-shadow: none;
+      gap: 10px;
+      padding: 14px;
+      box-shadow: var(--shadow);
     }
     .dialnav__track, .dialnav__hand, .dialnav__info { display: none; }
     .dialnav__idx {
@@ -789,10 +831,11 @@ const marquee = brands.map((b) => b.data.name);
       width: auto;
       margin: 0;
       transform: none;
-      padding: 16px 8px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
+      padding: 12px 8px;
+      border: var(--bw-sm) solid var(--ink);
+      border-radius: 10px;
     }
+    .dialnav__n { border: 0; box-shadow: none; background: none; height: auto; }
   }
 
   /* ---------- Learning path stack ---------- */
@@ -804,22 +847,25 @@ const marquee = brands.map((b) => b.data.name);
     grid-template-columns: minmax(120px, 0.38fr) 1fr;
     gap: clamp(20px, 4vw, 60px);
     padding: clamp(28px, 4vw, 60px);
-    border-radius: 30px;
-    border: 1px solid var(--line-2);
-    background:
-      radial-gradient(800px circle at 0% 0%, rgba(207, 174, 107, calc(0.05 + var(--i) * 0.03)), transparent 60%),
-      linear-gradient(160deg, var(--surface-2), var(--surface));
-    box-shadow: 0 -30px 80px -40px rgba(0, 0, 0, 0.6);
+    border-radius: var(--radius);
+    border: var(--bw) solid var(--ink);
+    background: var(--block);
+    box-shadow: var(--shadow-lg);
     min-height: 420px;
-    transition: border-color 0.4s;
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
   }
-  .stack__card:hover { border-color: var(--gold); }
+  .stack__card:nth-child(1) { --block: var(--c-yellow); }
+  .stack__card:nth-child(2) { --block: var(--c-green); }
+  .stack__card:nth-child(3) { --block: var(--c-blue); }
+  .stack__card:nth-child(4) { --block: var(--c-pink); }
+  .stack__card:hover { transform: translate(-3px, -3px); box-shadow: 13px 13px 0 var(--ink); }
   .stack__num {
     font-size: clamp(90px, 14vw, 220px);
     line-height: 0.8;
-    font-style: italic;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--gold);
+    color: #fff;
+    -webkit-text-stroke: 4px #111;
+    paint-order: stroke fill;
+    text-shadow: 8px 8px 0 #111;
   }
   .stack__top { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
   .stack__body h3 { margin: 18px 0 10px; }
@@ -831,8 +877,8 @@ const marquee = brands.map((b) => b.data.name);
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
     gap: 8px 22px;
   }
-  .stack__list li { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
-  .stack__list li::before { content: '◆'; color: var(--gold); font-size: 8px; margin-right: 10px; vertical-align: 2px; }
+  .stack__list li { padding: 8px 0; border-bottom: var(--bw-sm) solid #111; font-size: 15px; font-weight: 500; }
+  .stack__list li::before { content: '■'; font-size: 10px; margin-right: 10px; vertical-align: 2px; }
   @media (max-width: 760px) {
     .stack__card { grid-template-columns: 1fr; position: relative; top: 0; min-height: 0; }
     .stack__num { font-size: 80px; }
@@ -861,8 +907,8 @@ const marquee = brands.map((b) => b.data.name);
     padding-right: 30px;
   }
   .hs__intro h2 { margin: 20px 0; }
-  .hs__bar { height: 2px; background: var(--line); margin-top: 40px; }
-  .hs__bar i { display: block; height: 100%; background: var(--gold); transform-origin: 0 50%; transform: scaleX(var(--p, 0)); }
+  .hs__bar { height: 18px; border: var(--bw) solid var(--ink); border-radius: 6px; background: var(--surface); margin-top: 40px; overflow: hidden; box-shadow: var(--shadow-sm); }
+  .hs__bar i { display: block; height: 100%; background: var(--c-pink); transform-origin: 0 50%; transform: scaleX(var(--p, 0)); }
   .hs__panel {
     position: relative;
     flex: none;
@@ -873,33 +919,40 @@ const marquee = brands.map((b) => b.data.name);
     align-items: center;
     gap: 30px;
     padding: clamp(28px, 4vw, 56px);
-    border-radius: 34px;
-    border: 1px solid var(--line-2);
-    background: linear-gradient(150deg, var(--surface-2), var(--bg-2));
+    border-radius: var(--radius);
+    border: var(--bw) solid var(--ink);
+    background: var(--block);
+    box-shadow: var(--shadow-lg);
     overflow: hidden;
-    transition: border-color 0.4s;
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
   }
-  .hs__panel:hover { border-color: var(--gold); }
+  .hs__panel:nth-of-type(6n + 1) { --block: var(--c-yellow); }
+  .hs__panel:nth-of-type(6n + 2) { --block: var(--c-pink); }
+  .hs__panel:nth-of-type(6n + 3) { --block: var(--c-green); }
+  .hs__panel:nth-of-type(6n + 4) { --block: var(--c-blue); }
+  .hs__panel:nth-of-type(6n + 5) { --block: var(--c-orange); }
+  .hs__panel:nth-of-type(6n + 6) { --block: var(--c-violet); }
+  .hs__panel:hover { transform: translate(-3px, -3px); box-shadow: 13px 13px 0 var(--ink); }
+  .hs__panel :global(.glyph) { color: #111; }
   .hs__bigword {
     position: absolute;
     left: -2%;
     bottom: -6%;
     font-size: clamp(110px, 16vw, 260px);
-    font-style: italic;
     white-space: nowrap;
     color: transparent;
-    -webkit-text-stroke: 1px var(--line-2);
+    -webkit-text-stroke: 3px rgba(17, 17, 17, 0.28);
     pointer-events: none;
     transform: translateX(calc(var(--p, 0) * 160px));
   }
   .hs__glyph { position: relative; max-width: 340px; width: 100%; justify-self: center; }
   .hs__text { position: relative; }
-  .hs__no { color: var(--gold); }
+  .hs__no { display: inline-block; padding: 2px 8px; background: #111; color: #fff; font-weight: 700; }
   .hs__text h3 { margin: 12px 0 14px; }
   .hs__text p { color: var(--muted); margin: 0 0 22px; }
   .hs__facts { display: grid; gap: 10px; margin: 0 0 28px; }
-  .hs__facts div { display: grid; grid-template-columns: 140px 1fr; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line); font-size: 14.5px; }
-  .hs__facts dt { font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); padding-top: 3px; }
+  .hs__facts div { display: grid; grid-template-columns: 140px 1fr; gap: 12px; padding-bottom: 10px; border-bottom: var(--bw-sm) solid #111; font-size: 14.5px; font-weight: 500; }
+  .hs__facts dt { font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--faint); padding-top: 3px; }
   .hs__facts dd { margin: 0; }
   @media (max-width: 760px) {
     .hs__sticky { position: relative; height: auto; overflow: visible; padding: 80px 0; }
@@ -914,13 +967,27 @@ const marquee = brands.map((b) => b.data.name);
   /* ---------- Stats ---------- */
   .stats__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 30px;
-    padding: 50px 0;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
+    gap: 20px;
+    padding: 40px 0;
   }
-  .stats__item { display: grid; gap: 6px; }
-  .stats__n { font-size: clamp(54px, 6vw, 92px); line-height: 1; font-variant-numeric: lining-nums; }
-  .stats__item .mono { letter-spacing: 0.14em; text-transform: uppercase; font-size: 11px; }
+  .stats__item {
+    display: grid;
+    gap: 6px;
+    padding: 18px 20px;
+    border: var(--bw) solid var(--ink);
+    border-radius: var(--radius-sm);
+    background: var(--block);
+    box-shadow: var(--shadow);
+  }
+  .stats__item:nth-child(6n + 1) { --block: var(--c-yellow); }
+  .stats__item:nth-child(6n + 2) { --block: var(--c-pink); }
+  .stats__item:nth-child(6n + 3) { --block: var(--c-blue); }
+  .stats__item:nth-child(6n + 4) { --block: var(--c-green); }
+  .stats__item:nth-child(6n + 5) { --block: var(--c-orange); }
+  .stats__item:nth-child(6n + 6) { --block: var(--c-violet); }
+  .stats__n { font-size: clamp(48px, 5vw, 80px); line-height: 1; font-variant-numeric: tabular-nums; }
+  .stats__item .mono { font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; font-size: 11px; }
 
   /* ---------- History teaser ---------- */
   .history-teaser__grid { align-items: center; gap: clamp(30px, 6vw, 90px); }
@@ -932,16 +999,17 @@ const marquee = brands.map((b) => b.data.name);
     display: grid;
     text-align: center;
     min-width: 72px;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
-    border: 2px solid var(--gold);
-    background: #f6f3ea;
+    border: var(--bw) solid var(--ink);
+    background: #fff;
     color: #111;
-    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--shadow-sm);
+    transform: rotate(4deg);
   }
-  .datewin__window span { background: var(--gold); color: #120f08; font-size: 10px; letter-spacing: 0.2em; padding: 3px 0; }
-  .datewin__window b { font-family: var(--sans); font-size: 30px; padding: 2px 0 4px; }
-  .datewin__year { display: block; font-size: clamp(80px, 10vw, 150px); line-height: 1; margin: 26px 0 8px; font-style: italic; font-variant-numeric: lining-nums; }
+  .datewin__window span { background: var(--c-red); color: #111; border-bottom: var(--bw-sm) solid #111; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; padding: 3px 0; }
+  .datewin__window b { font-family: var(--display); font-weight: 900; font-size: 30px; padding: 2px 0 4px; }
+  .datewin__year { display: block; font-size: clamp(80px, 10vw, 150px); line-height: 1; margin: 26px 0 8px; font-variant-numeric: lining-nums; }
   .datewin h3 { margin: 0 0 10px; }
   .sweep {
     position: relative;
@@ -957,9 +1025,9 @@ const marquee = brands.map((b) => b.data.name);
     position: absolute;
     left: 0;
     right: 0;
-    top: 0;
-    height: 1px;
-    background: linear-gradient(90deg, var(--gold), var(--line-2));
+    top: -2px;
+    height: 6px;
+    background: var(--ink);
     transform-origin: 0 50%;
     transform: scaleX(0);
     transition: transform 2s var(--ease);
@@ -978,14 +1046,16 @@ const marquee = brands.map((b) => b.data.name);
     position: absolute;
     top: -39px;
     left: 0;
-    width: 9px;
-    height: 9px;
+    top: -45px;
+    width: 20px;
+    height: 20px;
+    border: var(--bw) solid var(--ink);
     border-radius: 50%;
-    background: var(--gold);
-    box-shadow: 0 0 0 5px var(--bg), 0 0 18px var(--gold);
+    background: var(--c-yellow);
   }
+  .sweep li:nth-child(even)::before { background: var(--c-pink); }
   .sweep span { display: block; font-size: 38px; line-height: 1; }
-  .sweep strong { display: block; font-weight: 500; font-size: 14px; color: var(--muted); margin-top: 6px; }
+  .sweep strong { display: block; font-weight: 600; font-size: 14px; color: var(--muted); margin-top: 6px; }
   @media (max-width: 760px) {
     .sweep { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); row-gap: 40px; }
     .sweep::before { display: none; }
@@ -1001,7 +1071,7 @@ const marquee = brands.map((b) => b.data.name);
     width: min(1100px, 130vw);
     aspect-ratio: 1;
     margin: calc(min(1100px, 130vw) / -2) 0 0 calc(min(1100px, 130vw) / -2);
-    opacity: 0.5;
+    opacity: 0.25;
   }
   .escapement__inner { position: relative; display: grid; justify-items: center; }
   .escapement h2 { margin: 24px 0; }
@@ -1025,8 +1095,9 @@ const marquee = brands.map((b) => b.data.name);
     left: 6%;
     right: 6%;
     top: min(95px, 20vw);
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    height: 6px;
+    margin-top: -3px;
+    background: var(--ink);
     transform-origin: 0 50%;
     transform: scaleX(0);
     transition: transform 2.2s var(--ease);
@@ -1034,9 +1105,10 @@ const marquee = brands.map((b) => b.data.name);
   .evo__row.is-in::before { transform: scaleX(1); }
   .evo__row li { opacity: 0; transform: translateY(30px) scale(0.92); transition: opacity 1s var(--ease), transform 1s var(--ease); transition-delay: var(--d); }
   .evo__row.is-in li { opacity: 1; transform: none; }
-  .evo__row a { position: relative; display: grid; justify-items: center; text-align: center; gap: 6px; }
+  .evo__row a { position: relative; display: grid; justify-items: center; text-align: center; gap: 6px; padding: 12px 6px; border: var(--bw) solid transparent; border-radius: var(--radius-sm); transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s, transform 0.15s; }
+  .evo__row a:hover { border-color: var(--ink); background: var(--surface); box-shadow: var(--shadow); transform: translate(-2px, -2px); }
   .evo__year { font-size: clamp(30px, 3vw, 44px); line-height: 1; margin-top: 10px; font-variant-numeric: lining-nums; }
-  .evo__ref { font-size: 11px; color: var(--gold); letter-spacing: 0.08em; }
+  .evo__ref { font-size: 11px; font-weight: 700; padding: 1px 6px; border: var(--bw-sm) solid var(--ink); border-radius: 4px; background: var(--c-yellow); color: #111; }
   .evo__ms { font-size: 13.5px; color: var(--muted); line-height: 1.45; max-width: 22ch; }
   @media (max-width: 900px) {
     .evo__row { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(200px, 62vw); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; }

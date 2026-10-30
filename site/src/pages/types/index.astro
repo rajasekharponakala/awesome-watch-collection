@@ -17,7 +17,7 @@ const types = (await getCollection('types')).sort((a, b) => a.data.order - b.dat
   <section class="section--tight">
     <div class="container grid grid--3">
       {types.map((t, i) => (
-        <a href={u(`types/${t.id}/`)} class="card type-card" data-reveal data-tilt="7" style={`--d:${i * 0.07}s`}>
+        <a href={u(`types/${t.id}/`)} class="card type-card" data-reveal style={`--d:${i * 0.07}s`}>
           <span class="mono tc-no">{String(i + 1).padStart(2, '0')}</span>
           <div class="tc-glyph"><TypeGlyph type={t.data.glyph} /></div>
           <h2 class="display h3">{t.data.title}</h2>
@@ -31,8 +31,9 @@ const types = (await getCollection('types')).sort((a, b) => a.data.order - b.dat
 
 <style>
   .type-card { display: flex; flex-direction: column; gap: 14px; min-height: 520px; }
-  .tc-no { color: var(--gold); }
-  .tc-glyph { width: 62%; margin: 0 auto 10px; transform: translateZ(30px); }
+  .tc-no { display: inline-block; align-self: start; padding: 1px 7px; background: var(--ink); color: var(--bg); font-weight: 700; }
+  .tc-glyph { width: 62%; margin: 0 auto 10px; transition: transform 0.3s var(--snap); }
+  .type-card:hover .tc-glyph { transform: rotate(-8deg) scale(1.04); }
   .type-card h2 { margin: 0; }
   .type-card p { margin: 0; flex: 1; }
   .tc-subs { display: flex; flex-wrap: wrap; gap: 6px; }

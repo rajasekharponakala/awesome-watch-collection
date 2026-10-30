@@ -16,7 +16,7 @@ function gear(cx: number, cy: number, r: number, n: number, depth = 6) {
 }
 ---
 
-<svg class={`glyph ${cls}`} viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+<svg class={`glyph ${cls}`} viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
   {type === 'mechanical' && (
     <g>
       <g>
@@ -45,7 +45,7 @@ function gear(cx: number, cy: number, r: number, n: number, depth = 6) {
           <animate attributeName="opacity" values=".6;0" dur="3s" begin={`${i}s`} repeatCount="indefinite" />
         </circle>
       ))}
-      <text x="100" y="192" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="currentColor" stroke="none">32,768 Hz</text>
+      <text x="100" y="192" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" fill="currentColor" stroke="none">32,768 Hz</text>
     </g>
   )}
   {type === 'digital' && (
@@ -104,6 +104,6 @@ function gear(cx: number, cy: number, r: number, n: number, depth = 6) {
   .glyph {
     width: 100%;
     height: auto;
-    color: var(--gold);
+    color: var(--text);
   }
 </style>
