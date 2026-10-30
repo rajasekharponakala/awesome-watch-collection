@@ -53,18 +53,18 @@ const guides = (await getCollection('guides')).sort((a, b) => a.data.order - b.d
   .levels { display: grid; gap: 28px; }
   .level { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 20px 60px; padding: clamp(26px, 4vw, 56px); }
   .level__head { display: flex; gap: 28px; align-items: start; }
-  .level__num { font-size: clamp(70px, 9vw, 130px); line-height: 0.8; font-style: italic; color: transparent; -webkit-text-stroke: 1px var(--gold); }
+  .level__num { font-size: clamp(70px, 9vw, 130px); line-height: 0.8; color: var(--c-yellow); -webkit-text-stroke: 3px var(--ink); paint-order: stroke fill; text-shadow: 6px 6px 0 var(--ink); }
   .level__head h2 { margin: 14px 0 6px; }
   .level__head p { margin: 0; }
   .level > .lede { grid-column: 1; margin: 0; font-size: 17px; }
-  .level__list { grid-column: 2; grid-row: 1 / span 2; list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-  .level__list a { display: grid; grid-template-columns: 36px 1fr 20px; gap: 14px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--line); transition: padding 0.4s var(--ease), color 0.3s; }
-  .level__list a:hover { padding-left: 10px; color: var(--gold-2); }
-  [data-theme='day'] .level__list a:hover { color: var(--gold); }
-  .level__list .mono { color: var(--gold); }
-  .level__list strong { display: block; font-weight: 500; }
+  .level__list { grid-column: 2; grid-row: 1 / span 2; list-style: none; margin: 0; padding: 0; border: var(--bw) solid var(--ink); border-radius: var(--radius-sm); background: var(--surface); box-shadow: var(--shadow); overflow: hidden; }
+  .level__list li + li { border-top: var(--bw-sm) solid var(--ink); }
+  .level__list a { display: grid; grid-template-columns: 36px 1fr 20px; gap: 14px; align-items: center; padding: 14px 16px; transition: padding 0.2s var(--ease), background-color 0.15s; }
+  .level__list a:hover { padding-left: 24px; background: var(--c-yellow); --muted: #2b2925; color: #111; }
+  .level__list .mono { font-weight: 700; }
+  .level__list strong { display: block; font-weight: 700; }
   .level__list small { display: block; color: var(--muted); font-size: 14px; line-height: 1.5; }
-  .level__list svg { width: 18px; color: var(--gold); }
+  .level__list svg { width: 20px; stroke-width: 2.4; }
   @media (max-width: 900px) {
     .level { grid-template-columns: 1fr; }
     .level > .lede, .level__list { grid-column: auto; grid-row: auto; }

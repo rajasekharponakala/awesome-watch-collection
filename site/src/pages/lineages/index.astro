@@ -29,7 +29,7 @@ const cards = await Promise.all(
   <section class="section--tight">
     <div class="container lin">
       {cards.map(({ l, members, picks, span, brand }, i) => (
-        <a href={u(`lineages/${l.id}/`)} class="lin__card" data-reveal style={`--d:${i * 0.08}s`}>
+        <a href={u(`lineages/${l.id}/`)} class="lin__card paint" data-reveal style={`--d:${i * 0.08}s`}>
           <div class="lin__visuals" aria-hidden="true">
             {picks.map((p, k) => (
               <div class={`lin__w lin__w--${k}`} data-parallax={String([0.06, -0.04, 0.1][k])}>
@@ -62,16 +62,20 @@ const cards = await Promise.all(
     gap: clamp(20px, 4vw, 60px);
     align-items: center;
     padding: clamp(26px, 4vw, 56px);
-    border-radius: 30px;
-    border: 1px solid var(--line-2);
-    background: radial-gradient(700px circle at 10% 0%, var(--glow), transparent 60%), linear-gradient(160deg, var(--surface-2), var(--surface));
+    border-radius: var(--radius);
+    border: var(--bw) solid var(--ink);
+    background: var(--block, var(--c-yellow));
+    box-shadow: var(--shadow-lg);
     overflow: hidden;
-    transition: border-color 0.4s;
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
   }
-  .lin__card:hover { border-color: var(--gold); }
+  .lin__card:nth-child(4n + 2) { --block: var(--c-blue); }
+  .lin__card:nth-child(4n + 3) { --block: var(--c-pink); }
+  .lin__card:nth-child(4n + 4) { --block: var(--c-green); }
+  .lin__card:hover { transform: translate(-3px, -3px); box-shadow: 13px 13px 0 var(--ink); }
   .lin__visuals { position: relative; display: flex; justify-content: center; align-items: center; min-height: 260px; }
   .lin__w { position: relative; display: grid; justify-items: center; gap: 8px; margin: 0 -26px; transition: transform 0.7s var(--ease); }
-  .lin__w .mono { font-size: 12px; color: var(--gold); }
+  .lin__w .mono { padding: 1px 6px; border: var(--bw-sm) solid #111; border-radius: 4px; background: #fff; font-size: 12px; font-weight: 700; color: #111; }
   .lin__w--0 { z-index: 1; opacity: 0.85; }
   .lin__w--1 { z-index: 2; }
   .lin__w--2 { z-index: 3; }
@@ -81,7 +85,7 @@ const cards = await Promise.all(
   .lin__text .lede { margin: 0 0 12px; font-size: 18px; }
   .lin__text .mono { margin: 0 0 22px; }
   .lin__more { font-size: 12px; }
-  .lin__more a { color: var(--gold); }
+  .lin__more a { font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
   @media (max-width: 860px) {
     .lin__card { grid-template-columns: minmax(0, 1fr); }
     .lin__w { margin: 0 -18px; }

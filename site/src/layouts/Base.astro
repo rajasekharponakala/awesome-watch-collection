@@ -32,12 +32,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#07080a" />
+    <meta name="theme-color" content="#ffd23f" />
     <link rel="icon" href={u('favicon.svg')} type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Orbitron:wght@500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Orbitron:wght@500;600&display=swap"
       rel="stylesheet"
     />
     <script is:inline>
@@ -53,8 +53,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="awc-base" content={u()} />
   </head>
   <body data-page={page}>
-    <div class="grain" aria-hidden="true"></div>
-    <div class="cursor-glow" aria-hidden="true" data-cursor></div>
     <a class="sr-only" href="#main">Skip to content</a>
     <Header />
     <main id="main">

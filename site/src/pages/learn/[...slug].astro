@@ -26,8 +26,8 @@ const beats = (minutes * 60 * 8).toLocaleString('en-US');
   <div class="power-reserve" data-power-reserve="#guide"></div>
   <div class="pr-gauge" data-power-reserve="#guide" aria-hidden="true">
     <svg viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="44" fill="none" stroke="var(--line-2)" stroke-width="3" stroke-dasharray="2 4.9" />
-      <circle cx="50" cy="50" r="44" fill="none" stroke="var(--gold)" stroke-width="3" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:calc(var(--p, 0) * 100)" transform="rotate(-90 50 50)" />
+      <circle cx="50" cy="50" r="44" fill="none" stroke="var(--ink)" stroke-width="3" stroke-dasharray="2 4.9" />
+      <circle cx="50" cy="50" r="44" fill="none" stroke="var(--c-pink)" stroke-width="9" pathLength="100" stroke-dasharray="100" style="stroke-dashoffset:calc(var(--p, 0) * 100)" transform="rotate(-90 50 50)" />
     </svg>
     <div class="pr-gauge__label"><b data-pr-value>100%</b><span>Power<br />reserve</span></div>
   </div>
@@ -71,11 +71,12 @@ const beats = (minutes * 60 * 8).toLocaleString('en-US');
 </Base>
 
 <style>
-  .guide-meta { display: flex; flex-wrap: wrap; gap: 22px; align-items: center; margin-top: 30px; color: var(--muted); font-size: 12px; }
+  .guide-meta { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; margin-top: 30px; color: var(--muted); font-size: 12px; font-weight: 700; }
   .guide-nav { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; margin-top: 90px; }
   .guide-nav .card { display: grid; gap: 10px; }
   .guide-nav .next { text-align: right; }
   .edit { margin-top: 40px; font-size: 12px; }
-  .edit a { color: var(--gold); }
+  .edit a { font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  .edit a:hover { background: var(--c-yellow); color: #111; }
   @media (max-width: 700px) { .guide-nav { grid-template-columns: 1fr; } .guide-nav .next { text-align: left; } }
 </style>

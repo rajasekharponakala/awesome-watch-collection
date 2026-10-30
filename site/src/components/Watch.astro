@@ -95,15 +95,11 @@ const style = size ? `--size:${size}` : '';
       <div class="watch__layer" style="--i:0" data-i="0">
         <svg viewBox="-30 -30 460 460" aria-hidden="true">
           <defs>
-            <linearGradient id={`${uid}-cb`} x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color={m[0]} /><stop offset=".35" stop-color={m[1]} />
-              <stop offset=".6" stop-color={m[2]} /><stop offset="1" stop-color={m[3]} />
-            </linearGradient>
             <path id={`${uid}-ring`} d="M200 200 m-160 0 a160 160 0 1 1 320 0 a160 160 0 1 1 -320 0" />
           </defs>
-          <circle cx={C} cy={C} r="188" fill={`url(#${uid}-cb)`} />
+          <circle cx={C} cy={C} r="188" fill={m[2]} stroke="#111" stroke-width="6" />
           <circle cx={C} cy={C} r="176" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="1.5" />
-          <text font-family="JetBrains Mono, monospace" font-size="10.5" letter-spacing="4" fill="rgba(0,0,0,.45)">
+          <text font-family="Space Mono, monospace" font-size="10.5" letter-spacing="4" fill="rgba(0,0,0,.45)">
             <textPath href={`#${uid}-ring`}>AWESOME WATCH COLLECTION · SAPPHIRE CASEBACK · WATER RESISTANT 100 M · N° 0001 ·</textPath>
           </text>
           <circle cx={C} cy={C} r="140" fill="#0b0d10" opacity=".85" />
@@ -122,9 +118,9 @@ const style = size ? `--size:${size}` : '';
           </defs>
           <g>
             <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="18s" repeatCount="indefinite" />
-            <path d="M48 200 A152 152 0 0 1 352 200 L262 200 A62 62 0 0 0 138 200 Z" fill={`url(#${uid}-cdg)`} stroke={m[3]} stroke-width="1.5" />
-            <text x="200" y="104" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="20" font-style="italic" fill={m[3]}>Awesome</text>
-            <text x="200" y="124" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="3" fill={m[3]}>28 JEWELS · SWISS LEVER</text>
+            <path d="M48 200 A152 152 0 0 1 352 200 L262 200 A62 62 0 0 0 138 200 Z" fill={`url(#${uid}-cdg)`} stroke="#111" stroke-width="4" stroke-linejoin="round" />
+            <text x="200" y="104" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="20" font-style="italic" fill={m[3]}>Awesome</text>
+            <text x="200" y="124" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" letter-spacing="3" fill={m[3]}>28 JEWELS · SWISS LEVER</text>
           </g>
           <circle cx={C} cy={C} r="14" fill={m[1]} stroke={m[3]} />
           <circle cx={C} cy={C} r="5" fill="#a3141f" />
@@ -148,7 +144,7 @@ const style = size ? `--size:${size}` : '';
             </radialGradient>
           </defs>
           <circle cx={C} cy={C} r="162" fill={`url(#${uid}-perlage)`} />
-          <circle cx={C} cy={C} r="162" fill="none" stroke="#7d8389" stroke-width="2" />
+          <circle cx={C} cy={C} r="162" fill="none" stroke="#111" stroke-width="5" />
 
           {/* Gear train */}
           <g fill="#d9b25f" stroke="#7c5a20" stroke-width=".8">
@@ -177,11 +173,11 @@ const style = size ? `--size:${size}` : '';
           </g>
 
           {/* Bridges with Côtes de Genève */}
-          <path d="M60 170 Q120 90 236 82 L246 106 Q150 118 98 196 Z" fill={`url(#${uid}-br)`} stroke="#6b4f1c" stroke-width="1" />
-          <path d="M110 300 Q170 330 236 312 L224 286 Q170 300 128 278 Z" fill={`url(#${uid}-br)`} stroke="#6b4f1c" stroke-width="1" />
+          <path d="M60 170 Q120 90 236 82 L246 106 Q150 118 98 196 Z" fill={`url(#${uid}-br)`} stroke="#111" stroke-width="3" stroke-linejoin="round" />
+          <path d="M110 300 Q170 330 236 312 L224 286 Q170 300 128 278 Z" fill={`url(#${uid}-br)`} stroke="#111" stroke-width="3" stroke-linejoin="round" />
 
           {/* Balance cock */}
-          <path d="M262 252 L338 312 L322 330 L246 268 Z" fill={`url(#${uid}-br)`} stroke="#6b4f1c" />
+          <path d="M262 252 L338 312 L322 330 L246 268 Z" fill={`url(#${uid}-br)`} stroke="#111" stroke-width="3" stroke-linejoin="round" />
 
           {/* Balance wheel */}
           <g>
@@ -218,20 +214,11 @@ const style = size ? `--size:${size}` : '';
   <div class="watch__layer" style="--i:3" data-i="3">
     <svg viewBox="-30 -30 460 460" aria-hidden="true">
       <defs>
-        <radialGradient id={`${uid}-dial`} cx=".35" cy=".3" r=".9">
-          <stop offset="0" stop-color="#fff" stop-opacity=".22" />
-          <stop offset=".55" stop-color="#fff" stop-opacity="0" />
-          <stop offset="1" stop-color="#000" stop-opacity=".45" />
-        </radialGradient>
-        <linearGradient id={`${uid}-idx`} x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stop-color={m[1]} /><stop offset=".5" stop-color={m[0]} /><stop offset="1" stop-color={m[3]} />
-        </linearGradient>
       </defs>
       <circle cx={C} cy={C} r="152" fill={dial} />
       <g stroke="#fff" stroke-width=".7" opacity=".05">
         {sunburst.map((a) => <line x1="200" y1="200" x2="200" y2="48" transform={`rotate(${a} 200 200)`} />)}
       </g>
-      <circle cx={C} cy={C} r="152" fill={`url(#${uid}-dial)`} />
 
       <g stroke={accent} opacity=".85">
         {minuteTicks.map((i) => (
@@ -243,14 +230,14 @@ const style = size ? `--size:${size}` : '';
         {hourIdx.map((i) =>
           i === 0 ? (
             <g>
-              <rect x="186" y="72" width="10" height="34" rx="1.5" fill={`url(#${uid}-idx)`} />
-              <rect x="204" y="72" width="10" height="34" rx="1.5" fill={`url(#${uid}-idx)`} />
+              <rect x="186" y="72" width="10" height="34" rx="1.5" fill={m[0]} stroke="#111" stroke-width="2" />
+              <rect x="204" y="72" width="10" height="34" rx="1.5" fill={m[0]} stroke="#111" stroke-width="2" />
               <rect x="188.5" y="75" width="5" height="28" class="lm" />
               <rect x="206.5" y="75" width="5" height="28" class="lm" />
             </g>
           ) : (
             <g transform={`rotate(${i * 30} 200 200)`}>
-              <rect x="194" y="72" width="12" height={i % 3 === 0 ? 34 : 28} rx="1.5" fill={`url(#${uid}-idx)`} />
+              <rect x="194" y="72" width="12" height={i % 3 === 0 ? 34 : 28} rx="1.5" fill={m[0]} stroke="#111" stroke-width="2" />
               <rect x="197" y="75" width="6" height={i % 3 === 0 ? 28 : 22} class="lm" />
             </g>
           ),
@@ -259,13 +246,13 @@ const style = size ? `--size:${size}` : '';
 
       {date && (
         <g>
-          <rect x="296" y="187" width="38" height="26" rx="3" fill="#f6f3ea" stroke={m[1]} stroke-width="2.5" />
-          <text x="315" y="206" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="17" fill="#111" data-date>16</text>
+          <rect x="296" y="187" width="38" height="26" rx="3" fill="#f6f3ea" stroke="#111" stroke-width="3" />
+          <text x="315" y="206" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="17" fill="#111" data-date>16</text>
         </g>
       )}
 
-      <text x="200" y="134" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="600" font-size="24" letter-spacing="3" fill={accent}>{label}</text>
-      <text x="200" y="272" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" letter-spacing="3.5" fill={accent} opacity=".75">{sub}</text>
+      <text x="200" y="134" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="24" letter-spacing="3" fill={accent}>{label}</text>
+      <text x="200" y="272" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" letter-spacing="3.5" fill={accent} opacity=".75">{sub}</text>
     </svg>
   </div>
 
@@ -273,30 +260,24 @@ const style = size ? `--size:${size}` : '';
   <div class="watch__layer" style="--i:4" data-i="4">
     <svg viewBox="-30 -30 460 460" aria-hidden="true">
       <defs>
-        <linearGradient id={`${uid}-hand`} x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stop-color={m[3]} /><stop offset=".5" stop-color={m[0]} /><stop offset="1" stop-color={m[1]} />
-        </linearGradient>
-        <filter id={`${uid}-hs`} x="-50%" y="-50%" width="200%" height="200%">
-          <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity=".45" />
-        </filter>
       </defs>
-      <g filter={`url(#${uid}-hs)`}>
+      <g stroke="#111" stroke-width="2.5" stroke-linejoin="round">
         <g data-hand="h" transform="rotate(305 200 200)">
-          <polygon points="200,98 209,124 206,214 194,214 191,124" fill={`url(#${uid}-hand)`} />
-          <polygon points="200,112 204,127 202,188 198,188 196,127" class="lm" />
+          <polygon points="200,98 209,124 206,214 194,214 191,124" fill={m[0]} />
+          <polygon points="200,112 204,127 202,188 198,188 196,127" class="lm" stroke="none" />
         </g>
         <g data-hand="m" transform="rotate(60 200 200)">
-          <polygon points="200,58 206,84 204.5,216 195.5,216 194,84" fill={`url(#${uid}-hand)`} />
-          <polygon points="200,70 203,88 201.6,190 198.4,190 197,88" class="lm" />
+          <polygon points="200,58 206,84 204.5,216 195.5,216 194,84" fill={m[0]} />
+          <polygon points="200,70 203,88 201.6,190 198.4,190 197,88" class="lm" stroke="none" />
         </g>
         <g data-hand="s" transform="rotate(180 200 200)">
-          <rect x="198.8" y="54" width="2.4" height="196" fill="var(--red, #e0523f)" />
+          <rect x="198" y="54" width="4" height="196" fill="var(--red, #e0523f)" stroke-width="1.5" />
           <circle cx="200" cy="96" r="7" fill="var(--red, #e0523f)" />
-          <circle cx="200" cy="96" r="4.2" class="lm" />
+          <circle cx="200" cy="96" r="4.2" class="lm" stroke="none" />
           <rect x="196.5" y="228" width="7" height="24" rx="2" fill="var(--red, #e0523f)" />
         </g>
-        <circle cx={C} cy={C} r="8" fill={`url(#${uid}-hand)`} />
-        <circle cx={C} cy={C} r="3.2" fill="var(--red, #e0523f)" />
+        <circle cx={C} cy={C} r="8" fill={m[0]} />
+        <circle cx={C} cy={C} r="3.2" fill="var(--red, #e0523f)" stroke="none" />
       </g>
     </svg>
   </div>
@@ -304,17 +285,8 @@ const style = size ? `--size:${size}` : '';
   {/* 5 · Case and bezel */}
   <div class="watch__layer" style="--i:5" data-i="5">
     <svg viewBox="-30 -30 460 460" aria-hidden="true">
-      <defs>
-        <linearGradient id={`${uid}-case`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color={m[0]} /><stop offset=".3" stop-color={m[1]} />
-          <stop offset=".55" stop-color={m[2]} /><stop offset=".8" stop-color={m[3]} /><stop offset="1" stop-color={m[4]} />
-        </linearGradient>
-        <linearGradient id={`${uid}-case2`} x1="1" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color={m[2]} /><stop offset=".5" stop-color={m[3]} /><stop offset="1" stop-color={m[0]} />
-        </linearGradient>
-      </defs>
       {/* lugs */}
-      <g fill={`url(#${uid}-case)`} stroke="rgba(0,0,0,.25)">
+      <g fill={m[2]} stroke="#111" stroke-width="6" stroke-linejoin="round">
         <path d="M118 52 L130 -18 Q134 -26 144 -24 L162 -20 L156 40 Z" />
         <path d="M282 52 L270 -18 Q266 -26 256 -24 L238 -20 L244 40 Z" />
         <path d="M118 348 L130 418 Q134 426 144 424 L162 420 L156 360 Z" />
@@ -322,24 +294,23 @@ const style = size ? `--size:${size}` : '';
       </g>
       {/* crown */}
       <g>
-        <rect x="380" y="190" width="10" height="20" fill={m[3]} />
-        <rect x="388" y="180" width="20" height="40" rx="5" fill={`url(#${uid}-case)`} stroke="rgba(0,0,0,.3)" />
+        <rect x="378" y="190" width="12" height="20" fill={m[3]} stroke="#111" stroke-width="4" />
+        <rect x="388" y="178" width="22" height="44" rx="5" fill={m[2]} stroke="#111" stroke-width="5" />
         {[184, 189, 194, 199, 204, 209, 214].map((y) => (
-          <line x1="390" y1={y} x2="406" y2={y} stroke="rgba(0,0,0,.35)" stroke-width="1.2" />
+          <line x1="390" y1={y} x2="406" y2={y} stroke="#111" stroke-width="1.6" />
         ))}
       </g>
       {/* mid case */}
-      <path d="M200 10 a190 190 0 1 1 -0.01 0 Z M200 48 a152 152 0 1 0 0.01 0 Z" fill-rule="evenodd" fill={`url(#${uid}-case)`} />
+      <path d="M200 10 a190 190 0 1 1 -0.01 0 Z M200 48 a152 152 0 1 0 0.01 0 Z" fill-rule="evenodd" fill={m[2]} stroke="#111" stroke-width="6" />
 
       {bezel === 'dive' && (
         <g>
-          <path d="M200 16 a184 184 0 1 1 -0.01 0 Z M200 50 a150 150 0 1 0 0.01 0 Z" fill-rule="evenodd" fill="#0d0f12" />
-          <path d="M200 16 a184 184 0 1 1 -0.01 0 Z M200 50 a150 150 0 1 0 0.01 0 Z" fill-rule="evenodd" fill={`url(#${uid}-case2)`} opacity=".12" />
+          <path d="M200 16 a184 184 0 1 1 -0.01 0 Z M200 50 a150 150 0 1 0 0.01 0 Z" fill-rule="evenodd" fill="#0d0f12" stroke="#111" stroke-width="5" />
           {Array.from({ length: 15 }, (_, i) => (
             <line x1="200" y1="24" x2="200" y2="34" stroke="#e9e4d8" stroke-width="1.6" transform={`rotate(${i * 6 + 6} 200 200)`} />
           ))}
           {[10, 20, 30, 40, 50].map((n) => (
-            <text x="200" y="40" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="19" fill="#e9e4d8" transform={`rotate(${n * 6} 200 200)`}>{n}</text>
+            <text x="200" y="40" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="19" fill="#e9e4d8" transform={`rotate(${n * 6} 200 200)`}>{n}</text>
           ))}
           {[5, 15, 25, 35, 45, 55].map((n) =>
             n > 15 ? <rect x="197" y="26" width="6" height="12" fill="#e9e4d8" transform={`rotate(${n * 6} 200 200)`} /> : null,
@@ -352,42 +323,36 @@ const style = size ? `--size:${size}` : '';
         <g>
           <path d="M200 16 a184 184 0 1 1 -0.01 0 Z M200 50 a150 150 0 1 0 0.01 0 Z" fill-rule="evenodd" fill="#0c0d0f" />
           <path id={`${uid}-tachy`} d="M200 200 m-160 0 a160 160 0 1 1 320 0 a160 160 0 1 1 -320 0" fill="none" />
-          <text font-family="Inter, sans-serif" font-size="12" font-weight="600" letter-spacing="2" fill="#e9e4d8">
+          <text font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" letter-spacing="2" fill="#e9e4d8">
             <textPath href={`#${uid}-tachy`} startOffset="6%">500 · 400 · 300 · 250 · 200 · 170 · 150 · 130 · 120 · 110 · 100 · 90 · 80 · 70 · 60 · TACHYMETRE</textPath>
           </text>
         </g>
       )}
       {bezel === 'octagon' && (
         <g>
-          <path d={octagon} fill-rule="evenodd" fill={`url(#${uid}-case2)`} stroke="rgba(0,0,0,.25)" />
+          <path d={octagon} fill-rule="evenodd" fill={m[0]} stroke="#111" stroke-width="6" stroke-linejoin="round" />
           {Array.from({ length: 8 }, (_, i) => {
             const a = (i / 8) * Math.PI * 2 + Math.PI / 8;
             const x = 200 + Math.cos(a) * 166;
             const y = 200 + Math.sin(a) * 166;
             return (
               <g>
-                <circle cx={x} cy={y} r="7" fill={m[0]} stroke={m[3]} />
-                <path d={`M${x - 4} ${y - 2} L${x + 4} ${y + 2}`} stroke={m[3]} stroke-width="1.5" />
+                <circle cx={x} cy={y} r="7" fill={m[2]} stroke="#111" stroke-width="2.5" />
+                <path d={`M${x - 4} ${y - 2} L${x + 4} ${y + 2}`} stroke="#111" stroke-width="2" />
               </g>
             );
           })}
         </g>
       )}
-      <circle cx={C} cy={C} r="150" fill="none" stroke="rgba(0,0,0,.4)" stroke-width="2" />
+      <circle cx={C} cy={C} r="150" fill="none" stroke="#111" stroke-width="5" />
     </svg>
   </div>
 
   {/* 6 · Crystal */}
   <div class="watch__layer watch__crystal" style="--i:6" data-i="6">
     <svg viewBox="-30 -30 460 460" aria-hidden="true">
-      <defs>
-        <linearGradient id={`${uid}-glare`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#fff" stop-opacity=".32" />
-          <stop offset=".5" stop-color="#fff" stop-opacity="0" />
-        </linearGradient>
-      </defs>
-      <circle cx={C} cy={C} r="151" fill="rgba(170,200,230,.04)" stroke="rgba(255,255,255,.18)" stroke-width="1" />
-      <path d="M78 150 A130 130 0 0 1 250 64 A150 150 0 0 0 88 176 Z" fill={`url(#${uid}-glare)`} />
+      <path d="M84 158 A124 124 0 0 1 236 76 L226 98 A102 102 0 0 0 106 166 Z" fill="#fff" opacity=".22" />
+      <path d="M100 186 A100 100 0 0 1 108 170 L118 176 A90 90 0 0 0 112 190 Z" fill="#fff" opacity=".22" />
     </svg>
   </div>
 </div>
@@ -418,13 +383,17 @@ const style = size ? `--size:${size}` : '';
     transform: translateZ(calc((var(--i) - 3) * var(--e, 0) * var(--gap, 70px)));
   }
 
+  /* Hard offset shadow instead of a soft blur; skipped while exploding so 3D layers stay intact. */
+  .watch:not(.watch--explode) {
+    filter: drop-shadow(7px 7px 0 var(--ink));
+  }
+
   .watch :global(.lm) {
     fill: var(--watch-lume);
-    transition: fill 0.6s, filter 0.6s;
+    transition: fill 0.3s;
   }
 
   :global([data-theme='lume']) .watch :global(.lm) {
     fill: var(--lume);
-    filter: drop-shadow(0 0 3px var(--lume));
   }
 </style>

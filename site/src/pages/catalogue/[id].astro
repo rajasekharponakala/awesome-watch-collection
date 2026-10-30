@@ -93,7 +93,7 @@ const specs: [string, string | undefined][] = [
   {lineage && (
     <section class="section--tight">
       <div class="container" data-reveal>
-        <div class="lin-panel">
+        <div class="lin-panel paint">
           <div class="lin-panel__head">
             <span class="eyebrow">Part of a lineage</span>
             <a href={u(`lineages/${lineage.id}/#${ref.id}`)} class="display h4 lin-panel__title">{lineage.data.name}: {pos + 1} of {members.length} →</a>
@@ -125,35 +125,36 @@ const specs: [string, string | undefined][] = [
 </Base>
 
 <style>
-  .ref-hero { position: relative; padding: calc(var(--header-h) + 60px) 0 40px; overflow: hidden; }
-  .ref-hero__rings { position: absolute; left: -20vw; top: 0; width: min(1000px, 110vw); opacity: 0.45; pointer-events: none; }
+  .ref-hero { position: relative; padding: calc(var(--header-h) + 60px) 0 56px; border-bottom: var(--bw) solid var(--ink); overflow: hidden; }
+  .ref-hero__rings { position: absolute; left: -20vw; top: 0; width: min(1000px, 110vw); opacity: 0.2; pointer-events: none; }
   .ref-hero__grid { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 60px; align-items: center; }
-  .ref-hero__visual { display: grid; place-items: center; perspective: 1200px; }
-  .ref-hero__follow { transform: rotateY(var(--fx, 0deg)) rotateX(var(--fy, 0deg)); transition: transform 1.2s var(--ease); filter: drop-shadow(0 40px 50px rgba(0, 0, 0, 0.5)); }
+  .ref-hero__visual { display: grid; place-items: center; perspective: 1200px; padding: clamp(24px, 4vw, 48px); border: var(--bw) solid var(--ink); border-radius: var(--radius); background: var(--c-yellow) radial-gradient(rgba(17, 17, 17, 0.16) 1.4px, transparent 1.6px) 0 0 / 18px 18px; box-shadow: var(--shadow-lg); }
+  .ref-hero__follow { transform: rotateY(var(--fx, 0deg)) rotateX(var(--fy, 0deg)); transition: transform 1.2s var(--ease); }
   .ref-hero__visual { min-width: 0; }
   .ref-hero__chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 26px; }
   .warranty {
     max-width: 920px;
     padding: clamp(24px, 4vw, 50px);
-    border: 1px solid var(--line-2);
-    border-radius: 26px;
-    background:
-      repeating-linear-gradient(45deg, transparent 0 22px, color-mix(in srgb, var(--gold) 4%, transparent) 22px 23px),
-      linear-gradient(180deg, var(--surface-2), var(--surface));
+    border: var(--bw) solid var(--ink);
+    border-radius: var(--radius);
+    background: var(--surface) repeating-linear-gradient(45deg, transparent 0 22px, color-mix(in srgb, var(--ink) 7%, transparent) 22px 24px);
+    box-shadow: var(--shadow-lg);
   }
   .warranty__head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-bottom: 26px; }
-  .lin-panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: center; max-width: 920px; padding: clamp(22px, 3vw, 36px); border: 1px solid var(--line-2); border-radius: 26px; background: linear-gradient(160deg, var(--surface-2), var(--surface)); }
-  .lin-panel__title { display: block; margin: 12px 0 8px; transition: color 0.3s; }
-  .lin-panel__title:hover { color: var(--gold); }
+  .lin-panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: center; max-width: 920px; padding: clamp(22px, 3vw, 36px); border: var(--bw) solid var(--ink); border-radius: var(--radius); background: var(--c-blue); box-shadow: var(--shadow-lg); }
+  .lin-panel__title { display: block; margin: 12px 0 8px; }
+  .lin-panel__title:hover { text-decoration: underline; text-decoration-thickness: 4px; text-underline-offset: 6px; }
   .lin-panel__head p { margin: 0; font-size: 15px; }
   .lin-panel__nav { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .lin-panel__nav .card { display: grid; gap: 6px; padding: 16px 18px; }
   .lin-panel__nav .mono { font-size: 11px; }
   .lin-panel__next { text-align: right; }
-  .lin-panel__end { display: grid; place-items: center; padding: 16px; border: 1px dashed var(--line-2); border-radius: var(--radius); font-size: 11px; text-align: center; }
+  .lin-panel__end { display: grid; place-items: center; padding: 16px; border: var(--bw) dashed #111; border-radius: var(--radius); font-size: 11px; font-weight: 700; text-align: center; }
   @media (max-width: 760px) { .lin-panel { grid-template-columns: minmax(0, 1fr); } }
-  .gold-link { color: var(--gold); border-bottom: 1px solid currentColor; }
-  .sources { margin: 22px 0 0; font-size: 12px; display: flex; flex-wrap: wrap; gap: 12px; }
-  .sources a { color: var(--gold); }
+  .gold-link { font-weight: 700; background: linear-gradient(var(--c-yellow), var(--c-yellow)) 0 100% / 100% 0.35em no-repeat; }
+  .gold-link:hover { background-size: 100% 100%; color: #111; }
+  .sources { margin: 22px 0 0; font-size: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .sources a { padding: 2px 8px; border: var(--bw-sm) solid var(--ink); border-radius: 5px; font-weight: 700; box-shadow: 2px 2px 0 var(--ink); }
+  .sources a:hover { background: var(--c-blue); color: #111; }
   @media (max-width: 900px) { .ref-hero__grid { grid-template-columns: minmax(0, 1fr); gap: 20px; } .ref-hero__follow :global(.watch), .ref-hero__follow :global(.dface) { --size: min(380px, 78vw) !important; } }
 </style>

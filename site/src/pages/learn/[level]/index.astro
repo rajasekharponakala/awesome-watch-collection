@@ -26,7 +26,7 @@ const next = LEVELS[i + 1];
   <section class="section--tight">
     <div class="container grid grid--3">
       {guides.map((g, k) => (
-        <a href={u(`learn/${g.id}/`)} class="card guide-card" data-reveal data-tilt="5" style={`--d:${k * 0.07}s`}>
+        <a href={u(`learn/${g.id}/`)} class="card guide-card" data-reveal style={`--d:${k * 0.07}s`}>
           <span class="mono gc-num">Lesson {String(k + 1).padStart(2, '0')}</span>
           <h2 class="display h4">{g.data.title}</h2>
           <p class="muted">{g.data.description}</p>
@@ -45,10 +45,11 @@ const next = LEVELS[i + 1];
 
 <style>
   .guide-card { display: flex; flex-direction: column; gap: 12px; min-height: 280px; }
-  .gc-num { color: var(--gold); }
+  .gc-num { align-self: start; padding: 1px 7px; background: var(--ink); color: var(--bg); font-weight: 700; }
   .guide-card h2 { margin: 6px 0 0; }
   .guide-card p { margin: 0; flex: 1; }
   .gc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .next-level { margin-top: 90px; display: grid; gap: 14px; }
-  .next-level a:hover { color: var(--gold); }
+  .next-level a { justify-self: start; padding: 4px 12px; border: var(--bw) solid var(--ink); border-radius: 10px; background: var(--surface); box-shadow: var(--shadow); transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease), background-color 0.15s; }
+  .next-level a:hover { background: var(--c-yellow); color: #111; transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--ink); }
 </style>

@@ -220,58 +220,12 @@ function runCounter(el: HTMLElement) {
   requestAnimationFrame(step);
 }
 
-/* ---------- Pointer effects: glow, tilt, magnetic ---------- */
+/* ---------- Pointer effects ---------- */
 
+// Neo-brutalist UI: hover states are hard offsets handled in CSS; only the hero watch tracks the pointer.
 const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-const cursor = document.querySelector<HTMLElement>('[data-cursor]');
 
 if (fine) {
-  window.addEventListener(
-    'pointermove',
-    (e) => {
-      cursor?.style.setProperty('--mx', `${e.clientX}px`);
-      cursor?.style.setProperty('--my', `${e.clientY}px`);
-    },
-    { passive: true },
-  );
-
-  document.querySelectorAll<HTMLElement>('.card').forEach((c) =>
-    c.addEventListener('pointermove', (e) => {
-      const r = c.getBoundingClientRect();
-      c.style.setProperty('--cx', `${e.clientX - r.left}px`);
-      c.style.setProperty('--cy', `${e.clientY - r.top}px`);
-    }),
-  );
-
-  document.querySelectorAll<HTMLElement>('[data-tilt]').forEach((el) => {
-    const max = parseFloat(el.dataset.tilt || '8');
-    el.addEventListener('pointermove', (e) => {
-      if (isHacked()) return;
-      const r = el.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5;
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      el.style.setProperty('--rx', `${(x * max).toFixed(2)}deg`);
-      el.style.setProperty('--ry', `${(-y * max).toFixed(2)}deg`);
-    });
-    el.addEventListener('pointerleave', () => {
-      el.style.setProperty('--rx', '0deg');
-      el.style.setProperty('--ry', '0deg');
-    });
-  });
-
-  document.querySelectorAll<HTMLElement>('[data-magnetic]').forEach((el) => {
-    el.addEventListener('pointermove', (e) => {
-      if (isHacked()) return;
-      const r = el.getBoundingClientRect();
-      el.style.setProperty('--bx', `${((e.clientX - r.left - r.width / 2) * 0.25).toFixed(1)}px`);
-      el.style.setProperty('--by', `${((e.clientY - r.top - r.height / 2) * 0.35).toFixed(1)}px`);
-    });
-    el.addEventListener('pointerleave', () => {
-      el.style.setProperty('--bx', '0px');
-      el.style.setProperty('--by', '0px');
-    });
-  });
-
   // Hero watch follows the pointer in 3D
   document.querySelectorAll<HTMLElement>('[data-follow]').forEach((el) => {
     window.addEventListener(
